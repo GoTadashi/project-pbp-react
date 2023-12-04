@@ -1,0 +1,886 @@
+.GURU-LIHAT-NILAI {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .GURU-LIHAT-NILAI .div {
+    background-color: #f9f9f9;
+    height: 1080px;
+    overflow: hidden;
+    position: relative;
+    width: 1920px;
+  }
+  
+  .GURU-LIHAT-NILAI .MENU-SIDEBAR {
+    background-color: #0082fc;
+    border-radius: 16px;
+    height: 740px;
+    left: 40px;
+    position: absolute;
+    top: 163px;
+    width: 239px;
+  }
+  
+  .GURU-LIHAT-NILAI .PROFILE {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 28px;
+    position: absolute;
+    top: 192px;
+  }
+  
+  .GURU-LIHAT-NILAI .element {
+    height: 24px;
+    position: relative;
+    width: 24px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .GURU-LIHAT-NILAI .PROFILE-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 29px;
+    position: absolute;
+    top: 606px;
+  }
+  
+  .GURU-LIHAT-NILAI .group {
+    height: 48px;
+    left: 28px;
+    position: absolute;
+    top: 643px;
+    width: 190px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap-group {
+    background-color: var(--gray-40);
+    border-radius: 32px;
+    height: 48px;
+    position: relative;
+    width: 188px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap {
+    background-color: var(--whitewhite);
+    border-radius: 24px;
+    box-shadow: var(--shadows-gray-1-level);
+    height: 36px;
+    left: 6px;
+    position: absolute;
+    top: 6px;
+    width: 85px;
+  }
+  
+  .GURU-LIHAT-NILAI .group-2 {
+    height: 20px;
+    left: 16px;
+    position: relative;
+    top: 8px;
+    width: 55px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-2 {
+    color: #0841d4;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    left: 28px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    white-space: nowrap;
+  }
+  
+  .GURU-LIHAT-NILAI .sun-solid {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-3 {
+    color: var(--gray-290);
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    left: 135px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    top: 16px;
+    white-space: nowrap;
+  }
+  
+  .GURU-LIHAT-NILAI .moon-solid {
+    height: 20px;
+    left: 107px;
+    position: absolute;
+    top: 14px;
+    width: 20px;
+  }
+  
+  .GURU-LIHAT-NILAI .NILAI-wrapper {
+    /* background-image: url(./bg-nilai.svg); */
+    background-size: 100% 100%;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 75px;
+    width: 239px;
+  }
+  
+  .GURU-LIHAT-NILAI .NILAI {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 25px;
+    position: relative;
+    top: 13px;
+  }
+  
+  .GURU-LIHAT-NILAI .icon-SISWA {
+    height: 19px;
+    position: relative;
+    width: 27.14px;
+  }
+  
+  .GURU-LIHAT-NILAI .CHAT {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 28px;
+    position: absolute;
+    top: 143px;
+  }
+  
+  .GURU-LIHAT-NILAI .icon-envelope {
+    height: 19.39px;
+    position: relative;
+    width: 23px;
+  }
+  
+  .GURU-LIHAT-NILAI .DASHBOARD {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 25px;
+    position: absolute;
+    top: 39px;
+  }
+  
+  .GURU-LIHAT-NILAI .FOOTER {
+    background-color: transparent;
+    height: 62px;
+    left: 0;
+    position: absolute;
+    top: 1009px;
+    width: 1920px;
+  }
+  
+  .GURU-LIHAT-NILAI .p {
+    color: #0083ff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    left: 591px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: -9px;
+    width: 737px;
+  }
+  
+  .GURU-LIHAT-NILAI .line {
+    height: 5px;
+    left: 1038px;
+    object-fit: cover;
+    position: absolute;
+    top: -17px;
+    width: 882px;
+  }
+  
+  .GURU-LIHAT-NILAI .img {
+    height: 5px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: -20px;
+    width: 882px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-4 {
+    color: #0083ff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 17px;
+    font-weight: 500;
+    left: 919px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: -29px;
+    white-space: nowrap;
+    width: 82px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap-2 {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    height: 645px;
+    left: 301px;
+    position: absolute;
+    top: 258px;
+    width: 1508px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-5 {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 40px;
+    font-weight: 600;
+    left: 54px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 30px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap-3 {
+    height: 320px;
+    left: 54px;
+    position: absolute;
+    top: 225px;
+    width: 1408px;
+  }
+  
+  .GURU-LIHAT-NILAI .rectangle {
+    background-color: #eeeeee;
+    height: 320px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1400px;
+  }
+  
+  .GURU-LIHAT-NILAI .navbar-wrapper {
+    height: 54px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1408px;
+  }
+  
+  .GURU-LIHAT-NILAI .div-2 {
+    background-color: #cbcbcb;
+    height: 54px;
+    position: relative;
+    width: 1400px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-6 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 130px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 7px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-7 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 7px;
+    width: 50px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-8 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 473px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 7px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-9 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 793px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 7px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .NILAI-2 {
+    height: 40px;
+    left: 30px;
+    position: absolute;
+    top: 60px;
+    width: 1091px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-10 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-11 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 50px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-12 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 443px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-13 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 763px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap-wrapper {
+    height: 54px;
+    left: 0;
+    position: absolute;
+    top: 105px;
+    width: 1408px;
+  }
+  
+  .GURU-LIHAT-NILAI .NILAI-3 {
+    height: 40px;
+    left: 30px;
+    position: absolute;
+    top: 165px;
+    width: 1091px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap-group-wrapper {
+    height: 54px;
+    left: 0;
+    position: absolute;
+    top: 210px;
+    width: 1408px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-14 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 130px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-15 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 8px;
+    width: 50px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-16 {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 473px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .b {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 793px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .HEADER-TABEL {
+    height: 70px;
+    left: 54px;
+    position: absolute;
+    top: 155px;
+    width: 1408px;
+  }
+  
+  .GURU-LIHAT-NILAI .navbar {
+    background-color: #9b9b9b;
+    height: 70px;
+    position: relative;
+    width: 1400px;
+  }
+  
+  .GURU-LIHAT-NILAI .mata-pelajaran {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 130px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-17 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    width: 50px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-18 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 470px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-19 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 790px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .kelompok-a-wajib {
+    color: #080808;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    height: 40px;
+    left: 64px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 104px;
+    width: 320px;
+  }
+  
+  .GURU-LIHAT-NILAI .PAGES {
+    height: 38px;
+    left: 678px;
+    position: absolute;
+    top: 587px;
+    width: 157px;
+  }
+  
+  .GURU-LIHAT-NILAI .div-wrapper {
+    height: 38px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 33px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap-group-2 {
+    height: 38px;
+    position: relative;
+    width: 31px;
+  }
+  
+  .GURU-LIHAT-NILAI .ellipse {
+    background-color: #0083ff;
+    border-radius: 15px/14.5px;
+    height: 29px;
+    left: 1px;
+    position: absolute;
+    top: 4px;
+    width: 30px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-20 {
+    color: #eeeeee;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 600;
+    height: 38px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 31px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-21 {
+    color: #000000;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    height: 38px;
+    left: 61px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 31px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-22 {
+    color: #000000;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    height: 38px;
+    left: 122px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 31px;
+  }
+  
+  .GURU-LIHAT-NILAI .download-button {
+    align-items: center;
+    background-color: #0082fc;
+    border-radius: 30px;
+    display: inline-flex;
+    gap: 10px;
+    height: 70px;
+    justify-content: center;
+    left: 1149px;
+    padding: 20px 60px;
+    position: absolute;
+    top: 45px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-23 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -0.5px;
+    margin-top: -2.5px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .GURU-LIHAT-NILAI .nama-ahmad-NISIN {
+    color: #000000;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 25px;
+    font-weight: 600;
+    left: 723px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 153px;
+  }
+  
+  .GURU-LIHAT-NILAI .frame {
+    align-items: center;
+    background-color: #e4dddd;
+    border-radius: 15px;
+    display: flex;
+    gap: 90px;
+    justify-content: flex-end;
+    left: 301px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 163px;
+    width: 400px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-24 {
+    color: #262626;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .GURU-LIHAT-NILAI .icon-chevron-down {
+    height: 19px;
+    margin-right: -2px;
+    position: relative;
+    width: 34px;
+  }
+  
+  .GURU-LIHAT-NILAI .HEADER {
+    background-color: transparent;
+    height: 123px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1922px;
+  }
+  
+  .GURU-LIHAT-NILAI .overlap-4 {
+    background-color: #62a8e8;
+    height: 123px;
+    position: relative;
+    width: 1920px;
+  }
+  
+  .GURU-LIHAT-NILAI .element-wrapper {
+    background-color: #f0f2f5;
+    border-radius: 24px;
+    height: 48px;
+    left: 1595px;
+    position: absolute;
+    top: 50px;
+    width: 48px;
+  }
+  
+  .GURU-LIHAT-NILAI .element-2 {
+    height: 24px;
+    left: 12px;
+    position: absolute;
+    top: 12px;
+    width: 24px;
+  }
+  
+  .GURU-LIHAT-NILAI .search {
+    background-color: #f0f2f5;
+    border-radius: 32px;
+    height: 45px;
+    left: 467px;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    width: 938px;
+  }
+  
+  .GURU-LIHAT-NILAI .group-3 {
+    height: 21px;
+    left: 16px;
+    position: relative;
+    top: 14px;
+    width: 97px;
+  }
+  
+  .GURU-LIHAT-NILAI .element-3 {
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 16px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-25 {
+    color: #727272;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+  }
+  
+  .GURU-LIHAT-NILAI .SMP-KRISTEN-GETASAN {
+    color: #000000;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 72px;
+    left: 125px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 34px;
+    width: 310px;
+  }
+  
+  .GURU-LIHAT-NILAI .ellipse-2 {
+    height: 48px;
+    left: 1819px;
+    position: absolute;
+    top: 47px;
+    width: 48px;
+  }
+  
+  .GURU-LIHAT-NILAI .SMP-KRISTEN {
+    height: 86px;
+    left: 26px;
+    object-fit: cover;
+    position: absolute;
+    top: 27px;
+    width: 99px;
+  }
+  
+  .GURU-LIHAT-NILAI .group-wrapper {
+    height: 48px;
+    left: 1686px;
+    position: absolute;
+    top: 46px;
+    width: 123px;
+  }
+  
+  .GURU-LIHAT-NILAI .group-4 {
+    height: 48px;
+  }
+  
+  .GURU-LIHAT-NILAI .group-5 {
+    height: 48px;
+    position: relative;
+    width: 127px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-26 {
+    color: #727272;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 27px;
+  }
+  
+  .GURU-LIHAT-NILAI .text-wrapper-27 {
+    color: #262626;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 0;
+  }
+  

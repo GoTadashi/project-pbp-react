@@ -1,0 +1,819 @@
+.DAFTAR-MAPEL {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.DAFTAR-MAPEL .div {
+  background-color: #f9f9f9;
+  height: 1080px;
+  position: relative;
+  width: 1966px;
+}
+
+.DAFTAR-MAPEL .FOOTER {
+  background-color: transparent;
+  height: 62px;
+  left: 0;
+  position: absolute;
+  top: 1009px;
+  width: 1920px;
+}
+
+.DAFTAR-MAPEL .text-wrapper {
+  color: #0083ff;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 18px;
+  font-weight: 500;
+  left: 591px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -9px;
+  width: 737px;
+}
+
+.DAFTAR-MAPEL .line {
+  height: 5px;
+  left: 1038px;
+  object-fit: cover;
+  position: absolute;
+  top: -17px;
+  width: 882px;
+}
+
+.DAFTAR-MAPEL .img {
+  height: 5px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: -20px;
+  width: 882px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-2 {
+  color: #0083ff;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 17px;
+  font-weight: 500;
+  left: 919px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -29px;
+  white-space: nowrap;
+  width: 82px;
+}
+
+.DAFTAR-MAPEL .PAGES {
+  height: 38px;
+  left: 871px;
+  position: absolute;
+  top: 918px;
+  width: 157px;
+}
+
+.DAFTAR-MAPEL .element {
+  height: 38px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 33px;
+}
+
+.DAFTAR-MAPEL .overlap-group {
+  height: 38px;
+  position: relative;
+  width: 31px;
+}
+
+.DAFTAR-MAPEL .ellipse {
+  background-color: #0083ff;
+  border-radius: 15px/14.5px;
+  height: 29px;
+  left: 1px;
+  position: absolute;
+  top: 4px;
+  width: 30px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-3 {
+  color: #eeeeee;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+  height: 38px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 31px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-4 {
+  color: #000000;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  height: 38px;
+  left: 61px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 31px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-5 {
+  color: #000000;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  height: 38px;
+  left: 122px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 31px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-6 {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  left: 538px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 929px;
+  width: 313px;
+}
+
+.DAFTAR-MAPEL .PEMBERITAHUAN {
+  background-color: #eaebeb;
+  border-radius: 16px;
+  height: 496px;
+  left: 1610px;
+  position: absolute;
+  top: 160px;
+  width: 296px;
+}
+
+.DAFTAR-MAPEL .element-2 {
+  height: 24px;
+  left: 200px;
+  position: absolute;
+  top: 20px;
+  width: 24px;
+}
+
+.DAFTAR-MAPEL .frame {
+  height: 24px;
+  left: 248px;
+  position: absolute;
+  top: 20px;
+  transform: rotate(-90deg);
+  width: 24px;
+}
+
+.DAFTAR-MAPEL .group {
+  height: 18px;
+  left: 10px;
+  position: relative;
+  top: 3px;
+  width: 4px;
+}
+
+.DAFTAR-MAPEL .ellipse-2 {
+  background-color: #0741d4;
+  border-radius: 1.75px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 4px;
+}
+
+.DAFTAR-MAPEL .ellipse-3 {
+  background-color: #0741d4;
+  border-radius: 1.75px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 7px;
+  width: 4px;
+}
+
+.DAFTAR-MAPEL .ellipse-4 {
+  background-color: #0741d4;
+  border-radius: 1.75px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 14px;
+  width: 4px;
+}
+
+.DAFTAR-MAPEL .PIKET {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 265px;
+}
+
+.DAFTAR-MAPEL .element-3 {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.DAFTAR-MAPEL .div-wrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.DAFTAR-MAPEL .text-wrapper-7 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.DAFTAR-MAPEL .WALI-MURID {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 217px;
+}
+
+.DAFTAR-MAPEL .KLS {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 169px;
+}
+
+.DAFTAR-MAPEL .KLS-2 {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 121px;
+}
+
+.DAFTAR-MAPEL .KLS-3 {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 73px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-8 {
+  color: #262626;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 22px;
+  font-weight: 500;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15px;
+}
+
+.DAFTAR-MAPEL .SORTING-DATA {
+  height: 20px;
+  left: 1259px;
+  position: absolute;
+  top: 198px;
+  width: 108px;
+}
+
+.DAFTAR-MAPEL .icon-sort {
+  height: 18px;
+  left: 85px;
+  position: absolute;
+  top: 0;
+  width: 23px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-9 {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+  width: 85px;
+}
+
+.DAFTAR-MAPEL .overlap {
+  height: 37px;
+  left: 276px;
+  position: absolute;
+  top: 140px;
+  width: 349px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-10 {
+  color: #000000;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 115px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 234px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-11 {
+  color: #000000;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 120px;
+}
+
+.DAFTAR-MAPEL .MENU {
+  background-color: #0082fc;
+  border-radius: 16px;
+  height: 740px;
+  left: 21px;
+  position: absolute;
+  top: 160px;
+  width: 239px;
+}
+
+.DAFTAR-MAPEL .PROFILE {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 28px;
+  position: absolute;
+  top: 310px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-12 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.DAFTAR-MAPEL .PROFILE-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 28px;
+  position: absolute;
+  top: 609px;
+}
+
+.DAFTAR-MAPEL .overlap-group-wrapper {
+  height: 48px;
+  left: 27px;
+  position: absolute;
+  top: 646px;
+  width: 190px;
+}
+
+.DAFTAR-MAPEL .overlap-group-2 {
+  background-color: var(--gray-40);
+  border-radius: 32px;
+  height: 48px;
+  position: relative;
+  width: 188px;
+}
+
+.DAFTAR-MAPEL .group-wrapper {
+  background-color: var(--whitewhite);
+  border-radius: 24px;
+  box-shadow: var(--shadows-gray-1-level);
+  height: 36px;
+  left: 6px;
+  position: absolute;
+  top: 6px;
+  width: 85px;
+}
+
+.DAFTAR-MAPEL .group-2 {
+  height: 20px;
+  left: 16px;
+  position: relative;
+  top: 8px;
+  width: 55px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-13 {
+  color: #0841d4;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  left: 28px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  white-space: nowrap;
+}
+
+.DAFTAR-MAPEL .sun-solid {
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-14 {
+  color: var(--gray-290);
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  left: 135px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+}
+
+.DAFTAR-MAPEL .moon-solid {
+  height: 20px;
+  left: 107px;
+  position: absolute;
+  top: 14px;
+  width: 20px;
+}
+
+.DAFTAR-MAPEL .SISWA {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  position: absolute;
+  top: 91px;
+}
+
+.DAFTAR-MAPEL .icon-SISWA {
+  height: 19px;
+  position: relative;
+  width: 27.14px;
+}
+
+.DAFTAR-MAPEL .CHAT {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 27px;
+  position: absolute;
+  top: 146px;
+}
+
+.DAFTAR-MAPEL .icon-envelope {
+  height: 19.39px;
+  position: relative;
+  width: 23px;
+}
+
+.DAFTAR-MAPEL .CHAT-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 25px;
+  position: absolute;
+  top: 202px;
+}
+
+.DAFTAR-MAPEL .icon-attendance {
+  height: 20.83px;
+  position: relative;
+  width: 25px;
+}
+
+.DAFTAR-MAPEL .CHAT-3 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 27px;
+  position: absolute;
+  top: 256px;
+}
+
+.DAFTAR-MAPEL .icon-calender {
+  height: 24px;
+  position: relative;
+  width: 22px;
+}
+
+.DAFTAR-MAPEL .DASHBOARD {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  position: absolute;
+  top: 42px;
+}
+
+.DAFTAR-MAPEL .HEADER {
+  background-color: transparent;
+  height: 96px;
+  left: 6px;
+  position: absolute;
+  top: 27px;
+  width: 1861px;
+}
+
+.DAFTAR-MAPEL .overlap-2 {
+  background-color: #62a8e8;
+  height: 147px;
+  left: -6px;
+  position: relative;
+  top: -51px;
+  width: 1970px;
+}
+
+.DAFTAR-MAPEL .group-3 {
+  height: 48px;
+  left: 1680px;
+  position: absolute;
+  top: 71px;
+  width: 123px;
+}
+
+.DAFTAR-MAPEL .group-4 {
+  height: 48px;
+}
+
+.DAFTAR-MAPEL .group-5 {
+  height: 48px;
+  width: 123px;
+}
+
+.DAFTAR-MAPEL .group-6 {
+  height: 48px;
+  position: relative;
+  width: 127px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-15 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 27px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-16 {
+  color: #262626;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  left: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 0;
+}
+
+.DAFTAR-MAPEL .element-wrapper {
+  background-color: #f0f2f5;
+  border-radius: 24px;
+  height: 48px;
+  left: 1595px;
+  position: absolute;
+  top: 74px;
+  width: 48px;
+}
+
+.DAFTAR-MAPEL .element-4 {
+  height: 24px;
+  left: 12px;
+  position: absolute;
+  top: 12px;
+  width: 24px;
+}
+
+.DAFTAR-MAPEL .search {
+  background-color: #f0f2f5;
+  border-radius: 32px;
+  height: 45px;
+  left: 467px;
+  overflow: hidden;
+  position: absolute;
+  top: 74px;
+  width: 938px;
+}
+
+/* Add these styles to your CSS file */
+.custom-input {
+  width: 57rem; 
+  font-size: 16px; 
+  margin-left: -18px;
+  margin-top: -20px;
+  padding: 18px;
+}
+
+
+.DAFTAR-MAPEL .group-7 {
+  height: 21px;
+  left: 16px;
+  position: relative;
+  top: 14px;
+  width: 219px;
+}
+
+.DAFTAR-MAPEL .element-5 {
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 16px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-17 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.DAFTAR-MAPEL .SMP-KRISTEN-GETASAN {
+  color: #000000;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 20px;
+  font-weight: 500;
+  height: 60px;
+  left: 106px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 72px;
+  width: 269px;
+}
+
+.DAFTAR-MAPEL .ellipse-5 {
+  height: 48px;
+  left: 1819px;
+  position: absolute;
+  top: 71px;
+  width: 48px;
+}
+
+.DAFTAR-MAPEL .SMP-KRISTEN {
+  height: 86px;
+  left: 6px;
+  object-fit: cover;
+  position: absolute;
+  top: 51px;
+  width: 99px;
+}
+
+.DAFTAR-MAPEL .DATA-KELAS-wrapper {
+  height: 643px;
+  left: 383px;
+  position: absolute;
+  top: 228px;
+  width: 1074px;
+}
+
+.DAFTAR-MAPEL .DATA-KELAS {
+  align-items: flex-start;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 1.97px 6.47px #00000005, 0px 9px 18.2px #00000008, 0px 22.78px 48.83px #0000000a,
+    0px 45px 112px #0000000f;
+  display: flex;
+  flex-direction: column;
+  height: 643px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  width: 1074px;
+}
+
+.stable-table {
+  border-collapse: separate; 
+  border-spacing: 10rem 100px;
+  width: 100%;
+  border-collapse: collapse; 
+  margin-top: 20px; 
+}
+
+.stable-table th, .stable-table td {
+  width: 15rem;
+  border: none; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+.stable-table th {
+  color: white;
+  background-color: #0082fc; 
+  border-style: none;
+}
+
+.stable-table tr {
+  margin-right: -15px; 
+  padding: 9px;
+}
+
+/* Style for the actions column (Edit/Delete buttons) */
+.stable-table td img {
+  margin-right: 15px; /* Adjust the margin between the buttons */
+  cursor: pointer;
+}
+
+.DAFTAR-MAPEL .EDIT {
+  height: 33.85px;
+  position: relative;
+  width: 30px;
+}
+
+.DAFTAR-MAPEL .DELETE {
+  height: 33px;
+  position: relative;
+  width: 27px;
+}
+
+
+
+.DAFTAR-MAPEL .TAMBAH-DATA {
+  background-color: #0082fc;
+  border: none;
+  border-radius: 15px;
+  height: 45px;
+  width: 169px;
+  cursor: pointer;
+}
+
+.text-wrapper-23 {
+  margin-top: 12px;
+}
+
+.DAFTAR-MAPEL .text-wrapper-23 {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 400;
+  left: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  width: 147px;
+}

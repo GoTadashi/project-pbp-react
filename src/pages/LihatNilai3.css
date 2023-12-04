@@ -1,0 +1,800 @@
+.LIHAT-NILAI3 {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.LIHAT-NILAI3 .div {
+  background-color: #f9f9f9;
+  height: 1080px;
+  overflow: hidden;
+  position: relative;
+  width: 1920px;
+}
+
+.LIHAT-NILAI3 .MENU-SIDEBAR {
+  background-color: #0082fc;
+  border-radius: 16px;
+  height: 740px;
+  left: 40px;
+  position: absolute;
+  top: 163px;
+  width: 239px;
+}
+
+.LIHAT-NILAI3 .PROFILE {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 28px;
+  position: absolute;
+  top: 192px;
+}
+
+.LIHAT-NILAI3 .element {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.LIHAT-NILAI3 .text-wrapper {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.LIHAT-NILAI3 .PROFILE-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 29px;
+  position: absolute;
+  top: 606px;
+}
+
+.LIHAT-NILAI3 .group {
+  height: 48px;
+  left: 28px;
+  position: absolute;
+  top: 643px;
+  width: 190px;
+}
+
+.LIHAT-NILAI3 .overlap-group {
+  background-color: var(--gray-40);
+  border-radius: 32px;
+  height: 48px;
+  position: relative;
+  width: 188px;
+}
+
+.LIHAT-NILAI3 .overlap {
+  background-color: var(--whitewhite);
+  border-radius: 24px;
+  box-shadow: var(--shadows-gray-1-level);
+  height: 36px;
+  left: 6px;
+  position: absolute;
+  top: 6px;
+  width: 85px;
+}
+
+.LIHAT-NILAI3 .group-2 {
+  height: 20px;
+  left: 16px;
+  position: relative;
+  top: 8px;
+  width: 55px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-2 {
+  color: #0841d4;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  left: 28px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  white-space: nowrap;
+}
+
+.LIHAT-NILAI3 .sun-solid {
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-3 {
+  color: var(--gray-290);
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  left: 135px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+}
+
+.LIHAT-NILAI3 .moon-solid {
+  height: 20px;
+  left: 107px;
+  position: absolute;
+  top: 14px;
+  width: 20px;
+}
+
+.LIHAT-NILAI3 .NILAI-wrapper {
+  background-color: #62a8e8;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 75px;
+  width: 239px;
+}
+
+.LIHAT-NILAI3 .NILAI {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 25px;
+  position: relative;
+  top: 13px;
+}
+
+.LIHAT-NILAI3 .icon-SISWA {
+  height: 19px;
+  position: relative;
+  width: 27.14px;
+}
+
+.LIHAT-NILAI3 .CHAT {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 28px;
+  position: absolute;
+  top: 143px;
+}
+
+.LIHAT-NILAI3 .icon-envelope {
+  height: 19.39px;
+  position: relative;
+  width: 23px;
+}
+
+.LIHAT-NILAI3 .DASHBOARD {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 25px;
+  position: absolute;
+  top: 39px;
+}
+
+.LIHAT-NILAI3 .FOOTER {
+  background-color: transparent;
+  height: 62px;
+  left: 0;
+  position: absolute;
+  top: 1009px;
+  width: 1920px;
+}
+
+.LIHAT-NILAI3 .p {
+  color: #0083ff;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 18px;
+  font-weight: 500;
+  left: 591px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -9px;
+  width: 737px;
+}
+
+.LIHAT-NILAI3 .line {
+  height: 5px;
+  left: 1038px;
+  object-fit: cover;
+  position: absolute;
+  top: -17px;
+  width: 882px;
+}
+
+.LIHAT-NILAI3 .img {
+  height: 5px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: -20px;
+  width: 882px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-4 {
+  color: #0083ff;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 17px;
+  font-weight: 500;
+  left: 919px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -29px;
+  white-space: nowrap;
+  width: 82px;
+}
+
+.LIHAT-NILAI3 .overlap-2 {
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  height: 645px;
+  left: 301px;
+  position: absolute;
+  top: 258px;
+  width: 1508px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-5 {
+  color: #000000;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 40px;
+  font-weight: 600;
+  left: 54px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 39px;
+}
+
+.LIHAT-NILAI3 .navbar {
+  background-color: #9b9b9b;
+  height: 70px;
+  left: 54px;
+  position: absolute;
+  top: 155px;
+  width: 1400px;
+}
+
+.LIHAT-NILAI3 .mata-pelajaran {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 130px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 14px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-6 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+  width: 50px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-7 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 470px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 14px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-8 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 790px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 14px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .overlap-3 {
+  background-color: #eeeeee;
+  height: 210px;
+  left: 54px;
+  position: absolute;
+  top: 225px;
+  width: 1400px;
+}
+
+.LIHAT-NILAI3 .navbar-2 {
+  background-color: #cbcbcb;
+  height: 54px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1400px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-9 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 130px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 6px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-10 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  width: 50px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-11 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 473px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 6px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-12 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 793px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 6px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .overlap-4 {
+  background-color: #cbcbcb;
+  height: 54px;
+  left: 0;
+  position: absolute;
+  top: 105px;
+  width: 1400px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-13 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 130px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 59px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-14 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 59px;
+  width: 50px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-15 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 473px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 59px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-16 {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 793px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 59px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .kelompok-c-muatan {
+  color: #080808;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  left: 64px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 104px;
+  width: 320px;
+}
+
+.LIHAT-NILAI3 .PAGES {
+  height: 38px;
+  left: 678px;
+  position: absolute;
+  top: 587px;
+  width: 159px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-17 {
+  color: #000000;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  height: 38px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 31px;
+}
+
+.LIHAT-NILAI3 .overlap-5 {
+  height: 38px;
+  left: 122px;
+  position: absolute;
+  top: 0;
+  width: 31px;
+}
+
+.LIHAT-NILAI3 .ellipse {
+  background-color: #0083ff;
+  border-radius: 15px/14.5px;
+  height: 29px;
+  left: 1px;
+  position: absolute;
+  top: 4px;
+  width: 30px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-18 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+  height: 38px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 31px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-19 {
+  color: #000000;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  height: 38px;
+  left: 61px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 31px;
+}
+
+.LIHAT-NILAI3 .download-button {
+  align-items: center;
+  background-color: #0082fc;
+  border-radius: 30px;
+  display: inline-flex;
+  gap: 10px;
+  height: 70px;
+  justify-content: center;
+  left: 1157px;
+  padding: 20px 60px;
+  position: absolute;
+  top: 45px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-20 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: -0.5px;
+  margin-top: -2.5px;
+  position: relative;
+  width: fit-content;
+}
+
+.LIHAT-NILAI3 .div-wrapper {
+  align-items: center;
+  background-color: #0082fc;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  height: 70px;
+  justify-content: center;
+  left: 1230px;
+  padding: 20px 60px;
+  position: absolute;
+  top: 536px;
+  width: 232px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-21 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: -0.5px;
+  margin-left: -45.5px;
+  margin-right: -45.5px;
+  margin-top: -2.5px;
+  position: relative;
+  width: fit-content;
+}
+
+.LIHAT-NILAI3 .frame {
+  align-items: center;
+  background-color: #e4dddd;
+  border-radius: 15px;
+  display: flex;
+  gap: 90px;
+  justify-content: flex-end;
+  left: 301px;
+  padding: 10px 20px;
+  position: absolute;
+  top: 163px;
+  width: 400px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-22 {
+  color: #262626;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.LIHAT-NILAI3 .icon-chevron-down {
+  height: 19px;
+  margin-right: -2px;
+  position: relative;
+  width: 34px;
+}
+
+.LIHAT-NILAI3 .div-2 {
+  height: 123px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1922px;
+}
+
+.LIHAT-NILAI3 .overlap-6 {
+  background-color: #62a8e8;
+  height: 123px;
+  position: relative;
+  width: 1920px;
+}
+
+.LIHAT-NILAI3 .group-wrapper {
+  height: 48px;
+  left: 1693px;
+  position: absolute;
+  top: 47px;
+  width: 110px;
+}
+
+.LIHAT-NILAI3 .group-3 {
+  height: 48px;
+}
+
+.LIHAT-NILAI3 .group-4 {
+  height: 48px;
+  width: 110px;
+}
+
+.LIHAT-NILAI3 .group-5 {
+  height: 48px;
+  position: relative;
+  width: 114px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-23 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 70px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 27px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-24 {
+  color: #262626;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 0;
+}
+
+.LIHAT-NILAI3 .element-wrapper {
+  background-color: #f0f2f5;
+  border-radius: 24px;
+  height: 48px;
+  left: 1595px;
+  position: absolute;
+  top: 50px;
+  width: 48px;
+}
+
+.LIHAT-NILAI3 .element-2 {
+  height: 24px;
+  left: 12px;
+  position: absolute;
+  top: 12px;
+  width: 24px;
+}
+
+.LIHAT-NILAI3 .search {
+  background-color: #f0f2f5;
+  border-radius: 32px;
+  height: 45px;
+  left: 467px;
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  width: 938px;
+}
+
+.LIHAT-NILAI3 .group-6 {
+  height: 21px;
+  left: 16px;
+  position: relative;
+  top: 14px;
+  width: 97px;
+}
+
+.LIHAT-NILAI3 .element-3 {
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 16px;
+}
+
+.LIHAT-NILAI3 .text-wrapper-25 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.LIHAT-NILAI3 .SMP-KRISTEN-GETASAN {
+  color: #000000;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  height: 72px;
+  left: 125px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 34px;
+  width: 310px;
+}
+
+.LIHAT-NILAI3 .ellipse-2 {
+  height: 48px;
+  left: 1819px;
+  position: absolute;
+  top: 47px;
+  width: 48px;
+}
+
+.LIHAT-NILAI3 .SMP-KRISTEN {
+  height: 86px;
+  left: 26px;
+  object-fit: cover;
+  position: absolute;
+  top: 27px;
+  width: 99px;
+}
