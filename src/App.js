@@ -31,6 +31,7 @@ function App() {
           <Route path="/EditMapel" exact component={EditMapel} />
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
           <Route path="/GuruLihatNilai" exact component={GuruLihatNilai} />
+          {/* Sehat sehat orang baik */}
         </div>
       </Switch>
     </Router>
