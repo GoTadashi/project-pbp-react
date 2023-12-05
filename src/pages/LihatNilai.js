@@ -6,12 +6,12 @@ export const LihatNilai = () => {
 
   useEffect(() => {
     // Fetch data from your API
-    fetch("your_api_endpoint")
+    fetch("https://jojopinjam.iffan.site/api/get-raport")
       .then((response) => response.json())
       .then((data) => setRaports(data))
       .catch((error) => console.error("Error fetching data:", error));
-  }, []); 
-  
+  }, []);
+
   return (
     <div className="LIHAT-NILAI">
       <div className="div">
@@ -64,49 +64,17 @@ export const LihatNilai = () => {
           <div className="overlap-3">
             <div className="rectangle" />
             <div className="navbar-wrapper">
-            {raports.map((raport) => (
-        <div key={raport.id_raport}>
-          <div className="text-wrapper-6">{raport.nama_matapelajaran}</div>
-          <div className="text-wrapper-7">{raport.semester}.</div>
-          <div className="text-wrapper-8">{raport.nilai}</div>
-          <div className="text-wrapper-9">{raport.predikat}</div>
-        </div>
-      ))}
-              {/* <div className="div-2">
-                <div className="text-wrapper-6">Agama Kristen</div>
-                <div className="text-wrapper-7">1.</div>
-                <div className="text-wrapper-8">90</div>
-                <div className="text-wrapper-9">A</div>
-              </div> */}
-            </div>
-            <div className="NILAI-2">
-              <div className="text-wrapper-10">Bahasa Indonesia</div>
-              <div className="text-wrapper-11">2.</div>
-              <div className="text-wrapper-12">85</div>
-              <div className="text-wrapper-13">A</div>
-            </div>
-            <div className="overlap-wrapper">
-              <div className="div-2">
-                <div className="text-wrapper-6">Ppkn</div>
-                <div className="text-wrapper-7">3.</div>
-                <div className="text-wrapper-8">84</div>
-                <div className="text-wrapper-9">B</div>
-              </div>
-            </div>
-            <div className="NILAI-3">
-              <div className="text-wrapper-10">Bahasa Inggris</div>
-              <div className="text-wrapper-11">4.</div>
-              <div className="text-wrapper-12">89</div>
-              <div className="text-wrapper-13">A</div>
-            </div>
-            <div className="overlap-group-wrapper">
-              <div className="div-2">
-                <div className="text-wrapper-14">Matematika</div>
-                <div className="text-wrapper-15">5.</div>
-                <div className="text-wrapper-16">75</div>
-                <div className="b">B-</div>
-              </div>
-            </div>
+              {raports.map((raport) => (
+                <div key={raport.id_raport}>
+                  <div className="div-2">
+                  <div className="text-wrapper-6">{raport.nama_matapelajaran}</div>
+                  <div className="text-wrapper-7">{raport.semester}.</div>
+                  <div className="text-wrapper-8">{raport.nilai}</div>
+                  <div className="text-wrapper-9">{raport.predikat}</div>
+                  </div>
+                </div>
+              ))}
+             </div>
           </div>
           <div className="HEADER-TABEL">
             <div className="navbar">

@@ -1,22 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./EditGuru.css";
 
 export const EditGuru = () => {
-
+  const [guru, setGuru] = useState([]);
+  const [message, setMessage] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const [nik, setNik] = useState("101");
-  const [nama, setNama] = useState("Bu Siti");
-  const [waliKelas, setWaliKelas] = useState("7A");
-  const [noHandphone, setNoHandphone] = useState("086120121");
-  const [alamat, setAlamat] = useState("Getasan");
-  const [password, setPassword] = useState("1231");
+  useEffect(() => {
+    fetch("https://jojopinjam.iffan.site/api/get-guru")
+      .then((response) => response.json())
+      .then((json) => setGuru(json));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Handle form submission logic here
-    console.log("Form submitted:", { nik, nama, waliKelas, noHandphone, alamat, password });
+    const updateGuru = (id, judul, pengarang) => {
+      const updatedGuru = { id, judul, pengarang };
+      fetch("https://jojopinjam.iffan.site/api/update-guru", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedGuru),
+      }).then(() => {
+        fetch("https://jojopinjam.iffan.site/api/get-guru")
+          .then((response) => response.json())
+          .then((json) => setGuru(json));
+        setTimeout(() => {
+          setMessage("Buku Berhasil Diubah");
+        }, 500);
+      });
+    };
   };
 
   return (
@@ -148,170 +163,105 @@ export const EditGuru = () => {
           </div>
         </header>
         <form onSubmit={handleSubmit}>
-      <div className="group-6">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">NIK</div>
-            <div className="text-wrapper-14">*</div>
-          </div>
-        </div>
-        <div className="frame-3">
-          <input className="setting"
-            type="text"
-            value={nik}
-            onChange={(e) => setNik(e.target.value)}
-          />
-        </div>
-      </div>
-      <div className="group-7">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Nama</div>
-            <div className="text-wrapper-16">*</div>
-          </div>
-        </div>
-        <div className="frame-4">
-          <input
-            type="text"
-            value={nama}
-            onChange={(e) => setNama(e.target.value)}
-          />
-        </div>
-      </div>
-      <div className="group-8">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Wali Kelas</div>
-            <div className="text-wrapper-16">*</div>
-          </div>
-        </div>
-        <div className="overlap-4">
-          <div className="frame-5">
-            <input
-              type="text"
-              value={waliKelas}
-              onChange={(e) => setWaliKelas(e.target.value)}
-            />
-          </div>
-          <img className="icon-chevron-down" alt="Icon chevron down" src="icon-chevron-down.png" />
-        </div>
-      </div>
-      <div className="group-9">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">No. Handphone</div>
-            <div className="text-wrapper-16">*</div>
-          </div>
-        </div>
-        <div className="frame-4">
-          <input
-            type="text"
-            value={noHandphone}
-            onChange={(e) => setNoHandphone(e.target.value)}
-          />
-        </div>
-      </div>
-      <div className="group-10">
-        <div className="frame-6">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Alamat</div>
-            <div className="text-wrapper-16">*</div>
-          </div>
-        </div>
-        <div className="frame-4">
-          <input
-            type="text"
-            value={alamat}
-            onChange={(e) => setAlamat(e.target.value)}
-          />
-        </div>
-      </div>
-      <div className="group-11">
-        <div className="frame-6">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Password</div>
-            <div className="text-wrapper-16">*</div>
-          </div>
-        </div>
-        <div className="frame-4">
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-        {/* <div className="group-6">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">NIK</div>
-              <div className="text-wrapper-14">*</div>
+      {guru.map((g) => (
+        <div key={g.id_guru}>
+          <div className="group-6">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">NIP</div>
+                <div className="text-wrapper-14">*</div>
+              </div>
+            </div>
+            <div className="frame-3">
+              <input
+                className="setting"
+                type="text"
+                value={g.nip}
+                onChange={(e) =>
+                  setGuru((prevGuru) =>
+                    prevGuru.map((item) =>
+                      item.id_guru === g.id_guru
+                        ? { ...item, nip: e.target.value }
+                        : item
+                    )
+                  )
+                }
+              />
             </div>
           </div>
-          <div className="frame-3">
-            <div className="text-wrapper-15">101</div>
-          </div>
-        </div>
-        <div className="group-7">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Nama</div>
-              <div className="text-wrapper-16">*</div>
+          <div className="group-9">
+            <div className="frame-wrapper">
+              <div className="frame-4">
+                <div className="text-wrapper-13">Tempat Lahir</div>
+                <div className="text-wrapper-16">*</div>
+              </div>
             </div>
-          </div>
-          <div className="frame-4">
-            <div className="text-wrapper-15">Bu Siti</div>
-          </div>
-        </div>
-        <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Wali Kelas</div>
-              <div className="text-wrapper-16">*</div>
-            </div>
-          </div>
-          <div className="overlap-4">
             <div className="frame-5">
-              <div className="text-wrapper-15">7A</div>
+              <input
+                type="text"
+                value={g.tempat_lahir}
+                onChange={(e) =>
+                  setGuru((prevGuru) =>
+                    prevGuru.map((item) =>
+                      item.id_guru === g.id_guru
+                        ? { ...item, tempat_lahir: e.target.value }
+                        : item
+                    )
+                  )
+                }
+              />
             </div>
-            <img className="icon-chevron-down" alt="Icon chevron down" src="icon-chevron-down.png" />
+          </div>
+          <div className="group-10">
+            <div className="frame-wrapper">
+              <div className="frame-6">
+                <div className="text-wrapper-13">Tanggal Lahir</div>
+                <div className="text-wrapper-16">*</div>
+              </div>
+            </div>
+            <div className="frame-4">
+              <input
+                type="text"
+                value={g.tanggal_lahir}
+                onChange={(e) =>
+                  setGuru((prevGuru) =>
+                    prevGuru.map((item) =>
+                      item.id_guru === g.id_guru
+                        ? { ...item, tanggal_lahir: e.target.value }
+                        : item
+                    )
+                  )
+                }
+              />
+            </div>
+          </div>
+          <div className="group-11">
+            <div className="frame-6">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Jenis Kelamin</div>
+                <div className="text-wrapper-16">*</div>
+              </div>
+            </div>
+            <div className="frame-4">
+              <input
+                type="text"
+                value={g.jenis_kelamin}
+                onChange={(e) =>
+                  setGuru((prevGuru) =>
+                    prevGuru.map((item) =>
+                      item.id_guru === g.id_guru
+                        ? { ...item, jenis_kelamin: e.target.value }
+                        : item
+                    )
+                  )
+                }
+              />
+            </div>
           </div>
         </div>
-        <div className="group-9">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">No. Handphone</div>
-              <div className="text-wrapper-16">*</div>
-            </div>
-          </div>
-          <div className="frame-4">
-            <div className="text-wrapper-15">086120121</div>
-          </div>
-        </div>
-        <div className="group-10">
-          <div className="frame-6">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Alamat</div>
-              <div className="text-wrapper-16">*</div>
-            </div>
-          </div>
-          <div className="frame-4">
-            <div className="text-wrapper-15">Getasan</div>
-          </div>
-        </div>
-        <div className="group-11">
-          <div className="frame-6">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Password</div>
-              <div className="text-wrapper-16">*</div>
-            </div>
-          </div>
-          <div className="frame-4">
-            <div className="text-wrapper-15">1231</div>
-          </div>
-        </div> */}
+      ))}
+            <button type="submit">Submit</button>
+    </form>
         <div className="TAMBAH-DATA">
           <div className="text-wrapper-17">Simpan Data</div>
         </div>
