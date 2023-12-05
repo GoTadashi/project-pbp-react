@@ -35,6 +35,15 @@ export const TambahMapel = () => {
     e.preventDefault();
     // Add your logic for form submission, e.g., call addMatapelajaran
     addMatapelajaran();
+    
+    alert("Mata pelajaran berhasil dimasukkan.");
+    
+    console.log(
+      "Submitted:",
+      kodeMatapelajaran,
+      namaMatapelajaran,
+      guruPengampu
+    );
   };
 
   const handleReset = () => {
@@ -60,11 +69,19 @@ export const TambahMapel = () => {
               <div className="overlap">
                 <div className="group-2">
                   <div className="text-wrapper-3">Light</div>
-                  <img className="sun-solid" alt="Sun solid" src="sun-solid.svg" />
+                  <img
+                    className="sun-solid"
+                    alt="Sun solid"
+                    src="sun-solid.svg"
+                  />
                 </div>
               </div>
               <div className="text-wrapper-4">Dark</div>
-              <img className="moon-solid" alt="Moon solid" src="moon-solid.svg" />
+              <img
+                className="moon-solid"
+                alt="Moon solid"
+                src="moon-solid.svg"
+              />
             </div>
           </div>
           <div className="SISWA">
@@ -72,11 +89,19 @@ export const TambahMapel = () => {
             <div className="text-wrapper">Siswa</div>
           </div>
           <div className="CHAT">
-            <img className="icon-envelope" alt="Icon envelope" src="icon-envelope.png" />
+            <img
+              className="icon-envelope"
+              alt="Icon envelope"
+              src="icon-envelope.png"
+            />
             <div className="text-wrapper">Chat</div>
           </div>
           <div className="CHAT-2">
-            <img className="icon-attendance" alt="Icon attendance" src="icon-attendance.png" />
+            <img
+              className="icon-attendance"
+              alt="Icon attendance"
+              src="icon-attendance.png"
+            />
             <div className="text-wrapper">Generate Absen</div>
           </div>
           <div className="CHAT-3">
@@ -162,7 +187,11 @@ export const TambahMapel = () => {
               e-rapor
             </div>
             <img className="ellipse-4" alt="Ellipse" src="ellipse-1192.svg" />
-            <img className="SMP-KRISTEN" alt="Smp KRISTEN" src="SMP-KRISTEN-2.png" />
+            <img
+              className="SMP-KRISTEN"
+              alt="Smp KRISTEN"
+              src="SMP-KRISTEN-2.png"
+            />
           </div>
         </header>
         <div className="kembali">
@@ -181,6 +210,7 @@ export const TambahMapel = () => {
             <div className="frame-3">
               <input
                 type="text"
+                className="custom-input"
                 value={kodeMatapelajaran}
                 onChange={(e) => setKodeMatapelajaran(e.target.value)}
               />
@@ -195,6 +225,7 @@ export const TambahMapel = () => {
             <div className="frame-5">
               <input
                 type="text"
+                className="custom-input"
                 value={namaMatapelajaran}
                 onChange={(e) => setNamaMatapelajaran(e.target.value)}
               />
@@ -209,18 +240,19 @@ export const TambahMapel = () => {
             <div className="frame-6">
               <input
                 type="text"
+                className="custom-input"
                 value={guruPengampu}
                 onChange={(e) => setGuruPengampu(e.target.value)}
               />
             </div>
           </div>
           <div className="group-11">
-            <div className="frame-7" onClick={handleSubmit}>
+            <button className="frame-7" onClick={handleSubmit}>
               <div className="text-wrapper-15">Simpan</div>
-            </div>
-            <div className="frame-8" onClick={handleReset}>
+            </button>
+            <button className="frame-8" onClick={handleReset}>
               <div className="text-wrapper-15">Reset</div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
