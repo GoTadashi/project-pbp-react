@@ -35,6 +35,9 @@ export const TambahMapel = () => {
     e.preventDefault();
     // Add your logic for form submission, e.g., call addMatapelajaran
     addMatapelajaran();
+    
+    alert("Mata pelajaran berhasil dimasukkan.");
+    
     console.log(
       "Submitted:",
       kodeMatapelajaran,
@@ -207,6 +210,7 @@ export const TambahMapel = () => {
             <div className="frame-3">
               <input
                 type="text"
+                className="custom-input"
                 value={kodeMatapelajaran}
                 onChange={(e) => setKodeMatapelajaran(e.target.value)}
               />
@@ -221,6 +225,7 @@ export const TambahMapel = () => {
             <div className="frame-5">
               <input
                 type="text"
+                className="custom-input"
                 value={namaMatapelajaran}
                 onChange={(e) => setNamaMatapelajaran(e.target.value)}
               />
@@ -235,6 +240,7 @@ export const TambahMapel = () => {
             <div className="frame-6">
               <input
                 type="text"
+                className="custom-input"
                 value={guruPengampu}
                 onChange={(e) => setGuruPengampu(e.target.value)}
               />
