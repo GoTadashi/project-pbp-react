@@ -38,9 +38,10 @@ export const TambahMapel = () => {
     if (!kodeMatapelajaran || !namaMatapelajaran || !guruPengampu) {
       alert("Harap isi semua kolom form.");
     }
+    else {
+      alert("Mata pelajaran berhasil dimasukkan.");
+    }
 
-    alert("Mata pelajaran berhasil dimasukkan.");
-    
     console.log(
       "Submitted:",
       kodeMatapelajaran,
