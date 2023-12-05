@@ -2,6 +2,35 @@ import React from "react";
 import "./TambahMapel.css";
 
 export const TambahMapel = () => {
+  const [kodeMatapelajaran, setKodeMatapelajaran] = useState("");
+  const [namaMatapelajaran, setNamaMatapelajaran] = useState("");
+  const [guruPengampu, setGuruPengampu] = useState("");
+
+  const addMatapelajaran = () => {
+    const newMatapelajaran = {
+      kode_matapelajaran: kodeMatapelajaran,
+      nama_matapelajaran: namaMatapelajaran,
+      id_guru: guruPengampu,
+    };
+
+    fetch("https://jojopinjam.iffan.site/api/add-matapelajaran", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newMatapelajaran),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle success response
+        console.log(data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error adding matapelajaran:", error);
+      });
+  };
+
   return (
     <div className="TAMBAH-MAPEL">
       <div className="div">
@@ -129,7 +158,48 @@ export const TambahMapel = () => {
           <div className="text-wrapper-11">Kembali</div>
         </div>
         <div className="text-wrapper-12">Tambah Mata Pelajaran</div>
-        <div className="group-8">
+
+        <div>
+      <div className="group-8">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Kode Mata Pelajaran</div>
+          </div>
+        </div>
+        <div className="frame-3">
+          <div className="text-wrapper-14">{kodeMatapelajaran}</div>
+        </div>
+      </div>
+      <div className="group-9">
+        <div className="frame-wrapper">
+          <div className="frame-4">
+            <div className="text-wrapper-13">Mata Pelajaran</div>
+          </div>
+        </div>
+        <div className="frame-5">
+          <div className="text-wrapper-14">{namaMatapelajaran}</div>
+        </div>
+      </div>
+      <div className="group-10">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Guru Pengampu</div>
+          </div>
+        </div>
+        <div className="frame-6">
+          <div className="text-wrapper-14">{guruPengampu}</div>
+        </div>
+      </div>
+      <div className="group-11">
+        <div className="frame-7" onClick={handleSubmit}>
+          <div className="text-wrapper-15">Simpan</div>
+        </div>
+        <div className="frame-8" onClick={handleReset}>
+          <div className="text-wrapper-15">Reset</div>
+        </div>
+      </div>
+    </div>
+        {/* <div className="group-8">
           <div className="frame-wrapper">
             <div className="frame-2">
               <div className="text-wrapper-13">Kode Mata Pelajaran</div>
@@ -166,7 +236,7 @@ export const TambahMapel = () => {
           <div className="frame-8">
             <div className="text-wrapper-15">Reset</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
