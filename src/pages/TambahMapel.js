@@ -212,7 +212,7 @@ export const TambahMapel = () => {
             </div>
             <div className="frame-3">
               <input
-                type="text"
+                type="number"
                 className="custom-input"
                 value={kodeMatapelajaran}
                 onChange={(e) => setKodeMatapelajaran(e.target.value)}
@@ -237,12 +237,12 @@ export const TambahMapel = () => {
           <div className="group-10">
             <div className="frame-wrapper">
               <div className="frame-2">
-                <div className="text-wrapper-13">Guru Pengampu</div>
+                <div className="text-wrapper-13">Kode Guru Pengampu</div>
               </div>
             </div>
             <div className="frame-6">
               <input
-                type="text"
+                type="number"
                 className="custom-input"
                 value={guruPengampu}
                 onChange={(e) => setGuruPengampu(e.target.value)}
