@@ -1,49 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./DaftarMapel.css";
 
 export const DaftarMapel = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://jojopinjam.iffan.site/api/get-matapelajaran");
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const handleTambahData = () => {
     // Add your logic for handling the click event here
     console.log("Button clicked!");
   };
-
-  const tabel = [
-    { kode: "1", mataPelajaran: "PPKn", guruPengajar: "Bu Siti" },
-    {
-      kode: "2",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    // ... Add more data as needed
-  ];
-
-  const [data, setData] = useState(tabel);
 
   const handleEdit = (index) => {
     // Handle the edit action
@@ -234,39 +213,43 @@ export const DaftarMapel = () => {
           </button>
 
           <div className="DATA-KELAS">
-            <table>
-              <thead className="stable-table">
-                <tr>
-                  <th>Kode Mata Pelajaran</th>
-                  <th>Mata Pelajaran</th>
-                  <th>Guru Pengajar</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.kode}</td>
-                    <td>{item.mataPelajaran}</td>
-                    <td>{item.guruPengajar}</td>
-                    <td>
-                      <img
-                        className="EDIT"
-                        alt="Edit"
-                        src="/src/img/edit.png"
-                        onClick={() => handleEdit(index)}
-                      />
-                      <img
-                        className="DELETE"
-                        alt="Delete"
-                        src="DELETE.png"
-                        onClick={() => handleDelete(index)}
-                      />
-                    </td>
+            {data.length === 0 ? (
+              <p>Loading...</p>
+            ) : (
+              <table>
+                <thead className="stable-table">
+                  <tr>
+                    <th>Kode Mata Pelajaran</th>
+                    <th>Mata Pelajaran</th>
+                    <th>Guru Pengajar</th>
+                    <th>Actions</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {data.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.id_matapelajaran}</td>
+                      <td>{item.nama_matapelajaran}</td>
+                      <td>{item.id_guru}</td>
+                      <td>
+                        <img
+                          className="EDIT"
+                          alt="Edit"
+                          src="/src/img/edit.png"
+                          onClick={() => handleEdit(index)}
+                        />
+                        <img
+                          className="DELETE"
+                          alt="Delete"
+                          src="DELETE.png"
+                          onClick={() => handleDelete(index)}
+                        />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
         </div>
       </div>
