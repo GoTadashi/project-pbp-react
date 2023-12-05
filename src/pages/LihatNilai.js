@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./LihatNilai.css";
 
 export const LihatNilai = () => {
+  const [raports, setRaports] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from your API
+    fetch("your_api_endpoint")
+      .then((response) => response.json())
+      .then((data) => setRaports(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []); 
+  
   return (
     <div className="LIHAT-NILAI">
       <div className="div">
@@ -54,12 +64,20 @@ export const LihatNilai = () => {
           <div className="overlap-3">
             <div className="rectangle" />
             <div className="navbar-wrapper">
-              <div className="div-2">
+            {raports.map((raport) => (
+        <div key={raport.id_raport}>
+          <div className="text-wrapper-6">{raport.nama_matapelajaran}</div>
+          <div className="text-wrapper-7">{raport.semester}.</div>
+          <div className="text-wrapper-8">{raport.nilai}</div>
+          <div className="text-wrapper-9">{raport.predikat}</div>
+        </div>
+      ))}
+              {/* <div className="div-2">
                 <div className="text-wrapper-6">Agama Kristen</div>
                 <div className="text-wrapper-7">1.</div>
                 <div className="text-wrapper-8">90</div>
                 <div className="text-wrapper-9">A</div>
-              </div>
+              </div> */}
             </div>
             <div className="NILAI-2">
               <div className="text-wrapper-10">Bahasa Indonesia</div>
