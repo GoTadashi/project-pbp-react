@@ -31,6 +31,18 @@ export const TambahMapel = () => {
       });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your logic for form submission, e.g., call addMatapelajaran
+    addMatapelajaran();
+  };
+
+  const handleReset = () => {
+    setKodeMatapelajaran("");
+    setNamaMatapelajaran("");
+    setGuruPengampu("");
+  };
+
   return (
     <div className="TAMBAH-MAPEL">
       <div className="div">
@@ -160,49 +172,57 @@ export const TambahMapel = () => {
         <div className="text-wrapper-12">Tambah Mata Pelajaran</div>
 
         <div>
-      <div className="group-8">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Kode Mata Pelajaran</div>
+          <div className="group-8">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Kode Mata Pelajaran</div>
+              </div>
+            </div>
+            <div className="frame-3">
+              <input
+                type="text"
+                value={kodeMatapelajaran}
+                onChange={(e) => setKodeMatapelajaran(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="group-9">
+            <div className="frame-wrapper">
+              <div className="frame-4">
+                <div className="text-wrapper-13">Mata Pelajaran</div>
+              </div>
+            </div>
+            <div className="frame-5">
+              <input
+                type="text"
+                value={namaMatapelajaran}
+                onChange={(e) => setNamaMatapelajaran(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="group-10">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Guru Pengampu</div>
+              </div>
+            </div>
+            <div className="frame-6">
+              <input
+                type="text"
+                value={guruPengampu}
+                onChange={(e) => setGuruPengampu(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="group-11">
+            <div className="frame-7" onClick={handleSubmit}>
+              <div className="text-wrapper-15">Simpan</div>
+            </div>
+            <div className="frame-8" onClick={handleReset}>
+              <div className="text-wrapper-15">Reset</div>
+            </div>
           </div>
         </div>
-        <div className="frame-3">
-        <input
-            type="text"
-            value={kodeMatapelajaran}
-            onChange={(e) => setKodeMatapelajaran(e.target.value)}
-          />
-        </div>
-      </div>
-      <div className="group-9">
-        <div className="frame-wrapper">
-          <div className="frame-4">
-            <div className="text-wrapper-13">Mata Pelajaran</div>
-          </div>
-        </div>
-        <div className="frame-5">
-          <div className="text-wrapper-14">{namaMatapelajaran}</div>
-        </div>
-      </div>
-      <div className="group-10">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Guru Pengampu</div>
-          </div>
-        </div>
-        <div className="frame-6">
-          <div className="text-wrapper-14">{guruPengampu}</div>
-        </div>
-      </div>
-      <div className="group-11">
-        <div className="frame-7" onClick={handleSubmit}>
-          <div className="text-wrapper-15">Simpan</div>
-        </div>
-        <div className="frame-8" onClick={handleReset}>
-          <div className="text-wrapper-15">Reset</div>
-        </div>
-      </div>
-    </div>
       </div>
     </div>
   );
