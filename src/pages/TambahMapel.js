@@ -203,44 +203,6 @@ export const TambahMapel = () => {
         </div>
       </div>
     </div>
-        {/* <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Kode Mata Pelajaran</div>
-            </div>
-          </div>
-          <div className="frame-3">
-            <div className="text-wrapper-14">1</div>
-          </div>
-        </div>
-        <div className="group-9">
-          <div className="frame-wrapper">
-            <div className="frame-4">
-              <div className="text-wrapper-13">Mata Pelajaran</div>
-            </div>
-          </div>
-          <div className="frame-5">
-            <div className="text-wrapper-14">PPKn</div>
-          </div>
-        </div>
-        <div className="group-10">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Guru Pengampu</div>
-            </div>
-          </div>
-          <div className="frame-6">
-            <div className="text-wrapper-14">Bu Siti</div>
-          </div>
-        </div>
-        <div className="group-11">
-          <div className="frame-7">
-            <div className="text-wrapper-15">Simpan</div>
-          </div>
-          <div className="frame-8">
-            <div className="text-wrapper-15">Reset</div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
