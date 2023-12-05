@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TambahMapel.css";
 
 export const TambahMapel = () => {
@@ -167,7 +167,11 @@ export const TambahMapel = () => {
           </div>
         </div>
         <div className="frame-3">
-          <div className="text-wrapper-14">{kodeMatapelajaran}</div>
+        <input
+            type="text"
+            value={kodeMatapelajaran}
+            onChange={(e) => setKodeMatapelajaran(e.target.value)}
+          />
         </div>
       </div>
       <div className="group-9">
