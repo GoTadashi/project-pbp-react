@@ -51,11 +51,19 @@ export const EditGuru = () => {
               <div className="overlap">
                 <div className="group-2">
                   <div className="text-wrapper-2">Light</div>
-                  <img className="sun-solid" alt="Sun solid" src="sun-solid.svg" />
+                  <img
+                    className="sun-solid"
+                    alt="Sun solid"
+                    src="sun-solid.svg"
+                  />
                 </div>
               </div>
               <div className="text-wrapper-3">Dark</div>
-              <img className="moon-solid" alt="Moon solid" src="moon-solid.svg" />
+              <img
+                className="moon-solid"
+                alt="Moon solid"
+                src="moon-solid.svg"
+              />
             </div>
           </div>
           <div className="SISWA">
@@ -63,15 +71,27 @@ export const EditGuru = () => {
             <div className="text-wrapper">Siswa</div>
           </div>
           <div className="CHAT">
-            <img className="icon-envelope" alt="Icon envelope" src="icon-envelope.png" />
+            <img
+              className="icon-envelope"
+              alt="Icon envelope"
+              src="icon-envelope.png"
+            />
             <div className="text-wrapper">Chat</div>
           </div>
           <div className="CHAT-2">
-            <img className="icon-attendance" alt="Icon attendance" src="icon-attendance.png" />
+            <img
+              className="icon-attendance"
+              alt="Icon attendance"
+              src="icon-attendance.png"
+            />
             <div className="text-wrapper">Generate Absen</div>
           </div>
           <div className="CHAT-3">
-            <img className="icon-calender" alt="Icon calender" src="icon-calender.png" />
+            <img
+              className="icon-calender"
+              alt="Icon calender"
+              src="icon-calender.png"
+            />
             <div className="text-wrapper">Jadwal Pelajaran</div>
           </div>
           <div className="DASHBOARD">
@@ -159,112 +179,116 @@ export const EditGuru = () => {
               e-rapor
             </div>
             <img className="ellipse-4" alt="Ellipse" src="ellipse-1192.svg" />
-            <img className="SMP-KRISTEN" alt="Smp KRISTEN" src="SMP-KRISTEN-2.png" />
+            <img
+              className="SMP-KRISTEN"
+              alt="Smp KRISTEN"
+              src="SMP-KRISTEN-2.png"
+            />
           </div>
         </header>
         <form onSubmit={handleSubmit}>
-      {guru.map((g) => (
-        <div key={g.id_guru}>
-          <div className="group-6">
-            <div className="frame-wrapper">
-              <div className="frame-2">
-                <div className="text-wrapper-13">NIP</div>
-                <div className="text-wrapper-14">*</div>
+          {guru.map((g) => (
+            <div key={g.id_guru}>
+              <div className="group-6">
+                <div className="frame-wrapper">
+                  <div className="frame-2">
+                    <div className="text-wrapper-13">NIP</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-3">
+                  <input
+                    className="setting"
+                    type="text"
+                    value={g.nip}
+                    onChange={(e) =>
+                      setGuru((prevGuru) =>
+                        prevGuru.map((item) =>
+                          item.id_guru === g.id_guru
+                            ? { ...item, nip: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="group-9">
+                <div className="frame-wrapper">
+                  <div className="frame-4">
+                    <div className="text-wrapper-13">Tempat Lahir</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-5">
+                  <input
+                    className="setting"
+                    type="text"
+                    value={g.tempat_lahir}
+                    onChange={(e) =>
+                      setGuru((prevGuru) =>
+                        prevGuru.map((item) =>
+                          item.id_guru === g.id_guru
+                            ? { ...item, tempat_lahir: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="group-10">
+                <div className="frame-wrapper">
+                  <div className="frame-6">
+                    <div className="text-wrapper-13">Tanggal Lahir</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-7">
+                  <input
+                    className="setting"
+                    type="text"
+                    value={g.tanggal_lahir}
+                    onChange={(e) =>
+                      setGuru((prevGuru) =>
+                        prevGuru.map((item) =>
+                          item.id_guru === g.id_guru
+                            ? { ...item, tanggal_lahir: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="group-11">
+                <div className="frame-6">
+                  <div className="frame-8">
+                    <div className="text-wrapper-13">Jenis Kelamin</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-9">
+                  <input
+                    className="setting"
+                    type="text"
+                    value={g.jenis_kelamin}
+                    onChange={(e) =>
+                      setGuru((prevGuru) =>
+                        prevGuru.map((item) =>
+                          item.id_guru === g.id_guru
+                            ? { ...item, jenis_kelamin: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
               </div>
             </div>
-            <div className="frame-3">
-              <input
-                className="setting"
-                type="text"
-                value={g.nip}
-                onChange={(e) =>
-                  setGuru((prevGuru) =>
-                    prevGuru.map((item) =>
-                      item.id_guru === g.id_guru
-                        ? { ...item, nip: e.target.value }
-                        : item
-                    )
-                  )
-                }
-              />
-            </div>
-          </div>
-          <div className="group-9">
-            <div className="frame-wrapper">
-              <div className="frame-4">
-                <div className="text-wrapper-13">Tempat Lahir</div>
-                <div className="text-wrapper-14">*</div>
-              </div>
-            </div>
-            <div className="frame-5">
-              <input
-              className="setting"
-                type="text"
-                value={g.tempat_lahir}
-                onChange={(e) =>
-                  setGuru((prevGuru) =>
-                    prevGuru.map((item) =>
-                      item.id_guru === g.id_guru
-                        ? { ...item, tempat_lahir: e.target.value }
-                        : item
-                    )
-                  )
-                }
-              />
-            </div>
-          </div>
-          <div className="group-10">
-            <div className="frame-wrapper">
-              <div className="frame-6">
-                <div className="text-wrapper-13">Tanggal Lahir</div>
-                <div className="text-wrapper-14">*</div>
-              </div>
-            </div>
-            <div className="frame-7">
-              <input
-              className="setting"
-                type="text"
-                value={g.tanggal_lahir}
-                onChange={(e) =>
-                  setGuru((prevGuru) =>
-                    prevGuru.map((item) =>
-                      item.id_guru === g.id_guru
-                        ? { ...item, tanggal_lahir: e.target.value }
-                        : item
-                    )
-                  )
-                }
-              />
-            </div>
-          </div>
-          <div className="group-11">
-            <div className="frame-6">
-              <div className="frame-8">
-                <div className="text-wrapper-13">Jenis Kelamin</div>
-                <div className="text-wrapper-14">*</div>
-              </div>
-            </div>
-            <div className="frame-9">
-              <input
-              className="setting"
-                type="text"
-                value={g.jenis_kelamin}
-                onChange={(e) =>
-                  setGuru((prevGuru) =>
-                    prevGuru.map((item) =>
-                      item.id_guru === g.id_guru
-                        ? { ...item, jenis_kelamin: e.target.value }
-                        : item
-                    )
-                  )
-                }
-              />
-            </div>
-          </div>
-        </div>
-      ))}
-            <button type="submit">Submit</button>
-    </form>
+          ))}
+          <button type="submit">Submit</button>
+        </form>
         <div className="TAMBAH-DATA">
           <div className="text-wrapper-17">Simpan Data</div>
         </div>
