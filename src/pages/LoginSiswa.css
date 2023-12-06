@@ -124,16 +124,19 @@
 
 .LOGIN-SISWA .text-wrapper-4 {
     color: #000000;
+    border-color: #68b6ff;
+    border-radius: 3px 30px 30px 2px;
     font-family: "Poppins", Helvetica;
-    font-size: 31px;
+    font-size: 25px;
     font-weight: 500;
-    left: 161px;
+    left: 8rem;
     letter-spacing: 0;
     line-height: normal;
     opacity: 0.55;
     position: absolute;
-    top: 146px;
-    width: 339px;
+    top: 119px;
+    height: 75px;
+    width: 43.7rem;
 }
 
 .LOGIN-SISWA .icon-user {
@@ -172,10 +175,10 @@
     border-color: #68b6ff;
     border-radius: 33px;
     box-shadow: 0px 4px 7px #00000040;
-    height: 60px;
+    height: 80px;
     left: 42px;
     position: absolute;
-    top: 520px;
+    top: 33rem;
     width: 790px;
 }
 
@@ -208,24 +211,27 @@
     border-radius: 33px;
     box-shadow: 0px 4px 7px #00000040;
     height: 80px;
-    left: -1px;
+    left: 42px;
     position: absolute;
-    top: -1px;
+    top: 117px;
     width: 790px;
 }
 
 .LOGIN-SISWA .text-wrapper-7 {
     color: #000000;
+    border-color: #68b6ff;
+    border-radius: 3px 30px 30px 2px;
     font-family: "Poppins", Helvetica;
-    font-size: 31px;
+    font-size: 25px;
     font-weight: 500;
-    left: 121px;
+    left: 5.2rem;
     letter-spacing: 0;
     line-height: normal;
     opacity: 0.55;
     position: absolute;
-    top: 20px;
-    width: 446px;
+    top: -1.5px;
+    height: 75px;
+    width: 43.7rem;
 }
 
 .LOGIN-SISWA .icon-lock {
