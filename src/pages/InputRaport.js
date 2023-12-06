@@ -74,7 +74,7 @@ const InputRaport = () => {
     const newRaport = {
       semester: selectedSemester,
       kelas: selectedKelas,
-      id_siswa: selectedSiswa,
+      nis: selectedSiswa,
       id_guru: selectedGuru,
     };
 
