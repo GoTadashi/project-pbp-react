@@ -10,6 +10,7 @@ const InputNilai = () => {
   const [selectedSiswa, setSelectedSiswa] = useState(nisSiswa);
   const [selectedMapel, setSelectedMapel] = useState("");
   const [selectedIdRaport, setSelectedIdRaport] = useState("");
+  const [raportData, setSelectedIdRaport] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
