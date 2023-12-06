@@ -125,14 +125,14 @@ const DataNilai = () => {
                 <tbody>
                   {currentItems.map((item, index) => (
                     <tr key={index}>
-                      <td>{item.nis}</td>
+                      <td className="center-item">{item.nis}</td>
                       <td>{item.nama}</td>
                       <td>{item.tempat_lahir}</td>
                       <td>{item.tanggal_lahir}</td>
                       <td>{item.jenis_kelamin}</td>
                       <td>{item.agama}</td>
                       <td>{item.nama_orangtua}</td>
-                      <td>
+                      <td className="action-button">
                         <button
                           className="TAMBAH-DATA"
                           onClick={() => handleBuatRaport(item.nis)}
@@ -143,6 +143,7 @@ const DataNilai = () => {
                         <button
                           className="TAMBAH-DATA-2"
                           onClick={() => handleInputNilai(item.nis)}
+                          // disabled
                         >
                           <div className="text-wrapper-23">Input Nilai</div>
                         </button>

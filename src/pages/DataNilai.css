@@ -350,6 +350,16 @@
   padding: 9px;
 }
 
+.center-item {
+  text-align: center;
+}
+
+.action-button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
 .TAMBAH-DATA {
   background-color: #538dc7;
   border: none;
