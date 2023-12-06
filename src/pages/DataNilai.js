@@ -36,9 +36,9 @@ const DataNilai = () => {
     // Add your logic for handling "Tambah Data" here
   };
 
-  const handleInputNilai = () => {
+  const handleInputNilai = (nis) => {
     console.log("Button clicked!");
-    history.push(`/inputnilai`);
+    history.push(`/inputnilai/${nis}`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -147,7 +147,7 @@ const DataNilai = () => {
                       <td>
                         <button
                           className="TAMBAH-DATA"
-                          onClick={handleInputNilai}
+                          onClick={() => handleInputNilai(item.nis)}
                         >
                           <div className="text-wrapper-23">Input Nilai</div>
                         </button>
