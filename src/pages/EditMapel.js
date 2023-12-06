@@ -3,37 +3,76 @@ import "./EditMapel.css";
 
 export const EditMapel = () => {
   // const [searchQuery, setSearchQuery] = useState("");
-  // const [data, setData] = useState([]);
+  const [kodeMatapelajaran, setKodeMatapelajaran] = useState("");
+  const [namaMatapelajaran, setNamaMatapelajaran] = useState("");
+  const [guruPengampu, setGuruPengampu] = useState("");
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         "http://127.0.0.1:8000/api/update-matapelajaran",
-  //         {
-  //           method: "POST",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //           body: JSON.stringify({
-  //             // You may pass necessary data here based on your requirement
-  //             // For example:
-  //             id_matapelajaran: 1,
-  //             nama_matapelajaran: "Nama Matapelajaran Baru",
-  //             id_guru: 3,
-  //           }),
-  //         }
-  //       );
+  const fetchData = async () => {
+    try {
+      // Assuming the ID of the matapelajaran is obtained from the route or some other source
+      const idMatapelajaran = 1; // Change this value based on your requirements
 
-  //       const responseData = await response.json();
-  //       console.log(responseData); // Logging the response data from the API
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+      const response = await fetch(
+        `http://localhost:8000/api/getById/${idMatapelajaran}`
+      );
 
-  //   fetchData();
-  // }, []);
+      const responseData = await response.json();
+
+      // Assuming the API response has properties 'nama_matapelajaran' and 'id_guru'
+      setNamaMatapelajaran(responseData.matapelajaran[0].nama_matapelajaran);
+      setGuruPengampu(responseData.matapelajaran[0].id_guru);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!kodeMatapelajaran || !namaMatapelajaran || !guruPengampu) {
+      alert("Harap isi semua kolom form.");
+    } else {
+      alert("Mata pelajaran berhasil diupdate.");
+    }
+
+    console.log(
+      "Submitted:",
+      kodeMatapelajaran,
+      namaMatapelajaran,
+      guruPengampu
+    );
+
+    try {
+      const response = await fetch("https://jojopinjam.iffan.site/api/update-matapelajaran", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id_matapelajaran: 1, // Change this value based on your requirements
+          nama_matapelajaran: namaMatapelajaran,
+          id_guru: guruPengampu,
+        }),
+      });
+
+      const responseData = await response.json();
+      console.log(responseData); // Logging the response data from the API
+
+      // Assuming there is some feedback or redirection logic based on the API response
+    } catch (error) {
+      console.error("Error updating data:", error);
+    }
+  };
+
+  const handleReset = () => {
+    // Add your logic for resetting the form here
+    setKodeMatapelajaran("");
+    setNamaMatapelajaran("");
+    setGuruPengampu("");
+  };
 
   return (
     <div className="EDIT-MAPEL">
@@ -182,44 +221,64 @@ export const EditMapel = () => {
           <div className="text-wrapper-11">Kembali</div>
         </div>
         <div className="text-wrapper-12">Edit Mata Pelajaran</div>
-        <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Kode Mata Pelajaran</div>
+        <form onSubmit={handleSubmit}>
+          <div className="group-8">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Kode Mata Pelajaran</div>
+              </div>
+            </div>
+            <div className="frame-3">
+              <input
+                type="number"
+                className="custom-input"
+                value={kodeMatapelajaran}
+                onChange={(e) => setKodeMatapelajaran(e.target.value)}
+              />
             </div>
           </div>
-          <div className="frame-3">
-            <div className="text-wrapper-14">1</div>
-          </div>
-        </div>
-        <div className="group-9">
-          <div className="frame-wrapper">
-            <div className="frame-4">
-              <div className="text-wrapper-13">Mata Pelajaran</div>
+
+          <div className="group-9">
+            <div className="frame-wrapper">
+              <div className="frame-4">
+                <div className="text-wrapper-13">Mata Pelajaran</div>
+              </div>
+            </div>
+            <div className="frame-5">
+              <input
+                type="text"
+                className="custom-input"
+                value={namaMatapelajaran}
+                onChange={(e) => setNamaMatapelajaran(e.target.value)}
+              />
             </div>
           </div>
-          <div className="frame-5">
-            <div className="text-wrapper-14">PPKn</div>
-          </div>
-        </div>
-        <div className="group-10">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Guru Pengampu</div>
+
+          <div className="group-10">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Guru Pengampu</div>
+              </div>
+            </div>
+            <div className="frame-6">
+              <input
+                type="number"
+                className="custom-input"
+                value={guruPengampu}
+                onChange={(e) => setGuruPengampu(e.target.value)}
+              />
             </div>
           </div>
-          <div className="frame-6">
-            <div className="text-wrapper-14">Bu Siti</div>
+
+          <div className="group-11">
+            <button className="frame-7" onClick={handleSubmit}>
+              <div className="text-wrapper-15">Simpan</div>
+            </button>
+            <button className="frame-8" onClick={handleReset}>
+              <div className="text-wrapper-15">Reset</div>
+            </button>
           </div>
-        </div>
-        <div className="group-11">
-          <div className="frame-7">
-            <div className="text-wrapper-15">Simpan</div>
-          </div>
-          <div className="frame-8">
-            <div className="text-wrapper-15">Reset</div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );
