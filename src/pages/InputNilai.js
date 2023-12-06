@@ -1,7 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./InputNilai.css";
 
 export const InputNilai = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [dataSiswa, setDataSiswa] = useState([]);
+  const [dataMapel, setDataMapel] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jojopinjam.iffan.site/api/get-siswa"
+        );
+        const dataSiswa = await response.json();
+        setDataSiswa(dataSiswa);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jojopinjam.iffan.site/api/get-matapelajaran"
+        );
+        const dataMapel = await response.json();
+        setDataMapel(dataMapel);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="INPUT-NILAI">
       <div className="div">
@@ -128,7 +164,13 @@ export const InputNilai = () => {
             <div className="search">
               <div className="group-7">
                 <img className="element-5" alt="Element" src="7.svg" />
-                <div className="text-wrapper-10">Pencarian</div>
+                <input
+                  className="custom-input"
+                  type="text"
+                  placeholder="Cari berdasarkan Nama/NIS"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
@@ -155,13 +197,14 @@ export const InputNilai = () => {
               <div className="text-wrapper-13">Nama Siswa</div>
             </div>
           </div>
-          <div className="frame-3">
-            <div className="text-wrapper-14">Ahmad</div>
-            <img
-              className="expand-arrow"
-              alt="Expand arrow"
-              src="expand-arrow.png"
-            />
+          <div className="frame-2">
+            <select className="dropdown">
+              {dataSiswa.map((item, index) => (
+                <option key={index} value={item.nama}>
+                  {item.nama}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="group-9">
@@ -170,9 +213,14 @@ export const InputNilai = () => {
               <div className="text-wrapper-13">Mata Pelajaran</div>
             </div>
           </div>
-          <div className="frame-4">
-            <div className="text-wrapper-14">Ilmu Pengetahuan Alam</div>
-            <img className="expand-arrow" alt="Expand arrow" src="image.png" />
+          <div className="frame-2">
+            <select className="dropdown">
+              {dataMapel.map((item, index) => (
+                <option key={index} value={item.nama_matapelajaran}>
+                  {item.nama_matapelajaran}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="group-10">
@@ -181,13 +229,11 @@ export const InputNilai = () => {
               <div className="text-wrapper-13">Semester</div>
             </div>
           </div>
-          <div className="frame-5">
-            <div className="text-wrapper-14">1</div>
-            <img
-              className="expand-arrow"
-              alt="Expand arrow"
-              src="expand-arrow-2.png"
-            />
+          <div className="frame-2">
+            <select className="dropdown">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
           </div>
         </div>
         <div className="group-11">
@@ -196,9 +242,7 @@ export const InputNilai = () => {
               <div className="text-wrapper-13">Nilai</div>
             </div>
           </div>
-          <div className="frame-6">
-            <div className="text-wrapper-14">90</div>
-          </div>
+          <input className="number-input" type="number" />
         </div>
         <div className="group-12">
           <div className="frame-7">
