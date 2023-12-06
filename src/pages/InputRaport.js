@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./InputRaport.css";
 
-export const InputRaport = () => {
+const InputRaport = () => {
+  const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
-  const [nis, setNIS] = useState("");
+  const [nis, setNIS] = useState(nisSiswa);
   const [id_guru, setIdGuru] = useState("");
   const [semester, setSemester] = useState("");
   const [kelas, setKelas] = useState("");
+  const [nilai, setNilai] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
