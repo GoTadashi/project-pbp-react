@@ -7,7 +7,7 @@ const InputNilai = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
-  const [selectedSiswa, setSelectedSiswa] = useState("");
+  const [selectedSiswa, setSelectedSiswa] = useState(nisSiswa);
   const [selectedMapel, setSelectedMapel] = useState("");
   const [selectedIdRaport, setSelectedIdRaport] = useState("");
 
@@ -54,16 +54,21 @@ const InputNilai = () => {
   useEffect(() => {
     const fetchRaportData = async () => {
       try {
+        console.log("Fetching raport data...");
         const response = await fetch(
           "https://jojopinjam.iffan.site/api/get-raport-main"
         );
         const raportData = await response.json();
-
+  
+        console.log("Raport data:", raportData);
+        console.log("Selected student:", selectedSiswa);
+        console.log("Student data:", dataSiswa);
+  
         if (raportData.length > 0 && selectedSiswa && dataSiswa.length > 0) {
           const matchingRaport = raportData.find(
             (raport) => raport.id_siswa === selectedSiswa
           );
-
+  
           if (matchingRaport) {
             setSelectedIdRaport(matchingRaport.id_raport);
           } else {
@@ -76,7 +81,7 @@ const InputNilai = () => {
         console.error("Error fetching raport data:", error);
       }
     };
-
+  
     fetchRaportData();
   }, [dataSiswa, selectedSiswa]);
 
@@ -93,7 +98,7 @@ const InputNilai = () => {
       id_raport: selectedIdRaport
     };
 
-    fetch("https://jojopinjam.iffan.site/api/add-nilai", {
+    fetch("https://jojopinjam.iffan.site/api/add-detailraport", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
