@@ -257,7 +257,7 @@ export const EditMapel = () => {
           <div className="group-10">
             <div className="frame-wrapper">
               <div className="frame-2">
-                <div className="text-wrapper-13">Guru Pengampu</div>
+                <div className="text-wrapper-13">Kode Guru Pengampu</div>
               </div>
             </div>
             <div className="frame-6">
