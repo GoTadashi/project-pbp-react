@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./DataNilai.css";
 
 const DataNilai = () => {
+  const history = useHistory();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataRaport, setDataRaport] = useState([]);
@@ -32,6 +34,11 @@ const DataNilai = () => {
   const handleTambahData = () => {
     console.log("Button clicked!");
     // Add your logic for handling "Tambah Data" here
+  };
+
+  const handleInputNilai = () => {
+    console.log("Button clicked!");
+    history.push(`/inputnilai`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -140,7 +147,7 @@ const DataNilai = () => {
                       <td>
                         <button
                           className="TAMBAH-DATA"
-                          onClick={handleTambahData}
+                          onClick={handleInputNilai}
                         >
                           <div className="text-wrapper-23">Input Nilai</div>
                         </button>

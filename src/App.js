@@ -13,7 +13,6 @@ import GuruLihatNilai from "./pages/GuruLihatNilai";
 import DashboardGuru from "./pages/DashboardGuru";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-
 function App() {
   return (
     <Router>
