@@ -20,19 +20,24 @@ function App() {
       <div className="app-header"></div>
       <Switch>
         <div className="app-content">
+          {/* 
+          editguru done
+          datanilai semester dan kelas rancu
+          lihatnilai -
+          inputnilai -
+          editnilai -
+          */}
+
           {/* Data Guru */}
           <Route path="/EditGuru" exact component={EditGuru} />
-
           {/* Data Raport */}
           <Route path="/DataNilai" exact component={DataNilai} />
-
           {/* Data Detail */}
           <Route path="/LihatNilai" exact component={LihatNilai} />
           <Route path="/LihatNilai2" exact component={LihatNilai2} />
           <Route path="/LihatNilai3" exact component={LihatNilai3} />
           <Route path="/InputNilai" exact component={InputNilai} />
           <Route path="/EditNilai" exact component={EditNilai} />
-
           {/* Data Mapel */}
           <Route path="/TambahMapel" exact component={TambahMapel} />
           <Route path="/EditMapel" exact component={EditMapel} />

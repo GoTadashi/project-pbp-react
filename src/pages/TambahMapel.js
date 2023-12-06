@@ -13,7 +13,7 @@ export const TambahMapel = () => {
       id_guru: guruPengampu,
     };
 
-    fetch("https://127.0.0.1:8000/api/add-matapelajaran", {
+    fetch("https://jojopinjam.iffan.site/api/add-matapelajaran", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
