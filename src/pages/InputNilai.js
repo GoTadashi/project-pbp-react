@@ -38,7 +38,7 @@ const InputNilai = () => {
   
     fetchData();
   }, [nisSiswa]);
-  
+  console.log("Data Siswa:", dataSiswa);
 
   useEffect(() => {
     const fetchData = async () => {
