@@ -96,9 +96,6 @@ const InputRaport = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-
-
     addRaport();
 
     console.log(
