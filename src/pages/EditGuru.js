@@ -193,11 +193,12 @@ export const EditGuru = () => {
             <div className="frame-wrapper">
               <div className="frame-4">
                 <div className="text-wrapper-13">Tempat Lahir</div>
-                <div className="text-wrapper-16">*</div>
+                <div className="text-wrapper-14">*</div>
               </div>
             </div>
             <div className="frame-5">
               <input
+              className="setting"
                 type="text"
                 value={g.tempat_lahir}
                 onChange={(e) =>
@@ -216,11 +217,12 @@ export const EditGuru = () => {
             <div className="frame-wrapper">
               <div className="frame-6">
                 <div className="text-wrapper-13">Tanggal Lahir</div>
-                <div className="text-wrapper-16">*</div>
+                <div className="text-wrapper-14">*</div>
               </div>
             </div>
-            <div className="frame-4">
+            <div className="frame-7">
               <input
+              className="setting"
                 type="text"
                 value={g.tanggal_lahir}
                 onChange={(e) =>
@@ -237,13 +239,14 @@ export const EditGuru = () => {
           </div>
           <div className="group-11">
             <div className="frame-6">
-              <div className="frame-2">
+              <div className="frame-8">
                 <div className="text-wrapper-13">Jenis Kelamin</div>
-                <div className="text-wrapper-16">*</div>
+                <div className="text-wrapper-14">*</div>
               </div>
             </div>
-            <div className="frame-4">
+            <div className="frame-9">
               <input
+              className="setting"
                 type="text"
                 value={g.jenis_kelamin}
                 onChange={(e) =>
