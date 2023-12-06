@@ -354,6 +354,10 @@
   cursor: pointer;
 }
 
+.TAMBAH-DATA:hover {
+  background-color: #7a828a;
+}
+
 .text-wrapper-23 {
   color: #ffffff;
   font-size: 17px;
