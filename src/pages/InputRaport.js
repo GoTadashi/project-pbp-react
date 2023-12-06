@@ -6,11 +6,10 @@ const InputRaport = () => {
   const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
-  const [dataMapel, setDataMapel] = useState([]);
   const [selectedSemester, setSelectedSemester] = useState(1);
   const kelasOptions = ["1", "2", "3", "4", "5", "6"];
   const [selectedKelas, setSelectedKelas] = useState("1");
-  const [selectedSiswa, setSelectedSiswa] = useState(nisSiswa);
+  const [selectedSiswa, setSelectedSiswa] = useState("");
   const [dataGuru, setDataGuru] = useState([]);
   const [selectedGuru, setSelectedGuru] = useState("");
 
@@ -39,22 +38,6 @@ const InputRaport = () => {
   }, [nisSiswa]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://jojopinjam.iffan.site/api/get-matapelajaran"
-        );
-        const dataMapel = await response.json();
-        setDataMapel(dataMapel);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
     const fetchGuruData = async () => {
       try {
         const responseGuru = await fetch(
@@ -74,7 +57,7 @@ const InputRaport = () => {
     const newRaport = {
       semester: selectedSemester,
       kelas: selectedKelas,
-      id_siswa: selectedSiswa,
+      nis: selectedSiswa,
       id_guru: selectedGuru,
     };
 
@@ -96,13 +79,8 @@ const InputRaport = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addRaport();
 
-    if (!selectedSiswa || !selectedGuru) {
-      alert("Harap isi semua kolom form.");
-    } else {
-      alert("Raport berhasil dimasukkan.");
-    }
+    addRaport();
 
     console.log(
       "Submitted:",
@@ -296,7 +274,6 @@ const InputRaport = () => {
           <div className="frame-wrapper">
             <div className="frame-2">
               <div className="text-wrapper-13">Nama Guru</div>
-              <div className="text-wrapper-13">Tanggal Raport</div>
             </div>
           </div>
           <div className="frame-2">
