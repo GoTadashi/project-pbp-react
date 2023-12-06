@@ -306,7 +306,7 @@ const InputRaport = () => {
             >
               {dataGuru.map((guru) => (
                 <option key={guru.id_guru} value={guru.id_guru}>
-                  {guru.nama_guru}
+                  {guru.nama}
                 </option>
               ))}
             </select>
