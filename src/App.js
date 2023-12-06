@@ -13,7 +13,7 @@ import DaftarMapel from "./pages/DaftarMapel";
 import GuruLihatNilai from "./pages/GuruLihatNilai";
 import DashboardGuru from "./pages/DashboardGuru";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { LoginSiswa } from "./pages/LoginSiswa";
+import LoginSiswa  from "./pages/LoginSiswa";
 
 function App() {
   return (

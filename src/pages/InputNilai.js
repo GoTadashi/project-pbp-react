@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./InputRaport.css";
+import "./InputNilai.css";
 
-const InputRaport = () => {
+const InputNilai = () => {
   const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
-  const [selectedSemester, setSelectedSemester] = useState(1);
-  const [selectedKelas, setSelectedKelas] = useState("1");
   const [selectedSiswa, setSelectedSiswa] = useState("");
   const [selectedMapel, setSelectedMapel] = useState("");
-  const [selectedGuru, setSelectedGuru] = useState("");
+  const [selectedIdRaport, setSelectedIdRaport] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,48 +51,73 @@ const InputRaport = () => {
     fetchData();
   }, []);
 
-  const addRaport = () => {
-    const newRaport = {
-      id_mapel: selectedMapel,
-      nilai: selectedSemester,
-      id_raport: selectedKelas
+  useEffect(() => {
+    const fetchRaportData = async () => {
+      try {
+        const response = await fetch(
+          "https://jojopinjam.iffan.site/api/get-raport-main"
+        );
+        const raportData = await response.json();
+
+        if (raportData.length > 0 && selectedSiswa && dataSiswa.length > 0) {
+          const matchingRaport = raportData.find(
+            (raport) => raport.id_siswa === selectedSiswa
+          );
+
+          if (matchingRaport) {
+            setSelectedIdRaport(matchingRaport.id_raport);
+          } else {
+            console.error("No matching raport found for the selected student.");
+          }
+        } else {
+          console.error("No raport data, selected student, or student data available.");
+        }
+      } catch (error) {
+        console.error("Error fetching raport data:", error);
+      }
     };
 
-    fetch("https://jojopinjam.iffan.site/api/add-detail", {
+    fetchRaportData();
+  }, [dataSiswa, selectedSiswa]);
+
+  const addNilai = () => {
+    // Validate the input fields
+    if (!selectedSiswa || !selectedMapel || !selectedIdRaport) {
+      console.error("Please fill in all the required fields.");
+      return;
+    }
+
+    const newNilai = {
+      nis: selectedSiswa,
+      id_mapel: selectedMapel,
+      id_raport: selectedIdRaport
+    };
+
+    fetch("https://jojopinjam.iffan.site/api/add-nilai", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newRaport),
+      body: JSON.stringify(newNilai),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log("Nilai added successfully:", data);
+        // Additional actions after successfully adding the nilai
       })
       .catch((error) => {
-        console.error("Error adding raport:", error);
+        console.error("Error adding nilai:", error);
       });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    addRaport();
-
-    console.log(
-      "Submitted:",
-      selectedSemester,
-      selectedKelas,
-      selectedSiswa,
-      selectedGuru
-    );
+    addNilai();
+    console.log("Submitted:");
   };
 
   const handleReset = () => {
-    setSelectedSemester("");
-    setSelectedKelas("");
-    setSelectedSiswa("");
-    setSelectedGuru("");
+    // Reset form or perform any other reset logic
   };
 
   return (
@@ -296,7 +319,7 @@ const InputRaport = () => {
             <input
               type="number"
               className="dropdown"
-              onChange={(e) => setSelectedSemester(e.target.value)}
+              onChange={(e) => setSelectedMapel(e.target.value)}
             ></input>
           </div>
         </div>
@@ -310,8 +333,8 @@ const InputRaport = () => {
             <input
               type="number"
               className="dropdown"
-              onChange={(e) => setSelectedKelas(e.target.value)}
-              value={selectedKelas}
+              onChange={(e) => setSelectedIdRaport(e.target.value)}
+              value={selectedIdRaport}
               disabled
             ></input>
           </div>
@@ -329,4 +352,4 @@ const InputRaport = () => {
   );
 };
 
-export default InputRaport;
+export default InputNilai;
