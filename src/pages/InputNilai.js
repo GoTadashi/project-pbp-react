@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./InputNilai.css";
 
-export const InputNilai = () => {
+const InputNilai = () => {
   const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
-  const [nis, setNIS] = useState("");
+  const [nis, setNIS] = useState(nisSiswa);
   const [id_guru, setIdGuru] = useState("");
   const [semester, setSemester] = useState("");
   const [kelas, setKelas] = useState("");
@@ -16,18 +16,29 @@ export const InputNilai = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://jojopinjam.iffan.site/api/get-siswa"
+        const responseSiswa = await fetch(
+          `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
         );
-        const dataSiswa = await response.json();
-        setDataSiswa(dataSiswa);
+        const dataSiswa = await responseSiswa.json();
+  
+        if (Array.isArray(dataSiswa)) {
+          setDataSiswa(dataSiswa);
+        } else if (dataSiswa) {
+          // If it's not an array, create an array with a single item
+          setDataSiswa([dataSiswa]);
+        } else {
+          // Handle the case where dataSiswa is undefined or null
+          console.error("Invalid Data Siswa format:", dataSiswa);
+          setDataSiswa([]);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-
+  
     fetchData();
-  }, []);
+  }, [nisSiswa]);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +55,7 @@ export const InputNilai = () => {
 
     fetchData();
   }, []);
+
 
   const addRaport = () => {
     const newRaport = {
@@ -246,24 +258,21 @@ export const InputNilai = () => {
         </div>
         <div className="text-wrapper-12">Input Nilai</div>
         <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Nama Siswa</div>
-            </div>
-          </div>
+        <div className="frame-wrapper">
           <div className="frame-2">
-            <select
-              className="dropdown"
-              onChange={(e) => setNIS(e.target.value)}
-            >
-              {dataSiswa.map((item, index) => (
-                <option key={index} value={item.nis}>
-                  {item.nama}
-                </option>
-              ))}
-            </select>
+            <div className="text-wrapper-13">Nama Siswa</div>
           </div>
         </div>
+        <div className="frame-2">
+          <select className="dropdown" onChange={(e) => setNIS(e.target.value)}>
+            {dataSiswa.map((item, index) => (
+              <option key={index} value={item.nis}>
+                {item.nama}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
         <div className="group-9">
           <div className="frame-wrapper">
             <div className="frame-2">

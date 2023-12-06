@@ -36,7 +36,7 @@ function App() {
           <Route path="/DataNilai" exact component={DataNilai} />
           {/* Data Detail */}
           <Route path="/LihatNilai" exact component={LihatNilai} />
-          <Route path="/InputNilai" exact component={InputNilai} />
+          <Route path="/inputnilai/:nisSiswa" component={InputNilai} />
           <Route path="/EditNilai" exact component={EditNilai} />
           {/* Data Mapel */}
           <Route path="/TambahMapel" exact component={TambahMapel} />
