@@ -55,10 +55,9 @@ const InputRaport = () => {
 
   const addRaport = () => {
     const newRaport = {
-      semester: selectedSemester,
-      kelas: selectedKelas,
-      nis: selectedSiswa,
-      id_guru: selectedGuru,
+      id_mapel: selectedMapel,
+      nilai: selectedSemester,
+      id_raport: selectedKelas
     };
 
     fetch("https://jojopinjam.iffan.site/api/add-detail", {
@@ -272,13 +271,12 @@ const InputRaport = () => {
         </div>
         <div className="group-9">
           <div className="frame-2">
-            <div className="text-wrapper-13">Mata Pelajaran</div>{" "}
-            {/* Change to "Mata Pelajaran" */}
+            <div className="text-wrapper-13">Mata Pelajaran</div>
           </div>
           <div className="frame-2">
             <select
               className="dropdown"
-              onChange={(e) => setSelectedMapel(e.target.value)} // Update the state
+              onChange={(e) => setSelectedMapel(e.target.value)}
             >
               {dataMapel.map((item) => (
                 <option key={item.id_mapel} value={item.id_mapel}>
