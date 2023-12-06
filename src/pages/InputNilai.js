@@ -19,11 +19,19 @@ export const InputNilai = () => {
               <div className="overlap">
                 <div className="group-2">
                   <div className="text-wrapper-3">Light</div>
-                  <img className="sun-solid" alt="Sun solid" src="sun-solid.svg" />
+                  <img
+                    className="sun-solid"
+                    alt="Sun solid"
+                    src="sun-solid.svg"
+                  />
                 </div>
               </div>
               <div className="text-wrapper-4">Dark</div>
-              <img className="moon-solid" alt="Moon solid" src="moon-solid.svg" />
+              <img
+                className="moon-solid"
+                alt="Moon solid"
+                src="moon-solid.svg"
+              />
             </div>
           </div>
           <div className="SISWA">
@@ -31,11 +39,19 @@ export const InputNilai = () => {
             <div className="text-wrapper">Siswa</div>
           </div>
           <div className="CHAT">
-            <img className="icon-envelope" alt="Icon envelope" src="icon-envelope.png" />
+            <img
+              className="icon-envelope"
+              alt="Icon envelope"
+              src="icon-envelope.png"
+            />
             <div className="text-wrapper">Chat</div>
           </div>
           <div className="CHAT-2">
-            <img className="icon-attendance" alt="Icon attendance" src="icon-attendance.png" />
+            <img
+              className="icon-attendance"
+              alt="Icon attendance"
+              src="icon-attendance.png"
+            />
             <div className="text-wrapper">Generate Absen</div>
           </div>
           <div className="CHAT-3">
@@ -121,7 +137,11 @@ export const InputNilai = () => {
               e-rapor
             </div>
             <img className="ellipse-4" alt="Ellipse" src="ellipse-1192.svg" />
-            <img className="SMP-KRISTEN" alt="Smp KRISTEN" src="SMP-KRISTEN-2.png" />
+            <img
+              className="SMP-KRISTEN"
+              alt="Smp KRISTEN"
+              src="SMP-KRISTEN-2.png"
+            />
           </div>
         </header>
         <div className="kembali">
@@ -137,7 +157,11 @@ export const InputNilai = () => {
           </div>
           <div className="frame-3">
             <div className="text-wrapper-14">Ahmad</div>
-            <img className="expand-arrow" alt="Expand arrow" src="expand-arrow.png" />
+            <img
+              className="expand-arrow"
+              alt="Expand arrow"
+              src="expand-arrow.png"
+            />
           </div>
         </div>
         <div className="group-9">
@@ -159,7 +183,11 @@ export const InputNilai = () => {
           </div>
           <div className="frame-5">
             <div className="text-wrapper-14">1</div>
-            <img className="expand-arrow" alt="Expand arrow" src="expand-arrow-2.png" />
+            <img
+              className="expand-arrow"
+              alt="Expand arrow"
+              src="expand-arrow-2.png"
+            />
           </div>
         </div>
         <div className="group-11">
@@ -184,6 +212,5 @@ export const InputNilai = () => {
     </div>
   );
 };
-
 
 export default InputNilai;
