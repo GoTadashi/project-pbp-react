@@ -8,7 +8,7 @@ const DataNilai = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+  const [itemsPerPage] = useState(5);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,22 +63,7 @@ const DataNilai = () => {
           <img className="img" alt="Line" src="line-1.svg" />
           <div className="text-wrapper-2">SCH</div>
         </footer>
-        <div className="PAGES">
-          <div className="div-wrapper">
-            {pageNumbers.map((number) => (
-              <div
-                key={number}
-                className={`overlap-group ${
-                  currentPage === number ? "active" : ""
-                }`}
-                onClick={() => paginate(number)}
-              >
-                <div className="ellipse" />
-                <div className="text-wrapper-3">{number}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+
         <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
         <div className="PEMBERITAHUAN">
           <img className="element-2" alt="Element" src="53.svg" />
@@ -241,6 +226,23 @@ const DataNilai = () => {
           <div className="DASHBOARD">
             <img className="element-3" alt="Element" src="1.svg" />
             <div className="text-wrapper-14">Dashboard</div>
+          </div>
+        </div>
+        <div className="PAGES">
+          <div className="div-wrapper">
+            {pageNumbers.map((number) => (
+              <div
+                key={number}
+                className={`overlap-group ${
+                  currentPage === number ? "active" : ""
+                }`}
+                onClick={() => paginate(number)}
+              >
+                <div className="ellipse">
+                  <div className="text-wrapper-3">{number}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <header className="HEADER">
