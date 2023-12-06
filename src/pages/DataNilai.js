@@ -10,9 +10,7 @@ export const DataNilai = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://jojopinjam.iffan.site/api/get-siswa"
-        );
+        const response = await fetch("http://127.0.0.1:8000/api/get-siswa");
         const dataSiswa = await response.json();
         setDataSiswa(dataSiswa);
       } catch (error) {
@@ -23,12 +21,11 @@ export const DataNilai = () => {
     fetchData();
   }, []);
 
+  // RANCU DISINI
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://jojopinjam.iffan.site/api/get-siswa"
-        );
+        const response = await fetch("http://127.0.0.1:8000/api/get-siswa");
         const dataSiswa = await response.json();
         setData(dataSiswa);
       } catch (error) {
@@ -162,7 +159,6 @@ export const DataNilai = () => {
           <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
           <div className="text-wrapper-9">Sortir Data</div>
         </div>
-        {/* <div className="navbar"> */}
         {dataRaport.map((item, index) => (
           <div key={index} className="navbar">
             <div className="text-wrapper-10">\{item.kelas}</div>
@@ -171,9 +167,6 @@ export const DataNilai = () => {
             <div className="text-wrapper-13">Dashboard</div>
           </div>
         ))}
-        {/* <div className="text-wrapper-10">\VIIA</div>
-          <div className="text-wrapper-11">\Sem1</div> */}
-        {/* </div> */}
         <div className="MENU">
           <div className="PROFILE">
             <img className="element-3" alt="Element" src="64.svg" />
