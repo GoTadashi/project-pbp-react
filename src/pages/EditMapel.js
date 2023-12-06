@@ -13,7 +13,7 @@ export const EditMapel = () => {
       const idMatapelajaran = 1; // Change this value based on your requirements
 
       const response = await fetch(
-        `http://localhost:8000/api/getById/${idMatapelajaran}`
+        fetch("https://jojopinjam.iffan.site/api/get-matapelajaran")
       );
 
       const responseData = await response.json();
