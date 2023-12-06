@@ -649,11 +649,11 @@
   
   .EDIT-NILAI .frame-2 {
     align-items: center;
-    display: inline-flex;
-    gap: 2px;
-    left: 5px;
-    position: relative;
-    top: 9px;
+  display: inline-flex;
+  gap: 2px;
+  left: 5px;
+  position: relative;
+  top: 9px;
   }
 
   .EDIT-NILAI .custom-input {
@@ -680,18 +680,13 @@
   
   .EDIT-NILAI .frame-3 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 680px;
-    left: -1px;
-    padding: 12px 16px;
-    position: absolute;
-    top: 40px;
-    width: 802px;
+  top: 50px;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 802px;
   }
   
   .EDIT-NILAI .text-wrapper-14 {
@@ -721,18 +716,14 @@
   
   .EDIT-NILAI .frame-4 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 530px;
-    left: -1px;
-    padding: 12px 16px;
-    position: absolute;
-    top: 53px;
-    width: 802px;
+    align-items: center;
+  top: 50px;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 802px;
   }
   
   .EDIT-NILAI .group-10 {
@@ -745,18 +736,13 @@
   
   .EDIT-NILAI .frame-5 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 740px;
-    left: -1px;
-    padding: 12px 16px;
-    position: absolute;
-    top: 40px;
-    width: 802px;
+  top: 50px;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 802px;
   }
   
   .EDIT-NILAI .group-11 {
@@ -769,18 +755,13 @@
   
   .EDIT-NILAI .frame-6 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 465px;
-    left: -1px;
-    padding: 12px 16px;
-    position: absolute;
-    top: 40px;
-    width: 802px;
+  top: 50px;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 802px;
   }
   
   .EDIT-NILAI .group-12 {
