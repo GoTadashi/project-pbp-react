@@ -87,6 +87,7 @@
 .DATA-NILAI .overlap-group {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .DATA-NILAI .ellipse {
