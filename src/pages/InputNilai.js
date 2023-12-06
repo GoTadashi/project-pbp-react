@@ -290,8 +290,7 @@ const InputRaport = () => {
         <div className="group-9">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-13">Nama Guru</div>
-              <div className="text-wrapper-13">Tanggal Raport</div>
+              <div className="text-wrapper-13">Nama Matapelajaran</div>
             </div>
           </div>
           <div className="frame-2">
@@ -310,38 +309,31 @@ const InputRaport = () => {
         <div className="group-10">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-13">Semester</div>
+              <div className="text-wrapper-13">Nilai</div>
             </div>
           </div>
           <div className="frame-2">
-            <select
+            <input
+              type="number"
               className="dropdown"
               onChange={(e) => setSelectedSemester(e.target.value)}
-              value={selectedSemester}
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
+            ></input>
           </div>
         </div>
         <div className="group-11">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-13">Kelas</div>
+              <div className="text-wrapper-13">Id Raport</div>
             </div>
           </div>
           <div className="frame-2">
-            <select
+            <input
+              type="number"
               className="dropdown"
               onChange={(e) => setSelectedKelas(e.target.value)}
               value={selectedKelas}
-            >
-              {kelasOptions.map((kelas) => (
-                <option key={kelas} value={kelas}>
-                  {`Kelas ${kelas}`}
-                </option>
-              ))}
-            </select>
+              disabled
+            ></input>
           </div>
         </div>
         <div className="group-12">
