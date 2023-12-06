@@ -10,7 +10,6 @@ const InputNilai = () => {
   const [selectedSiswa, setSelectedSiswa] = useState(nisSiswa);
   const [selectedMapel, setSelectedMapel] = useState("");
   const [selectedIdRaport, setSelectedIdRaport] = useState("");
-  const [raportData, setSelectedIdRaport] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +26,26 @@ const InputNilai = () => {
         } else {
           console.error("Invalid Data Siswa format:", dataSiswa);
           setDataSiswa([]);
+        }
+
+        // Check if there is valid data for the student
+        if (dataSiswa.length > 0) {
+          const studentId = dataSiswa[0].id; // Assuming id is the correct property
+          const responseRaport = await fetch(
+            `https://jojopinjam.iffan.site/api/get-raport-main/${studentId}`
+          );
+          const raportData = await responseRaport.json();
+
+          console.log("Raport data:", raportData);
+
+          if (raportData.length > 0) {
+            const firstRaportId = raportData[0].id_raport; // Assuming id_raport is the correct property
+            setSelectedIdRaport(firstRaportId);
+          } else {
+            console.error("No raport data available for the selected student.");
+          }
+        } else {
+          console.error("No data available for the selected student.");
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -66,12 +85,15 @@ const InputNilai = () => {
         console.log("Student data:", dataSiswa);
 
         if (raportData.length > 0 && selectedSiswa && dataSiswa.length > 0) {
-          const matchingRaport = raportData.find(
-            (raport) => raport.id_siswa === selectedSiswa
-          );
+          const matchingRaports = raportData.filter((raport) => {
+            return (
+              raport.id_siswa.toString().trim() ===
+              selectedSiswa.toString().trim()
+            );
+          });
 
-          if (matchingRaport) {
-            setSelectedIdRaport(matchingRaport.id_raport);
+          if (matchingRaports.length > 0) {
+            setSelectedIdRaport(matchingRaports[0].id_raport);
           } else {
             console.error("No matching raport found for the selected student.");
           }
@@ -85,7 +107,9 @@ const InputNilai = () => {
       }
     };
 
-    fetchRaportData();
+    if (selectedSiswa) {
+      fetchRaportData();
+    }
   }, [dataSiswa, selectedSiswa]);
 
   const addNilai = () => {
@@ -309,7 +333,7 @@ const InputNilai = () => {
               className="dropdown"
               onChange={(e) => setSelectedMapel(e.target.value)}
             >
-              {se.map((item) => (
+              {dataMapel.map((item) => (
                 <option key={item.id_mapel} value={item.id_mapel}>
                   {item.nama_matapelajaran}
                 </option>
@@ -338,17 +362,13 @@ const InputNilai = () => {
             </div>
           </div>
           <div className="frame-2">
-            <select
+            <input
+              type="number"
               className="dropdown"
               onChange={(e) => setSelectedIdRaport(e.target.value)}
               value={selectedIdRaport}
-            >
-              {raportData.map((item) => (
-                <option key={item.id_raport} value={item.id_raport}>
-                  {item.id_raport}
-                </option>
-              ))}
-            </select>
+              disabled
+            ></input>
           </div>
         </div>
         <div className="group-12">
