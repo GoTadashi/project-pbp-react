@@ -267,7 +267,7 @@ const InputRaport = () => {
         <div className="group-9">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-13">Mata Pelajaran</div>
+              <div className="text-wrapper-13">Tanggal Raport</div>
             </div>
           </div>
           <div className="frame-2">
