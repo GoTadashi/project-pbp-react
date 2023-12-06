@@ -115,7 +115,8 @@
 
 /* Add hover effect for better user experience */
 .DATA-NILAI .overlap-group:hover .ellipse {
-  background-color: #0060cb; /* Change color on hover */
+  background-color: #0060cb;
+  /* Change color on hover */
 }
 
 .DATA-NILAI .text-wrapper-4 {
@@ -320,6 +321,10 @@
   width: 938px;
 }
 
+.DATA-NILAI .TABLE {
+  border: 1px black;
+}
+
 .stable-table {
   border-collapse: separate;
   border-spacing: 10rem 100px;
@@ -348,22 +353,41 @@
 }
 
 .TAMBAH-DATA {
-  background-color: #959da5;
+  background-color: #538dc7;
   border: none;
   border-radius: 15px;
-  height: 45px;
+  height: 42px;
   width: 8rem;
   cursor: pointer;
 }
 
 .TAMBAH-DATA:hover {
-  background-color: #7a828a;
+  background-color: #416e9c;
 }
 
-.text-wrapper-23 {
+.TAMBAH-DATA .text-wrapper-23 {
   color: #ffffff;
   font-size: 17px;
   margin-bottom: 20px;
+}
+
+.TAMBAH-DATA-2 {
+  background-color: #dd3920;
+  border: none;
+  border-radius: 15px;
+  height: 42px;
+  width: 8rem;
+  cursor: pointer;
+}
+
+.TAMBAH-DATA-2 .text-wrapper-23 {
+  color: #ffffff;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.TAMBAH-DATA-2:hover {
+  background-color: #b32e1a;
 }
 
 .DATA-NILAI .TABLE {
