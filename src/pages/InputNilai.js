@@ -8,10 +8,9 @@ const InputRaport = () => {
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
   const [selectedSemester, setSelectedSemester] = useState(1);
-  const kelasOptions = ["1", "2", "3", "4", "5", "6"];
   const [selectedKelas, setSelectedKelas] = useState("1");
   const [selectedSiswa, setSelectedSiswa] = useState("");
-  const [dataGuru, setDataGuru] = useState([]);
+  const [selectedMapel, setSelectedMapel] = useState("");
   const [selectedGuru, setSelectedGuru] = useState("");
 
   useEffect(() => {
@@ -54,22 +53,6 @@ const InputRaport = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchGuruData = async () => {
-      try {
-        const responseGuru = await fetch(
-          "https://jojopinjam.iffan.site/api/get-guru"
-        );
-        const dataGuru = await responseGuru.json();
-        setDataGuru(dataGuru);
-      } catch (error) {
-        console.error("Error fetching guru data:", error);
-      }
-    };
-
-    fetchGuruData();
-  }, []);
-
   const addRaport = () => {
     const newRaport = {
       semester: selectedSemester,
@@ -78,7 +61,7 @@ const InputRaport = () => {
       id_guru: selectedGuru,
     };
 
-    fetch("https://jojopinjam.iffan.site/api/add-raport", {
+    fetch("https://jojopinjam.iffan.site/api/add-detail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -177,7 +160,7 @@ const InputRaport = () => {
           </div>
         </div>
         <footer className="FOOTER">
-          <p className="p">Copyright © SMP Kristen Getasan 2023</p>
+          <p className="p">Copyright Â© SMP Kristen Getasan 2023</p>
           <img className="line" alt="Line" src="line-2.svg" />
           <img className="line-2" alt="Line" src="line-1.svg" />
           <div className="text-wrapper-5">SCH</div>
@@ -288,19 +271,18 @@ const InputRaport = () => {
           </div>
         </div>
         <div className="group-9">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Nama Matapelajaran</div>
-            </div>
+          <div className="frame-2">
+            <div className="text-wrapper-13">Mata Pelajaran</div>{" "}
+            {/* Change to "Mata Pelajaran" */}
           </div>
           <div className="frame-2">
             <select
               className="dropdown"
-              onChange={(e) => setdata(e.target.value)}
+              onChange={(e) => setSelectedMapel(e.target.value)} // Update the state
             >
-              {dataGuru.map((guru) => (
-                <option key={guru.id_guru} value={guru.id_guru}>
-                  {guru.nama}
+              {dataMapel.map((item) => (
+                <option key={item.id_mapel} value={item.id_mapel}>
+                  {item.nama_matapelajaran}
                 </option>
               ))}
             </select>
