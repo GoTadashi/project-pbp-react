@@ -4,7 +4,7 @@ import "./DataNilai.css";
 
 const DataNilai = () => {
   const history = useHistory();
-  const [dataRaport, setDataRaport] = useState([]); 
+  const [dataRaport, setDataRaport] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,11 +38,13 @@ const DataNilai = () => {
 
   const handleInputNilai = (nis) => {
     history.push(`/inputnilai/${nis}`);
-    
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
-  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -142,7 +144,7 @@ const DataNilai = () => {
                       <td>{item.agama}</td>
                       <td>{item.nama_orangtua}</td>
                       <td>
-                      <button
+                        <button
                           className="TAMBAH-DATA"
                           onClick={() => handleBuatRaport(item.nis)}
                         >

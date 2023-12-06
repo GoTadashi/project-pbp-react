@@ -14,7 +14,6 @@ const InputRaport = () => {
   const [dataGuru, setDataGuru] = useState([]);
   const [selectedGuru, setSelectedGuru] = useState("");
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -71,7 +70,6 @@ const InputRaport = () => {
     fetchGuruData();
   }, []);
 
-
   const addRaport = () => {
     const newRaport = {
       semester: selectedSemester,
@@ -106,7 +104,13 @@ const InputRaport = () => {
 
     addRaport();
 
-    console.log("Submitted:", selectedSemester, selectedKelas, selectedSiswa, selectedGuru);
+    console.log(
+      "Submitted:",
+      selectedSemester,
+      selectedKelas,
+      selectedSiswa,
+      selectedGuru
+    );
   };
 
   const handleReset = () => {
@@ -281,7 +285,7 @@ const InputRaport = () => {
               onChange={(e) => setSelectedSiswa(e.target.value)}
             >
               {dataSiswa.map((item, index) => (
-                <option key={index} value={item.id}>
+                <option key={index} value={item.nis}>
                   {item.nama}
                 </option>
               ))}
