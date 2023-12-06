@@ -59,19 +59,18 @@ const InputNilai = () => {
         );
         const raportData = await response.json();
 
-        if (raportData.length > 0 && dataSiswa.length > 0) {
-          const firstStudentId = dataSiswa[0].id; // Assuming the student ID field is 'id'
+        if (raportData.length > 0 && selectedSiswa && dataSiswa.length > 0) {
           const matchingRaport = raportData.find(
-            (raport) => raport.id_siswa === firstStudentId
+            (raport) => raport.id_siswa === selectedSiswa
           );
 
           if (matchingRaport) {
             setSelectedIdRaport(matchingRaport.id_raport);
           } else {
-            console.error("No matching raport found for the first student.");
+            console.error("No matching raport found for the selected student.");
           }
         } else {
-          console.error("No raport data or student data available.");
+          console.error("No raport data, selected student, or student data available.");
         }
       } catch (error) {
         console.error("Error fetching raport data:", error);
@@ -79,7 +78,7 @@ const InputNilai = () => {
     };
 
     fetchRaportData();
-  }, [dataSiswa]);
+  }, [dataSiswa, selectedSiswa]);
 
   const addNilai = () => {
     // Validate the input fields
