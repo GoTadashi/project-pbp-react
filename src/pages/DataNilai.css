@@ -70,35 +70,33 @@
 }
 
 .DATA-NILAI .PAGES {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 38px;
-  left: 871px;
   position: absolute;
-  top: 918px;
-  width: 157px;
+  top: 908px;
+  width: 100%;
 }
 
-.DATA-NILAI .element {
-  height: 38px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 33px;
+.DATA-NILAI .div-wrapper {
+  display: flex;
+  gap: 10px;
 }
 
 .DATA-NILAI .overlap-group {
-  height: 38px;
-  position: relative;
-  width: 31px;
+  display: flex;
+  align-items: center;
 }
 
 .DATA-NILAI .ellipse {
   background-color: #0083ff;
   border-radius: 15px/14.5px;
   height: 29px;
-  left: 1px;
-  position: absolute;
-  top: 4px;
   width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .DATA-NILAI .text-wrapper-3 {
@@ -112,9 +110,14 @@
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 0;
   width: 31px;
 }
+
+/* Add hover effect for better user experience */
+.DATA-NILAI .overlap-group:hover .ellipse {
+  background-color: #0060cb; /* Change color on hover */
+}
+
 
 .DATA-NILAI .text-wrapper-4 {
   color: #000000;

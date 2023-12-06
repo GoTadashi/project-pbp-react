@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
-// import { TableHeader } from "./TableHeader";
 import "./DataNilai.css";
 
-export const DataNilai = () => {
+const DataNilai = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
-  const [dataRaport, setData] = useState([]);
+  const [dataRaport, setDataRaport] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
+        const responseSiswa = await fetch(
           "https://jojopinjam.iffan.site/api/get-siswa"
         );
-        const dataSiswa = await response.json();
+        const dataSiswa = await responseSiswa.json();
         setDataSiswa(dataSiswa);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -23,39 +24,22 @@ export const DataNilai = () => {
     fetchData();
   }, []);
 
-  // RANCU DISINI
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://jojopinjam.iffan.site/api/get-siswa"
-        );
-        const dataSiswa = await response.json();
-        setData(dataSiswa);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+  const paginate = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
   const handleTambahData = () => {
-    // Add your logic for handling the click event here
     console.log("Button clicked!");
+    // Add your logic for handling "Tambah Data" here
   };
 
-  const handleEdit = (index) => {
-    // Handle the edit action
-    console.log("Edit clicked for index:", index);
-  };
+  const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 
-  const handleDelete = (index) => {
-    // Handle the delete action
-    const newDataSiswa = [...dataSiswa];
-    newDataSiswa.splice(index, 1);
-    setDataSiswa(newDataSiswa);
-  };
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = dataSiswa.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className="DATA-NILAI">
@@ -67,15 +51,19 @@ export const DataNilai = () => {
           <div className="text-wrapper-2">SCH</div>
         </footer>
         <div className="PAGES">
-          <div className="element">
-            <div className="overlap-group">
+        <div className="div-wrapper">
+          {pageNumbers.map((number) => (
+            <div
+              key={number}
+              className={`overlap-group ${currentPage === number ? 'active' : ''}`}
+              onClick={() => paginate(number)}
+            >
               <div className="ellipse" />
-              <div className="text-wrapper-3">1</div>
+              <div className="text-wrapper-3">{number}</div>
             </div>
-          </div>
-          <div className="text-wrapper-4">2</div>
-          <div className="text-wrapper-5">3</div>
+          ))}
         </div>
+      </div>
         <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
         <div className="PEMBERITAHUAN">
           <img className="element-2" alt="Element" src="53.svg" />
@@ -119,46 +107,46 @@ export const DataNilai = () => {
           <div className="text-wrapper-8">Pemberitahuan</div>
         </div>
         <div className="TABLE">
-          <div className="overlap">
-            <div className="DATA-KELAS">
-              <table>
-                <thead className="stable-table">
-                  <tr>
-                    <th>NIS</th>
-                    <th>Nama</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Agama</th>
-                    <th>Nama Orang Tua</th>
-                    <th>Action</th>
+        <div className="overlap">
+          <div className="DATA-KELAS">
+            <table>
+              <thead className="stable-table">
+                <tr>
+                  <th>NIS</th>
+                  <th>Nama</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Agama</th>
+                  <th>Nama Orang Tua</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {currentItems.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.nis}</td>
+                    <td>{item.nama}</td>
+                    <td>{item.tempat_lahir}</td>
+                    <td>{item.tanggal_lahir}</td>
+                    <td>{item.jenis_kelamin}</td>
+                    <td>{item.agama}</td>
+                    <td>{item.nama_orangtua}</td>
+                    <td>
+                      <button
+                        className="TAMBAH-DATA"
+                        onClick={handleTambahData}
+                      >
+                        <div className="text-wrapper-23">Input Nilai</div>
+                      </button>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {dataSiswa.map((item, index) => (
-                    <tr key={index}>
-                      <td>{item.nis}</td>
-                      <td>{item.nama}</td>
-                      <td>{item.tempat_lahir}</td>
-                      <td>{item.tanggal_lahir}</td>
-                      <td>{item.jenis_kelamin}</td>
-                      <td>{item.agama}</td>
-                      <td>{item.nama_orangtua}</td>
-                      <td>
-                        <button
-                          className="TAMBAH-DATA"
-                          onClick={handleTambahData}
-                        >
-                          <div className="text-wrapper-23">Input Nilai</div>
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
+      </div>
         <div className="SORTING-DATA">
           <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
           <div className="text-wrapper-9">Sortir Data</div>
