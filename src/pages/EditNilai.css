@@ -655,6 +655,15 @@
     position: relative;
     top: 9px;
   }
+
+  .EDIT-NILAI .custom-input {
+    border-radius: 10px;
+    width: 58rem;
+    font-size: 16px;
+    margin-left: -19px;
+    margin-top: -20px;
+    padding: 18px;
+  }
   
   .EDIT-NILAI .text-wrapper-13 {
     color: #252d36;

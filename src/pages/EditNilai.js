@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./EditNilai.css";
 
 export const EditNilai = () => {
+
+  const [namaSiswa, setNamaSiswa] = useState("");
+  const [mataPelajaran, setMataPelajaran] = useState("");
+  const [semester, setSemester] = useState("");
+  const [nilai, setNilai] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Add your logic for form submission here, e.g., call an API
+    console.log("Submitted:", namaSiswa, mataPelajaran, semester, nilai);
+  };
+
   return (
     <div className="EDIT-NILAI">
       <div className="div">
@@ -129,50 +142,72 @@ export const EditNilai = () => {
           <div className="text-wrapper-11">Kembali</div>
         </div>
         <div className="text-wrapper-12">Input Nilai</div>
-        <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Nama Siswa</div>
-            </div>
-          </div>
-          <div className="frame-3">
-            <div className="text-wrapper-14">Ahmad</div>
-            <img className="expand-arrow" alt="Expand arrow" src="expand-arrow.png" />
+        <form onSubmit={handleSubmit}>
+      <div className="group-8">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Nama Siswa</div>
           </div>
         </div>
-        <div className="group-9">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Mata Pelajaran</div>
-            </div>
-          </div>
-          <div className="frame-4">
-            <div className="text-wrapper-14">Ilmu Pengetahuan Alam</div>
-            <img className="expand-arrow" alt="Expand arrow" src="image.png" />
+        <div className="frame-3">
+        <input
+                type="text"
+                className="custom-input"
+                value={namaSiswa}
+                onChange={(e) => setNamaSiswa(e.target.value)}
+              />
+        </div>
+      </div>
+
+      <div className="group-9">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Mata Pelajaran</div>
           </div>
         </div>
-        <div className="group-10">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Semester</div>
-            </div>
-          </div>
-          <div className="frame-5">
-            <div className="text-wrapper-14">1</div>
-            <img className="expand-arrow" alt="Expand arrow" src="expand-arrow-2.png" />
+        <div className="frame-4">
+        <input
+                type="text"
+                className="custom-input"
+                value={mataPelajaran}
+                onChange={(e) => setMataPelajaran(e.target.value)}
+              />
+        </div>
+      </div>
+
+      <div className="group-10">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Semester</div>
           </div>
         </div>
-        <div className="group-11">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Nilai</div>
-            </div>
-          </div>
-          <div className="frame-6">
-            <div className="text-wrapper-14">90</div>
+        <div className="frame-5">
+        <input
+                type="number"
+                className="custom-input"
+                value={semester}
+                onChange={(e) => setSemester(e.target.value)}
+              />
+        </div>
+      </div>
+
+      <div className="group-11">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Nilai</div>
           </div>
         </div>
-        <div className="group-12">
+        <div className="frame-6">
+        <input
+                type="number"
+                className="custom-input"
+                value={nilai}
+                onChange={(e) => setNilai(e.target.value)}
+              />
+        </div>
+      </div>
+
+      <div className="group-12">
           <div className="frame-7">
             <div className="text-wrapper-15">Simpan</div>
           </div>
@@ -180,6 +215,8 @@ export const EditNilai = () => {
             <div className="text-wrapper-15">Reset</div>
           </div>
         </div>
+    </form>
+        
       </div>
     </div>
   );
