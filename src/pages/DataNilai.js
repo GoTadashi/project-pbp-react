@@ -26,6 +26,10 @@ const DataNilai = () => {
     fetchData();
   }, []);
 
+  const calculateTotalPages = () => {
+    return Math.ceil(dataSiswa.length / itemsPerPage);
+  };
+  
   const paginate = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);

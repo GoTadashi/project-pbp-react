@@ -72,11 +72,11 @@
 .DATA-NILAI .PAGES {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 38px;
+  left: 55rem;
   position: absolute;
-  top: 908px;
-  width: 100%;
+  top: 54rem;
+  width: 157px;
 }
 
 .DATA-NILAI .div-wrapper {
