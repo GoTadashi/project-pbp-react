@@ -29,21 +29,37 @@ export const LihatNilai = () => {
               <div className="overlap">
                 <div className="group-2">
                   <div className="text-wrapper-2">Light</div>
-                  <img className="sun-solid" alt="Sun solid" src="sun-solid.svg" />
+                  <img
+                    className="sun-solid"
+                    alt="Sun solid"
+                    src="sun-solid.svg"
+                  />
                 </div>
               </div>
               <div className="text-wrapper-3">Dark</div>
-              <img className="moon-solid" alt="Moon solid" src="moon-solid.svg" />
+              <img
+                className="moon-solid"
+                alt="Moon solid"
+                src="moon-solid.svg"
+              />
             </div>
           </div>
           <div className="NILAI-wrapper">
             <div className="NILAI">
-              <img className="icon-SISWA" alt="Icon SISWA" src="icon-SISWA.png" />
+              <img
+                className="icon-SISWA"
+                alt="Icon SISWA"
+                src="icon-SISWA.png"
+              />
               <div className="text-wrapper">Nilai</div>
             </div>
           </div>
           <div className="CHAT">
-            <img className="icon-envelope" alt="Icon envelope" src="icon-envelope.png" />
+            <img
+              className="icon-envelope"
+              alt="Icon envelope"
+              src="icon-envelope.png"
+            />
             <div className="text-wrapper">Chat</div>
           </div>
           <div className="DASHBOARD">
@@ -53,7 +69,8 @@ export const LihatNilai = () => {
         </div>
         <footer className="FOOTER">
           <p className="p">
-            Jalan Pangeran Diponegoro Km. 9, Getasan, Kec. Getasan, Kabupaten Semarang, Jawa Tengah 50774
+            Jalan Pangeran Diponegoro Km. 9, Getasan, Kec. Getasan, Kabupaten
+            Semarang, Jawa Tengah 50774
           </p>
           <img className="line" alt="Line" src="line-2.svg" />
           <img className="img" alt="Line" src="line-1.svg" />
@@ -64,17 +81,19 @@ export const LihatNilai = () => {
           <div className="overlap-3">
             <div className="rectangle" />
             <div className="navbar-wrapper">
-              {raports.map((raport) => (
+              {raports.map((raport, index) => (
                 <div key={raport.id_raport}>
                   <div className="div-2">
-                  <div className="text-wrapper-6">{raport.nama_matapelajaran}</div>
-                  <div className="text-wrapper-7">{raport.semester}.</div>
-                  <div className="text-wrapper-8">{raport.nilai}</div>
-                  <div className="text-wrapper-9">{raport.predikat}</div>
+                    <div className="text-wrapper-6">
+                      {raport.nama_matapelajaran}
+                    </div>
+                    <div className="text-wrapper-7">{index + 1}.</div>
+                    <div className="text-wrapper-8">{raport.nilai}</div>
+                    <div className="text-wrapper-9">{raport.predikat}</div>
                   </div>
                 </div>
               ))}
-             </div>
+            </div>
           </div>
           <div className="HEADER-TABEL">
             <div className="navbar">
@@ -101,7 +120,11 @@ export const LihatNilai = () => {
         </div>
         <div className="frame">
           <div className="text-wrapper-24">Semester 1</div>
-          <img className="icon-chevron-down" alt="Icon chevron down" src="icon-chevron-down.png" />
+          <img
+            className="icon-chevron-down"
+            alt="Icon chevron down"
+            src="icon-chevron-down.png"
+          />
         </div>
         <header className="HEADER">
           <div className="overlap-4">
@@ -130,7 +153,11 @@ export const LihatNilai = () => {
               e-rapor
             </div>
             <img className="ellipse-2" alt="Ellipse" src="ellipse-1192.svg" />
-            <img className="SMP-KRISTEN" alt="Smp KRISTEN" src="SMP-KRISTEN-2.png" />
+            <img
+              className="SMP-KRISTEN"
+              alt="Smp KRISTEN"
+              src="SMP-KRISTEN-2.png"
+            />
           </div>
         </header>
       </div>
