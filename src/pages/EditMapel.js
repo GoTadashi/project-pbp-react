@@ -52,7 +52,7 @@ export const EditMapel = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id_matapelajaran: 1, // Change this value based on your requirements
+          id_matapelajaran: kodeMatapelajaran, // Change this value based on your requirements
           nama_matapelajaran: namaMatapelajaran,
           id_guru: guruPengampu,
         }),
