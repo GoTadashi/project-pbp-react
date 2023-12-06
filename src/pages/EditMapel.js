@@ -13,7 +13,7 @@ export const EditMapel = () => {
       const idMatapelajaran = 1; // Change this value based on your requirements
 
       const response = await fetch(
-        `http://localhost:8000/api/getById/${idMatapelajaran}`
+        fetch("https://jojopinjam.iffan.site/api/get-matapelajaran")
       );
 
       const responseData = await response.json();
@@ -52,7 +52,7 @@ export const EditMapel = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id_matapelajaran: 1, // Change this value based on your requirements
+          id_matapelajaran: kodeMatapelajaran, // Change this value based on your requirements
           nama_matapelajaran: namaMatapelajaran,
           id_guru: guruPengampu,
         }),
