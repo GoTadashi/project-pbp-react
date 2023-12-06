@@ -7,6 +7,9 @@ const InputNilai = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
+  const [dataNilai, setDataNilai] = useState("");
+  const [dataPredikat, setDataPredikat] = useState("");
+  const [dataDeskripsi, setDataDeskripsi] = useState("");
   const [selectedSiswa, setSelectedSiswa] = useState(nisSiswa);
   const [selectedMapel, setSelectedMapel] = useState("");
   const [selectedIdRaport, setSelectedIdRaport] = useState("");
@@ -114,18 +117,43 @@ const InputNilai = () => {
 
   const addNilai = () => {
     // Validate the input fields
-    if (!selectedSiswa || !selectedMapel || !selectedIdRaport) {
+    if (!selectedMapel || !selectedIdRaport || !dataNilai) {
       console.error("Please fill in all the required fields.");
       return;
     }
 
+    // Konversi dataNilai dari string ke number jika perlu
+    const nilai = parseInt(dataNilai);
+    let dataPredikat = "";
+    let dataDeskripsi = "";
+
+    if (nilai > 90 && nilai <= 100) {
+      dataPredikat = "A";
+      dataDeskripsi = "Sangat Baik";
+    } else if (nilai > 80) {
+      dataPredikat = "B";
+      dataDeskripsi = "Baik";
+    } else if (nilai > 70) {
+      dataPredikat = "C";
+      dataDeskripsi = "Cukup";
+    } else if (nilai > 60) {
+      dataPredikat = "D";
+      dataDeskripsi = "Kurang";
+    } else {
+      dataPredikat = "E";
+      dataDeskripsi = "Sangat Kurang";
+    }
+
     const newNilai = {
-      nis: selectedSiswa,
-      id_mapel: selectedMapel,
-      id_raport: selectedIdRaport,
+      // nis: selectedSiswa,
+      id_matapelajaran: selectedMapel,
+      id_raport: parseInt(selectedIdRaport),
+      nilai: nilai, // Gunakan variabel 'nilai' yang sudah diubah menjadi number
+      predikat: dataPredikat,
+      deskripsi: dataDeskripsi,
     };
 
-    fetch("https://jojopinjam.iffan.site/api/add-detailraport", {
+    fetch("https://jojopinjam.iffan.site/api/add-detail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -145,11 +173,22 @@ const InputNilai = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addNilai();
-    console.log("Submitted:");
+    console.log(
+      "Submitted:",
+      selectedMapel,
+      selectedIdRaport,
+      parseInt(dataNilai),
+      dataPredikat,
+      dataDeskripsi
+    );
   };
 
   const handleReset = () => {
-    // Reset form or perform any other reset logic
+    // setSelectedMapel(""),
+    //   setSelectedIdRaport(""),
+    //   setDataNilai(""),
+    //   setDataPredikat(""),
+    //   setDataDeskripsi("");
   };
 
   return (
@@ -334,7 +373,10 @@ const InputNilai = () => {
               onChange={(e) => setSelectedMapel(e.target.value)}
             >
               {dataMapel.map((item) => (
-                <option key={item.id_mapel} value={item.id_mapel}>
+                <option
+                  key={item.id_matapelajaran}
+                  value={item.id_matapelajaran}
+                >
                   {item.nama_matapelajaran}
                 </option>
               ))}
@@ -351,7 +393,7 @@ const InputNilai = () => {
             <input
               type="number"
               className="dropdown"
-              onChange={(e) => setSelectedMapel(e.target.value)}
+              onChange={(e) => setDataNilai(e.target.value)}
             ></input>
           </div>
         </div>
