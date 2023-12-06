@@ -6,7 +6,6 @@ const InputRaport = () => {
   const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
-  const [dataMapel, setDataMapel] = useState([]);
   const [selectedSemester, setSelectedSemester] = useState(1);
   const kelasOptions = ["1", "2", "3", "4", "5", "6"];
   const [selectedKelas, setSelectedKelas] = useState("1");
@@ -37,22 +36,6 @@ const InputRaport = () => {
 
     fetchData();
   }, [nisSiswa]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://jojopinjam.iffan.site/api/get-matapelajaran"
-        );
-        const dataMapel = await response.json();
-        setDataMapel(dataMapel);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   useEffect(() => {
     const fetchGuruData = async () => {
