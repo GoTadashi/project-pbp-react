@@ -97,10 +97,7 @@ const InputRaport = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!selectedSiswa || !selectedGuru) {
-      alert("Harap pilih siswa dan guru.");
-      return;
-    }
+
 
     addRaport();
 
@@ -319,7 +316,11 @@ const InputRaport = () => {
             </div>
           </div>
           <div className="frame-2">
-            <select className="dropdown">
+            <select
+              className="dropdown"
+              onChange={(e) => setSelectedSemester(e.target.value)}
+              value={selectedSemester}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
