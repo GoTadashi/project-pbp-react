@@ -230,19 +230,19 @@ const DataNilai = () => {
         </div>
         <div className="PAGES">
           <div className="div-wrapper">
-            {pageNumbers.map((number) => (
-              <div
-                key={number}
-                className={`overlap-group ${
-                  currentPage === number ? "active" : ""
-                }`}
-                onClick={() => paginate(number)}
-              >
-                <div className="ellipse">
+            <div className="overlap-group">
+              {pageNumbers.map((number) => (
+                <div
+                  key={number}
+                  className={`ellipse ${
+                    currentPage === number ? "active" : ""
+                  }`}
+                  onClick={() => paginate(number)}
+                >
                   <div className="text-wrapper-3">{number}</div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <header className="HEADER">

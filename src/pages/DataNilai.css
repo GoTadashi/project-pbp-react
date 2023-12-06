@@ -72,17 +72,16 @@
 .DATA-NILAI .PAGES {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 38px;
-  left: 55rem;
   position: absolute;
   top: 54rem;
-  width: 157px;
+  width: 100%;
 }
 
 .DATA-NILAI .div-wrapper {
   display: flex;
-  gap: 15px;
-  align-items: center; /* Menjadikan elemen berjejer secara horizontal */
+  align-items: center;
 }
 
 .DATA-NILAI .overlap-group {
@@ -92,7 +91,7 @@
 
 .DATA-NILAI .ellipse {
   background-color: #0083ff;
-  border-radius: 50%; /* Ubah border-radius menjadi 50% untuk membuat lingkaran */
+  border-radius: 50%;
   height: 30px;
   width: 30px;
   display: flex;
@@ -109,8 +108,7 @@
   text-align: center;
 }
 
-/* Add hover effect for better user experience */
-.DATA-NILAI .overlap-group:hover .ellipse {
+.DATA-NILAI .active {
   background-color: #0060cb;
 }
 
