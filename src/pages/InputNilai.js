@@ -59,29 +59,31 @@ const InputNilai = () => {
           "https://jojopinjam.iffan.site/api/get-raport-main"
         );
         const raportData = await response.json();
-  
+
         console.log("Raport data:", raportData);
         console.log("Selected student:", selectedSiswa);
         console.log("Student data:", dataSiswa);
-  
+
         if (raportData.length > 0 && selectedSiswa && dataSiswa.length > 0) {
           const matchingRaport = raportData.find(
             (raport) => raport.id_siswa === selectedSiswa
           );
-  
+
           if (matchingRaport) {
             setSelectedIdRaport(matchingRaport.id_raport);
           } else {
             console.error("No matching raport found for the selected student.");
           }
         } else {
-          console.error("No raport data, selected student, or student data available.");
+          console.error(
+            "No raport data, selected student, or student data available."
+          );
         }
       } catch (error) {
         console.error("Error fetching raport data:", error);
       }
     };
-  
+
     fetchRaportData();
   }, [dataSiswa, selectedSiswa]);
 
@@ -95,7 +97,7 @@ const InputNilai = () => {
     const newNilai = {
       nis: selectedSiswa,
       id_mapel: selectedMapel,
-      id_raport: selectedIdRaport
+      id_raport: selectedIdRaport,
     };
 
     fetch("https://jojopinjam.iffan.site/api/add-detailraport", {
@@ -306,7 +308,7 @@ const InputNilai = () => {
               className="dropdown"
               onChange={(e) => setSelectedMapel(e.target.value)}
             >
-              {dataMapel.map((item) => (
+              {se.map((item) => (
                 <option key={item.id_mapel} value={item.id_mapel}>
                   {item.nama_matapelajaran}
                 </option>
@@ -335,13 +337,17 @@ const InputNilai = () => {
             </div>
           </div>
           <div className="frame-2">
-            <input
-              type="number"
+            <select
               className="dropdown"
               onChange={(e) => setSelectedIdRaport(e.target.value)}
               value={selectedIdRaport}
-              disabled
-            ></input>
+            >
+              {raportData.map((item) => (
+                <option key={item.id_raport} value={item.id_raport}>
+                  {item.id_raport}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="group-12">
