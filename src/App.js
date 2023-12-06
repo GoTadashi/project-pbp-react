@@ -12,6 +12,7 @@ import DaftarMapel from "./pages/DaftarMapel";
 import GuruLihatNilai from "./pages/GuruLihatNilai";
 import DashboardGuru from "./pages/DashboardGuru";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { LoginSiswa } from "./pages/LoginSiswa";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           inputnilai -
           editnilai -
           */}
+          
+          <Route path="/LoginSiswa" exact component={LoginSiswa} />
           <Route path="/DashboardGuru" exact component={DashboardGuru} />
           {/* Data Guru */}
           <Route path="/EditGuru" exact component={EditGuru} />
