@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./TambahMapel.css";
 
 export const TambahMapel = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [kodeMatapelajaran, setKodeMatapelajaran] = useState("");
   const [namaMatapelajaran, setNamaMatapelajaran] = useState("");
   const [guruPengampu, setGuruPengampu] = useState("");
@@ -181,7 +182,13 @@ export const TambahMapel = () => {
             <div className="search">
               <div className="group-7">
                 <img className="element-5" alt="Element" src="7.svg" />
-                <div className="text-wrapper-10">Pencarian</div>
+                <input
+                  className="custom-input"
+                  type="text"
+                  placeholder="Cari berdasarkan Nama/NIS"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
