@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./InputNilai.css";
 
 export const InputNilai = () => {
+  const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
@@ -84,9 +86,9 @@ export const InputNilai = () => {
 
   const handleReset = () => {
     setNIS("");
-    setIdGuru("8");
+    setIdGuru("");
     setSemester("");
-    setKelas("VII");
+    setKelas("");
     setNilai("");
   };
 
