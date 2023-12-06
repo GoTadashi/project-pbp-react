@@ -32,8 +32,13 @@ const DataNilai = () => {
     }
   };
 
+  const handleBuatRaport = (nis) => {
+    history.push(`/inputraport/${nis}`);
+  };
+
   const handleInputNilai = (nis) => {
     history.push(`/inputnilai/${nis}`);
+    
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -137,6 +142,13 @@ const DataNilai = () => {
                       <td>{item.agama}</td>
                       <td>{item.nama_orangtua}</td>
                       <td>
+                      <button
+                          className="TAMBAH-DATA"
+                          onClick={() => handleBuatRaport(item.nis)}
+                        >
+                          <div className="text-wrapper-23">Buat Raport</div>
+                        </button>
+
                         <button
                           className="TAMBAH-DATA"
                           onClick={() => handleInputNilai(item.nis)}
