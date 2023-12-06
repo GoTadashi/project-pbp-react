@@ -87,7 +87,7 @@
 .DATA-NILAI .overlap-group {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .DATA-NILAI .ellipse {
@@ -99,6 +99,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.DATA-NILAI .ellipse:hover {
+  background-color: #1e62a1;
 }
 
 .DATA-NILAI .text-wrapper-3 {
