@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./InputNilai.css";
+import "./InputRaport.css";
 
-const InputNilai = () => {
+const InputRaport = () => {
   const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
-  const [nis, setNIS] = useState(nisSiswa);
-  const [id_guru, setIdGuru] = useState("");
-  const [semester, setSemester] = useState("");
-  const [kelas, setKelas] = useState("");
-  const [nilai, setNilai] = useState("");
+  const [selectedSemester, setSelectedSemester] = useState(1);
+  const kelasOptions = ["1", "2", "3", "4", "5", "6"];
+  const [selectedKelas, setSelectedKelas] = useState("1");
+  const [selectedSiswa, setSelectedSiswa] = useState("");
+  const [dataGuru, setDataGuru] = useState([]);
+  const [selectedGuru, setSelectedGuru] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,10 +25,8 @@ const InputNilai = () => {
         if (Array.isArray(dataSiswa)) {
           setDataSiswa(dataSiswa);
         } else if (dataSiswa) {
-          // If it's not an array, create an array with a single item
           setDataSiswa([dataSiswa]);
         } else {
-          // Handle the case where dataSiswa is undefined or null
           console.error("Invalid Data Siswa format:", dataSiswa);
           setDataSiswa([]);
         }
@@ -38,7 +37,6 @@ const InputNilai = () => {
 
     fetchData();
   }, [nisSiswa]);
-  console.log("Data Siswa:", dataSiswa);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,15 +54,31 @@ const InputNilai = () => {
     fetchData();
   }, []);
 
-  const addRaport = () => {
-    const newRaport = {
-      semester: semester,
-      kelas: kelas,
-      id_guru: id_guru,
-      nis: nis,
+  useEffect(() => {
+    const fetchGuruData = async () => {
+      try {
+        const responseGuru = await fetch(
+          "https://jojopinjam.iffan.site/api/get-guru"
+        );
+        const dataGuru = await responseGuru.json();
+        setDataGuru(dataGuru);
+      } catch (error) {
+        console.error("Error fetching guru data:", error);
+      }
     };
 
-    fetch("https://jojopinjam.iffan.site/api/add-matapelajaran", {
+    fetchGuruData();
+  }, []);
+
+  const addRaport = () => {
+    const newRaport = {
+      semester: selectedSemester,
+      kelas: selectedKelas,
+      nis: selectedSiswa,
+      id_guru: selectedGuru,
+    };
+
+    fetch("https://jojopinjam.iffan.site/api/add-raport", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,34 +87,37 @@ const InputNilai = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle success response
         console.log(data);
       })
       .catch((error) => {
-        // Handle error
         console.error("Error adding raport:", error);
       });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addRaport();
 
-    if (!nis || !id_guru || !semester || !kelas) {
-      alert("Harap isi semua kolom form.");
-    } else {
-      alert("Mata pelajaran berhasil dimasukkan.");
+    if (!selectedSiswa || !selectedGuru) {
+      alert("Harap pilih siswa dan guru.");
+      return;
     }
 
-    console.log("Submitted:", nis, id_guru, semester, kelas);
+    addRaport();
+
+    console.log(
+      "Submitted:",
+      selectedSemester,
+      selectedKelas,
+      selectedSiswa,
+      selectedGuru
+    );
   };
 
   const handleReset = () => {
-    setNIS("");
-    setIdGuru("");
-    setSemester("");
-    setKelas("");
-    setNilai("");
+    setSelectedSemester("");
+    setSelectedKelas("");
+    setSelectedSiswa("");
+    setSelectedGuru("");
   };
 
   return (
@@ -265,7 +282,7 @@ const InputNilai = () => {
           <div className="frame-2">
             <select
               className="dropdown"
-              onChange={(e) => setNIS(e.target.value)}
+              onChange={(e) => setSelectedSiswa(e.target.value)}
             >
               {dataSiswa.map((item, index) => (
                 <option key={index} value={item.nis}>
@@ -278,14 +295,18 @@ const InputNilai = () => {
         <div className="group-9">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-13">Mata Pelajaran</div>
+              <div className="text-wrapper-13">Nama Guru</div>
+              <div className="text-wrapper-13">Tanggal Raport</div>
             </div>
           </div>
           <div className="frame-2">
-            <select className="dropdown">
-              {dataMapel.map((item, index) => (
-                <option key={index} value={item.nama_matapelajaran}>
-                  {item.nama_matapelajaran}
+            <select
+              className="dropdown"
+              onChange={(e) => setSelectedGuru(e.target.value)}
+            >
+              {dataGuru.map((guru) => (
+                <option key={guru.id_guru} value={guru.id_guru}>
+                  {guru.nama}
                 </option>
               ))}
             </select>
@@ -307,10 +328,22 @@ const InputNilai = () => {
         <div className="group-11">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-13">Nilai</div>
+              <div className="text-wrapper-13">Kelas</div>
             </div>
           </div>
-          <input className="number-input" type="number" />
+          <div className="frame-2">
+            <select
+              className="dropdown"
+              onChange={(e) => setSelectedKelas(e.target.value)}
+              value={selectedKelas}
+            >
+              {kelasOptions.map((kelas) => (
+                <option key={kelas} value={kelas}>
+                  {`Kelas ${kelas}`}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         <div className="group-12">
           <div className="frame-7" onClick={handleSubmit}>
@@ -325,4 +358,4 @@ const InputNilai = () => {
   );
 };
 
-export default InputNilai;
+export default InputRaport;

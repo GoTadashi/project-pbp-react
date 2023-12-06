@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import "./DataNilai.css";
 
 const DataNilai = () => {
   const history = useHistory();
+  const [dataRaport, setDataRaport] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
-  const [dataRaport, setDataRaport] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
 
@@ -31,13 +31,12 @@ const DataNilai = () => {
       setCurrentPage(pageNumber);
     }
   };
-  const handleTambahData = () => {
-    console.log("Button clicked!");
-    // Add your logic for handling "Tambah Data" here
+
+  const handleBuatRaport = (nis) => {
+    history.push(`/inputraport/${nis}`);
   };
 
   const handleInputNilai = (nis) => {
-    console.log("Button clicked!");
     history.push(`/inputnilai/${nis}`);
   };
 
@@ -147,6 +146,13 @@ const DataNilai = () => {
                       <td>
                         <button
                           className="TAMBAH-DATA"
+                          onClick={() => handleBuatRaport(item.nis)}
+                        >
+                          <div className="text-wrapper-23">Buat Raport</div>
+                        </button>
+
+                        <button
+                          className="TAMBAH-DATA-2"
                           onClick={() => handleInputNilai(item.nis)}
                         >
                           <div className="text-wrapper-23">Input Nilai</div>
