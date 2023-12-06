@@ -1,0 +1,952 @@
+.sidebar {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.sidebar .div {
+    background-color: #f9f9f9;
+    height: 1080px;
+    overflow: hidden;
+    position: relative;
+    width: 1920px;
+}
+
+.sidebar .MENU {
+    background-color: #0082fc;
+    border-radius: 16px;
+    height: 650px;
+    left: 21px;
+    position: absolute;
+    top: 160px;
+    width: 239px;
+}
+
+.sidebar .PROFILE {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 28px;
+    position: absolute;
+    top: 310px;
+}
+
+.sidebar .element {
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.sidebar .text-wrapper {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: 100%;
+}
+
+.sidebar .PROFILE-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 28px;
+    position: absolute;
+    top: 609px;
+}
+
+.sidebar .group {
+    height: 48px;
+    left: 27px;
+    position: absolute;
+    top: 646px;
+    width: 190px;
+}
+
+.sidebar .overlap-group {
+    background-color: var(--gray-40);
+    border-radius: 32px;
+    height: 48px;
+    position: relative;
+    width: 188px;
+}
+
+.sidebar .overlap {
+    background-color: var(--whitewhite);
+    border-radius: 24px;
+    box-shadow: var(--shadows-gray-1-level);
+    height: 36px;
+    left: 6px;
+    position: absolute;
+    top: 6px;
+    width: 85px;
+}
+
+.sidebar .group-2 {
+    height: 20px;
+    left: 16px;
+    position: relative;
+    top: 8px;
+    width: 55px;
+}
+
+.sidebar .text-wrapper-2 {
+    color: #0841d4;
+    font-family: "Poppins", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    left: 28px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    white-space: nowrap;
+}
+
+.sidebar .sun-solid {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+
+.sidebar .text-wrapper-3 {
+    color: var(--gray-290);
+    font-family: "Poppins", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    left: 135px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    top: 16px;
+    white-space: nowrap;
+}
+
+.sidebar .moon-solid {
+    height: 20px;
+    left: 107px;
+    position: absolute;
+    top: 14px;
+    width: 20px;
+}
+
+.sidebar .SISWA {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 24px;
+    position: absolute;
+    top: 91px;
+}
+
+.sidebar .icon-SISWA {
+    height: 19px;
+    position: relative;
+    width: 27.14px;
+}
+
+.sidebar .CHAT {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 27px;
+    position: absolute;
+    top: 146px;
+}
+
+.sidebar .icon-envelope {
+    height: 19.39px;
+    position: relative;
+    width: 23px;
+}
+
+.sidebar .CHAT-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 25px;
+    position: absolute;
+    top: 202px;
+}
+
+.sidebar .icon-attendance {
+    height: 20.83px;
+    position: relative;
+    width: 25px;
+}
+
+.sidebar .CHAT-3 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 27px;
+    position: absolute;
+    top: 256px;
+}
+
+.sidebar .icon-calender {
+    height: 24px;
+    position: relative;
+    width: 22px;
+}
+
+.sidebar .DASHBOARD {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 24px;
+    position: absolute;
+    top: 42px;
+}
+
+.list-menu::after{
+    font-weight: 700;
+    background-color: #62a8e8;
+}
+
+.sidebar .FOOTER {
+    background-color: transparent;
+    height: 62px;
+    left: 0;
+    position: absolute;
+    top: 1009px;
+    width: 1920px;
+}
+
+.sidebar .p {
+    color: #0083ff;
+    font-family: "Poppins", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    left: 591px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: -9px;
+    width: 737px;
+}
+
+.sidebar .line {
+    height: 5px;
+    left: 1038px;
+    object-fit: cover;
+    position: absolute;
+    top: -17px;
+    width: 882px;
+}
+
+.sidebar .img {
+    height: 5px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: -20px;
+    width: 882px;
+}
+
+.sidebar .text-wrapper-4 {
+    color: #0083ff;
+    font-family: "Poppins", Helvetica;
+    font-size: 17px;
+    font-weight: 500;
+    left: 919px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: -29px;
+    white-space: nowrap;
+    width: 82px;
+}
+
+.sidebar .overlap-2 {
+    height: 641px;
+    left: 335px;
+    position: absolute;
+    top: 148px;
+    width: 1571px;
+}
+
+.sidebar .overlap-3 {
+    height: 508px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1571px;
+}
+
+.sidebar .PEMBERITAHUAN {
+    background-color: #eaebeb;
+    border-radius: 16px;
+    height: 496px;
+    left: 1275px;
+    position: absolute;
+    top: 12px;
+    width: 296px;
+}
+
+.sidebar .element-2 {
+    height: 24px;
+    left: 200px;
+    position: absolute;
+    top: 20px;
+    width: 24px;
+}
+
+.sidebar .frame {
+    height: 24px;
+    left: 248px;
+    position: absolute;
+    top: 20px;
+    transform: rotate(-90deg);
+    width: 24px;
+}
+
+.sidebar .group-3 {
+    height: 18px;
+    left: 10px;
+    position: relative;
+    top: 3px;
+    width: 4px;
+}
+
+.sidebar .ellipse {
+    background-color: #0741d4;
+    border-radius: 1.75px;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 4px;
+}
+
+.sidebar .ellipse-2 {
+    background-color: #0741d4;
+    border-radius: 1.75px;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 4px;
+}
+
+.sidebar .ellipse-3 {
+    background-color: #0741d4;
+    border-radius: 1.75px;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 14px;
+    width: 4px;
+}
+
+.sidebar .PIKET {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 265px;
+}
+
+.sidebar .div-wrapper {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    position: relative;
+}
+
+.sidebar .text-wrapper-5 {
+    color: #727272;
+    font-family: "Poppins", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width :100%;
+}
+
+.sidebar .WALI-MURID {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 217px;
+}
+
+.sidebar .KLS {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 169px;
+}
+
+.sidebar .KLS-2 {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 121px;
+}
+
+.sidebar .KLS-3 {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 73px;
+}
+
+.sidebar .text-wrapper-6 {
+    color: #262626;
+    font-family: "Poppins", Helvetica;
+    font-size: 22px;
+    font-weight: 500;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+}
+
+.sidebar .overlap-wrapper {
+    height: 459px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.sidebar .overlap-4 {
+    border-radius: 16px;
+    height: 447px;
+    position: relative;
+    width: 100%;
+}
+
+.sidebar .overlap-group-wrapper {
+    background-color: #0841d4;
+    border-radius: 16px;
+    box-shadow: 10px 24px 54px #00000008;
+    height: 447px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.sidebar .overlap-group-2 {
+    height: 555px;
+    left: -44px;
+    position: relative;
+    top: -30px;
+    width: 1368px;
+}
+
+.sidebar .mask-group {
+    height: 555px;
+    left: 44px;
+    position: absolute;
+    top: 0;
+    width: 1324px;
+}
+
+.sidebar .mask-group-2 {
+    height: 555px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1368px;
+}
+
+.sidebar .rectangle {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background: linear-gradient(180deg, rgb(0.11, 11.06, 39.31) 0%, rgba(8, 65, 212, 0) 100%);
+    border-radius: 16px;
+    height: 447px;
+    left: 44px;
+    position: absolute;
+    top: 30px;
+    width: 1260px;
+}
+
+.sidebar .group-4 {
+    height: 382px;
+    left: 22px;
+    position: absolute;
+    top: 38px;
+    width: 460px;
+}
+
+.sidebar .overlap-5 {
+    height: 384px;
+    position: relative;
+    top: -1px;
+}
+
+.sidebar .rectangle-2 {
+    -webkit-backdrop-filter: blur(20px) brightness(100%);
+    backdrop-filter: blur(20px) brightness(100%);
+    background-color: #ffffff33;
+    border: 1px solid;
+    border-color: #ffffff66;
+    border-radius: 16px;
+    box-shadow: 10px 24px 54px #00000008;
+    height: 384px;
+    left: 15px;
+    position: absolute;
+    top: 0;
+    width: 430px;
+}
+
+.sidebar .rectangle-wrapper {
+    background-color: #d9d9d9;
+    height: 245px;
+    left: 16px;
+    position: absolute;
+    top: 1px;
+    width: 428px;
+}
+
+.sidebar .rectangle-3 {
+    -webkit-backdrop-filter: blur(9px) brightness(100%);
+    backdrop-filter: blur(9px) brightness(100%);
+    background-color: #ffffff1a;
+    border-radius: 16px 16px 0px 0px;
+    height: 245px;
+}
+
+.sidebar .group-5 {
+    height: 73px;
+    left: 54px;
+    position: absolute;
+    top: 272px;
+    width: 232px;
+}
+
+.sidebar .text-wrapper-7 {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 45px;
+    width: 228px;
+}
+
+.sidebar .SEMESTER {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 137px;
+}
+
+.sidebar .element-3 {
+    height: 180px;
+    left: 280px;
+    object-fit: cover;
+    position: absolute;
+    top: 52px;
+    width: 180px;
+}
+
+.sidebar .element-4 {
+    height: 180px;
+    left: 138px;
+    object-fit: cover;
+    position: absolute;
+    top: 52px;
+    width: 180px;
+}
+
+.sidebar .element-5 {
+    height: 142px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 71px;
+    width: 180px;
+}
+
+.sidebar .group-6 {
+    height: 331px;
+    left: 530px;
+    position: absolute;
+    top: 38px;
+    width: 652px;
+}
+
+.sidebar .INPUT-RAPOR {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 40px;
+    display: flex;
+    gap: 10px;
+    height: 83px;
+    justify-content: center;
+    left: 0;
+    padding: 6px 32px;
+    position: absolute;
+    top: 249px;
+    width: 271px;
+}
+
+.sidebar .INPUT-RAPOR-2 {
+    color: #0841d4;
+    font-family: "Poppins", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    /* width: fit-content; */
+}
+
+.sidebar .selamat-datang-BU {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 455px;
+}
+
+.sidebar .span {
+    font-weight: 500;
+}
+
+.sidebar .text-wrapper-8 {
+    font-weight: 700;
+}
+
+.sidebar .takut-akan-TUHAN {
+    color: #ffffff;
+    font-family: "Poppins", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 134px;
+    width: 648px;
+}
+
+.sidebar .text-wrapper-9 {
+    font-weight: 600;
+}
+
+.sidebar .DAFTAR-MATAPELAJARAN {
+    height: 160px;
+    left: 898px;
+    position: absolute;
+    top: 481px;
+    width: 366px;
+}
+
+.sidebar .overlap-6 {
+    background-color: #c4c4c4c7;
+    border-radius: 10px;
+    height: 160px;
+    position: relative;
+    width: 362px;
+}
+
+.sidebar .text-wrapper-10 {
+    color: #757575;
+    font-family: "Roboto", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    height: 24px;
+    left: 18px;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    position: absolute;
+    top: 49px;
+    white-space: nowrap;
+}
+
+.sidebar .overlap-group-3 {
+    height: 64px;
+    left: 23px;
+    position: absolute;
+    top: 17px;
+    width: 321px;
+}
+
+.sidebar .text-wrapper-11 {
+    color: #000000de;
+    font-family: "Roboto", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    height: 24px;
+    left: 0;
+    letter-spacing: 0.1px;
+    line-height: 24px;
+    position: absolute;
+    top: 8px;
+    width: 274px;
+}
+
+.sidebar .icon-book {
+    height: 64px;
+    left: 251px;
+    position: absolute;
+    top: 0;
+    width: 70px;
+}
+
+.sidebar .DAFTAR-GURU {
+    height: 160px;
+    left: 444px;
+    position: absolute;
+    top: 481px;
+    width: 366px;
+}
+
+.sidebar .text-wrapper-12 {
+    color: #000000de;
+    font-family: "Roboto", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    height: 24px;
+    left: 23px;
+    letter-spacing: 0.1px;
+    line-height: 24px;
+    position: absolute;
+    top: 25px;
+    white-space: nowrap;
+}
+
+.sidebar .icon-chalkboard {
+    height: 55px;
+    left: 251px;
+    position: absolute;
+    top: 16px;
+    width: 70px;
+}
+
+.sidebar .DAFTAR-SISWA {
+    height: 160px;
+    left: 0;
+    position: absolute;
+    top: 481px;
+    width: 366px;
+}
+
+.sidebar .icon-siswa {
+    height: 56px;
+    left: 255px;
+    position: absolute;
+    top: 24px;
+    width: 80px;
+}
+
+.sidebar .INPUT-PENGUMUMAN {
+    height: 160px;
+    left: 335px;
+    position: absolute;
+    top: 811px;
+    width: 366px;
+}
+
+.sidebar .icon-megaphone {
+    height: 62px;
+    left: 265px;
+    position: absolute;
+    top: 12px;
+    width: 70px;
+}
+
+.sidebar .HEADER {
+    background-color: transparent;
+    height: 96px;
+    left: 6px;
+    position: absolute;
+    top: 27px;
+    width: 1861px;
+}
+
+.sidebar .overlap-7 {
+    background-color: #62a8e8;
+    height: 123px;
+    left: -6px;
+    position: relative;
+    top: -27px;
+    width: 1920px;
+}
+
+.sidebar .group-wrapper {
+    height: 48px;
+    left: 1680px;
+    position: absolute;
+    top: 47px;
+    width: 123px;
+}
+
+.sidebar .group-7 {
+    height: 48px;
+}
+
+.sidebar .group-8 {
+    height: 48px;
+    width: 123px;
+}
+
+.sidebar .group-9 {
+    height: 48px;
+    position: relative;
+    width: 127px;
+}
+
+.sidebar .text-wrapper-13 {
+    color: #727272;
+    font-family: "Poppins", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 27px;
+}
+
+.sidebar .text-wrapper-14 {
+    color: #262626;
+    font-family: "Poppins", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 0;
+}
+
+.sidebar .element-wrapper {
+    background-color: #f0f2f5;
+    border-radius: 24px;
+    height: 48px;
+    left: 1595px;
+    position: absolute;
+    top: 50px;
+    width: 48px;
+}
+
+.sidebar .element-6 {
+    height: 24px;
+    left: 12px;
+    position: absolute;
+    top: 12px;
+    width: 24px;
+}
+
+.sidebar .search {
+    background-color: #f0f2f5;
+    border-radius: 32px;
+    height: 45px;
+    left: 467px;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    width: 938px;
+}
+
+.sidebar .group-10 {
+    height: 21px;
+    left: 16px;
+    position: relative;
+    top: 14px;
+    width: 97px;
+}
+
+.sidebar .element-7 {
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 16px;
+}
+
+.sidebar .text-wrapper-15 {
+    color: #727272;
+    font-family: "Poppins", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.sidebar .SMP-KRISTEN-GETASAN {
+    color: #000000;
+    font-family: "Poppins", Helvetica;
+    font-size: 22px;
+    font-weight: bold;
+    height: 60px;
+    left: 106px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 48px;
+    width: 269px;
+}
+
+.sidebar .ellipse-4 {
+    height: 48px;
+    left: 1819px;
+    position: absolute;
+    top: 47px;
+    width: 48px;
+}
+
+.sidebar .SMP-KRISTEN {
+    height: 86px;
+    left: 6px;
+    object-fit: cover;
+    position: absolute;
+    top: 27px;
+    width: 99px;
+}
+
+.img-logo{
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+}

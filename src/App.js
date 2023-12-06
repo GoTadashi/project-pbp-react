@@ -10,7 +10,9 @@ import TambahMapel from "./pages/TambahMapel";
 import EditMapel from "./pages/EditMapel";
 import DaftarMapel from "./pages/DaftarMapel";
 import GuruLihatNilai from "./pages/GuruLihatNilai";
+import DashboardGuru from "./pages/DashboardGuru";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -25,7 +27,7 @@ function App() {
           inputnilai -
           editnilai -
           */}
-
+          <Route path="/DashboardGuru" exact component={DashboardGuru} />
           {/* Data Guru */}
           <Route path="/EditGuru" exact component={EditGuru} />
           {/* Data Raport */}
