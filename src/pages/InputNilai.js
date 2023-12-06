@@ -7,12 +7,7 @@ const InputRaport = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
-  const [selectedSemester, setSelectedSemester] = useState(1);
-  const kelasOptions = ["1", "2", "3", "4", "5", "6"];
-  const [selectedKelas, setSelectedKelas] = useState("1");
   const [selectedSiswa, setSelectedSiswa] = useState("");
-  const [dataGuru, setDataGuru] = useState([]);
-  const [selectedGuru, setSelectedGuru] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,22 +47,6 @@ const InputRaport = () => {
     };
 
     fetchData();
-  }, []);
-
-  useEffect(() => {
-    const fetchGuruData = async () => {
-      try {
-        const responseGuru = await fetch(
-          "https://jojopinjam.iffan.site/api/get-guru"
-        );
-        const dataGuru = await responseGuru.json();
-        setDataGuru(dataGuru);
-      } catch (error) {
-        console.error("Error fetching guru data:", error);
-      }
-    };
-
-    fetchGuruData();
   }, []);
 
   const addRaport = () => {
