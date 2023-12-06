@@ -3,8 +3,6 @@ import "./App.css";
 import edit from "./img/edit.png";
 import EditGuru from "./pages/EditGuru";
 import LihatNilai from "./pages/LihatNilai";
-import LihatNilai2 from "./pages/LihatNilai2";
-import LihatNilai3 from "./pages/LihatNilai3";
 import InputNilai from "./pages/InputNilai";
 import EditNilai from "./pages/EditNilai";
 import DataNilai from "./pages/DataNilai";
@@ -34,8 +32,6 @@ function App() {
           <Route path="/DataNilai" exact component={DataNilai} />
           {/* Data Detail */}
           <Route path="/LihatNilai" exact component={LihatNilai} />
-          <Route path="/LihatNilai2" exact component={LihatNilai2} />
-          <Route path="/LihatNilai3" exact component={LihatNilai3} />
           <Route path="/InputNilai" exact component={InputNilai} />
           <Route path="/EditNilai" exact component={EditNilai} />
           {/* Data Mapel */}
