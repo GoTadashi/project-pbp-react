@@ -13,7 +13,7 @@ export const TambahMapel = () => {
       id_guru: guruPengampu,
     };
 
-    fetch("https://jojopinjam.iffan.site/api/add-matapelajaran", {
+    fetch("https://127.0.0.1:8000/api/add-matapelajaran", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,11 +34,10 @@ export const TambahMapel = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addMatapelajaran();
-    
+
     if (!kodeMatapelajaran || !namaMatapelajaran || !guruPengampu) {
       alert("Harap isi semua kolom form.");
-    }
-    else {
+    } else {
       alert("Mata pelajaran berhasil dimasukkan.");
     }
 
@@ -253,7 +252,7 @@ export const TambahMapel = () => {
           <div className="group-11">
             <button className="frame-7" onClick={handleSubmit}>
               <div className="text-wrapper-15">Simpan</div>
-            </button> 
+            </button>
             <button className="frame-8" onClick={handleReset}>
               <div className="text-wrapper-15">Reset</div>
             </button>

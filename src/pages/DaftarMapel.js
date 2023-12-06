@@ -8,11 +8,14 @@ export const DaftarMapel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://jojopinjam.iffan.site/api/get-matapelajaran");
+        // const response = await fetch("https://jojopinjam.iffan.site/api/get-matapelajaran");
+        const response = await fetch(
+          "http://127.0.0.1:8000/api/get-matapelajaran"
+        );
         const data = await response.json();
         setData(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 

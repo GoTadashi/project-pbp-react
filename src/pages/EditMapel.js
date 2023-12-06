@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./EditMapel.css";
 
 export const EditMapel = () => {
+  // const [searchQuery, setSearchQuery] = useState("");
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "http://127.0.0.1:8000/api/update-matapelajaran",
+  //         {
+  //           method: "POST",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify({
+  //             // You may pass necessary data here based on your requirement
+  //             // For example:
+  //             id_matapelajaran: 1,
+  //             nama_matapelajaran: "Nama Matapelajaran Baru",
+  //             id_guru: 3,
+  //           }),
+  //         }
+  //       );
+
+  //       const responseData = await response.json();
+  //       console.log(responseData); // Logging the response data from the API
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   return (
     <div className="EDIT-MAPEL">
       <div className="div">
@@ -19,11 +52,19 @@ export const EditMapel = () => {
               <div className="overlap">
                 <div className="group-2">
                   <div className="text-wrapper-3">Light</div>
-                  <img className="sun-solid" alt="Sun solid" src="sun-solid.svg" />
+                  <img
+                    className="sun-solid"
+                    alt="Sun solid"
+                    src="sun-solid.svg"
+                  />
                 </div>
               </div>
               <div className="text-wrapper-4">Dark</div>
-              <img className="moon-solid" alt="Moon solid" src="moon-solid.svg" />
+              <img
+                className="moon-solid"
+                alt="Moon solid"
+                src="moon-solid.svg"
+              />
             </div>
           </div>
           <div className="SISWA">
@@ -31,11 +72,19 @@ export const EditMapel = () => {
             <div className="text-wrapper">Siswa</div>
           </div>
           <div className="CHAT">
-            <img className="icon-envelope" alt="Icon envelope" src="icon-envelope.png" />
+            <img
+              className="icon-envelope"
+              alt="Icon envelope"
+              src="icon-envelope.png"
+            />
             <div className="text-wrapper">Chat</div>
           </div>
           <div className="CHAT-2">
-            <img className="icon-attendance" alt="Icon attendance" src="icon-attendance.png" />
+            <img
+              className="icon-attendance"
+              alt="Icon attendance"
+              src="icon-attendance.png"
+            />
             <div className="text-wrapper">Generate Absen</div>
           </div>
           <div className="CHAT-3">
@@ -121,7 +170,11 @@ export const EditMapel = () => {
               e-rapor
             </div>
             <img className="ellipse-4" alt="Ellipse" src="ellipse-1192.svg" />
-            <img className="SMP-KRISTEN" alt="Smp KRISTEN" src="SMP-KRISTEN-2.png" />
+            <img
+              className="SMP-KRISTEN"
+              alt="Smp KRISTEN"
+              src="SMP-KRISTEN-2.png"
+            />
           </div>
         </header>
         <div className="kembali">
@@ -171,6 +224,5 @@ export const EditMapel = () => {
     </div>
   );
 };
-
 
 export default EditMapel;
