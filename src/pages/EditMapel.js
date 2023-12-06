@@ -272,7 +272,7 @@ export const EditMapel = () => {
 
           <div className="group-11">
             <button className="frame-7" onClick={handleSubmit}>
-              <div className="text-wrapper-15">Simpan</div>
+              <div className="text-wrapper-15">Update</div>
             </button>
             <button className="frame-8" onClick={handleReset}>
               <div className="text-wrapper-15">Reset</div>
