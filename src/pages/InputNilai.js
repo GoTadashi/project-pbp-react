@@ -5,6 +5,11 @@ export const InputNilai = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
+  const [nis, setNIS] = useState("");
+  const [id_guru, setIdGuru] = useState("");
+  const [semester, setSemester] = useState("");
+  const [kelas, setKelas] = useState("");
+  const [nilai, setNilai] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +42,53 @@ export const InputNilai = () => {
 
     fetchData();
   }, []);
+
+  const addRaport = () => {
+    const newRaport = {
+      semester: semester,
+      kelas: kelas,
+      id_guru: id_guru,
+      nis: nis,
+    };
+
+    fetch("https://jojopinjam.iffan.site/api/add-matapelajaran", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newRaport),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle success response
+        console.log(data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error adding raport:", error);
+      });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addRaport();
+
+    if (!nis || !id_guru || !semester || !kelas) {
+      alert("Harap isi semua kolom form.");
+    } else {
+      alert("Mata pelajaran berhasil dimasukkan.");
+    }
+
+    console.log("Submitted:", nis, id_guru, semester, kelas);
+  };
+
+  const handleReset = () => {
+    setNIS("");
+    setIdGuru("");
+    setSemester("");
+    setKelas("");
+    setNilai("");
+  };
 
   return (
     <div className="INPUT-NILAI">
@@ -198,9 +250,12 @@ export const InputNilai = () => {
             </div>
           </div>
           <div className="frame-2">
-            <select className="dropdown">
+            <select
+              className="dropdown"
+              onChange={(e) => setNIS(e.target.value)}
+            >
               {dataSiswa.map((item, index) => (
-                <option key={index} value={item.nama}>
+                <option key={index} value={item.nis}>
                   {item.nama}
                 </option>
               ))}
@@ -245,10 +300,10 @@ export const InputNilai = () => {
           <input className="number-input" type="number" />
         </div>
         <div className="group-12">
-          <div className="frame-7">
+          <div className="frame-7" onClick={handleSubmit}>
             <div className="text-wrapper-15">Simpan</div>
           </div>
-          <div className="frame-8">
+          <div className="frame-8" onClick={handleReset}>
             <div className="text-wrapper-15">Reset</div>
           </div>
         </div>
