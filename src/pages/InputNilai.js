@@ -84,9 +84,9 @@ export const InputNilai = () => {
 
   const handleReset = () => {
     setNIS("");
-    setIdGuru("");
+    setIdGuru("8");
     setSemester("");
-    setKelas("");
+    setKelas("VII");
     setNilai("");
   };
 
