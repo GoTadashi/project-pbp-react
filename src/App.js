@@ -4,6 +4,7 @@ import edit from "./img/edit.png";
 import EditGuru from "./pages/EditGuru";
 import LihatNilai from "./pages/LihatNilai";
 import InputNilai from "./pages/InputNilai";
+import InputRaport from "./pages/InputRaport";
 import EditNilai from "./pages/EditNilai";
 import DataNilai from "./pages/DataNilai";
 import TambahMapel from "./pages/TambahMapel";
@@ -27,7 +28,7 @@ function App() {
           inputnilai -
           editnilai -
           */}
-          
+
           <Route path="/LoginSiswa" exact component={LoginSiswa} />
           <Route path="/DashboardGuru" exact component={DashboardGuru} />
           {/* Data Guru */}

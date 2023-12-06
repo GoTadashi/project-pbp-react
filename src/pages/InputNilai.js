@@ -20,7 +20,7 @@ const InputNilai = () => {
           `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
         );
         const dataSiswa = await responseSiswa.json();
-  
+
         if (Array.isArray(dataSiswa)) {
           setDataSiswa(dataSiswa);
         } else if (dataSiswa) {
@@ -35,7 +35,7 @@ const InputNilai = () => {
         console.error("Error fetching data:", error);
       }
     };
-  
+
     fetchData();
   }, [nisSiswa]);
   console.log("Data Siswa:", dataSiswa);
@@ -55,7 +55,6 @@ const InputNilai = () => {
 
     fetchData();
   }, []);
-
 
   const addRaport = () => {
     const newRaport = {
@@ -258,21 +257,24 @@ const InputNilai = () => {
         </div>
         <div className="text-wrapper-12">Input Nilai</div>
         <div className="group-8">
-        <div className="frame-wrapper">
+          <div className="frame-wrapper">
+            <div className="frame-2">
+              <div className="text-wrapper-13">Nama Siswa</div>
+            </div>
+          </div>
           <div className="frame-2">
-            <div className="text-wrapper-13">Nama Siswa</div>
+            <select
+              className="dropdown"
+              onChange={(e) => setNIS(e.target.value)}
+            >
+              {dataSiswa.map((item, index) => (
+                <option key={index} value={item.nis}>
+                  {item.nama}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
-        <div className="frame-2">
-          <select className="dropdown" onChange={(e) => setNIS(e.target.value)}>
-            {dataSiswa.map((item, index) => (
-              <option key={index} value={item.nis}>
-                {item.nama}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
         <div className="group-9">
           <div className="frame-wrapper">
             <div className="frame-2">

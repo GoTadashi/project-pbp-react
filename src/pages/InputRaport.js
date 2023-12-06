@@ -292,6 +292,7 @@ const InputRaport = () => {
           <div className="frame-wrapper">
             <div className="frame-2">
               <div className="text-wrapper-13">Nama Guru</div>
+              <div className="text-wrapper-13">Tanggal Raport</div>
             </div>
           </div>
           <div className="frame-2">
