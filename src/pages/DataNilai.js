@@ -1,52 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { TableHeader } from "./TableHeader";
 import "./DataNilai.css";
 
 export const DataNilai = () => {
-
   const [searchQuery, setSearchQuery] = useState("");
-  
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/get-siswa");
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const handleTambahData = () => {
     // Add your logic for handling the click event here
     console.log("Button clicked!");
   };
 
-  const tabel = [
-    { nis: "1", nama: "PPKn", alamat: "Bu Siti", ttl:"12 April"},
-    {
-      kode: "2",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    // ... Add more data as needed
-  ];
+  const handleEdit = (index) => {
+    // Handle the edit action
+    console.log("Edit clicked for index:", index);
+  };
 
-  const [data, setData] = useState(tabel);
+  const handleDelete = (index) => {
+    // Handle the delete action
+    const newData = [...data];
+    newData.splice(index, 1);
+    setData(newData);
+  };
 
   return (
     <div className="DATA-NILAI">
@@ -117,8 +106,8 @@ export const DataNilai = () => {
                   <tr>
                     <th>NIS</th>
                     <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>TTL</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Agama</th>
                     <th>Nama Orang Tua</th>
@@ -130,11 +119,11 @@ export const DataNilai = () => {
                     <tr key={index}>
                       <td>{item.nis}</td>
                       <td>{item.nama}</td>
-                      <td>{item.alamat}</td>
-                      <td>{item.ttl}</td>
-                      <td>{item.jk}</td>
+                      <td>{item.tempat_lahir}</td>
+                      <td>{item.tanggal_lahir}</td>
+                      <td>{item.jenis_kelamin}</td>
                       <td>{item.agama}</td>
-                      <td>{item.ortu}</td>
+                      <td>{item.nama_orangtua}</td>
                       <td>
                         <button
                           className="TAMBAH-DATA"
