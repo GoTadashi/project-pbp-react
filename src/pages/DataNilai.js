@@ -1,52 +1,60 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { TableHeader } from "./TableHeader";
 import "./DataNilai.css";
 
 export const DataNilai = () => {
-
   const [searchQuery, setSearchQuery] = useState("");
-  
+  const [dataSiswa, setDataSiswa] = useState([]);
+  const [dataRaport, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jojopinjam.iffan.site/api/get-siswa"
+        );
+        const dataSiswa = await response.json();
+        setDataSiswa(dataSiswa);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jojopinjam.iffan.site/api/get-siswa"
+        );
+        const dataSiswa = await response.json();
+        setData(dataSiswa);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const handleTambahData = () => {
     // Add your logic for handling the click event here
     console.log("Button clicked!");
   };
 
-  const tabel = [
-    { nis: "1", nama: "PPKn", alamat: "Bu Siti", ttl:"12 April"},
-    {
-      kode: "2",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    {
-      kode: "3",
-      mataPelajaran: "Bahasa Indonesia",
-      guruPengajar: "Pak Darmawan",
-    },
-    // ... Add more data as needed
-  ];
+  const handleEdit = (index) => {
+    // Handle the edit action
+    console.log("Edit clicked for index:", index);
+  };
 
-  const [data, setData] = useState(tabel);
+  const handleDelete = (index) => {
+    // Handle the delete action
+    const newDataSiswa = [...dataSiswa];
+    newDataSiswa.splice(index, 1);
+    setDataSiswa(newDataSiswa);
+  };
 
   return (
     <div className="DATA-NILAI">
@@ -117,8 +125,8 @@ export const DataNilai = () => {
                   <tr>
                     <th>NIS</th>
                     <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>TTL</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
                     <th>Agama</th>
                     <th>Nama Orang Tua</th>
@@ -126,15 +134,15 @@ export const DataNilai = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((item, index) => (
+                  {dataSiswa.map((item, index) => (
                     <tr key={index}>
                       <td>{item.nis}</td>
                       <td>{item.nama}</td>
-                      <td>{item.alamat}</td>
-                      <td>{item.ttl}</td>
-                      <td>{item.jk}</td>
+                      <td>{item.tempat_lahir}</td>
+                      <td>{item.tanggal_lahir}</td>
+                      <td>{item.jenis_kelamin}</td>
                       <td>{item.agama}</td>
-                      <td>{item.ortu}</td>
+                      <td>{item.nama_orangtua}</td>
                       <td>
                         <button
                           className="TAMBAH-DATA"
@@ -154,12 +162,18 @@ export const DataNilai = () => {
           <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
           <div className="text-wrapper-9">Sortir Data</div>
         </div>
-        <div className="navbar">
-          <div className="text-wrapper-10">\VIIA</div>
-          <div className="text-wrapper-11">\Sem1</div>
-          <div className="text-wrapper-12">\Input Rapor</div>
-          <div className="text-wrapper-13">Dashboard</div>
-        </div>
+        {/* <div className="navbar"> */}
+        {dataRaport.map((item, index) => (
+          <div key={index} className="navbar">
+            <div className="text-wrapper-10">\{item.kelas}</div>
+            <div className="text-wrapper-11">\Semester {item.semester}</div>
+            <div className="text-wrapper-12">\Input Rapor</div>
+            <div className="text-wrapper-13">Dashboard</div>
+          </div>
+        ))}
+        {/* <div className="text-wrapper-10">\VIIA</div>
+          <div className="text-wrapper-11">\Sem1</div> */}
+        {/* </div> */}
         <div className="MENU">
           <div className="PROFILE">
             <img className="element-3" alt="Element" src="64.svg" />

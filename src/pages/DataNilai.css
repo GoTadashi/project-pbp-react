@@ -588,7 +588,7 @@
   font-family: "Poppins-Regular", Helvetica;
   font-size: 20px;
   font-weight: 400;
-  left: 304px;
+  left: 360px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -606,7 +606,7 @@
   line-height: normal;
   position: absolute;
   top: 0;
-  width: 71px;
+  /* width: 71px; */
 }
 
 .DATA-NILAI .text-wrapper-12 {
@@ -920,13 +920,12 @@
 }
 
 .DATA-NILAI .custom-input {
-  width: 58rem; 
-  font-size: 16px; 
+  width: 58rem;
+  font-size: 16px;
   margin-left: -2px;
   margin-top: -2px;
   padding: 15px;
 }
-
 
 .DATA-NILAI .group-8 {
   height: 21px;
