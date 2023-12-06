@@ -152,7 +152,7 @@ const DataNilai = () => {
                         </button>
 
                         <button
-                          className="TAMBAH-DATA"
+                          className="TAMBAH-DATA-2"
                           onClick={() => handleInputNilai(item.nis)}
                         >
                           <div className="text-wrapper-23">Input Nilai</div>
