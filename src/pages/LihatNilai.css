@@ -588,6 +588,8 @@
 }
 
 .LIHAT-NILAI .PAGES {
+  display: flex;
+  justify-content: center;
   height: 38px;
   left: 678px;
   position: absolute;
@@ -596,6 +598,8 @@
 }
 
 .LIHAT-NILAI .div-wrapper {
+  display: flex;
+  gap: 40px;
   height: 38px;
   left: 0;
   position: absolute;
@@ -604,6 +608,9 @@
 }
 
 .LIHAT-NILAI .overlap-group-2 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   height: 38px;
   position: relative;
   width: 31px;
@@ -615,7 +622,7 @@
   height: 29px;
   left: 1px;
   position: absolute;
-  top: 4px;
+  top: 1px;
   width: 30px;
 }
 
