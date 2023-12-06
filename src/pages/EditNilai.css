@@ -720,7 +720,7 @@
   top: 50px;
   display: flex;
   gap: 680px;
-  left: -1px;
+  left: 4px;
   padding: 12px 20px;
   position: absolute;
   width: 802px;
@@ -786,6 +786,10 @@
     top: 0;
     width: 120px;
   }
+
+  .EDIT-NILAI .frame-7:hover {
+    background-color: #0d74d4;
+  }
   
   .EDIT-NILAI .text-wrapper-15 {
     color: #ffffff;
@@ -813,5 +817,9 @@
     position: absolute;
     top: 0;
     width: 120px;
+  }
+
+  .EDIT-NILAI .frame-8:hover {
+    background-color: #c01212;
   }
   
