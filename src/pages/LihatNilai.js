@@ -3,14 +3,35 @@ import "./LihatNilai.css";
 
 export const LihatNilai = () => {
   const [raports, setRaports] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const raportsPerPage = 5;
 
   useEffect(() => {
-    // Fetch data from your API
     fetch("https://jojopinjam.iffan.site/api/get-raport")
       .then((response) => response.json())
       .then((data) => setRaports(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  const indexOfLastRaport = currentPage * raportsPerPage;
+  const indexOfFirstRaport = (currentPage - 1) * raportsPerPage;
+  const currentRaports = raports.slice(indexOfFirstRaport, indexOfLastRaport);
+
+  const totalPages = Math.ceil(raports.length / raportsPerPage);
+
+  const paginate = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
+  if (!raports.length) {
+    return <p>Loading...</p>; // Add loading state
+  }
+
+  if (raports.length === 0) {
+    return <p>No data available.</p>; // Add empty state
+  }
 
   return (
     <div className="LIHAT-NILAI">
@@ -81,13 +102,15 @@ export const LihatNilai = () => {
           <div className="overlap-3">
             <div className="rectangle" />
             <div className="navbar-wrapper">
-              {raports.map((raport, index) => (
+              {currentRaports.map((raport, index) => (
                 <div key={raport.id_raport}>
                   <div className="div-2">
                     <div className="text-wrapper-6">
                       {raport.nama_matapelajaran}
                     </div>
-                    <div className="text-wrapper-7">{index + 1}.</div>
+                    <div className="text-wrapper-7">
+                      {(currentPage - 1) * raportsPerPage + index + 1}.
+                    </div>
                     <div className="text-wrapper-8">{raport.nilai}</div>
                     <div className="text-wrapper-9">{raport.predikat}</div>
                   </div>
@@ -106,13 +129,17 @@ export const LihatNilai = () => {
           <div className="kelompok-a-wajib">Kelompok A (wajib)</div>
           <div className="PAGES">
             <div className="div-wrapper">
-              <div className="overlap-group-2">
-                <div className="ellipse" />
-                <div className="text-wrapper-20">1</div>
-              </div>
+              {Array.from({ length: totalPages }, (_, index) => (
+                <div
+                  key={index}
+                  className={`overlap-group-2 ${currentPage === index + 1 ? 'active' : ''}`}
+                  onClick={() => paginate(index + 1)}
+                >
+                  <div className="ellipse" />
+                  <div className="text-wrapper-20">{index + 1}</div>
+                </div>
+              ))}
             </div>
-            <div className="text-wrapper-21">2</div>
-            <div className="text-wrapper-22">3</div>
           </div>
           <div className="download-button">
             <div className="text-wrapper-23">Download Rapor</div>
