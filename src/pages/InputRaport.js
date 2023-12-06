@@ -74,7 +74,7 @@ const InputRaport = () => {
     const newRaport = {
       semester: selectedSemester,
       kelas: selectedKelas,
-      nis: selectedSiswa,
+      id_siswa: selectedSiswa,
       id_guru: selectedGuru,
     };
 
@@ -97,6 +97,12 @@ const InputRaport = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addRaport();
+
+    if (!selectedSiswa || !selectedGuru) {
+      alert("Harap isi semua kolom form.");
+    } else {
+      alert("Raport berhasil dimasukkan.");
+    }
 
     console.log(
       "Submitted:",
