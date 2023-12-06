@@ -13,7 +13,7 @@ export const DataNilai = () => {
         // const response = await fetch(
         //   "http://jojopinjam.iffan.site/api/get-siswa"
         // );
-        const response = await fetch("http://127.0.0.1:8000/api/get-siswa");
+        const response = await fetch("https://jojopinjam.iffan.site/api/get-siswa");
         const dataSiswa = await response.json();
         setDataSiswa(dataSiswa);
       } catch (error) {
