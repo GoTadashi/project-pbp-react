@@ -75,7 +75,6 @@ const LihatGuru = () => {
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
-          <div className="text-wrapper-2">SCH</div>
         </footer>
         <div className="TABLE">
           <div className="overlap">
@@ -128,9 +127,9 @@ const LihatGuru = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-sliders2"></i>
-              <span className="side-text ms-2">Peraturan</span>
+            <Link to="/InputRaport" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-file-earmark-plus"></i>
+              <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
           </div>
           <div className="PROFILE-2">
@@ -140,34 +139,31 @@ const LihatGuru = () => {
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i className="bi bi-envelope"></i>
-              <span className="side-text ms-2">Chat</span>
+            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-person-video3"></i>
+              <span className="side-text ms-2">Guru</span>
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-card-checklist"></i>
-              <span className="side-text ms-2">Generate Absen</span>
+              <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link
-              to="/DaftarMapel"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i className="bi bi-table"></i>
-              <span className="side-text ms-2">Jadwal Pelajaran</span>
+            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-book-fill"></i>
+              <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
