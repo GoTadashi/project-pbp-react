@@ -40,8 +40,8 @@ const DataNilai = () => {
     history.push(`/inputraport/${nis}`);
   };
 
-  const handleInputNilai = (nis) => {
-    history.push(`/inputnilai/${nis}`);
+  const handleEditRaport = (nis) => {
+    history.push(`/editnilai/${nis}`);
   };
 
   const handleLihatRaport = () => {
@@ -147,22 +147,22 @@ const DataNilai = () => {
 
                         <button
                           className="TAMBAH-DATA-2"
-                          onClick={() => handleInputNilai(item.nis)}
-                          // disabled
+                          onClick={() => handleEditRaport(item.nis)}
                         >
-                          <div className="text-wrapper-23">Input Nilai</div>
+                          <div className="text-wrapper-23">Edit Raport</div>
                         </button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
-                <button
-                className="TAMBAH-DATA"
-                onClick={() => handleLihatRaport()}
-                >
-                <div className="text-wrapper-23">Edit Raport</div>
-                </button>
               </table>
+              <button
+                  className="TAMBAH-DATA-2"
+                  onClick={() => handleLihatRaport()}
+                // disabled
+                >
+                  <div className="text-wrapper-23">Input Nilai</div>
+                </button>
             </div>
           </div>
         </div>
@@ -246,9 +246,8 @@ const DataNilai = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${
-                    currentPage === number ? "active" : ""
-                  }`}
+                  className={`ellipse ${currentPage === number ? "active" : ""
+                    }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>

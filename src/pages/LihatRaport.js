@@ -46,8 +46,9 @@ const LihatRaport = () => {
     }
   };
 
-  const handleEditRaport = (nis) => {
-    history.push(`/inputraport/${nis}`);
+
+  const handleInputNilai = (nis) => {
+    history.push(`/inputnilai/${nis}`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -141,9 +142,9 @@ const LihatRaport = () => {
                       <td className="action-button">
                       <button
                         className="EDIT-RAPORT"
-                        onClick={() => handleEditRaport(item.nis)}
+                        onClick={() => handleInputNilai(item.nis)}
                       >
-                        <div className="text-wrapper-23">Edit Raport</div>
+                        <div className="text-wrapper-23">Input Nilai</div>
                       </button>
                       </td>
                     </tr>
