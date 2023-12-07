@@ -14,14 +14,18 @@ const LihatNilai = () => {
     const fetchData = async () => {
       try {
         // Fetch data of students who have raport
-        const responseRaport = await fetch("https://jojopinjam.iffan.site/api/get-raport-main");
+        const responseRaport = await fetch(
+          "https://jojopinjam.iffan.site/api/get-raport-main"
+        );
         const dataRaport = await responseRaport.json();
         setDataRaport(dataRaport);
 
         // Fetch all student data
-        const responseSiswa = await fetch("https://jojopinjam.iffan.site/api/get-siswa");
+        const responseSiswa = await fetch(
+          "https://jojopinjam.iffan.site/api/get-siswa"
+        );
         const dataSiswa = await responseSiswa.json();
-        
+
         // Filter students who have raport
         const studentsWithRaport = dataSiswa.filter((siswa) =>
           dataRaport.some((raport) => raport.id_siswa === siswa.nis)
@@ -45,7 +49,6 @@ const LihatNilai = () => {
       setCurrentPage(pageNumber);
     }
   };
-
 
   const handleLihatNilai = (nis) => {
     history.push(`/SiswaLihatNilai/${nis}`);
@@ -140,12 +143,12 @@ const LihatNilai = () => {
                       <td>{item.agama}</td>
                       <td>{item.nama_orangtua}</td>
                       <td className="action-button">
-                      <button
-                        className="EDIT-RAPORT"
-                        onClick={() => handleLihatNilai(item.nis)}
-                      >
-                        <div className="text-wrapper-23">Lihat Nilai</div>
-                      </button>
+                        <button
+                          className="EDIT-RAPORT"
+                          onClick={() => handleLihatNilai(item.nis)}
+                        >
+                          <div className="text-wrapper-23">Lihat Nilai</div>
+                        </button>
                       </td>
                     </tr>
                   ))}

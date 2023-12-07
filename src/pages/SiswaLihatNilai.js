@@ -6,6 +6,7 @@ const SiswaLihatNilai = () => {
   const { nisSiswa } = useParams();
   const [raports, setRaports] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [raportData, setRaportData] = useState([]);
   const raportsPerPage = 5;
 
   useEffect(() => {
@@ -16,22 +17,23 @@ const SiswaLihatNilai = () => {
         );
         const dataSiswa = await responseSiswa.json();
         console.log("Data Siswa:", dataSiswa);
-  
+
         // Assuming the structure of data includes a unique identifier like nis
         const nis = dataSiswa.nis;
-  
+
         const responseRaport = await fetch(
           `https://jojopinjam.iffan.site/api/get-raport-main/${nis}`
         );
         const dataRaport = await responseRaport.json();
         console.log("Data Raport:", dataRaport);
-  
+        setRaportData(dataRaport);
+
         setRaports(dataRaport);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-  
+
     fetchData();
   }, [nisSiswa]);
 
@@ -122,24 +124,24 @@ const SiswaLihatNilai = () => {
         <div className="overlap-2">
           <div className="text-wrapper-5">Data Nilai Semester 1</div>
           <div className="overlap-3">
-        <div className="rectangle" />
-        <div className="navbar-wrapper">
-          {currentRaports.map((raport, index) => (
-            <div key={raport.id_raport}>
-              <div className="div-2">
-                <div className="text-wrapper-6">
-                  {raport.nama_matapelajaran}
+            <div className="rectangle" />
+            <div className="navbar-wrapper">
+              {currentRaports.map((raport, index) => (
+                <div key={raport.id_raport}>
+                  <div className="div-2">
+                    <div className="text-wrapper-6">
+                      {raport.nama_matapelajaran}
+                    </div>
+                    <div className="text-wrapper-7">
+                      {(currentPage - 1) * raportsPerPage + index + 1}.
+                    </div>
+                    <div className="text-wrapper-8">{raport.nilai}</div>
+                    <div className="text-wrapper-9">{raport.predikat}</div>
+                  </div>
                 </div>
-                <div className="text-wrapper-7">
-                  {(currentPage - 1) * raportsPerPage + index + 1}.
-                </div>
-                <div className="text-wrapper-8">{raport.nilai}</div>
-                <div className="text-wrapper-9">{raport.predikat}</div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
           <div className="HEADER-TABEL">
             <div className="navbar">
               <div className="mata-pelajaran">Mata Pelajaran</div>
@@ -154,7 +156,9 @@ const SiswaLihatNilai = () => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <div
                   key={index}
-                  className={`overlap-group-2 ${currentPage === index + 1 ? 'active' : ''}`}
+                  className={`overlap-group-2 ${
+                    currentPage === index + 1 ? "active" : ""
+                  }`}
                   onClick={() => paginate(index + 1)}
                 >
                   <div className="ellipse" />
@@ -168,7 +172,20 @@ const SiswaLihatNilai = () => {
           </div>
         </div>
         <div className="frame">
-          <div className="text-wrapper-24">Semester 1</div>
+          {/* <div className="text-wrapper-24">Semester 1</div> */}
+          {/* <select
+            className="dropdown"
+            onChange={(e) => setSelectedMapel(e.target.value)}
+          >
+            {raportData.map((item) => (
+              <option
+                key={item.kelas && item.semester}
+                value={item.kelas && item.semester}
+              >
+                {item.kelas && item.semester}
+              </option>
+            ))}
+          </select> */}
           <img
             className="icon-chevron-down"
             alt="Icon chevron down"
