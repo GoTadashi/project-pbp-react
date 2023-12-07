@@ -56,10 +56,6 @@ export const DashboardGuru = () => {
             </Link>
           </div>
         </div>
-        <footer className="FOOTER">
-          <p className="p">
-          </p>
-        </footer>
         <div className="overlap-2">
           <div className="overlap-3">
             <div className="overlap-wrapper">

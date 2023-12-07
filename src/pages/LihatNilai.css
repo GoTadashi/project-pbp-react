@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.LIHAT-NILAI .custom-input {
+  width: 60rem;
+}
+
 .LIHAT-NILAI .EDIT-RAPORT {
   background-color: #0082fc;
     border-radius: 16px;
