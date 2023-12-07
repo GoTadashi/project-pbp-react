@@ -46,12 +46,8 @@ const LihatRaport = () => {
     }
   };
 
-  const handleBuatRaport = (nis) => {
+  const handleEditRaport = (nis) => {
     history.push(`/inputraport/${nis}`);
-  };
-
-  const handleInputNilai = (nis) => {
-    history.push(`/inputnilai/${nis}`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -143,20 +139,12 @@ const LihatRaport = () => {
                       <td>{item.agama}</td>
                       <td>{item.nama_orangtua}</td>
                       <td className="action-button">
-                        <button
-                          className="TAMBAH-DATA"
-                          onClick={() => handleBuatRaport(item.nis)}
-                        >
-                          <div className="text-wrapper-23">Buat Raport</div>
-                        </button>
-
-                        <button
-                          className="TAMBAH-DATA-2"
-                          onClick={() => handleInputNilai(item.nis)}
-                          // disabled
-                        >
-                          <div className="text-wrapper-23">Input Nilai</div>
-                        </button>
+                      <button
+                        className="EDIT-RAPORT"
+                        onClick={() => handleEditRaport(item.nis)}
+                      >
+                        <div className="text-wrapper-23">Edit Raport</div>
+                      </button>
                       </td>
                     </tr>
                   ))}
