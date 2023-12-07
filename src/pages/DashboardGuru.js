@@ -139,7 +139,7 @@ export const DashboardGuru = () => {
         </div>
         <header className="HEADER">
           <div className="overlap-7">
-            <div className="group-wrapper onClick={() => setProfilePopupVisibility(true)}">
+            <div className="group-wrapper">
               <div className="group-7">
                 <div className="group-8">
                   <div className="group-9">
@@ -149,26 +149,6 @@ export const DashboardGuru = () => {
                 </div>
               </div>
             </div>
-            {isProfilePopupVisible && (
-              <div className="profile-popup">
-                <div className="group-wrapper">
-                  <div className="group-7">
-                    <div className="group-8">
-                      <div className="group-9">
-                        <div className="text-wrapper-13">Guru Matematika</div>
-                        <div className="text-wrapper-14">Eni Susilowati</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="element-wrapper">
-                  <img className="element-6" alt="Element" src="/img/3.svg" />
-                </div>
-                <button onClick={() => setProfilePopupVisibility(false)}>
-                  Close
-                </button>
-              </div>
-            )}
             <div className="element-wrapper">
               <img className="element-6" alt="Element" src="/img/3.svg" />
             </div>
