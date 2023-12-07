@@ -847,7 +847,7 @@
 
 .sidebar .overlap-7 {
     background-color: #62a8e8;
-    height: 123px;
+    height: spx;
     left: -6px;
     position: relative;
     top: -27px;
@@ -970,7 +970,7 @@
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 34px;
+    top: 40px;
     width: 314px;
 }
 
@@ -991,8 +991,8 @@
     width: 99px;
 }
 
-.img-logo {
-    margin-top: 5px;
+.img-logo{
+    margin-top: 10px;
     width: 100px;
     height: 100px;
 }
