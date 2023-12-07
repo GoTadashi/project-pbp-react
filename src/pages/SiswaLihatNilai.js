@@ -4,7 +4,8 @@ import "./SiswaLihatNilai.css";
 
 const SiswaLihatNilai = () => {
   const { nisSiswa } = useParams();
-  const [raports, setRaports] = useState([]);
+  const [raportMain, setRaportMain] = useState([]);
+  const [raportDetails, setRaportDetails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [raportData, setRaportData] = useState([]);
   const raportsPerPage = 5;
@@ -12,9 +13,11 @@ const SiswaLihatNilai = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseSiswa = await fetch(
-          `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
+        // Fetch main raport data
+        const responseRaportMain = await fetch(
+          `https://jojopinjam.iffan.site/api/get-raport-main/${nisSiswa}`
         );
+<<<<<<< HEAD
         const dataSiswa = await responseSiswa.json();
         console.log("Data Siswa:", dataSiswa);
 
@@ -29,6 +32,17 @@ const SiswaLihatNilai = () => {
         setRaportData(dataRaport);
 
         setRaports(dataRaport);
+=======
+        const dataRaportMain = await responseRaportMain.json();
+        setRaportMain(dataRaportMain);
+
+        // Fetch detailed raport data for all students (assuming the API doesn't support fetching by NIS)
+        const responseRaportDetails = await fetch(
+          `https://jojopinjam.iffan.site/api/get-raport`
+        );
+        const dataRaportDetails = await responseRaportDetails.json();
+        setRaportDetails(dataRaportDetails);
+>>>>>>> 85a59359e81b1823b6866580e9b02be0129acb08
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -37,11 +51,17 @@ const SiswaLihatNilai = () => {
     fetchData();
   }, [nisSiswa]);
 
+  // Merge raportMain and raportDetails based on id_raport
+  const mergedRaports = raportMain.map(main => {
+    const details = raportDetails.find(detail => detail.id_raport === main.id_raport);
+    return { ...main, ...details };
+  });
+
   const indexOfLastRaport = currentPage * raportsPerPage;
   const indexOfFirstRaport = indexOfLastRaport - raportsPerPage;
-  const currentRaports = raports.slice(indexOfFirstRaport, indexOfLastRaport);
+  const currentRaports = mergedRaports.slice(indexOfFirstRaport, indexOfLastRaport);
 
-  const totalPages = Math.ceil(raports.length / raportsPerPage);
+  const totalPages = Math.ceil(mergedRaports.length / raportsPerPage);
 
   const paginate = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
@@ -49,7 +69,7 @@ const SiswaLihatNilai = () => {
     }
   };
 
-  if (!raports.length) {
+  if (!mergedRaports.length) {
     return <p>Loading...</p>; // Add loading state
   }
 
