@@ -8,7 +8,7 @@ const DataSiswa = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,7 @@ const DataSiswa = () => {
   };
 
   const handleUbahData = (nis) => {
-    history.push(`/editsiswa/${nis}`);
+    history.push(`/EditSiswa/${nis}`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -131,7 +131,7 @@ const DataSiswa = () => {
                       <td className="action-button">
                         <button
                           className="TAMBAH-DATA"
-                          onClick={() => handleUbahData()}
+                          onClick={() => handleUbahData(item.nis)}
                         >
                           <div className="text-wrapper-23">Edit Siswa</div>
                         </button>
@@ -223,8 +223,9 @@ const DataSiswa = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${currentPage === number ? "active" : ""
-                    }`}
+                  className={`ellipse ${
+                    currentPage === number ? "active" : ""
+                  }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
