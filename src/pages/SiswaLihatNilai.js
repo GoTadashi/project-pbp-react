@@ -5,6 +5,7 @@ import "./SiswaLihatNilai.css";
 const SiswaLihatNilai = () => {
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
+  const [selectedRaportMain, setSelectedRaportMain] = useState("");
   const [raportDetails, setRaportDetails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const raportsPerPage = 5;
@@ -182,7 +183,7 @@ const SiswaLihatNilai = () => {
           {/* <div className="text-wrapper-24">Semester 1</div> */}
           {/* <select
             className="dropdown"
-            onChange={(e) => setSelectedMapel(e.target.value)}
+            onChange={(e) => setSelectedRaportMain(e.target.value)}
           >
             {raportMain.map((item) => (
               <option
