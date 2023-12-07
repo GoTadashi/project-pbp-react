@@ -49,7 +49,7 @@ const SiswaLihatNilai = () => {
   }, [nisSiswa, selectedRaportMain]);
 
   const handleEditNilai = (id_detail) => {
-    history.push(`/editNilai/${id_detail}`);
+    history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
   };
 
   const calculateTotalPages = () => {
