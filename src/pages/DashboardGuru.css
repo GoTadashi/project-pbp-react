@@ -847,7 +847,7 @@
 
 .sidebar .overlap-7 {
     background-color: #62a8e8;
-    height: 123px;
+    height: spx;
     left: -6px;
     position: relative;
     top: -27px;
@@ -928,7 +928,7 @@
     left: 467px;
     overflow: hidden;
     position: absolute;
-    top: 50px;
+    top: 45px;
     width: 938px;
 }
 
@@ -989,4 +989,11 @@
     position: absolute;
     top: 27px;
     width: 99px;
+}
+
+.img-logo{
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+
 }

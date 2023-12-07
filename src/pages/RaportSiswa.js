@@ -175,7 +175,7 @@ const RaportSiswa = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/InputRaport" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
@@ -199,13 +199,13 @@ const RaportSiswa = () => {
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-card-checklist"></i>
               <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-book-fill"></i>
               <span className="side-text ms-2">Raport Siswa</span>
             </Link>
