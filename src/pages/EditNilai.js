@@ -7,7 +7,7 @@ import "./EditNilai.css";
 import mainLogo from "../img/logo.png";
 
 export const EditNilai = () => {
-  const { nisSiswa } = useParams();
+  const { nisSiswa, id_detail } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);

@@ -47,6 +47,10 @@ const SiswaLihatNilai = () => {
     }
   }, [nisSiswa, selectedRaportMain]);
 
+  const handleEditNilai = (item) => {
+    history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
+  };
+
   const calculateTotalPages = () => {
     return Math.ceil(raportData.length / itemsPerPage);
   };
@@ -149,6 +153,12 @@ const SiswaLihatNilai = () => {
                     <div className="text-wrapper-7">{index + 1}.</div>
                     <div className="text-wrapper-8">{item.nilai}</div>
                     <div className="text-wrapper-9">{item.predikat}</div>
+                    <button
+                      className="TAMBAH-DATA"
+                      onClick={() => handleEditNilai(item)}
+                    >
+                      <div className="text-wrapper-23">Edit Siswa</div>
+                    </button>
                   </div>
                 </div>
               ))}

@@ -343,7 +343,7 @@
   font-size: 18px;
   color: white;
   background-color: #0082fc;
-  border-style: none;
+  /* border-style: none; */
 }
 
 .stable-table tr {
@@ -1007,7 +1007,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 34px;
+  top: 48px;
   width: 314px;
 }
 
