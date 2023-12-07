@@ -67,9 +67,9 @@ const LihatRaport = () => {
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SMP Kristen Getasan 2023</p>
-          <img className="line" alt="Line" src="line-2.svg" />
+          {/* <img className="line" alt="Line" src="line-2.svg" />
           <img className="img" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-2">SCH</div>
+          <div className="text-wrapper-2">SCH</div> */}
         </footer>
 
         {/* <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div> */}
