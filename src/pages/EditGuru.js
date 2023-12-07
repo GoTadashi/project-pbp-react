@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./EditGuru.css";
 
 import mainLogo from "../img/logo.png";
 
 export const EditGuru = () => {
+  const history = useHistory();
   const [guru, setGuru] = useState([]);
   const [message, setMessage] = useState("");
   const [searchQuery, setSearchQuery] = useState("");

@@ -29,7 +29,6 @@ function App() {
       <Switch>
         <div className="app-content">
         <Route path="/tambahguru" component={TambahGuru} />
-        <Route path="/lihatguru" component={LihatGuru} />
           <Route path="/lihatguru" component={LihatGuru} />
           <Route path="/inputsiswa" component={InputSiswa} />
           <Route path="/raportsiswa" component={RaportSiswa} />
