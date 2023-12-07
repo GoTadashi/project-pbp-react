@@ -16,6 +16,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginSiswa from "./pages/LoginSiswa";
 import LihatRaport from "./pages/LihatRaport";
 import SiswaLihatNilai from "./pages/SiswaLihatNilai";
+import EditSiswa from "./pages/EditSiswa";
 import RaportPage from "./pages/coba";
 import InputSiswa from "./pages/InputSiswa";
 
@@ -53,6 +54,9 @@ function App() {
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
 
           <Route path="/GuruLihatNilai" exact component={GuruLihatNilai} />
+
+          {/* Data Siswa */}
+          <Route path="/EditSiswa" exact component={EditSiswa} />
         </div>
       </Switch>
     </Router>

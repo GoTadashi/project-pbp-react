@@ -1,8 +1,63 @@
-import React from "react";
-import { Calendar } from "./Calendar";
+import React, { useEffect, useState } from "react";
+// import { Calendar } from "./Calendar";
 import "./EditSiswa.css";
 
 export const EditSiswa = () => {
+  const [nis, setNis] = useState("");
+  const [nama, setNama] = useState("");
+  const [jenisKelamin, setJenisKelamin] = useState("");
+  const [agama, setAgama] = useState("");
+  const [namaOrtu, setNamaOrtu] = useState("");
+  const [tanggalLahir, setTanggalLahir] = useState("");
+  const [tempatLahir, setTempatLahir] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const responseSiswa = await fetch(
+          "https://jojopinjam.iffan.site/api/get-siswa"
+        );
+        const dataSiswa = await responseSiswa.json();
+        setDataSiswa(dataSiswa);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:8001/api/update-siswa", {
+        method: "POST", // or "PUT" depending on your API
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nis,
+          nama,
+          jenis_kelamin: jenisKelamin,
+          agama,
+          nama_orangtua: namaOrtu,
+          tanggal_lahir: tanggalLahir,
+          tempat_lahir: tempatLahir,
+        }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("API response:", result);
+
+        // Add any additional logic based on the API response
+      } else {
+        console.error("Failed to update data:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  };
+
   return (
     <div className="EDIT-SISWA">
       <div className="div">
@@ -20,11 +75,19 @@ export const EditSiswa = () => {
               <div className="overlap">
                 <div className="group-2">
                   <div className="text-wrapper-2">Light</div>
-                  <img className="sun-solid" alt="Sun solid" src="sun-solid.svg" />
+                  <img
+                    className="sun-solid"
+                    alt="Sun solid"
+                    src="sun-solid.svg"
+                  />
                 </div>
               </div>
               <div className="text-wrapper-3">Dark</div>
-              <img className="moon-solid" alt="Moon solid" src="moon-solid.svg" />
+              <img
+                className="moon-solid"
+                alt="Moon solid"
+                src="moon-solid.svg"
+              />
             </div>
           </div>
           <div className="SISWA">
@@ -32,15 +95,27 @@ export const EditSiswa = () => {
             <div className="text-wrapper">Siswa</div>
           </div>
           <div className="CHAT">
-            <img className="icon-envelope" alt="Icon envelope" src="icon-envelope.png" />
+            <img
+              className="icon-envelope"
+              alt="Icon envelope"
+              src="icon-envelope.png"
+            />
             <div className="text-wrapper">Chat</div>
           </div>
           <div className="CHAT-2">
-            <img className="icon-attendance" alt="Icon attendance" src="icon-attendance.png" />
+            <img
+              className="icon-attendance"
+              alt="Icon attendance"
+              src="icon-attendance.png"
+            />
             <div className="text-wrapper">Generate Absen</div>
           </div>
           <div className="CHAT-3">
-            <img className="icon-calender" alt="Icon calender" src="icon-calender.png" />
+            <img
+              className="icon-calender"
+              alt="Icon calender"
+              src="icon-calender.png"
+            />
             <div className="text-wrapper">Jadwal Pelajaran</div>
           </div>
           <div className="DASHBOARD">
@@ -129,7 +204,11 @@ export const EditSiswa = () => {
               e-rapor
             </div>
             <img className="ellipse-4" alt="Ellipse" src="ellipse-1192.svg" />
-            <img className="SMP-KRISTEN" alt="Smp KRISTEN" src="SMP-KRISTEN-2.png" />
+            <img
+              className="SMP-KRISTEN"
+              alt="Smp KRISTEN"
+              src="SMP-KRISTEN-2.png"
+            />
           </div>
         </header>
         <div className="group-8">
@@ -140,7 +219,12 @@ export const EditSiswa = () => {
             </div>
           </div>
           <div className="frame-3">
-            <div className="text-wrapper-16">101</div>
+            <input
+              type="number"
+              className="custom-input"
+              value={nis}
+              onChange={(e) => setNis(e.target.value)}
+            />
           </div>
         </div>
         <div className="group-9">
@@ -151,7 +235,12 @@ export const EditSiswa = () => {
             </div>
           </div>
           <div className="frame-4">
-            <div className="text-wrapper-16">Ahmad</div>
+            <input
+              type="text"
+              className="custom-input"
+              value={nama}
+              onChange={(e) => setNama(e.target.value)}
+            />
           </div>
         </div>
         <div className="group-10">
@@ -163,9 +252,18 @@ export const EditSiswa = () => {
           </div>
           <div className="overlap-3">
             <div className="frame-5">
-              <div className="text-wrapper-16">Laki-Laki</div>
+              <input
+                type="text"
+                className="custom-input"
+                value={jenisKelamin}
+                onChange={(e) => setJenisKelamin(e.target.value)}
+              />
             </div>
-            <img className="icon-chevron-down" alt="Icon chevron down" src="icon-chevron-down.png" />
+            <img
+              className="icon-chevron-down"
+              alt="Icon chevron down"
+              src="icon-chevron-down.png"
+            />
           </div>
         </div>
         <div className="group-11">
@@ -177,31 +275,34 @@ export const EditSiswa = () => {
           </div>
           <div className="overlap-3">
             <div className="frame-5">
-              <div className="text-wrapper-16">Laki-Laki</div>
+              <input
+                type="text"
+                className="custom-input"
+                value={agama}
+                onChange={(e) => setAgama(e.target.value)}
+              />
             </div>
-            <img className="icon-chevron-down" alt="Icon chevron down" src="image.png" />
+            <img
+              className="icon-chevron-down"
+              alt="Icon chevron down"
+              src="image.png"
+            />
           </div>
         </div>
         <div className="group-12">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-14">Nama Ayah</div>
+              <div className="text-wrapper-14">Nama Orang Tua</div>
               <div className="text-wrapper-17">*</div>
             </div>
           </div>
           <div className="frame-6">
-            <div className="text-wrapper-16">Muhammad</div>
-          </div>
-        </div>
-        <div className="group-13">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-14">Nama Ibu</div>
-              <div className="text-wrapper-17">*</div>
-            </div>
-          </div>
-          <div className="frame-6">
-            <div className="text-wrapper-16">Aminah</div>
+            <input
+              type="text"
+              className="custom-input"
+              value={namaOrtu}
+              onChange={(e) => setNamaOrtu(e.target.value)}
+            />
           </div>
         </div>
         <div className="group-14">
@@ -212,27 +313,45 @@ export const EditSiswa = () => {
                 <div className="text-wrapper-17">*</div>
               </div>
               <div className="frame-9">
-                <div className="text-wrapper-16">06/21/2008</div>
-                <Calendar className="vuesax-linear" />
+                <input
+                  type="text"
+                  className="custom-input"
+                  value={tanggalLahir}
+                  onChange={(e) => setTanggalLahir(e.target.value)}
+                />
+                {/* <Calendar className="vuesax-linear" /> */}
               </div>
             </div>
           </div>
           <div className="group-15">
             <div className="group-16">
               <div className="frame-10">
-                <div className="text-wrapper-16">Salatiga</div>
+                <div className="text-wrapper-16"></div>
               </div>
             </div>
             <div className="frame-11">
               <div className="text-wrapper-18">Tempat Lahir</div>
               <div className="text-wrapper-17">*</div>
             </div>
+            <div className="frame-12">
+              <input
+                type="text"
+                className="custom-input"
+                value={tempatLahir}
+                onChange={(e) => setTempatLahir(e.target.value)}
+              />
+              {/* <Calendar className="vuesax-linear" /> */}
+            </div>
           </div>
         </div>
-        <div className="TAMBAH-DATA">
-          <div className="text-wrapper-19">Simpan Data</div>
+        <div className="EDIT-SISWA">
+          <button className="TAMBAH-DATA" onClick={handleSubmit}>
+            <div className="text-wrapper-19">Update</div>
+          </button>
         </div>
       </div>
     </div>
   );
 };
+
+export default EditSiswa;

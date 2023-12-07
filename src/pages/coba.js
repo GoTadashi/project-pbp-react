@@ -1,43 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const RaportPage = () => {
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
-  const [selectedRaportMain, setSelectedRaportMain] = useState('');
+  const [selectedRaportMain, setSelectedRaportMain] = useState("");
   const [raportData, setRaportData] = useState([]);
   const [mataPelajaran, setMataPelajaran] = useState([]);
 
   useEffect(() => {
     // Fetch data raport-main
     fetch(`https://jojopinjam.iffan.site/api/get-raport-main/${nisSiswa}`)
-      .then(response => response.json())
-      .then(data => {
-        console.log('Raport Main Data:', data);
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Raport Main Data:", data);
         setRaportMain(data);
       })
-      .catch(error => console.error('Error fetching raport-main:', error));
+      .catch((error) => console.error("Error fetching raport-main:", error));
   }, [nisSiswa]);
 
   useEffect(() => {
     // Fetch data matapelajaran
-    fetch('https://jojopinjam.iffan.site/api/get-matapelajaran')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Mata Pelajaran Data:', data);
+    fetch("https://jojopinjam.iffan.site/api/get-matapelajaran")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Mata Pelajaran Data:", data);
         setMataPelajaran(data);
       })
-      .catch(error => console.error('Error fetching matapelajaran:', error));
+      .catch((error) => console.error("Error fetching matapelajaran:", error));
   }, []);
 
   useEffect(() => {
     // Fetch data raport based on selectedRaportMain
     if (selectedRaportMain) {
-      const [kelas, semester] = selectedRaportMain.split('-');
-      fetch(`https://jojopinjam.iffan.site/api/get-raport/${nisSiswa}/${kelas}-${semester}`)
-        .then(response => response.json())
-        .then(data => setRaportData(data))
-        .catch(error => console.error('Error fetching raport data:', error));
+      const [kelas, semester] = selectedRaportMain.split("-");
+      fetch(
+        `https://jojopinjam.iffan.site/api/get-raport/${nisSiswa}/${kelas}-${semester}`
+      )
+        .then((response) => response.json())
+        .then((data) => setRaportData(data))
+        .catch((error) => console.error("Error fetching raport data:", error));
     }
   }, [nisSiswa, selectedRaportMain]);
 
