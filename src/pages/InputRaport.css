@@ -862,7 +862,7 @@
   margin-bottom: -4px;
   margin-top: -6px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .INPUT-NILAI .frame-8 {
