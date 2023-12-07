@@ -36,20 +36,8 @@ const DataSiswa = () => {
     }
   };
 
-  const handleBuatRaport = (nis) => {
-    history.push(`/inputraport/${nis}`);
-  };
-
-  const handleEditRaport = (nis) => {
-    history.push(`/editnilai/${nis}`);
-  };
-
   const handleUbahData = (nis) => {
     history.push(`/editsiswa/${nis}`);
-  };
-
-  const handleLihatRaport = () => {
-    history.push("/LihatRaport");
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -143,36 +131,15 @@ const DataSiswa = () => {
                       <td className="action-button">
                         <button
                           className="TAMBAH-DATA"
-                          onClick={() => handleBuatRaport(item.nis)}
+                          onClick={() => handleUbahData()}
                         >
-                          <div className="text-wrapper-23">Buat Raport</div>
-                        </button>
-
-                        <button
-                          className="TAMBAH-DATA-2"
-                          onClick={() => handleEditRaport(item.nis)}
-                        >
-                          <div className="text-wrapper-23">Edit Raport</div>
+                          <div className="text-wrapper-23">Edit Siswa</div>
                         </button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              <button
-                className="TAMBAH-DATA-2"
-                onClick={() => handleLihatRaport()}
-                // disabled
-              >
-                <div className="text-wrapper-23">Input Nilai</div>
-              </button>
-
-              <button
-                className="TAMBAH-DATA"
-                onClick={() => handleUbahData()}
-              >
-                <div className="text-wrapper-23">Edit Siswa</div>
-              </button>
             </div>
           </div>
         </div>
@@ -256,9 +223,8 @@ const DataSiswa = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${
-                    currentPage === number ? "active" : ""
-                  }`}
+                  className={`ellipse ${currentPage === number ? "active" : ""
+                    }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
