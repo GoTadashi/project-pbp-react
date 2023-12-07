@@ -41,7 +41,7 @@ const SiswaLihatNilai = () => {
         // Fetch detailed raport data for the selected main raport
         console.log("Fetching detailed raport data for:", selectedRaportMain);
         const responseRaportDetails = await fetch(
-          `https://jojopinjam.iffan.site/api/get-raport?id_siswa=${nisSiswa}&kelas=${kelas}&semester=${semester}`
+          `https://jojopinjam.iffan.site/api/get-raport/${nisSiswa}/${kelas}-${semester}`
         );
         const dataRaportDetails = await responseRaportDetails.json();
   
