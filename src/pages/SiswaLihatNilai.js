@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./SiswaLihatNilai.css";
 
 const SiswaLihatNilai = () => {
+  const history = useHistory();
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
@@ -46,6 +47,10 @@ const SiswaLihatNilai = () => {
         .catch((error) => console.error("Error fetching raport data:", error));
     }
   }, [nisSiswa, selectedRaportMain]);
+
+  const handleEditNilai = (nis) => {
+    history.push(`/editNilai/${nis}`);
+  };
 
   return (
     <div className="LIHAT-NILAI">
