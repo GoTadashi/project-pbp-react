@@ -4,6 +4,7 @@ import { useHistory, Link } from "react-router-dom";
 import "./SiswaLihatNilai.css";
 
 const SiswaLihatNilai = () => {
+  const history = useHistory();
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
@@ -49,7 +50,7 @@ const SiswaLihatNilai = () => {
   }, [nisSiswa, selectedRaportMain]);
 
   const handleEditNilai = (item) => {
-    // history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
+    history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
   };
 
   const calculateTotalPages = () => {

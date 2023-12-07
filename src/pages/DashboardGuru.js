@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
 import "./DashboardGuru.css";
 import mainLogo from "../img/logo.png";
+import terbang from "../img/terbang.jpeg";
 
 export const DashboardGuru = () => {
+  const [isProfilePopupVisible, setProfilePopupVisibility] = useState(false);
+
   return (
     <div className="sidebar">
       <div className="div">
@@ -41,7 +45,10 @@ export const DashboardGuru = () => {
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-table"></i>
               <span className="side-text ms-2">Jadwal Pelajaran</span>
             </Link>
@@ -54,71 +61,15 @@ export const DashboardGuru = () => {
           </div>
         </div>
         <footer className="FOOTER">
-          <p className="p">
-            Jalan Pangeran Diponegoro Km. 9, Getasan, Kec. Getasan, Kabupaten
-            Semarang, Jawa Tengah 50774
-          </p>
-          <img className="line" alt="Line" src="/img/line-1.svg" />
-          <img className="img" alt="Line" src="/img/line-1.svg" />
-          <div className="text-wrapper-4">SCH</div>
+          <p className="p">Copyright © SD Kristen Terang Bangsa</p>
+          <div className="text-wrapper-2">SCH</div>
         </footer>
         <div className="overlap-2">
           <div className="overlap-3">
-            <div className="PEMBERITAHUAN">
-              <img className="element-2" alt="Element" src="/img/53.svg" />
-              <div className="frame">
-                <div className="group-3">
-                  <div className="ellipse" />
-                  <div className="ellipse-2" />
-                  <div className="ellipse-3" />
-                </div>
-              </div>
-              <div className="PIKET">
-                <img className="element" alt="Element" src="/img/3.svg" />
-                <div className="div-wrapper">
-                  <div className="text-wrapper-5">Jadwal Piket Harian</div>
-                </div>
-              </div>
-              <div className="WALI-MURID">
-                <img className="element" alt="Element" src="/img/3.svg" />
-                <div className="div-wrapper">
-                  <div className="text-wrapper-5">Pertemuan Wali Murid</div>
-                </div>
-              </div>
-              <div className="KLS">
-                <img className="element" alt="Element" src="/img/3.svg" />
-                <div className="div-wrapper">
-                  <div className="text-wrapper-5">Matematika Kelas 9</div>
-                </div>
-              </div>
-              <div className="KLS-2">
-                <img className="element" alt="Element" src="/img/3.svg" />
-                <div className="div-wrapper">
-                  <div className="text-wrapper-5">Matematika Kelas 8</div>
-                </div>
-              </div>
-              <div className="KLS-3">
-                <img className="element" alt="Element" src="/img/3.svg" />
-                <div className="div-wrapper">
-                  <div className="text-wrapper-5">Matematika Kelas 7</div>
-                </div>
-              </div>
-              <div className="text-wrapper-6">Pemberitahuan</div>
-            </div>
             <div className="overlap-wrapper">
               <div className="overlap-4">
                 <div className="overlap-group-wrapper">
                   <div className="overlap-group-2">
-                    <img
-                      className="mask-group"
-                      alt="Mask group"
-                      src="/img/mask-group-1.png"
-                    />
-                    <img
-                      className="mask-group-2"
-                      alt="Mask group"
-                      src="/img/mask-group.png"
-                    />
                     <div className="rectangle" />
                   </div>
                 </div>
@@ -126,21 +77,13 @@ export const DashboardGuru = () => {
                   <div className="overlap-5">
                     <div className="rectangle-2" />
                     <div className="rectangle-wrapper">
-                      <div className="rectangle-3" />
+                      <div className="rectangle-3">
+                        <img className="terbang" src={terbang} alt="gedung" />
+                      </div>
                     </div>
                     <div className="group-5">
-                      <div className="text-wrapper-7">
-                        RATA-RATA RAPOR SEMESTER INI
-                      </div>
                       <div className="SEMESTER">Semester 3</div>
                     </div>
-                    <img
-                      className="element-3"
-                      alt="Element"
-                      src="/img/3-1.png"
-                    />
-                    <img className="element-4" alt="Element" src="/img/2.png" />
-                    <img className="element-5" alt="Element" src="/img/1.png" />
                   </div>
                 </div>
                 <div className="group-6">
@@ -169,54 +112,34 @@ export const DashboardGuru = () => {
           </div>
           <div className="DAFTAR-MATAPELAJARAN">
             <div className="overlap-6">
-              <div className="text-wrapper-10">Jumlah</div>
+              {/* <div className="text-wrapper-10">Jumlah</div> */}
               <div className="overlap-group-3">
                 <div className="text-wrapper-11">Daftar Mata Pelajaran</div>
-                <img
-                  className="icon-book"
-                  alt="Icon book"
-                  src="/img/icon-book.png"
-                />
               </div>
             </div>
           </div>
           <div className="DAFTAR-GURU">
             <div className="overlap-6">
-              <div className="text-wrapper-10">Jumlah</div>
+              {/* <div className="text-wrapper-10">Jumlah</div> */}
               <div className="text-wrapper-12">Daftar Guru</div>
-              <img
-                className="icon-chalkboard"
-                alt="Icon chalkboard"
-                src="/img/icon-chalkboard-teacher.png"
-              />
             </div>
           </div>
           <div className="DAFTAR-SISWA">
             <div className="overlap-6">
-              <div className="text-wrapper-10">Jumlah</div>
+              {/* <div className="text-wrapper-10">Jumlah</div> */}
               <div className="text-wrapper-12">Daftar Siswa</div>
-              <img
-                className="icon-siswa"
-                alt="Icon siswa"
-                src="/img/icon-siswa.png"
-              />
             </div>
           </div>
         </div>
         <div className="INPUT-PENGUMUMAN">
           <div className="overlap-6">
-            <div className="text-wrapper-10">Input</div>
+            {/* <div className="text-wrapper-10">Input</div> */}
             <div className="text-wrapper-12">Input Pengumuman</div>
-            <img
-              className="icon-megaphone"
-              alt="Icon megaphone"
-              src="/img/icon-megaphone.png"
-            />
           </div>
         </div>
         <header className="HEADER">
           <div className="overlap-7">
-            <div className="group-wrapper">
+            <div className="group-wrapper onClick={() => setProfilePopupVisibility(true)}">
               <div className="group-7">
                 <div className="group-8">
                   <div className="group-9">
@@ -226,12 +149,32 @@ export const DashboardGuru = () => {
                 </div>
               </div>
             </div>
+            {isProfilePopupVisible && (
+              <div className="profile-popup">
+                <div className="group-wrapper">
+                  <div className="group-7">
+                    <div className="group-8">
+                      <div className="group-9">
+                        <div className="text-wrapper-13">Guru Matematika</div>
+                        <div className="text-wrapper-14">Eni Susilowati</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="element-wrapper">
+                  <img className="element-6" alt="Element" src="/img/3.svg" />
+                </div>
+                <button onClick={() => setProfilePopupVisibility(false)}>
+                  Close
+                </button>
+              </div>
+            )}
             <div className="element-wrapper">
               <img className="element-6" alt="Element" src="/img/3.svg" />
             </div>
             <div className="search">
               <div className="group-10">
-                <img className="element-7" alt="Element" src="/img/7.svg" />
+                {/* <img className="element-7" alt="Element" src="/img/7.svg" /> */}
                 <div className="text-wrapper-15">Pencarian</div>
               </div>
             </div>

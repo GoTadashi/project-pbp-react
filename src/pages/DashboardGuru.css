@@ -1,3 +1,23 @@
+/* Add this CSS at the end of your existing EditSiswa.css file */
+
+.profile-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+}
+
+.profile-popup button {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
 .sidebar {
     background-color: #f9f9f9;
     display: flex;
@@ -208,7 +228,7 @@
     top: 42px;
 }
 
-.list-menu::after{
+.list-menu::after {
     font-weight: 700;
     background-color: #62a8e8;
 }
@@ -376,7 +396,7 @@
     line-height: normal;
     margin-top: -1px;
     position: relative;
-    width :100%;
+    width: 100%;
 }
 
 .sidebar .WALI-MURID {
@@ -428,7 +448,7 @@
 }
 
 .sidebar .overlap-wrapper {
-    height: 459px;
+    height: 499px;
     left: 0;
     position: absolute;
     top: 0;
@@ -450,7 +470,8 @@
     left: 0;
     position: absolute;
     top: 0;
-    width: 100%;
+    right: 100px;
+    width: 80.5%;
 }
 
 .sidebar .overlap-group-2 {
@@ -527,6 +548,31 @@
     width: 428px;
 }
 
+/* YourComponent.css */
+.overlap-5 {
+    position: relative;
+}
+
+.rectangle-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.terbang {
+    /* Add styles for the image */
+    width: 100%;
+    /* Make the image fill the inner rectangle horizontally */
+    height: 100%;
+    /* Make the image fill the inner rectangle vertically */
+    object-fit: fill;
+    /* Maintain aspect ratio and cover the entire area of the inner rectangle */
+}
+
+
 .sidebar .rectangle-3 {
     -webkit-backdrop-filter: blur(9px) brightness(100%);
     backdrop-filter: blur(9px) brightness(100%);
@@ -559,7 +605,7 @@
 .sidebar .SEMESTER {
     color: #ffffff;
     font-family: "Poppins", Helvetica;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: 500;
     left: 0;
     letter-spacing: 0;
@@ -597,7 +643,7 @@
 }
 
 .sidebar .group-6 {
-    height: 331px;
+    height: 301px;
     left: 530px;
     position: absolute;
     top: 38px;
@@ -739,7 +785,7 @@
 .sidebar .text-wrapper-12 {
     color: #000000de;
     font-family: "Roboto", Helvetica;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 400;
     height: 24px;
     left: 23px;
@@ -943,10 +989,4 @@
     position: absolute;
     top: 27px;
     width: 99px;
-}
-
-.img-logo{
-    margin-top: 5px;
-    width: 100px;
-    height: 100px;
 }

@@ -56,56 +56,6 @@ export const DaftarMapel = () => {
           <div className="text-wrapper-4">2</div>
           <div className="text-wrapper-5">3</div>
         </div>
-        <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
-        {/* <div className="PEMBERITAHUAN">
-          <img className="element-2" alt="Element" src="53.svg" />
-          <div className="frame">
-            <div className="group">
-              <div className="ellipse-2" />
-              <div className="ellipse-3" />
-              <div className="ellipse-4" />
-            </div>
-          </div>
-          <div className="PIKET">
-            <img className="element-3" alt="Element" src="4.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Jadwal Piket Harian</div>
-            </div>
-          </div>
-          <div className="WALI-MURID">
-            <img className="element-3" alt="Element" src="image.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Pertemuan Wali Murid</div>
-            </div>
-          </div>
-          <div className="KLS">
-            <img className="element-3" alt="Element" src="4-2.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Matematika Kelas 9</div>
-            </div>
-          </div>
-          <div className="KLS-2">
-            <img className="element-3" alt="Element" src="4-3.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Matematika Kelas 8</div>
-            </div>
-          </div>
-          <div className="KLS-3">
-            <img className="element-3" alt="Element" src="4-4.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Matematika Kelas 7</div>
-            </div>
-          </div>
-          <div className="text-wrapper-8">Pemberitahuan</div>
-        </div> */}
-        <div className="SORTING-DATA">
-          <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
-          <div className="text-wrapper-9">Sortir Data</div>
-        </div>
-        {/* <div className="overlap">
-          <div className="text-wrapper-10">\Daftar Mata Pelajaran</div>
-          <div className="text-wrapper-11">Dashboard</div>
-        </div> */}
         <div className="MENU">
           <div className="PROFILE">
             <Link to="/" className="list-menu nav-link text-white fs-5">
@@ -164,7 +114,6 @@ export const DaftarMapel = () => {
             </div>
             <div className="search">
               <div className="group-7">
-                <img className="element-5" alt="Element" src="7.svg" />
                 <input
                   className="custom-input"
                   type="text"
