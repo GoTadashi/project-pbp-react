@@ -36,6 +36,25 @@ const DataSiswa = () => {
     }
   };
 
+  const handleSearch = async () => {
+    try {
+      const responseSearch = await fetch(
+        "https://jojopinjam.iffan.site/api/cari-siswa",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ cari: searchQuery }),
+        }
+      );
+      const searchData = await responseSearch.json();
+      setDataSiswa(searchData);
+    } catch (error) {
+      console.error("Error searching data:", error);
+    }
+  };
+
   const handleUbahData = (nis) => {
     history.push(`/EditSiswa/${nis}`);
   };
@@ -223,9 +242,8 @@ const DataSiswa = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${
-                    currentPage === number ? "active" : ""
-                  }`}
+                  className={`ellipse ${currentPage === number ? "active" : ""
+                    }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
@@ -259,6 +277,9 @@ const DataSiswa = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
+                <button className="TAMBAH-DATA-2" onClick={handleSearch}>
+                  <div className="text-wrapper-23">Search</div>
+                </button>
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
