@@ -239,11 +239,11 @@ export const DashboardGuru = () => {
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
-              SMP KRISTEN GETASAN
+              SD KRISTEN TERANG BANGSA
               <br />
               E-Rpor
             </div>
-            <img className="img-logo" src={mainLogo} />
+            <img className="img-logo" src={mainLogo} alt="logo-sd"/>
           </div>
         </header>
       </div>

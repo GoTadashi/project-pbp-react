@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
-import "./DataSiswa.css";
+import "./RaportSiswa.css";
 
-const DataSiswa = () => {
+const RaportSiswa = () => {
   const history = useHistory();
   const [dataRaport, setDataRaport] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -36,8 +36,16 @@ const DataSiswa = () => {
     }
   };
 
-  const handleUbahData = (nis) => {
-    history.push(`/editsiswa/${nis}`);
+  const handleBuatRaport = (nis) => {
+    history.push(`/inputraport/${nis}`);
+  };
+
+  const handleEditRaport = (nis) => {
+    history.push(`/editnilai/${nis}`);
+  };
+
+  const handleLihatRaport = () => {
+    history.push("/LihatRaport");
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -51,7 +59,7 @@ const DataSiswa = () => {
   const currentItems = dataSiswa.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div className="DATA-NILAI">
+    <div className="RAPORT-SISWA">
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SMP Kristen Getasan 2023</p>
@@ -131,15 +139,29 @@ const DataSiswa = () => {
                       <td className="action-button">
                         <button
                           className="TAMBAH-DATA"
-                          onClick={() => handleUbahData()}
+                          onClick={() => handleBuatRaport(item.nis)}
                         >
-                          <div className="text-wrapper-23">Edit Siswa</div>
+                          <div className="text-wrapper-23">Buat Raport</div>
+                        </button>
+
+                        <button
+                          className="TAMBAH-DATA-2"
+                          onClick={() => handleEditRaport(item.nis)}
+                        >
+                          <div className="text-wrapper-23">Edit Raport</div>
                         </button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              <button
+                className="TAMBAH-DATA-2"
+                onClick={() => handleLihatRaport()}
+                // disabled
+              >
+                <div className="text-wrapper-23">Input Nilai</div>
+              </button>
             </div>
           </div>
         </div>
@@ -223,8 +245,9 @@ const DataSiswa = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${currentPage === number ? "active" : ""
-                    }`}
+                  className={`ellipse ${
+                    currentPage === number ? "active" : ""
+                  }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
@@ -278,4 +301,4 @@ const DataSiswa = () => {
   );
 };
 
-export default DataSiswa;
+export default RaportSiswa;
