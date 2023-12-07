@@ -8,7 +8,7 @@
   
   .GURU .div {
     background-color: #f9f9f9;
-    height: 1080px;
+    height: 720px;
     position: relative;
     width: 1966px;
   }
@@ -18,8 +18,8 @@
     height: 62px;
     left: 0;
     position: absolute;
-    top: 1009px;
-    width: 1920px;
+    top: 900px;
+    width: 1080px;
   }
   
   .GURU .p {
@@ -75,7 +75,7 @@
     align-items: center;
     height: 38px;
     position: absolute;
-    top: 56rem;
+    top: 50rem;
     width: 100%;
     left: -30px;
   }
@@ -316,7 +316,7 @@
     left: 467px;
     overflow: hidden;
     position: absolute;
-    top: 74px;
+    top: 70px;
     width: 938px;
   }
   
@@ -403,7 +403,7 @@
     height: 647px;
     left: 377px;
     position: absolute;
-    top: 262px;
+    top: 160px;
     width: 1153px;
   }
   
