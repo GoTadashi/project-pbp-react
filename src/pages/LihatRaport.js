@@ -66,7 +66,7 @@ const LihatRaport = () => {
     <div className="LIHAT-RAPORT">
       <div className="div">
         <footer className="FOOTER">
-          <p className="p">Copyright © SMP Kristen Getasan 2023</p>
+          <p className="p">Copyright © SD Kristen Terang Bangsa</p>
           {/* <img className="line" alt="Line" src="line-2.svg" />
           <img className="img" alt="Line" src="line-1.svg" />
           <div className="text-wrapper-2">SCH</div> */}
