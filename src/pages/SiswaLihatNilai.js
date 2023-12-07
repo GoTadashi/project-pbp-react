@@ -50,6 +50,7 @@ const SiswaLihatNilai = () => {
         setRaportDetails(dataRaportDetails);
       } catch (error) {
         console.error("Error fetching detailed raport data:", error);
+        // Handle the error, e.g., setRaportDetails([]) or show an error message
       }
     };
   
@@ -90,12 +91,12 @@ const SiswaLihatNilai = () => {
     }
   };
 
-  if (!mergedRaports.length) {
-    return <p>Loading...</p>; // Add loading state
+  if (raportMain.length === 0) {
+    return <p>Loading...</p>;
   }
 
   if (currentRaports.length === 0) {
-    return <p>No data available.</p>; // Add empty state
+    return <p>No data available.</p>;
   }
 
   return (
