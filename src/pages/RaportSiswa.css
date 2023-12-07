@@ -8,9 +8,9 @@
 
 .RAPORT-SISWA .div {
   background-color: #f9f9f9;
-  height: 1080px;
+  height: 100vh;
   position: relative;
-  width: 1966px;
+  width: 100%;
 }
 
 .RAPORT-SISWA .FOOTER {
@@ -18,8 +18,8 @@
   height: 62px;
   left: 0;
   position: absolute;
-  top: 1009px;
-  width: 1920px;
+  top: 950px;
+  width: 100%;
 }
 
 .RAPORT-SISWA .p {
@@ -392,9 +392,10 @@
 }
 
 .TAMBAH-DATA-2 .text-wrapper-23 {
+  text-align: center;
   color: #ffffff;
   font-size: 17px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .TAMBAH-DATA-2:hover {
@@ -405,7 +406,7 @@
   height: 647px;
   left: 377px;
   position: absolute;
-  top: 262px;
+  top: 160px;
   width: 1153px;
 }
 
@@ -961,11 +962,11 @@
 }
 
 .RAPORT-SISWA .custom-input {
-  width: 58rem;
-  font-size: 16px;
+  width: 56rem;
+  font-size: 18px;
   margin-left: -2px;
   margin-top: -2px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .RAPORT-SISWA .group-8 {
