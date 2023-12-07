@@ -109,7 +109,7 @@ const RaportSiswa = () => {
         <div className="TABLE">
           <div className="overlap">
             <div className="DATA-KELAS">
-              <table>
+              <table className="DATA-KELAS">
                 <thead className="stable-table">
                   <tr className="head-row">
                     <th>NIS</th>
