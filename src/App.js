@@ -14,6 +14,7 @@ import GuruLihatNilai from "./pages/GuruLihatNilai";
 import DashboardGuru from "./pages/DashboardGuru";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginSiswa from "./pages/LoginSiswa";
+import LihatRaport from "./pages/LihatRaport";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/DataNilai" exact component={DataNilai} />
           {/* Data Detail */}
           <Route path="/LihatNilai" exact component={LihatNilai} />
+          <Route path="/LihatRaport" component={LihatRaport} />
           <Route path="/inputnilai/:nisSiswa" component={InputNilai} />
           <Route path="/inputraport/:nisSiswa" component={InputRaport} />
           <Route path="/EditNilai" exact component={EditNilai} />
