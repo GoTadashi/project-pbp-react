@@ -409,6 +409,7 @@ const InputNilai = () => {
               className="dropdown"
               onChange={(e) => setSelectedMapel(e.target.value)}
             >
+              <option>Pilih Mata Pelajaran</option>
               {dataMapel.map((item) => (
                 <option
                   key={item.id_matapelajaran}

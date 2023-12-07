@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./SiswaLihatNilai.css";
 
 const SiswaLihatNilai = () => {
-  const history = useHistory();
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
@@ -47,10 +46,6 @@ const SiswaLihatNilai = () => {
         .catch((error) => console.error("Error fetching raport data:", error));
     }
   }, [nisSiswa, selectedRaportMain]);
-
-  const handleEditNilai = (id_detail) => {
-    history.push(`/editNilai/${id_detail}`);
-  };
 
   const calculateTotalPages = () => {
     return Math.ceil(raportData.length / itemsPerPage);
@@ -145,7 +140,7 @@ const SiswaLihatNilai = () => {
           <div className="overlap-3">
             <div className="rectangle" />
             <div className="navbar-wrapper">
-              {raportData.map((item, index) => (
+              {currentItems.map((item, index) => (
                 <div key={index}>
                   <div className="div-2">
                     <div className="text-wrapper-6">
@@ -154,12 +149,6 @@ const SiswaLihatNilai = () => {
                     <div className="text-wrapper-7">{index + 1}.</div>
                     <div className="text-wrapper-8">{item.nilai}</div>
                     <div className="text-wrapper-9">{item.predikat}</div>
-                    <button
-                      className="TAMBAH-DATA"
-                      onClick={() => handleEditNilai(item.id_detail)}
-                    >
-                      <div className="text-wrapper-23">Edit Siswa</div>
-                    </button>
                   </div>
                 </div>
               ))}
@@ -176,18 +165,18 @@ const SiswaLihatNilai = () => {
           <div className="kelompok-a-wajib">Kelompok A (wajib)</div>
           <div className="PAGES">
             <div className="div-wrapper">
-              <div className="overlap-group">
-                {pageNumbers.map((number) => (
-                  <div
-                    key={number}
-                    className={`ellipse ${currentPage === number ? "active" : ""
-                      }`}
-                    onClick={() => paginate(number)}
-                  >
-                    <div className="text-wrapper-3">{number}</div>
-                  </div>
-                ))}
-              </div>
+              {Array.from({ length: totalPages }, (_, index) => (
+                <div
+                  key={index}
+                  className={`overlap-group-2 ${
+                    currentPage === index + 1 ? "active" : ""
+                  }`}
+                  onClick={() => paginate(index + 1)}
+                >
+                  <div className="ellipse" />
+                  <div className="text-wrapper-20">{index + 1}</div>
+                </div>
+              ))}
             </div>
           </div>
           <div className="download-button">
