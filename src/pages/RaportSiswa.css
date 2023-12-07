@@ -257,7 +257,7 @@
   line-height: normal;
   margin-top: -1px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .RAPORT-SISWA .WALI-MURID {
@@ -340,6 +340,7 @@
 }
 
 .stable-table th {
+  font-size: 18px;
   color: white;
   background-color: #0082fc;
   border-style: none;
@@ -361,6 +362,7 @@
 }
 
 .TAMBAH-DATA {
+  margin-bottom: 8px;
   background-color: #538dc7;
   border: none;
   border-radius: 15px;
@@ -380,6 +382,7 @@
 }
 
 .TAMBAH-DATA-2 {
+  margin-bottom: 10px;
   background-color: #dd3920;
   border: none;
   border-radius: 15px;
@@ -701,7 +704,7 @@
   line-height: normal;
   margin-top: -1px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .RAPORT-SISWA .PROFILE-2 {
@@ -995,16 +998,16 @@
 
 .RAPORT-SISWA .SMP-KRISTEN-GETASAN {
   color: #000000;
-  font-family: "Poppins-Medium", Helvetica;
-  font-size: 20px;
-  font-weight: 500;
-  height: 60px;
-  left: 106px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  height: 72px;
+  left: 126px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 72px;
-  width: 269px;
+  top: 34px;
+  width: 314px;
 }
 
 .RAPORT-SISWA .ellipse-5 {
@@ -1022,4 +1025,10 @@
   position: absolute;
   top: 51px;
   width: 99px;
+}
+
+.img-logo {
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
 }
