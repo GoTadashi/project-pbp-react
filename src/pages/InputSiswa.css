@@ -1,0 +1,882 @@
+.INPUT-SISWA {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.INPUT-SISWA .div {
+  background-color: #f9f9f9;
+  height: 1080px;
+  overflow: hidden;
+  position: relative;
+  width: 1942px;
+}
+
+.INPUT-SISWA .MENU {
+  background-color: #0082fc;
+  border-radius: 16px;
+  height: 740px;
+  left: 21px;
+  position: absolute;
+  top: 163px;
+  width: 384px;
+}
+
+.INPUT-SISWA .PROFILE {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  padding: 0px 20px;
+  position: absolute;
+  top: 362px;
+}
+
+.INPUT-SISWA .img {
+  height: 30px;
+  position: relative;
+  width: 30px;
+}
+
+.INPUT-SISWA .text-wrapper {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.INPUT-SISWA .PROFILE-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 28px;
+  position: absolute;
+  top: 609px;
+}
+
+.INPUT-SISWA .element {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.INPUT-SISWA .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.INPUT-SISWA .group {
+  height: 48px;
+  left: 27px;
+  position: absolute;
+  top: 646px;
+  width: 190px;
+}
+
+.INPUT-SISWA .overlap-group {
+  background-color: var(--gray-40);
+  border-radius: 32px;
+  height: 48px;
+  position: relative;
+  width: 188px;
+}
+
+.INPUT-SISWA .overlap {
+  background-color: var(--whitewhite);
+  border-radius: 24px;
+  box-shadow: var(--shadows-gray-1-level);
+  height: 36px;
+  left: 6px;
+  position: absolute;
+  top: 6px;
+  width: 85px;
+}
+
+.INPUT-SISWA .group-2 {
+  height: 20px;
+  left: 16px;
+  position: relative;
+  top: 8px;
+  width: 55px;
+}
+
+.INPUT-SISWA .text-wrapper-3 {
+  color: #0841d4;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  left: 28px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  white-space: nowrap;
+}
+
+.INPUT-SISWA .sun-solid {
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.INPUT-SISWA .text-wrapper-4 {
+  color: var(--gray-290);
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 10px;
+  font-weight: 500;
+  left: 135px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+}
+
+.INPUT-SISWA .moon-solid {
+  height: 20px;
+  left: 107px;
+  position: absolute;
+  top: 14px;
+  width: 20px;
+}
+
+.INPUT-SISWA .SISWA {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  padding: 0px 20px;
+  position: absolute;
+  top: 106px;
+}
+
+.INPUT-SISWA .icon-SISWA {
+  height: 30px;
+  position: relative;
+  width: 42.86px;
+}
+
+.INPUT-SISWA .CHAT {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  padding: 0px 20px;
+  position: absolute;
+  top: 170px;
+}
+
+.INPUT-SISWA .icon-envelope {
+  height: 30px;
+  position: relative;
+  width: 35.59px;
+}
+
+.INPUT-SISWA .CHAT-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  padding: 0px 20px;
+  position: absolute;
+  top: 234px;
+}
+
+.INPUT-SISWA .icon-attendance {
+  height: 30px;
+  position: relative;
+  width: 36px;
+}
+
+.INPUT-SISWA .CHAT-3 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  padding: 0px 20px;
+  position: absolute;
+  top: 298px;
+}
+
+.INPUT-SISWA .DASHBOARD {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 16px;
+  left: 24px;
+  padding: 0px 20px;
+  position: absolute;
+  top: 42px;
+}
+
+.INPUT-SISWA .element-2 {
+  height: 40px;
+  position: relative;
+  width: 40px;
+}
+
+.INPUT-SISWA .FOOTER {
+  background-color: transparent;
+  height: 62px;
+  left: -7px;
+  position: absolute;
+  top: 1005px;
+  width: 1920px;
+}
+
+.INPUT-SISWA .p {
+  color: #0083ff;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 18px;
+  font-weight: 500;
+  left: 591px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -9px;
+  width: 737px;
+}
+
+.INPUT-SISWA .line {
+  height: 5px;
+  left: 1038px;
+  object-fit: cover;
+  position: absolute;
+  top: -17px;
+  width: 882px;
+}
+
+.INPUT-SISWA .line-2 {
+  height: 5px;
+  left: 7px;
+  object-fit: cover;
+  position: absolute;
+  top: -20px;
+  width: 875px;
+}
+
+.INPUT-SISWA .text-wrapper-5 {
+  color: #0083ff;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 17px;
+  font-weight: 500;
+  left: 919px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -29px;
+  white-space: nowrap;
+  width: 82px;
+}
+
+.INPUT-SISWA .PEMBERITAHUAN {
+  background-color: #eaebeb;
+  border-radius: 16px;
+  height: 496px;
+  left: 1610px;
+  position: absolute;
+  top: 160px;
+  width: 296px;
+}
+
+.INPUT-SISWA .element-3 {
+  height: 24px;
+  left: 200px;
+  position: absolute;
+  top: 20px;
+  width: 24px;
+}
+
+.INPUT-SISWA .frame {
+  height: 24px;
+  left: 248px;
+  position: absolute;
+  top: 20px;
+  transform: rotate(-90deg);
+  width: 24px;
+}
+
+.INPUT-SISWA .group-3 {
+  height: 18px;
+  left: 10px;
+  position: relative;
+  top: 3px;
+  width: 4px;
+}
+
+.INPUT-SISWA .ellipse {
+  background-color: #0741d4;
+  border-radius: 1.75px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 4px;
+}
+
+.INPUT-SISWA .ellipse-2 {
+  background-color: #0741d4;
+  border-radius: 1.75px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 7px;
+  width: 4px;
+}
+
+.INPUT-SISWA .ellipse-3 {
+  background-color: #0741d4;
+  border-radius: 1.75px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 14px;
+  width: 4px;
+}
+
+.INPUT-SISWA .PIKET {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 265px;
+}
+
+.INPUT-SISWA .div-wrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.INPUT-SISWA .text-wrapper-6 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.INPUT-SISWA .WALI-MURID {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 217px;
+}
+
+.INPUT-SISWA .KLS {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 169px;
+}
+
+.INPUT-SISWA .KLS-2 {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 121px;
+}
+
+.INPUT-SISWA .KLS-3 {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  left: 24px;
+  position: absolute;
+  top: 73px;
+}
+
+.INPUT-SISWA .text-wrapper-7 {
+  color: #262626;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 22px;
+  font-weight: 500;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15px;
+}
+
+.INPUT-SISWA .HEADER {
+  background-color: transparent;
+  height: 123px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1944px;
+}
+
+.INPUT-SISWA .overlap-2 {
+  background-color: #62a8e8;
+  height: 123px;
+  position: relative;
+  width: 1942px;
+}
+
+.INPUT-SISWA .group-wrapper {
+  height: 48px;
+  left: 1712px;
+  position: absolute;
+  top: 47px;
+  width: 111px;
+}
+
+.INPUT-SISWA .group-4 {
+  height: 48px;
+}
+
+.INPUT-SISWA .group-5 {
+  height: 48px;
+  width: 111px;
+}
+
+.INPUT-SISWA .group-6 {
+  height: 48px;
+  position: relative;
+  width: 115px;
+}
+
+.INPUT-SISWA .text-wrapper-8 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 71px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 27px;
+  width: 40px;
+}
+
+.INPUT-SISWA .text-wrapper-9 {
+  color: #262626;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 111px;
+}
+
+.INPUT-SISWA .element-wrapper {
+  background-color: #f0f2f5;
+  border-radius: 24.27px/24px;
+  height: 48px;
+  left: 1613px;
+  position: absolute;
+  top: 50px;
+  width: 49px;
+}
+
+.INPUT-SISWA .element-4 {
+  height: 24px;
+  left: 12px;
+  position: absolute;
+  top: 12px;
+  width: 24px;
+}
+
+.INPUT-SISWA .search {
+  background-color: #f0f2f5;
+  border-radius: 32px;
+  height: 45px;
+  left: 472px;
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  width: 949px;
+}
+
+.INPUT-SISWA .group-7 {
+  height: 21px;
+  left: 16px;
+  position: relative;
+  top: 14px;
+  width: 97px;
+}
+
+.INPUT-SISWA .element-5 {
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 16px;
+}
+
+.INPUT-SISWA .text-wrapper-10 {
+  color: #727272;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.INPUT-SISWA .SMP-KRISTEN-GETASAN {
+  color: #000000;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  height: 72px;
+  left: 126px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 34px;
+  width: 314px;
+}
+
+.INPUT-SISWA .ellipse-4 {
+  height: 48px;
+  left: 1840px;
+  position: absolute;
+  top: 47px;
+  width: 49px;
+}
+
+.INPUT-SISWA .SMP-KRISTEN {
+  height: 86px;
+  left: 26px;
+  object-fit: cover;
+  position: absolute;
+  top: 27px;
+  width: 100px;
+}
+
+.INPUT-SISWA .kembali {
+  align-items: center;
+  background-color: #0082fc;
+  border-radius: 10px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  left: 472px;
+  padding: 10px 15px;
+  position: absolute;
+  top: 163px;
+  width: 120px;
+}
+
+.INPUT-SISWA .back {
+  height: 18px;
+  margin-left: -0.5px;
+  position: relative;
+  width: 18px;
+}
+
+.INPUT-SISWA .text-wrapper-11 {
+  color: #ffffff;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -0.5px;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.INPUT-SISWA .text-wrapper-12 {
+  color: #000000;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 40px;
+  font-weight: 500;
+  left: 476px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 228px;
+}
+
+.INPUT-SISWA .group-8 {
+  height: 92px;
+  left: 475px;
+  position: absolute;
+  top: 320px;
+  width: 800px;
+}
+
+.INPUT-SISWA .frame-wrapper {
+  height: 17px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 582px;
+}
+
+.INPUT-SISWA .frame-2 {
+  align-items: center;
+  display: inline-flex;
+  gap: 2px;
+  left: 5px;
+  position: relative;
+  top: 9px;
+}
+
+.INPUT-SISWA .dropdown {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: var(--grey-300);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #17191c0d;
+  display: flex;
+  gap: 680px;
+  left: -5px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 20px;
+  width: 850px;
+
+  color: #252d36;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 20px;
+  margin-top: -1px;
+  /* position: relative; */
+  white-space: nowrap;
+}
+
+/* .INPUT-SISWA .text-wrapper-13 { 
+  color: #252d36;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 20px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+} */
+
+.INPUT-SISWA .frame-3 {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: var(--grey-300);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #17191c0d;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 40px;
+  width: 802px;
+}
+
+.INPUT-SISWA .text-wrapper-14 {
+  color: var(--grey-700);
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+
+.INPUT-SISWA .expand-arrow {
+  height: 15px;
+  position: relative;
+  width: 15px;
+  left: 0px;
+}
+
+.INPUT-SISWA .group-9 {
+  height: 105px;
+  left: 475px;
+  position: absolute;
+  top: 440px;
+  width: 800px;
+}
+
+/* .INPUT-SISWA .frame-4 {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: var(--grey-300);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #17191c0d;
+  display: flex;
+  gap: 530px;
+  left: -1px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 53px;
+  width: 802px;
+} */
+
+.INPUT-SISWA .group-10 {
+  height: 92px;
+  left: 475px;
+  position: absolute;
+  top: 560px;
+  width: 800px;
+}
+
+/* .INPUT-SISWA .frame-5 {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: var(--grey-300);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #17191c0d;
+  display: flex;
+  gap: 740px;
+  left: -1px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 40px;
+  width: 802px;
+} */
+
+.INPUT-SISWA .group-11 {
+  height: 92px;
+  left: 475px;
+  position: absolute;
+  top: 680px;
+  width: 800px;
+}
+
+/* .INPUT-SISWA .frame-6 {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: var(--grey-300);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #17191c0d;
+  display: flex;
+  gap: 465px;
+  left: -1px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 40px;
+  width: 802px;
+} */
+
+.INPUT-SISWA .number-input {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: var(--grey-300);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #17191c0d;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 45px;
+  width: 850px;
+  height: 50px;
+
+  color: #252d36;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 20px;
+  margin-top: -1px;
+  /* position: relative; */
+  white-space: nowrap;
+}
+
+.INPUT-SISWA .group-12 {
+  height: 40px;
+  left: 762px;
+  position: absolute;
+  top: 863px;
+  width: 269px;
+}
+
+.INPUT-SISWA .frame-7 {
+  align-items: center;
+  background-color: #0082fc;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+  cursor: pointer;
+}
+
+.INPUT-SISWA .text-wrapper-15 {
+  color: #ffffff;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: -4px;
+  margin-top: -6px;
+  position: relative;
+  width: fit-content;
+}
+
+.INPUT-SISWA .frame-8 {
+  align-items: center;
+  background-color: #e82c2c;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  left: 149px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+  cursor: pointer;
+}
