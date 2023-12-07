@@ -164,9 +164,8 @@ const SiswaLihatNilai = () => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <div
                   key={index}
-                  className={`overlap-group-2 ${
-                    currentPage === index + 1 ? "active" : ""
-                  }`}
+                  className={`overlap-group-2 ${currentPage === index + 1 ? "active" : ""
+                    }`}
                   onClick={() => paginate(index + 1)}
                 >
                   <div className="ellipse" />
