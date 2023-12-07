@@ -69,17 +69,20 @@ export const EditMapel = () => {
     );
 
     try {
-      const response = await fetch("https://jojopinjam.iffan.site/api/update-matapelajaran", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id_matapelajaran: kodeMatapelajaran, // Change this value based on your requirements
-          nama_matapelajaran: namaMatapelajaran,
-          id_guru: guruPengampu,
-        }),
-      });
+      const response = await fetch(
+        "https://jojopinjam.iffan.site/api/update-matapelajaran",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id_matapelajaran: kodeMatapelajaran, // Change this value based on your requirements
+            nama_matapelajaran: namaMatapelajaran,
+            id_guru: guruPengampu,
+          }),
+        }
+      );
 
       const responseData = await response.json();
       console.log(responseData); // Logging the response data from the API
@@ -100,7 +103,7 @@ export const EditMapel = () => {
   return (
     <div className="EDIT-MAPEL">
       <div className="div">
-      <div className="MENU">
+        <div className="MENU">
           <div className="PROFILE">
             <Link to="/" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-sliders2"></i>
@@ -190,10 +193,10 @@ export const EditMapel = () => {
           </div>
         </header>
         <div className="kembali">
-      <Link to="/other-page">
-        <div className="text-wrapper-11">Kembali</div>
-      </Link>
-    </div>
+          <Link to="/other-page">
+            <div className="text-wrapper-11">Kembali</div>
+          </Link>
+        </div>
         <div className="text-wrapper-12">Edit Mata Pelajaran</div>
         <form onSubmit={handleSubmit}>
           <div className="group-8">

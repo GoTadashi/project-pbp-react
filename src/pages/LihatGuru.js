@@ -1,39 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import "./LihatNilai.css";
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import mainLogo from "../img/logo.png";
+import "./LihatGuru.css";
 
-const LihatNilai = () => {
+const LihatGuru = () => {
   const history = useHistory();
   const [dataRaport, setDataRaport] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch data of students who have raport
-        const responseRaport = await fetch(
-          "https://jojopinjam.iffan.site/api/get-raport-main"
-        );
-        const dataRaport = await responseRaport.json();
-        setDataRaport(dataRaport);
-
-        // Fetch all student data
         const responseSiswa = await fetch(
-          "https://jojopinjam.iffan.site/api/get-siswa"
+          "https://jojopinjam.iffan.site/api/get-guru"
         );
         const dataSiswa = await responseSiswa.json();
-
-        // Filter students who have raport
-        const studentsWithRaport = dataSiswa.filter((siswa) =>
-          dataRaport.some((raport) => raport.id_siswa === siswa.nis)
-        );
-
-        setDataSiswa(studentsWithRaport);
+        setDataSiswa(dataSiswa);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -52,8 +37,27 @@ const LihatNilai = () => {
     }
   };
 
-  const handleLihatNilai = (nis) => {
-    history.push(`/SiswaLihatNilai/${nis}`);
+  const handleSearch = async () => {
+    try {
+      const responseSearch = await fetch(
+        "https://jojopinjam.iffan.site/api/cari-siswa",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ cari: searchQuery }),
+        }
+      );
+      const searchData = await responseSearch.json();
+      setDataSiswa(searchData);
+    } catch (error) {
+      console.error("Error searching data:", error);
+    }
+  };
+
+  const handleUbahData = (id_guru) => {
+    history.push(`/EditGuru/${id_guru}`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -67,46 +71,44 @@ const LihatNilai = () => {
   const currentItems = dataSiswa.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div className="LIHAT-RAPORT">
+    <div className="GURU">
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
-          <img className="img" alt="Line" src="line-1.svg" />
           <div className="text-wrapper-2">SCH</div>
         </footer>
-
         <div className="TABLE">
           <div className="overlap">
             <div className="DATA-KELAS">
               <table>
                 <thead className="stable-table">
                   <tr>
-                    <th>NIS</th>
+                    <th>No</th>
+                    <th>NIP</th>
                     <th>Nama</th>
+                    <th>Walikelas</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
-                    <th>Agama</th>
-                    <th>Nama Orang Tua</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {currentItems.map((item, index) => (
                     <tr key={index}>
-                      <td className="center-item">{item.nis}</td>
+                      <td className="center-item">{item.id_guru}</td>
+                      <td>{item.nip}</td>
                       <td>{item.nama}</td>
+                      <td>{item.walikelas}</td>
                       <td>{item.tempat_lahir}</td>
                       <td>{item.tanggal_lahir}</td>
                       <td>{item.jenis_kelamin}</td>
-                      <td>{item.agama}</td>
-                      <td>{item.nama_orangtua}</td>
                       <td className="action-button">
                         <button
-                          className="EDIT-RAPORT"
-                          onClick={() => handleLihatNilai(item.nis)}
+                          className="TAMBAH-DATA"
+                          onClick={() => handleUbahData(item.id_guru)}
                         >
-                          <div className="text-wrapper-23">Lihat Nilai</div>
+                          <div className="text-wrapper-23">Edit Guru</div>
                         </button>
                       </td>
                     </tr>
@@ -116,63 +118,56 @@ const LihatNilai = () => {
             </div>
           </div>
         </div>
+        {dataRaport.map((item, index) => (
+          <div key={index} className="navbar">
+            <div className="text-wrapper-10">\{item.kelas}</div>
+            <div className="text-wrapper-11">\Semester {item.semester}</div>
+            <div className="text-wrapper-12">\Input Rapor</div>
+            <div className="text-wrapper-13">Dashboard</div>
+          </div>
+        ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link
-              to="/InputRaport"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i class="bi bi-file-earmark-plus"></i>
-              <span className="side-text ms-2">Input Raport Siswa</span>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-sliders2"></i>
+              <span className="side-text ms-2">Peraturan</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link
-              to="/LoginSiswa"
-              className="list-menu nav-link text-white fs-5"
-            >
+            <Link to="/" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link
-              to="/DataSiswa"
-              className="list-menu nav-link text-white fs-5"
-            >
+            <Link to="/" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
             <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-person-video3"></i>
-              <span className="side-text ms-2">Guru</span>
+              <i className="bi bi-envelope"></i>
+              <span className="side-text ms-2">Chat</span>
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link
-              to="/DaftarMapel"
-              className="list-menu nav-link text-white fs-5"
-            >
+            <Link to="/" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-card-checklist"></i>
-              <span className="side-text ms-2">Mata Pelajaran</span>
+              <span className="side-text ms-2">Generate Absen</span>
             </Link>
           </div>
           <div className="CHAT-3">
             <Link
-              to="/RaportSiswa"
+              to="/DaftarMapel"
               className="list-menu nav-link text-white fs-5"
             >
-              <i class="bi bi-book-fill"></i>
-              <span className="side-text ms-2">Raport Siswa</span>
+              <i className="bi bi-table"></i>
+              <span className="side-text ms-2">Jadwal Pelajaran</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link
-              to="/DashboardGuru"
-              className="list-menu nav-link text-white fs-5"
-            >
+            <Link to="/" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -184,9 +179,8 @@ const LihatNilai = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${
-                    currentPage === number ? "active" : ""
-                  }`}
+                  className={`ellipse ${currentPage === number ? "active" : ""
+                    }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
@@ -219,6 +213,9 @@ const LihatNilai = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
+                <button className="button-search" onClick={handleSearch}>
+                  <div className="text-wrapper-23">Search</div>
+                </button>
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
@@ -227,11 +224,6 @@ const LihatNilai = () => {
               E-Rapor
             </div>
             <img className="img-logo" src={mainLogo} alt="logo-sd" />
-            <div className="kembali">
-              <Link to="/other-page">
-                <div className="text-wrapper-11">Kembali</div>
-              </Link>
-            </div>
           </div>
         </header>
       </div>
@@ -239,4 +231,4 @@ const LihatNilai = () => {
   );
 };
 
-export default LihatNilai;
+export default LihatGuru;
