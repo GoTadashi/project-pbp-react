@@ -50,7 +50,8 @@ const SiswaLihatNilai = () => {
   }, [nisSiswa, selectedRaportMain]);
 
   const handleEditNilai = (idDetail) => {
-    history.push(`/EditNilai/${nisSiswa}/${idDetail}`);
+    // (item)
+    history.push(`/EditNilai/${nisSiswa}/${idDetail}`); // /${item.id_detail}
   };
 
   const calculateTotalPages = () => {
@@ -129,9 +130,7 @@ const SiswaLihatNilai = () => {
           </div>
         </div>
         <footer className="FOOTER">
-          <p className="p">
-            SD Kristen Terang Bangsa
-          </p>
+          <p className="p">SD Kristen Terang Bangsa</p>
           <img className="line" alt="Line" src="line-2.svg" />
           <div className="text-wrapper-4">SCH</div>
         </footer>
@@ -155,7 +154,7 @@ const SiswaLihatNilai = () => {
                     <div className="text-wrapper-9">{item.predikat}</div>
                     <button
                       className="TAMBAH-DATA"
-                      onClick={() => handleEditNilai(item.id_detail)}
+                      onClick={() => handleEditNilai(item.id_detail)} // handleEditNilai(item)
                     >
                       <div className="text-wrapper-23">Edit Siswa</div>
                     </button>
@@ -226,7 +225,6 @@ const SiswaLihatNilai = () => {
             <div className="search">
               <div className="group-6">
                 <img className="element-3" alt="Element" src="7.svg" />
-                
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
