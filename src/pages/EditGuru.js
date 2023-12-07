@@ -162,6 +162,30 @@ export const EditGuru = () => {
                   />
                 </div>
               </div>
+              <div className="group-7">
+                <div className="frame-wrapper">
+                  <div className="frame-2">
+                    <div className="text-wrapper-13">Nama</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-3">
+                  <input
+                    className="setting"
+                    type="text"
+                    value={g.nama}
+                    onChange={(e) =>
+                      setGuru((prevGuru) =>
+                        prevGuru.map((item) =>
+                          item.id_guru === g.id_guru
+                            ? { ...item, nama: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
               <div className="group-9">
                 <div className="frame-wrapper">
                   <div className="frame-4">
