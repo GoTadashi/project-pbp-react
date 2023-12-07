@@ -1,43 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import "./EditGuru.css";
-
 import mainLogo from "../img/logo.png";
 
 export const EditGuru = () => {
+  const { id_guru } = useParams(); // Use useParams to get the parameter from the URL
   const history = useHistory();
   const [guru, setGuru] = useState([]);
   const [message, setMessage] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("https://jojopinjam.iffan.site/api/get-guru")
+    fetch(`https://jojopinjam.iffan.site/api/get-guru/${id_guru}`)
       .then((response) => response.json())
-      .then((json) => setGuru(json));
-  }, []);
+      .then((json) => {
+        // Check if the response is an array
+        if (Array.isArray(json)) {
+          setGuru(json);
+        } else {
+          // If not an array, consider wrapping it in an array or accessing the correct property
+          setGuru([json]);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching guru:", error);
+      });
+  }, [id_guru]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const updateGuru = (id, judul, pengarang) => {
-      const updatedGuru = { id, judul, pengarang };
-      fetch("https://jojopinjam.iffan.site/api/update-guru", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedGuru),
-      }).then(() => {
-        fetch("https://jojopinjam.iffan.site/api/get-guru")
-          .then((response) => response.json())
-          .then((json) => setGuru(json));
-        setTimeout(() => {
-          setMessage("Buku Berhasil Diubah");
-        }, 500);
-      });
-    };
+    const updatedGuru = guru[0]; // Assuming there is only one guru with the given id
+    fetch("https://jojopinjam.iffan.site/api/update-guru", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedGuru),
+    }).then(() => {
+      fetch(`https://jojopinjam.iffan.site/api/get-guru/${id_guru}`)
+        .then((response) => response.json())
+        .then((json) => setGuru(json));
+      setTimeout(() => {
+        setMessage("Guru Berhasil Diubah");
+      }, 500);
+    });
   };
-
   return (
     <div className="EDIT-GURU">
       <div className="div">
