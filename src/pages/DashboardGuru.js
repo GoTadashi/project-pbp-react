@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import "bootstrap-icons/font/bootstrap-icons.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
 import "./DashboardGuru.css";
 import mainLogo from "../img/logo.png";
@@ -33,7 +32,7 @@ export const DashboardGuru = () => {
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>
