@@ -429,11 +429,11 @@ const InputNilai = () => {
           <div className="frame-2">
             <select
               className="dropdown"
-              value={selectedRaportMain}
-              onChange={(e) => setSelectedRaportMain(e.target.value)}
+              value={selectedIdRaport} // Menggunakan selectedIdRaport sebagai nilai terpilih
+              onChange={(e) => setSelectedIdRaport(e.target.value)} // Mengatur selectedIdRaport dengan nilai terpilih
             >
               {raportMain.map((item, index) => (
-                <option key={index} value={`${item.kelas}-${item.semester}`}>
+                <option key={index} value={item.id_raport}>
                   {`Kelas ${item.kelas} - Semester ${item.semester}`}
                 </option>
               ))}
