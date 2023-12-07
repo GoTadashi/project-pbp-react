@@ -136,7 +136,7 @@ export const DashboardGuru = () => {
         </div>
         <header className="HEADER">
           <div className="overlap-7">
-            <div className="group-wrapper onClick={() => setProfilePopupVisibility(true)}">
+            <div className="group-wrapper">
               <div className="group-7">
                 <div className="group-8">
                   <div className="group-9">
