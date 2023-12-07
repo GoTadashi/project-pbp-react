@@ -8,10 +8,10 @@
   
   .EDIT-NILAI .div {
     background-color: #f9f9f9;
-    height: 1080px;
+    height: 100vh;
     overflow: hidden;
     position: relative;
-    width: 1942px;
+    width: 100%;
   }
   
   .EDIT-NILAI .MENU {
@@ -76,7 +76,7 @@
     line-height: normal;
     margin-top: -1px;
     position: relative;
-    width: fit-content;
+    width: 100%;
   }
   
   .EDIT-NILAI .group {
