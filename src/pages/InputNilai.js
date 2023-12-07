@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./InputNilai.css";
 
+// ini sudah dropdown id_raport
 const InputNilai = () => {
   const { nisSiswa } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
