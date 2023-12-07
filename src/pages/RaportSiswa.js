@@ -64,13 +64,8 @@ const RaportSiswa = () => {
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SMP Kristen Getasan 2023</p>
-          <img className="line" alt="Line" src="line-2.svg" />
-          <img className="img" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-2">SCH</div>
         </footer>
-
-        <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
-        <div className="PEMBERITAHUAN">
+        {/* <div className="PEMBERITAHUAN">
           <img className="element-2" alt="Element" src="53.svg" />
           <div className="frame">
             <div className="group">
@@ -110,7 +105,7 @@ const RaportSiswa = () => {
             </div>
           </div>
           <div className="text-wrapper-8">Pemberitahuan</div>
-        </div>
+        </div> */}
         <div className="TABLE">
           <div className="overlap">
             <div className="DATA-KELAS">
@@ -181,8 +176,8 @@ const RaportSiswa = () => {
         <div className="MENU">
           <div className="PROFILE">
             <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-sliders2"></i>
-              <span className="side-text ms-2">Peraturan</span>
+              <i class="bi bi-file-earmark-plus"></i>
+              <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
           </div>
           <div className="PROFILE-2">
@@ -199,8 +194,8 @@ const RaportSiswa = () => {
           </div>
           <div className="CHAT">
             <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-mortarboard-fill"></i>
-              <span className="side-text ms-2">Chat</span>
+              <i class="bi bi-person-video3"></i>
+              <span className="side-text ms-2">Guru</span>
             </Link>
           </div>
           <div className="CHAT-2">
@@ -255,7 +250,6 @@ const RaportSiswa = () => {
             </div>
             <div className="search">
               <div className="group-7">
-                <img className="element-5" alt="Element" src="7.svg" />
                 <input
                   className="custom-input"
                   type="text"
