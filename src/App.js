@@ -17,6 +17,7 @@ import LoginSiswa from "./pages/LoginSiswa";
 import LihatRaport from "./pages/LihatRaport";
 import SiswaLihatNilai from "./pages/SiswaLihatNilai";
 import EditSiswa from "./pages/EditSiswa";
+import RaportPage from "./pages/coba";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
           inputnilai -
           editnilai -
           */}
-
+          <Route path="/coba/:nisSiswa" exact component={RaportPage} />
           <Route path="/LoginSiswa" exact component={LoginSiswa} />
           <Route path="/DashboardGuru" exact component={DashboardGuru} />
           {/* Data Guru */}
