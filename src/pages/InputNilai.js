@@ -68,6 +68,7 @@ const InputNilai = () => {
     };
     fetchData();
   }, []);
+
   useEffect(() => {
     const fetchRaportData = async () => {
       try {
@@ -104,10 +105,11 @@ const InputNilai = () => {
           if (Array.isArray(data) && data.length > 0) {
             // Extracting the id_raport from the fetched data
             const idRaportArray = data.map((raport) => raport.id_raport);
-            setSelectedIdRaport(idRaportArray);
+            // Set the selectedIdRaport state with the first id_raport from the array
+            setSelectedIdRaport(idRaportArray[0]);
           } else {
             console.error("No raport data found for the selected student.");
-            setSelectedIdRaport([]);
+            setSelectedIdRaport("");
           }
           // Set the fetched raport data
           setRaportData(data);
