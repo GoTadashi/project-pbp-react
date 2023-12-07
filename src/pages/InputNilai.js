@@ -15,6 +15,8 @@ const InputNilai = () => {
   const [selectedMapel, setSelectedMapel] = useState("");
   const [selectedIdRaport, setSelectedIdRaport] = useState("");
   const [raportData, setRaportData] = useState([]);
+  const [selectedRaportMain, setSelectedRaportMain] = useState("");
+  const [raportMain, setRaportMain] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -83,13 +85,13 @@ const InputNilai = () => {
         const response = await fetch(
           `https://jojopinjam.iffan.site/api/get-raport-main/${nisSiswa}`
         );
-        const raportData = await response.json();
+        const raportMain = await response.json();
 
-        console.log("Raport data:", raportData);
-        setRaportData(raportData);
+        console.log("Raport data:", raportMain);
+        setRaportMain(raportMain);
 
-        if (Array.isArray(raportData) && raportData.length > 0) {
-          setSelectedIdRaport(raportData.map((raport) => raport.id_raport));
+        if (Array.isArray(raportMain) && raportMain.length > 0) {
+          setSelectedIdRaport(raportMain.map((raport) => raport.id_raport));
         } else {
           console.error("No raport data found for the selected student.");
           setSelectedIdRaport([]);
@@ -103,6 +105,19 @@ const InputNilai = () => {
       fetchRaportData();
     }
   }, [nisSiswa]);
+
+  useEffect(() => {
+    // Fetch data raport based on selectedRaportMain
+    if (selectedRaportMain) {
+      const [kelas, semester] = selectedRaportMain.split("-");
+      fetch(
+        `https://jojopinjam.iffan.site/api/get-raport/${nisSiswa}/${kelas}-${semester}`
+      )
+        .then((response) => response.json())
+        .then((data) => setRaportData(data))
+        .catch((error) => console.error("Error fetching raport data:", error));
+    }
+  }, [nisSiswa, selectedRaportMain]);
 
   const addNilai = async () => {
     // Validate the input fields
@@ -414,18 +429,18 @@ const InputNilai = () => {
         <div className="group-11">
           <div className="frame-wrapper">
             <div className="frame-2">
-              <div className="text-wrapper-13">Id Raport</div>
+              <div className="text-wrapper-13">Kelas - Semester</div>
             </div>
           </div>
           <div className="frame-2">
             <select
               className="dropdown"
-              value={selectedIdRaport} // Mengatur nilai yang dipilih dalam dropdown
-              onChange={(e) => setSelectedIdRaport(e.target.value)}
+              value={selectedRaportMain}
+              onChange={(e) => setSelectedRaportMain(e.target.value)}
             >
-              {raportData.map((item) => (
-                <option key={item.id_raport} value={item.id_raport}>
-                  {item.id_raport}
+              {raportMain.map((item, index) => (
+                <option key={index} value={`${item.kelas}-${item.semester}`}>
+                  {`Kelas ${item.kelas} - Semester ${item.semester}`}
                 </option>
               ))}
             </select>
