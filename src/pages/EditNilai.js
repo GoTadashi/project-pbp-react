@@ -143,80 +143,81 @@ export const EditNilai = () => {
         </div>
         <div className="text-wrapper-12">Input Nilai</div>
         <form onSubmit={handleSubmit}>
-      <div className="group-8">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Nama Siswa</div>
-          </div>
-        </div>
-        <div className="frame-3">
-        <input
+          <div className="group-8">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Nama Siswa</div>
+              </div>
+            </div>
+            <div className="frame-3">
+              <input
                 type="text"
                 className="custom-input"
                 value={namaSiswa}
                 onChange={(e) => setNamaSiswa(e.target.value)}
               />
-        </div>
-      </div>
-
-      <div className="group-9">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Mata Pelajaran</div>
+            </div>
           </div>
-        </div>
-        <div className="frame-4">
-        <input
+
+          <div className="group-9">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Mata Pelajaran</div>
+              </div>
+            </div>
+            <div className="frame-4">
+              <input
                 type="text"
                 className="custom-input"
                 value={mataPelajaran}
                 onChange={(e) => setMataPelajaran(e.target.value)}
               />
-        </div>
-      </div>
-
-      <div className="group-10">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Semester</div>
+            </div>
           </div>
-        </div>
-        <div className="frame-5">
-        <input
+
+          <div className="group-10">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Semester</div>
+              </div>
+            </div>
+            <div className="frame-5">
+              <input
                 type="number"
                 className="custom-input"
                 value={semester}
                 onChange={(e) => setSemester(e.target.value)}
+                min="1"
               />
-        </div>
-      </div>
-
-      <div className="group-11">
-        <div className="frame-wrapper">
-          <div className="frame-2">
-            <div className="text-wrapper-13">Nilai</div>
+            </div>
           </div>
-        </div>
-        <div className="frame-6">
-        <input
+
+          <div className="group-11">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-13">Nilai</div>
+              </div>
+            </div>
+            <div className="frame-6">
+              <input
                 type="number"
                 className="custom-input"
                 value={nilai}
                 onChange={(e) => setNilai(e.target.value)}
               />
-        </div>
-      </div>
+            </div>
+          </div>
 
-      <div className="group-12">
-          <div className="frame-7">
-            <div className="text-wrapper-15">Simpan</div>
+          <div className="group-12">
+            <div className="frame-7">
+              <div className="text-wrapper-15">Simpan</div>
+            </div>
+            <div className="frame-8">
+              <div className="text-wrapper-15">Reset</div>
+            </div>
           </div>
-          <div className="frame-8">
-            <div className="text-wrapper-15">Reset</div>
-          </div>
-        </div>
-    </form>
-        
+        </form>
+
       </div>
     </div>
   );
