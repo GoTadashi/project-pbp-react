@@ -283,14 +283,6 @@ const EditSiswa = () => {
             </div>
           </div>
           <div className="overlap-3">
-            <div className="frame-7">
-              <input
-                type="text"
-                className="custom-input"
-                value={jenisKelamin}
-                onChange={(e) => setJenisKelamin(e.target.value)}
-              />
-            </div>
             <img
               className="icon-chevron-down"
               alt="Icon chevron down"
@@ -390,26 +382,6 @@ const EditSiswa = () => {
             </div>
           </div>
           <div className="group-15">
-            <div className="group-16">
-              <div className="frame-10">
-                <div className="text-wrapper-16"></div>
-              </div>
-            </div>
-            <div className="frame-11">
-              <div className="text-wrapper-18">Tempat Lahir</div>
-              <div className="text-wrapper-17">*</div>
-            </div>
-            <div className="frame-13">
-              <input
-                type="text"
-                className="custom-input"
-                value={tempat_lahir}
-                onChange={(e) => setTempatLahir(e.target.value)}
-              />
-              {/* <Calendar className="vuesax-linear" /> */}
-            </div>
-          </div>
-          <div className="group-15">
             <div className="frame-wrapper">
               <div className="frame-14">
                 <div className="text-wrapper-14">Tempat Lahir</div>
@@ -419,7 +391,7 @@ const EditSiswa = () => {
                 <input
                   type="text"
                   className="custom-input"
-                  value={tempatLahir}
+                  value={tempat_lahir}
                   onChange={(e) => setTempatLahir(e.target.value)}
                 />
                 {/* <Calendar className="vuesax-linear" /> */}
