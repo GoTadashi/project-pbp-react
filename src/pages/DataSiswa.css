@@ -10,7 +10,7 @@
   background-color: #f9f9f9;
   height: 1080px;
   position: relative;
-  width: 1966px;
+  width: 100%;
 }
 
 .DATA-NILAI .FOOTER {
@@ -19,7 +19,7 @@
   left: 0;
   position: absolute;
   top: 1009px;
-  width: 1920px;
+  width: 100%;
 }
 
 .DATA-NILAI .p {
@@ -258,7 +258,7 @@
   line-height: normal;
   margin-top: -1px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .DATA-NILAI .WALI-MURID {
@@ -702,7 +702,7 @@
   line-height: normal;
   margin-top: -1px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .DATA-NILAI .PROFILE-2 {
@@ -868,7 +868,7 @@
   left: 6px;
   position: absolute;
   top: 27px;
-  width: 1861px;
+  width: 100%;
 }
 
 .DATA-NILAI .overlap-2 {
@@ -877,7 +877,7 @@
   left: -6px;
   position: relative;
   top: -51px;
-  width: 1970px;
+  width: 100%;
 }
 
 .DATA-NILAI .group-4 {
@@ -954,7 +954,7 @@
   left: 467px;
   overflow: hidden;
   position: absolute;
-  top: 74px;
+  top: 65px;
   width: 938px;
 }
 
@@ -962,7 +962,7 @@
   width: 60rem;
   font-size: 16px;
   margin-left: -2px;
-  margin-top: -2px;
+  margin-top: -6px;
   padding: 15px;
 }
 
