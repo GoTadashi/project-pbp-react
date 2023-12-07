@@ -115,18 +115,18 @@ const InputNilai = () => {
     }
   }, [dataSiswa, selectedSiswa]);
 
-  const addNilai = () => {
+  const addNilai = async () => {
     // Validate the input fields
     if (!selectedMapel || !selectedIdRaport || !dataNilai) {
       console.error("Please fill in all the required fields.");
-      return;
+      return { success: false, message: "Please fill in all the required fields." };
     }
-
+  
     // Konversi dataNilai dari string ke number jika perlu
     const nilai = parseInt(dataNilai);
     let dataPredikat = "";
     let dataDeskripsi = "";
-
+  
     if (nilai > 90 && nilai <= 100) {
       dataPredikat = "A";
       dataDeskripsi = "Sangat Baik";
@@ -143,7 +143,7 @@ const InputNilai = () => {
       dataPredikat = "E";
       dataDeskripsi = "Sangat Kurang";
     }
-
+  
     const newNilai = {
       // nis: selectedSiswa,
       id_matapelajaran: selectedMapel,
@@ -152,36 +152,55 @@ const InputNilai = () => {
       predikat: dataPredikat,
       deskripsi: dataDeskripsi,
     };
-
-    fetch("https://jojopinjam.iffan.site/api/add-detail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newNilai),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Nilai added successfully:", data);
-        // Additional actions after successfully adding the nilai
-      })
-      .catch((error) => {
-        console.error("Error adding nilai:", error);
+  
+    try {
+      const response = await fetch("https://jojopinjam.iffan.site/api/add-detail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newNilai),
       });
+  
+      const data = await response.json();
+  
+      console.log("Nilai added successfully:", data);
+      // Additional actions after successfully adding the nilai
+  
+      return { success: true, message: "Data berhasil dimasukkan!" };
+    } catch (error) {
+      console.error("Error adding nilai:", error);
+  
+      return { success: false, message: "Terjadi kesalahan. Mohon coba lagi." };
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addNilai();
-    console.log(
-      "Submitted:",
-      selectedMapel,
-      selectedIdRaport,
-      parseInt(dataNilai),
-      dataPredikat,
-      dataDeskripsi
-    );
+    
+    try {
+      const response = await addNilai();
+      console.log(
+        "Submitted:",
+        selectedMapel,
+        selectedIdRaport,
+        parseInt(dataNilai),
+        dataPredikat,
+        dataDeskripsi
+      );
+  
+      if (response.success) {
+        alert("Data berhasil dimasukkan!");
+      } else {
+        alert("Data tidak berhasil dimasukkan. Mohon coba lagi. " + response.message);
+      }
+    } catch (error) {
+      console.error("Error submitting data:", error);
+      alert("Terjadi kesalahan. Mohon coba lagi.");
+    }
   };
+  
+  
 
   const handleReset = () => {
     // setSelectedMapel(""),
