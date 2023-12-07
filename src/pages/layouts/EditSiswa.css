@@ -1,0 +1,963 @@
+.EDIT-SISWA {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .EDIT-SISWA .div {
+    background-color: #f9f9f9;
+    height: 1080px;
+    overflow: hidden;
+    position: relative;
+    width: 1942px;
+  }
+  
+  .EDIT-SISWA .MENU {
+    background-color: #0082fc;
+    border-radius: 16px;
+    height: 740px;
+    left: 21px;
+    position: absolute;
+    top: 163px;
+    width: 239px;
+  }
+  
+  .EDIT-SISWA .PROFILE {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 28px;
+    position: absolute;
+    top: 310px;
+  }
+  
+  .EDIT-SISWA .element {
+    height: 24px;
+    position: relative;
+    width: 24px;
+  }
+  
+  .EDIT-SISWA .text-wrapper {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .EDIT-SISWA .PROFILE-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 28px;
+    position: absolute;
+    top: 609px;
+  }
+  
+  .EDIT-SISWA .group {
+    height: 48px;
+    left: 27px;
+    position: absolute;
+    top: 646px;
+    width: 190px;
+  }
+  
+  .EDIT-SISWA .overlap-group {
+    background-color: var(--gray-40);
+    border-radius: 32px;
+    height: 48px;
+    position: relative;
+    width: 188px;
+  }
+  
+  .EDIT-SISWA .overlap {
+    background-color: var(--whitewhite);
+    border-radius: 24px;
+    box-shadow: var(--shadows-gray-1-level);
+    height: 36px;
+    left: 6px;
+    position: absolute;
+    top: 6px;
+    width: 85px;
+  }
+  
+  .EDIT-SISWA .group-2 {
+    height: 20px;
+    left: 16px;
+    position: relative;
+    top: 8px;
+    width: 55px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-2 {
+    color: #0841d4;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    left: 28px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    white-space: nowrap;
+  }
+  
+  .EDIT-SISWA .sun-solid {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-3 {
+    color: var(--gray-290);
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 10px;
+    font-weight: 500;
+    left: 135px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    top: 16px;
+    white-space: nowrap;
+  }
+  
+  .EDIT-SISWA .moon-solid {
+    height: 20px;
+    left: 107px;
+    position: absolute;
+    top: 14px;
+    width: 20px;
+  }
+  
+  .EDIT-SISWA .SISWA {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 24px;
+    position: absolute;
+    top: 91px;
+  }
+  
+  .EDIT-SISWA .icon-SISWA {
+    height: 19px;
+    position: relative;
+    width: 27.14px;
+  }
+  
+  .EDIT-SISWA .CHAT {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 27px;
+    position: absolute;
+    top: 146px;
+  }
+  
+  .EDIT-SISWA .icon-envelope {
+    height: 19.39px;
+    position: relative;
+    width: 23px;
+  }
+  
+  .EDIT-SISWA .CHAT-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 25px;
+    position: absolute;
+    top: 202px;
+  }
+  
+  .EDIT-SISWA .icon-attendance {
+    height: 20.83px;
+    position: relative;
+    width: 25px;
+  }
+  
+  .EDIT-SISWA .CHAT-3 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 27px;
+    position: absolute;
+    top: 256px;
+  }
+  
+  .EDIT-SISWA .icon-calender {
+    height: 24px;
+    position: relative;
+    width: 22px;
+  }
+  
+  .EDIT-SISWA .DASHBOARD {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 16px;
+    left: 24px;
+    position: absolute;
+    top: 42px;
+  }
+  
+  .EDIT-SISWA .FOOTER {
+    background-color: transparent;
+    height: 62px;
+    left: 0;
+    position: absolute;
+    top: 1009px;
+    width: 1920px;
+  }
+  
+  .EDIT-SISWA .p {
+    color: #0083ff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    left: 591px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: -9px;
+    width: 737px;
+  }
+  
+  .EDIT-SISWA .line {
+    height: 5px;
+    left: 1038px;
+    object-fit: cover;
+    position: absolute;
+    top: -17px;
+    width: 882px;
+  }
+  
+  .EDIT-SISWA .img {
+    height: 5px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: -20px;
+    width: 882px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-4 {
+    color: #0083ff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 17px;
+    font-weight: 500;
+    left: 919px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: -29px;
+    white-space: nowrap;
+    width: 82px;
+  }
+  
+  .EDIT-SISWA .PEMBERITAHUAN {
+    background-color: #eaebeb;
+    border-radius: 16px;
+    height: 496px;
+    left: 1610px;
+    position: absolute;
+    top: 160px;
+    width: 296px;
+  }
+  
+  .EDIT-SISWA .element-2 {
+    height: 24px;
+    left: 200px;
+    position: absolute;
+    top: 20px;
+    width: 24px;
+  }
+  
+  .EDIT-SISWA .frame {
+    height: 24px;
+    left: 248px;
+    position: absolute;
+    top: 20px;
+    transform: rotate(-90deg);
+    width: 24px;
+  }
+  
+  .EDIT-SISWA .group-3 {
+    height: 18px;
+    left: 10px;
+    position: relative;
+    top: 3px;
+    width: 4px;
+  }
+  
+  .EDIT-SISWA .ellipse {
+    background-color: #0741d4;
+    border-radius: 1.75px;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 4px;
+  }
+  
+  .EDIT-SISWA .ellipse-2 {
+    background-color: #0741d4;
+    border-radius: 1.75px;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 4px;
+  }
+  
+  .EDIT-SISWA .ellipse-3 {
+    background-color: #0741d4;
+    border-radius: 1.75px;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 14px;
+    width: 4px;
+  }
+  
+  .EDIT-SISWA .PIKET {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 265px;
+  }
+  
+  .EDIT-SISWA .div-wrapper {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .EDIT-SISWA .text-wrapper-5 {
+    color: #727272;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .EDIT-SISWA .WALI-MURID {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 217px;
+  }
+  
+  .EDIT-SISWA .KLS {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 169px;
+  }
+  
+  .EDIT-SISWA .KLS-2 {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 121px;
+  }
+  
+  .EDIT-SISWA .KLS-3 {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    left: 24px;
+    position: absolute;
+    top: 73px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-6 {
+    color: #262626;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 22px;
+    font-weight: 500;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+  }
+  
+  .EDIT-SISWA .navbar {
+    height: 37px;
+    left: 280px;
+    position: absolute;
+    top: 162px;
+    width: 471px;
+  }
+  
+  .EDIT-SISWA .line-2 {
+    height: 1px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 26px;
+    width: 400px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-7 {
+    color: #000000;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 230px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 71px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-8 {
+    color: #000000;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 295px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 176px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-9 {
+    color: #000000;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 118px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 112px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-10 {
+    color: #000000;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 3px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 120px;
+  }
+  
+  .EDIT-SISWA .HEADER {
+    background-color: transparent;
+    height: 123px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1944px;
+  }
+  
+  .EDIT-SISWA .overlap-2 {
+    background-color: #62a8e8;
+    height: 123px;
+    position: relative;
+    width: 1942px;
+  }
+  
+  .EDIT-SISWA .group-wrapper {
+    height: 48px;
+    left: 1712px;
+    position: absolute;
+    top: 47px;
+    width: 111px;
+  }
+  
+  .EDIT-SISWA .group-4 {
+    height: 48px;
+  }
+  
+  .EDIT-SISWA .group-5 {
+    height: 48px;
+    width: 111px;
+  }
+  
+  .EDIT-SISWA .group-6 {
+    height: 48px;
+    position: relative;
+    width: 115px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-11 {
+    color: #727272;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 71px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 27px;
+    width: 40px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-12 {
+    color: #262626;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    width: 111px;
+  }
+  
+  .EDIT-SISWA .element-wrapper {
+    background-color: #f0f2f5;
+    border-radius: 24.27px/24px;
+    height: 48px;
+    left: 1613px;
+    position: absolute;
+    top: 50px;
+    width: 49px;
+  }
+  
+  .EDIT-SISWA .element-3 {
+    height: 24px;
+    left: 12px;
+    position: absolute;
+    top: 12px;
+    width: 24px;
+  }
+  
+  .EDIT-SISWA .search {
+    background-color: #f0f2f5;
+    border-radius: 32px;
+    height: 45px;
+    left: 472px;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    width: 949px;
+  }
+  
+  .EDIT-SISWA .group-7 {
+    height: 21px;
+    left: 16px;
+    position: relative;
+    top: 14px;
+    width: 97px;
+  }
+  
+  .EDIT-SISWA .element-4 {
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 16px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-13 {
+    color: #727272;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+  }
+  
+  .EDIT-SISWA .SMP-KRISTEN-GETASAN {
+    color: #000000;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 72px;
+    left: 126px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 34px;
+    width: 314px;
+  }
+  
+  .EDIT-SISWA .ellipse-4 {
+    height: 48px;
+    left: 1840px;
+    position: absolute;
+    top: 47px;
+    width: 49px;
+  }
+  
+  .EDIT-SISWA .SMP-KRISTEN {
+    height: 86px;
+    left: 26px;
+    object-fit: cover;
+    position: absolute;
+    top: 27px;
+    width: 100px;
+  }
+  
+  .EDIT-SISWA .group-8 {
+    height: 86px;
+    left: 320px;
+    position: absolute;
+    top: 223px;
+    width: 528px;
+  }
+  
+  .EDIT-SISWA .frame-wrapper {
+    height: 17px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 509px;
+  }
+  
+  .EDIT-SISWA .frame-2 {
+    align-items: center;
+    display: inline-flex;
+    gap: 2px;
+    left: 5px;
+    position: relative;
+    top: 9px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-14 {
+    color: #252d36;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    line-height: 14px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .EDIT-SISWA .text-wrapper-15 {
+    color: #d95117;
+    font-family: "Poppins-Black", Helvetica;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.21px;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .EDIT-SISWA .frame-3 {
+    align-items: center;
+    background-color: #ebebeb;
+    border: 1px solid;
+    border-color: var(--grey-300);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #17191c0d;
+    display: flex;
+    gap: 10px;
+    left: -1px;
+    padding: 12px 16px;
+    position: absolute;
+    top: 40px;
+    width: 530px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-16 {
+    color: var(--grey-700);
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .EDIT-SISWA .group-9 {
+    height: 86px;
+    left: 320px;
+    position: absolute;
+    top: 314px;
+    width: 528px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-17 {
+    color: #d95117;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.21px;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .EDIT-SISWA .frame-4 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: var(--grey-300);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #17191c0d;
+    display: flex;
+    gap: 10px;
+    left: -1px;
+    padding: 12px 16px;
+    position: absolute;
+    top: 40px;
+    width: 530px;
+  }
+  
+  .EDIT-SISWA .group-10 {
+    height: 86px;
+    left: 320px;
+    position: absolute;
+    top: 405px;
+    width: 528px;
+  }
+  
+  .EDIT-SISWA .overlap-3 {
+    border-radius: 8px;
+    height: 47px;
+    left: -1px;
+    position: absolute;
+    top: 40px;
+    width: 530px;
+  }
+  
+  .EDIT-SISWA .frame-5 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: var(--grey-300);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #17191c0d;
+    display: flex;
+    gap: 10px;
+    left: 0;
+    padding: 12px 16px;
+    position: absolute;
+    top: 0;
+    width: 530px;
+  }
+  
+  .EDIT-SISWA .icon-chevron-down {
+    height: 10px;
+    left: 490px;
+    position: absolute;
+    top: 20px;
+    width: 17px;
+  }
+  
+  .EDIT-SISWA .group-11 {
+    height: 86px;
+    left: 320px;
+    position: absolute;
+    top: 496px;
+    width: 528px;
+  }
+  
+  .EDIT-SISWA .group-12 {
+    height: 86px;
+    left: 320px;
+    position: absolute;
+    top: 587px;
+    width: 531px;
+  }
+  
+  .EDIT-SISWA .frame-6 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: var(--grey-300);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #17191c0d;
+    display: flex;
+    gap: 10px;
+    left: -1px;
+    padding: 12px 16px;
+    position: absolute;
+    top: 40px;
+    width: 533px;
+  }
+  
+  .EDIT-SISWA .group-13 {
+    height: 86px;
+    left: 320px;
+    position: absolute;
+    top: 678px;
+    width: 531px;
+  }
+  
+  .EDIT-SISWA .group-14 {
+    height: 78px;
+    left: 320px;
+    position: absolute;
+    top: 769px;
+    width: 531px;
+  }
+  
+  .EDIT-SISWA .component {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+    left: 280px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .EDIT-SISWA .frame-7 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+  }
+  
+  .EDIT-SISWA .frame-8 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 2px;
+    position: relative;
+  }
+  
+  .EDIT-SISWA .text-wrapper-18 {
+    color: var(--grey-800);
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    line-height: 14px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .EDIT-SISWA .frame-9 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: var(--grey-300);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #17191c0d;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: 12px 16px;
+    position: relative;
+    width: 253px;
+  }
+  
+  .EDIT-SISWA .vuesax-linear {
+    height: 14px !important;
+    position: relative !important;
+    width: 14px !important;
+  }
+  
+  .EDIT-SISWA .group-15 {
+    height: 76px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 265px;
+  }
+  
+  .EDIT-SISWA .group-16 {
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 31px;
+    width: 265px;
+  }
+  
+  .EDIT-SISWA .frame-10 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: var(--grey-300);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #17191c0d;
+    display: flex;
+    gap: 10px;
+    left: -1px;
+    padding: 12px 16px;
+    position: relative;
+    top: -1px;
+    width: 267px;
+  }
+  
+  .EDIT-SISWA .frame-11 {
+    align-items: center;
+    display: inline-flex;
+    gap: 2px;
+    left: 5px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .EDIT-SISWA .TAMBAH-DATA {
+    background-color: #0082fc;
+    border-radius: 10px;
+    height: 40px;
+    left: 678px;
+    position: absolute;
+    top: 881px;
+    width: 170px;
+  }
+  
+  .EDIT-SISWA .text-wrapper-19 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 17px;
+    font-weight: 600;
+    height: 20px;
+    left: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 9px;
+    white-space: nowrap;
+    width: 147px;
+  }
+  
