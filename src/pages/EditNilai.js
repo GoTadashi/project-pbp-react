@@ -19,64 +19,64 @@ export const EditNilai = () => {
   const [selectedIdRaport, setSelectedIdRaport] = useState("");
   const [raportData, setRaportData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const responseSiswa = await fetch(
-          `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
-        );
-        const dataSiswa = await responseSiswa.json();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const responseSiswa = await fetch(
+  //         `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
+  //       );
+  //       const dataSiswa = await responseSiswa.json();
 
-        if (Array.isArray(dataSiswa)) {
-          setDataSiswa(dataSiswa);
-        } else if (dataSiswa) {
-          setDataSiswa([dataSiswa]);
-        } else {
-          console.error("Invalid Data Siswa format:", dataSiswa);
-          setDataSiswa([]);
-        }
+  //       if (Array.isArray(dataSiswa)) {
+  //         setDataSiswa(dataSiswa);
+  //       } else if (dataSiswa) {
+  //         setDataSiswa([dataSiswa]);
+  //       } else {
+  //         console.error("Invalid Data Siswa format:", dataSiswa);
+  //         setDataSiswa([]);
+  //       }
 
-        if (dataSiswa.length > 0) {
-          const studentId = dataSiswa[0].id;
-          const responseRaport = await fetch(
-            `https://jojopinjam.iffan.site/api/get-raport-main/${studentId}`
-          );
-          const raportData = await responseRaport.json();
+  //       if (dataSiswa.length > 0) {
+  //         const studentId = dataSiswa[0].id;
+  //         const responseRaport = await fetch(
+  //           `https://jojopinjam.iffan.site/api/get-raport-main/${studentId}`
+  //         );
+  //         const raportData = await responseRaport.json();
 
-          console.log("Raport data:", raportData);
+  //         console.log("Raport data:", raportData);
 
-          if (raportData.length > 0) {
-            const firstRaportId = raportData[0].id_raport;
-            setSelectedIdRaport(firstRaportId);
-          } else {
-            console.error("No raport data available for the selected student.");
-          }
-        } else {
-          console.error("No data available for the selected student.");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  //         if (raportData.length > 0) {
+  //           const firstRaportId = raportData[0].id_raport;
+  //           setSelectedIdRaport(firstRaportId);
+  //         } else {
+  //           console.error("No raport data available for the selected student.");
+  //         }
+  //       } else {
+  //         console.error("No data available for the selected student.");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, [nisSiswa]);
+  //   fetchData();
+  // }, [nisSiswa]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://jojopinjam.iffan.site/api/get-matapelajaran"
-        );
-        const dataMapel = await response.json();
-        setDataMapel(dataMapel);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://jojopinjam.iffan.site/api/get-matapelajaran"
+  //       );
+  //       const dataMapel = await response.json();
+  //       setDataMapel(dataMapel);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const fetchRaportData = async () => {
@@ -90,11 +90,13 @@ export const EditNilai = () => {
 
           console.log("Raport data:", raportData);
           setRaportData(raportData);
+          console.log("Isi raportData:", raportData);
 
           if (Array.isArray(raportData) && raportData.length > 0) {
-            setSelectedIdRaport(raportData.map((raport) => raport.id_raport));
+            setSelectedIdRaport(raportData[0].id_raport);
+            setSelectedMapel(raportData[0].id_matapelajaran);
           } else {
-            console.error("No raport data found !!!!!!.");
+            console.error("No raport data found !");
             setSelectedIdRaport([]);
           }
         }
@@ -113,7 +115,7 @@ export const EditNilai = () => {
         success: false,
         message: "Please fill in all the required fields.",
       };
-    }
+    } else console.log("Done.");
 
     const nilai = parseInt(dataNilai);
     let dataPredikat = "";
@@ -148,7 +150,7 @@ export const EditNilai = () => {
       const response = await fetch(
         `https://jojopinjam.iffan.site/api/update-detail/${id_detail}`,
         {
-          method: "PUT",
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
@@ -341,10 +343,12 @@ export const EditNilai = () => {
             <select
               className="dropdown"
               onChange={(e) => setSelectedSiswa(e.target.value)}
+              value={selectedSiswa} // Menyediakan nilai terpilih (default) dari state
+              disabled
             >
-              {dataSiswa.map((item, index) => (
-                <option key={index} value={item.nis}>
-                  {item.nama}
+              {raportData.map((item) => (
+                <option key={item.id_siswa} value={item.id_siswa}>
+                  {item.nama_siswa}
                 </option>
               ))}
             </select>
@@ -357,13 +361,14 @@ export const EditNilai = () => {
           <div className="frame-2">
             <select
               className="dropdown"
+              value={selectedMapel} // Menyediakan nilai terpilih (default) dari state
               onChange={(e) => setSelectedMapel(e.target.value)}
               disabled
             >
               {raportData.map((item) => (
                 <option
-                  key={item.nama_matapelajaran}
-                  value={item.nama_matapelajaran}
+                  key={item.id_matapelajaran}
+                  value={item.id_matapelajaran}
                 >
                   {item.nama_matapelajaran}
                 </option>
@@ -394,7 +399,7 @@ export const EditNilai = () => {
           <div className="frame-2">
             <select
               className="dropdown"
-              value={selectedIdRaport} // Mengatur nilai yang dipilih dalam dropdown
+              value={selectedIdRaport} // Menyediakan nilai terpilih (default) dari state
               onChange={(e) => setSelectedIdRaport(e.target.value)}
               disabled
             >
