@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import "./SiswaLihatNilai.css";
 
 const SiswaLihatNilai = () => {
@@ -48,7 +49,7 @@ const SiswaLihatNilai = () => {
   }, [nisSiswa, selectedRaportMain]);
 
   const handleEditNilai = (item) => {
-    history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
+    // history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
   };
 
   const calculateTotalPages = () => {
