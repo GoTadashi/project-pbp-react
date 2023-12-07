@@ -5,6 +5,7 @@ import "./SiswaLihatNilai.css";
 const SiswaLihatNilai = () => {
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
+  const [selectedRaportMain, setSelectedRaportMain] = useState("");
   const [raportDetails, setRaportDetails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const raportsPerPage = 5;
@@ -34,14 +35,19 @@ const SiswaLihatNilai = () => {
   }, [nisSiswa]);
 
   // Merge raportMain and raportDetails based on id_raport
-  const mergedRaports = raportMain.map(main => {
-    const details = raportDetails.find(detail => detail.id_raport === main.id_raport);
+  const mergedRaports = raportMain.map((main) => {
+    const details = raportDetails.find(
+      (detail) => detail.id_raport === main.id_raport
+    );
     return { ...main, ...details };
   });
 
   const indexOfLastRaport = currentPage * raportsPerPage;
   const indexOfFirstRaport = indexOfLastRaport - raportsPerPage;
-  const currentRaports = mergedRaports.slice(indexOfFirstRaport, indexOfLastRaport);
+  const currentRaports = mergedRaports.slice(
+    indexOfFirstRaport,
+    indexOfLastRaport
+  );
 
   const totalPages = Math.ceil(mergedRaports.length / raportsPerPage);
 
@@ -126,24 +132,24 @@ const SiswaLihatNilai = () => {
         <div className="overlap-2">
           <div className="text-wrapper-5">Data Nilai Semester 1</div>
           <div className="overlap-3">
-        <div className="rectangle" />
-        <div className="navbar-wrapper">
-          {currentRaports.map((raport, index) => (
-            <div key={raport.id_raport}>
-              <div className="div-2">
-                <div className="text-wrapper-6">
-                  {raport.nama_matapelajaran}
+            <div className="rectangle" />
+            <div className="navbar-wrapper">
+              {currentRaports.map((raport, index) => (
+                <div key={raport.id_raport}>
+                  <div className="div-2">
+                    <div className="text-wrapper-6">
+                      {raport.nama_matapelajaran}
+                    </div>
+                    <div className="text-wrapper-7">
+                      {(currentPage - 1) * raportsPerPage + index + 1}.
+                    </div>
+                    <div className="text-wrapper-8">{raport.nilai}</div>
+                    <div className="text-wrapper-9">{raport.predikat}</div>
+                  </div>
                 </div>
-                <div className="text-wrapper-7">
-                  {(currentPage - 1) * raportsPerPage + index + 1}.
-                </div>
-                <div className="text-wrapper-8">{raport.nilai}</div>
-                <div className="text-wrapper-9">{raport.predikat}</div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
           <div className="HEADER-TABEL">
             <div className="navbar">
               <div className="mata-pelajaran">Mata Pelajaran</div>
@@ -158,7 +164,9 @@ const SiswaLihatNilai = () => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <div
                   key={index}
-                  className={`overlap-group-2 ${currentPage === index + 1 ? 'active' : ''}`}
+                  className={`overlap-group-2 ${
+                    currentPage === index + 1 ? "active" : ""
+                  }`}
                   onClick={() => paginate(index + 1)}
                 >
                   <div className="ellipse" />
@@ -171,13 +179,17 @@ const SiswaLihatNilai = () => {
             <div className="text-wrapper-23">Download Rapor</div>
           </div>
         </div>
-        <div className="frame">
-          <div className="text-wrapper-24">Semester 1</div>
-          <img
-            className="icon-chevron-down"
-            alt="Icon chevron down"
-            src="icon-chevron-down.png"
-          />
+        <div className="dropdown-frame">
+          <select
+            className="dropdown"
+            onChange={(e) => setSelectedRaportMain(e.target.value)}
+          >
+            {raportMain.map((item, index) => (
+              <option key={index} value={`${item.kelas}-${item.semester}`}>
+                {`Kelas ${item.kelas} - Semester ${item.semester}`}
+              </option>
+            ))}
+          </select>
         </div>
         <header className="HEADER">
           <div className="overlap-4">
