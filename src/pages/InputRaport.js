@@ -9,7 +9,7 @@ const InputRaport = () => {
   const [selectedSemester, setSelectedSemester] = useState(1);
   const kelasOptions = ["1", "2", "3", "4", "5", "6"];
   const [selectedKelas, setSelectedKelas] = useState("1");
-  const [selectedSiswa, setSelectedSiswa] = useState("");
+  const [selectedSiswa, setSelectedSiswa] = useState(nisSiswa);
   const [dataGuru, setDataGuru] = useState([]);
   const [selectedGuru, setSelectedGuru] = useState("");
 
