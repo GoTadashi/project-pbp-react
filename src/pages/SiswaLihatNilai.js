@@ -48,7 +48,7 @@ const SiswaLihatNilai = () => {
     }
   }, [nisSiswa, selectedRaportMain]);
 
-  const handleEditNilai = (id_detail) => {
+  const handleEditNilai = (item) => {
     history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
   };
 
@@ -156,7 +156,7 @@ const SiswaLihatNilai = () => {
                     <div className="text-wrapper-9">{item.predikat}</div>
                     <button
                       className="TAMBAH-DATA"
-                      onClick={() => handleEditNilai(item.id_detail)}
+                      onClick={() => handleEditNilai(item)}
                     >
                       <div className="text-wrapper-23">Edit Siswa</div>
                     </button>
