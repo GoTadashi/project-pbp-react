@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./EditNilai.css";
 import mainLogo from "../img/logo.png";
