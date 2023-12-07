@@ -395,6 +395,7 @@ export const EditNilai = () => {
               className="dropdown"
               value={selectedIdRaport} // Mengatur nilai yang dipilih dalam dropdown
               onChange={(e) => setSelectedIdRaport(e.target.value)}
+              disabled
             >
               {raportData.map((item) => (
                 <option key={item.id_raport} value={item.id_raport}>
