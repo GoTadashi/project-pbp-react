@@ -19,6 +19,7 @@ const SiswaLihatNilai = () => {
         );
         const dataRaportMain = await responseRaportMain.json();
         setRaportMain(dataRaportMain);
+        console.log("selectedRaportMain: ", selectedRaportMain);
 
         // Fetch detailed raport data for all students (assuming the API doesn't support fetching by NIS)
         const responseRaportDetails = await fetch(
