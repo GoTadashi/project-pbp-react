@@ -7,6 +7,7 @@ const SiswaLihatNilai = () => {
   const [raportMain, setRaportMain] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
   const [raportDetails, setRaportDetails] = useState([]);
+  const [selectedRaportDetails, setSelectedRaportDetails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const raportsPerPage = 5;
 
@@ -19,21 +20,37 @@ const SiswaLihatNilai = () => {
         );
         const dataRaportMain = await responseRaportMain.json();
         setRaportMain(dataRaportMain);
-        console.log("selectedRaportMain: ", selectedRaportMain);
-
-        // Fetch detailed raport data for all students (assuming the API doesn't support fetching by NIS)
-        const responseRaportDetails = await fetch(
-          `https://jojopinjam.iffan.site/api/get-raport`
-        );
-        const dataRaportDetails = await responseRaportDetails.json();
-        setRaportDetails(dataRaportDetails);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching main raport data:", error);
       }
     };
 
     fetchData();
   }, [nisSiswa]);
+
+  useEffect(() => {
+    const fetchRaportDetails = async () => {
+      try {
+        // Fetch detailed raport data for the selected main raport
+        console.log("Fetching detailed raport data for:", selectedRaportMain);
+        const responseRaportDetails = await fetch(
+          `https://jojopinjam.iffan.site/api/get-raport?kelas=${selectedRaportMain.split('-')[0]}&semester=${selectedRaportMain.split('-')[1]}`
+        );
+        const dataRaportDetails = await responseRaportDetails.json();
+        setRaportDetails(dataRaportDetails);
+      } catch (error) {
+        console.error("Error fetching detailed raport data:", error);
+      }
+    };
+
+    if (selectedRaportMain) {
+      fetchRaportDetails();
+    }
+  }, [selectedRaportMain]);
+
+  useEffect(() => {
+    console.log("Selected raport details:", selectedRaportDetails);
+  }, [selectedRaportDetails]);
 
   // Merge raportMain and raportDetails based on id_raport
   const mergedRaports = raportMain.map((main) => {
