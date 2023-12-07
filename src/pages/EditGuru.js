@@ -98,7 +98,6 @@ export const EditGuru = () => {
         </div>
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
-          <div className="text-wrapper-4">SCH</div>
         </footer>
         <div className="overlap-2">
           <img className="line-2" alt="Line" src="line-3.svg" />
@@ -112,12 +111,9 @@ export const EditGuru = () => {
               <div className="text-wrapper-10">Admin</div>
               <div className="text-wrapper-11">Admin</div>
             </div>
-            <div className="element-wrapper">
-              <img className="element-3" alt="Element" src="3.svg" />
-            </div>
             <div className="search">
               <div className="group-10">
-                <img className="element-5" alt="Element" src="7.svg" />
+                {/* <img className="element-5" alt="Element" src="7.svg" /> */}
                 <input
                   className="custom-input-search"
                   type="text"
