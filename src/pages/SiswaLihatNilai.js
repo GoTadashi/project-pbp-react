@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./SiswaLihatNilai.css";
 
 const SiswaLihatNilai = () => {
+  const history = useHistory();
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
@@ -10,7 +11,7 @@ const SiswaLihatNilai = () => {
   const [mataPelajaran, setMataPelajaran] = useState([]);
   const [raportDetails, setRaportDetails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const raportsPerPage = 5;
+  const [itemsPerPage] = useState(5);
 
   useEffect(() => {
     // Fetch data raport-main
@@ -46,6 +47,30 @@ const SiswaLihatNilai = () => {
         .catch((error) => console.error("Error fetching raport data:", error));
     }
   }, [nisSiswa, selectedRaportMain]);
+
+  const handleEditNilai = (item) => {
+    history.push(`/EditNilai/${nisSiswa}/${item.id_detail}`);
+  };
+
+  const calculateTotalPages = () => {
+    return Math.ceil(raportData.length / itemsPerPage);
+  };
+
+  const paginate = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
+  const totalPages = Math.ceil(raportData.length / itemsPerPage);
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = raportData.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className="LIHAT-NILAI">
@@ -129,6 +154,12 @@ const SiswaLihatNilai = () => {
                     <div className="text-wrapper-7">{index + 1}.</div>
                     <div className="text-wrapper-8">{item.nilai}</div>
                     <div className="text-wrapper-9">{item.predikat}</div>
+                    <button
+                      className="TAMBAH-DATA"
+                      onClick={() => handleEditNilai(item)}
+                    >
+                      <div className="text-wrapper-23">Edit Siswa</div>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -143,22 +174,22 @@ const SiswaLihatNilai = () => {
             </div>
           </div>
           <div className="kelompok-a-wajib">Kelompok A (wajib)</div>
-          {/* <div className="PAGES">
+          <div className="PAGES">
             <div className="div-wrapper">
-              {Array.from({ length: totalPages }, (_, index) => (
-                <div
-                  key={index}
-                  className={`overlap-group-2 ${
-                    currentPage === index + 1 ? "active" : ""
-                  }`}
-                  onClick={() => paginate(index + 1)}
-                >
-                  <div className="ellipse" />
-                  <div className="text-wrapper-20">{index + 1}</div>
-                </div>
-              ))}
+              <div className="overlap-group">
+                {pageNumbers.map((number) => (
+                  <div
+                    key={number}
+                    className={`ellipse ${currentPage === number ? "active" : ""
+                      }`}
+                    onClick={() => paginate(number)}
+                  >
+                    <div className="text-wrapper-3">{number}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div> */}
+          </div>
           <div className="download-button">
             <div className="text-wrapper-23">Download Rapor</div>
           </div>
@@ -177,6 +208,7 @@ const SiswaLihatNilai = () => {
             ))}
           </select>
         </div>
+
         <header className="HEADER">
           <div className="overlap-4">
             <div className="group-wrapper">

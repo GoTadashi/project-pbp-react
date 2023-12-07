@@ -10,7 +10,7 @@
   background-color: #f9f9f9;
   height: 1080px;
   position: relative;
-  width: 1966px;
+  width: 100%;
 }
 
 .DAFTAR-MAPEL .FOOTER {
@@ -19,7 +19,7 @@
   left: 0;
   position: absolute;
   top: 1009px;
-  width: 1920px;
+  width: 100%;
 }
 
 .DAFTAR-MAPEL .text-wrapper {
@@ -573,7 +573,7 @@
   left: -6px;
   position: relative;
   top: -51px;
-  width: 1970px;
+  width: 100%;
 }
 
 .DAFTAR-MAPEL .group-3 {

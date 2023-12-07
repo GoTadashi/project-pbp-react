@@ -58,7 +58,7 @@ export const DaftarMapel = () => {
           <div className="text-wrapper-5">3</div>
         </div>
         <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
-        <div className="PEMBERITAHUAN">
+        {/* <div className="PEMBERITAHUAN">
           <img className="element-2" alt="Element" src="53.svg" />
           <div className="frame">
             <div className="group">
@@ -98,7 +98,7 @@ export const DaftarMapel = () => {
             </div>
           </div>
           <div className="text-wrapper-8">Pemberitahuan</div>
-        </div>
+        </div> */}
         <div className="SORTING-DATA">
           <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
           <div className="text-wrapper-9">Sortir Data</div>
@@ -181,9 +181,6 @@ export const DaftarMapel = () => {
                 </div>
               </div>
             </div>
-            <div className="element-wrapper">
-              <img className="element-4" alt="Element" src="3.svg" />
-            </div>
             <div className="search">
               <div className="group-7">
                 <img className="element-5" alt="Element" src="7.svg" />
@@ -201,7 +198,6 @@ export const DaftarMapel = () => {
               <br />
               e-rapor
             </div>
-            <img className="ellipse-5" alt="Ellipse" src="ellipse-1192.svg" />
             <img
               className="SMP-KRISTEN"
               alt="Smp KRISTEN"

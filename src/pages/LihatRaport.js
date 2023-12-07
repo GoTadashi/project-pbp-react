@@ -72,7 +72,7 @@ const LihatRaport = () => {
         </footer>
 
         <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
-        <div className="PEMBERITAHUAN">
+        {/* <div className="PEMBERITAHUAN">
           <img className="element-2" alt="Element" src="53.svg" />
           <div className="frame">
             <div className="group">
@@ -112,7 +112,7 @@ const LihatRaport = () => {
             </div>
           </div>
           <div className="text-wrapper-8">Pemberitahuan</div>
-        </div>
+        </div> */}
         <div className="TABLE">
           <div className="overlap">
             <div className="DATA-KELAS">
