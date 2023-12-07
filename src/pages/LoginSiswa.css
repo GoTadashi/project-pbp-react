@@ -141,9 +141,9 @@
 
 .LOGIN-SISWA .icon-user {
   height: 49px;
-  left: 80px;
+  left: 78px;
   position: absolute;
-  top: 143px;
+  top: 100px;
   width: 43px;
 }
 
@@ -178,7 +178,7 @@
   height: 80px;
   left: 42px;
   position: absolute;
-  top: 33rem;
+  top: 31rem;
   width: 790px;
 }
 
@@ -235,11 +235,11 @@
 }
 
 .LOGIN-SISWA .icon-lock {
-  height: 45px;
-  left: 47px;
+  height: 80px;
+  left: 30px;
   position: absolute;
-  top: 23px;
-  width: 41px;
+  top: 10px;
+  width: 100px;
 }
 
 .LOGIN-SISWA .overlap-2 {
@@ -290,6 +290,7 @@
 }
 
 .LOGIN-SISWA .text-wrapper-8 {
+  list-style: none;
   background-color: #0083ff;
   color: #ffffff;
   border-radius: 10px;
@@ -300,8 +301,8 @@
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 40rem;
-  left: 15rem;
+  top: 38rem;
+  left: 18rem;
   width: 50%;
   height: 8%;
 }
@@ -348,4 +349,3 @@
   top: 76px;
   width: 56px;
 }
-

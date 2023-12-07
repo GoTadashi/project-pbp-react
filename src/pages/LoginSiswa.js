@@ -51,22 +51,16 @@ const LoginSiswa = () => {
     <div className="LOGIN-SISWA">
       <div className="div">
         <footer className="FOOTER">
-          <p className="text-wrapper">
-            Jalan Pangeran Diponegoro Km. 9, Getasan, Kec. Getasan, Kabupaten
-            Semarang, Jawa Tengah 50774
-          </p>
-          <div className="text-wrapper-2">SCH</div>
+          {/* <p className="text-wrapper">
+            SD Kristen Terang Bangsa
+          </p> */}
+          {/* <div className="text-wrapper-2">SCH</div> */}
         </footer>
         <div className="FORM-LOGIN">
           <form action="/DashboardGuru" onSubmit={handleLogin}>
             <div className="overlap">
               <div className="rectangle" />
               <div className="text-wrapper-3">ID Siswa</div>
-              <img
-                className="iconsax-linear"
-                alt="Iconsax linear"
-                src="/img/iconsax-linear-profilecircle.svg"
-              />
               <div className="rectangle" />
               <input
                 type="email"
@@ -76,11 +70,9 @@ const LoginSiswa = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <img
-                className="icon-user"
-                alt="Icon user"
-                src="/img/icon-user.png"
-              />
+              <div className="icon-user">
+                <i class="bi bi-envelope-fill fs-2"></i>
+              </div>
               <p className="takut-akan-TUHAN">
                 <span className="span">
                   "Takut akan TUHAN adalah permulaan pengetahuan, tetapi orang
@@ -99,11 +91,9 @@ const LoginSiswa = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <img
-                className="icon-lock"
-                alt="Icon lock"
-                src="/img/icon-lock.png"
-              />
+              <div className="icon-lock">
+                <i class="bi bi-lock-fill fs-1"></i>
+              </div>
             </div>
             <div className="overlap-2">
               <div className="SMP-KRISTEN-GETASAN">
