@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
-import "./DataNilai.css";
+import "./DataSiswa.css";
 
-const DataNilai = () => {
+const DataSiswa = () => {
   const history = useHistory();
   const [dataRaport, setDataRaport] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,9 +45,8 @@ const DataNilai = () => {
   };
 
   const handleLihatRaport = () => {
-    history.push('/LihatRaport');
+    history.push("/LihatRaport");
   };
-
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
   const pageNumbers = Array.from(
@@ -157,12 +156,12 @@ const DataNilai = () => {
                 </tbody>
               </table>
               <button
-                  className="TAMBAH-DATA-2"
-                  onClick={() => handleLihatRaport()}
+                className="TAMBAH-DATA-2"
+                onClick={() => handleLihatRaport()}
                 // disabled
-                >
-                  <div className="text-wrapper-23">Input Nilai</div>
-                </button>
+              >
+                <div className="text-wrapper-23">Input Nilai</div>
+              </button>
             </div>
           </div>
         </div>
@@ -246,8 +245,9 @@ const DataNilai = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${currentPage === number ? "active" : ""
-                    }`}
+                  className={`ellipse ${
+                    currentPage === number ? "active" : ""
+                  }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
@@ -301,4 +301,4 @@ const DataNilai = () => {
   );
 };
 
-export default DataNilai;
+export default DataSiswa;

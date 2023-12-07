@@ -6,7 +6,7 @@ import LihatNilai from "./pages/LihatNilai";
 import InputNilai from "./pages/InputNilai";
 import InputRaport from "./pages/InputRaport";
 import EditNilai from "./pages/EditNilai";
-import DataNilai from "./pages/DataNilai";
+import DataSiswa from "./pages/DataSiswa";
 import TambahMapel from "./pages/TambahMapel";
 import EditMapel from "./pages/EditMapel";
 import DaftarMapel from "./pages/DaftarMapel";
@@ -35,7 +35,7 @@ function App() {
           {/* Data Guru */}
           <Route path="/EditGuru" exact component={EditGuru} />
           {/* Data Raport */}
-          <Route path="/DataNilai" exact component={DataNilai} />
+          <Route path="/DataSiswa" exact component={DataSiswa} />
           {/* Data Detail */}
           <Route path="/LihatNilai" exact component={LihatNilai} />
           <Route path="/LihatRaport" component={LihatRaport} />
