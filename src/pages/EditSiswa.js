@@ -11,51 +11,52 @@ export const EditSiswa = () => {
   const [tanggalLahir, setTanggalLahir] = useState("");
   const [tempatLahir, setTempatLahir] = useState("");
 
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://jojopinjam.iffan.site/api/get-siswa");
-        const data = await response.json();
-
-        // Populate the state with the fetched data
-        setNis(data.nis);
-        setNama(data.nama);
-        setJenisKelamin(data.jenisKelamin);
-        setAgama(data.agama);
-        setNamaOrtu(data.namaOrtu);
-        setTanggalLahir(data.tanggalLahir);
-        setTempatLahir(data.tempatLahir);
+        const responseSiswa = await fetch(
+          "https://jojopinjam.iffan.site/api/get-siswa"
+        );
+        const dataSiswa = await responseSiswa.json();
+        setDataSiswa(dataSiswa);
       } catch (error) {
-        console.error("Error fetching data:", error.message);
+        console.error("Error fetching data:", error);
       }
     };
 
+    fetchData();
+  }, []);
+  
   const handleSubmit = async () => {
     try {
       const response = await fetch("http://127.0.0.1:8001/api/update-siswa", {
-        method: "POST", // Assuming you want to update data
+        method: "POST", // or "PUT" depending on your API
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           nis,
           nama,
-          jenis_kelamin: jenisKelamin, // Make sure to match the API field names
+          jenis_kelamin: jenisKelamin,
           agama,
-          nama_orangtua: namaOrtu, // Make sure to match the API field names
-          tanggal_lahir: tanggalLahir, // Make sure to match the API field names
-          tempat_lahir: tempatLahir, // Make sure to match the API field names
+          nama_orangtua: namaOrtu,
+          tanggal_lahir: tanggalLahir,
+          tempat_lahir: tempatLahir,
         }),
       });
 
-      const result = await response.json();
+      if (response.ok) {
+        const result = await response.json();
+        console.log("API response:", result);
 
-      // Handle the result, you might want to show a success message or handle errors
-      console.log(result);
+        // Add any additional logic based on the API response
+      } else {
+        console.error("Failed to update data:", response.statusText);
+      }
     } catch (error) {
-      console.error("Error updating data:", error.message);
+      console.error("Error:", error.message);
     }
   };
-
 
   return (
     <div className="EDIT-SISWA">
@@ -220,6 +221,7 @@ export const EditSiswa = () => {
           <div className="frame-3">
             <input
               type="number"
+              className="custom-input"
               value={nis}
               onChange={(e) => setNis(e.target.value)}
             />
@@ -235,6 +237,7 @@ export const EditSiswa = () => {
           <div className="frame-4">
             <input
               type="text"
+              className="custom-input"
               value={nama}
               onChange={(e) => setNama(e.target.value)}
             />
@@ -251,6 +254,7 @@ export const EditSiswa = () => {
             <div className="frame-5">
               <input
                 type="text"
+                className="custom-input"
                 value={jenisKelamin}
                 onChange={(e) => setJenisKelamin(e.target.value)}
               />
@@ -273,6 +277,7 @@ export const EditSiswa = () => {
             <div className="frame-5">
               <input
                 type="text"
+                className="custom-input"
                 value={agama}
                 onChange={(e) => setAgama(e.target.value)}
               />
@@ -294,6 +299,7 @@ export const EditSiswa = () => {
           <div className="frame-6">
             <input
               type="text"
+              className="custom-input"
               value={namaOrtu}
               onChange={(e) => setNamaOrtu(e.target.value)}
             />
@@ -309,6 +315,7 @@ export const EditSiswa = () => {
               <div className="frame-9">
                 <input
                   type="text"
+                  className="custom-input"
                   value={tanggalLahir}
                   onChange={(e) => setTanggalLahir(e.target.value)}
                 />
@@ -327,19 +334,20 @@ export const EditSiswa = () => {
               <div className="text-wrapper-17">*</div>
             </div>
             <div className="frame-12">
-                <input
-                  type="text"
-                  value={tempatLahir}
-                  onChange={(e) => setTempatLahir(e.target.value)}
-                />
-                {/* <Calendar className="vuesax-linear" /> */}
-              </div>
+              <input
+                type="text"
+                className="custom-input"
+                value={tempatLahir}
+                onChange={(e) => setTempatLahir(e.target.value)}
+              />
+              {/* <Calendar className="vuesax-linear" /> */}
+            </div>
           </div>
         </div>
-        <div className="TAMBAH-DATA">
-          <button className="frame-13" onClick={handleSubmit}>
-              <div className="text-wrapper-19">Update</div>
-            </button>
+        <div className="EDIT-SISWA">
+          <button className="TAMBAH-DATA" onClick={handleSubmit}>
+            <div className="text-wrapper-19">Update</div>
+          </button>
         </div>
       </div>
     </div>
