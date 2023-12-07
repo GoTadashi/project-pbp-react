@@ -48,8 +48,8 @@ const SiswaLihatNilai = () => {
     }
   }, [nisSiswa, selectedRaportMain]);
 
-  const handleEditNilai = (detail) => {
-    history.push(`/editNilai/${detail}`);
+  const handleEditNilai = (id_detail) => {
+    history.push(`/editNilai/${id_detail}`);
   };
 
   const calculateTotalPages = () => {
@@ -155,11 +155,11 @@ const SiswaLihatNilai = () => {
                     <div className="text-wrapper-8">{item.nilai}</div>
                     <div className="text-wrapper-9">{item.predikat}</div>
                     <button
-                          className="TAMBAH-DATA"
-                          onClick={() => handleEditNilai(item.detail)}
-                        >
-                          <div className="text-wrapper-23">Edit Siswa</div>
-                        </button>
+                      className="TAMBAH-DATA"
+                      onClick={() => handleEditNilai(item.id_detail)}
+                    >
+                      <div className="text-wrapper-23">Edit Siswa</div>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -180,9 +180,8 @@ const SiswaLihatNilai = () => {
                 {pageNumbers.map((number) => (
                   <div
                     key={number}
-                    className={`ellipse ${
-                      currentPage === number ? "active" : ""
-                    }`}
+                    className={`ellipse ${currentPage === number ? "active" : ""
+                      }`}
                     onClick={() => paginate(number)}
                   >
                     <div className="text-wrapper-3">{number}</div>
