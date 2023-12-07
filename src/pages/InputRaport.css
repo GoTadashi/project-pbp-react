@@ -880,3 +880,9 @@
   width: 120px;
   cursor: pointer;
 }
+
+.img-logo{
+  top: 5px;
+  width: 100px;
+  height: 100px;
+}
