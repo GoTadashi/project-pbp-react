@@ -277,7 +277,7 @@ const DataSiswa = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <button className="TAMBAH-DATA-2" onClick={handleSearch}>
+                <button className="button-search" onClick={handleSearch}>
                   <div className="text-wrapper-23">Search</div>
                 </button>
               </div>
