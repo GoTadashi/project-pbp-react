@@ -20,6 +20,7 @@ import EditSiswa from "./pages/EditSiswa";
 import RaportPage from "./pages/coba";
 import InputSiswa from "./pages/InputSiswa";
 import RaportSiswa from "./pages/RaportSiswa";
+import LihatGuru from "./pages/LihatGuru";
 
 function App() {
   return (
@@ -27,13 +28,14 @@ function App() {
       <div className="app-header"></div>
       <Switch>
         <div className="app-content">
+        <Route path="/lihatguru" component={LihatGuru} />
           <Route path="/inputsiswa" component={InputSiswa} />
           <Route path="/raportsiswa" component={RaportSiswa} />
           <Route path="/coba/:nisSiswa" exact component={RaportPage} />
           <Route path="/LoginSiswa" exact component={LoginSiswa} />
           <Route path="/DashboardGuru" exact component={DashboardGuru} />
           {/* Data Guru */}
-          <Route path="/EditGuru" exact component={EditGuru} />
+          <Route path="/EditGuru/:id_guru" exact component={EditGuru} />
           {/* Data Raport */}
           <Route path="/DataSiswa" exact component={DataSiswa} />
           {/* Data Detail */}

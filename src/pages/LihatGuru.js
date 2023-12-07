@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import mainLogo from "../img/logo.png";
-import "./DataSiswa.css";
+import "./LihatGuru.css";
 
-const DataSiswa = () => {
+const LihatGuru = () => {
   const history = useHistory();
   const [dataRaport, setDataRaport] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,7 +15,7 @@ const DataSiswa = () => {
     const fetchData = async () => {
       try {
         const responseSiswa = await fetch(
-          "https://jojopinjam.iffan.site/api/get-siswa"
+          "https://jojopinjam.iffan.site/api/get-guru"
         );
         const dataSiswa = await responseSiswa.json();
         setDataSiswa(dataSiswa);
@@ -56,8 +56,8 @@ const DataSiswa = () => {
     }
   };
 
-  const handleUbahData = (nis) => {
-    history.push(`/EditSiswa/${nis}`);
+  const handleUbahData = (id_guru) => {
+    history.push(`/EditGuru/${id_guru}`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -71,7 +71,7 @@ const DataSiswa = () => {
   const currentItems = dataSiswa.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div className="DATA-NILAI">
+    <div className="GURU">
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
@@ -83,32 +83,32 @@ const DataSiswa = () => {
               <table>
                 <thead className="stable-table">
                   <tr>
-                    <th>NIS</th>
+                    <th>No</th>
+                    <th>NIP</th>
                     <th>Nama</th>
+                    <th>Walikelas</th>
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Jenis Kelamin</th>
-                    <th>Agama</th>
-                    <th>Nama Orang Tua</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {currentItems.map((item, index) => (
                     <tr key={index}>
-                      <td className="center-item">{item.nis}</td>
+                      <td className="center-item">{item.id_guru}</td>
+                      <td>{item.nip}</td>
                       <td>{item.nama}</td>
+                      <td>{item.walikelas}</td>
                       <td>{item.tempat_lahir}</td>
                       <td>{item.tanggal_lahir}</td>
                       <td>{item.jenis_kelamin}</td>
-                      <td>{item.agama}</td>
-                      <td>{item.nama_orangtua}</td>
                       <td className="action-button">
                         <button
                           className="TAMBAH-DATA"
-                          onClick={() => handleUbahData(item.nis)}
+                          onClick={() => handleUbahData(item.id_guru)}
                         >
-                          <div className="text-wrapper-23">Edit Siswa</div>
+                          <div className="text-wrapper-23">Edit Guru</div>
                         </button>
                       </td>
                     </tr>
@@ -128,9 +128,9 @@ const DataSiswa = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/InputRaport" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-file-earmark-plus"></i>
-              <span className="side-text ms-2">Input Raport Siswa</span>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-sliders2"></i>
+              <span className="side-text ms-2">Peraturan</span>
             </Link>
           </div>
           <div className="PROFILE-2">
@@ -147,24 +147,27 @@ const DataSiswa = () => {
           </div>
           <div className="CHAT">
             <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-person-video3"></i>
-              <span className="side-text ms-2">Guru</span>
+              <i className="bi bi-envelope"></i>
+              <span className="side-text ms-2">Chat</span>
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link to="/" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-card-checklist"></i>
-              <span className="side-text ms-2">Mata Pelajaran</span>
+              <span className="side-text ms-2">Generate Absen</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-book-fill"></i>
-              <span className="side-text ms-2">Raport Siswa</span>
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
+              <i className="bi bi-table"></i>
+              <span className="side-text ms-2">Jadwal Pelajaran</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+            <Link to="/" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -203,14 +206,13 @@ const DataSiswa = () => {
             </div>
             <div className="search">
               <div className="group-7">
-                <form>
-                  <input
-                    className="custom-input"
-                    type="text"
-                    placeholder="Cari berdasarkan Nama/NIS"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  /></form>
+                <input
+                  className="custom-input"
+                  type="text"
+                  placeholder="Cari berdasarkan Nama/NIS"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
                 <button className="button-search" onClick={handleSearch}>
                   <div className="text-wrapper-23">Search</div>
                 </button>
@@ -229,4 +231,4 @@ const DataSiswa = () => {
   );
 };
 
-export default DataSiswa;
+export default LihatGuru;

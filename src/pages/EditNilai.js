@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
 import "./EditNilai.css";
@@ -210,7 +210,10 @@ export const EditNilai = () => {
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LoginSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
@@ -320,7 +323,7 @@ export const EditNilai = () => {
               E-Rapor
             </div>
             {/* <img className="ellipse-4" alt="Ellipse" src="ellipse-1192.svg" /> */}
-            <img className="img-logo" src={mainLogo} alt="logo-sd"/>
+            <img className="img-logo" src={mainLogo} alt="logo-sd" />
           </div>
         </header>
         <div className="kembali">
