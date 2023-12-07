@@ -81,30 +81,30 @@ export const EditNilai = () => {
   useEffect(() => {
     const fetchRaportData = async () => {
       try {
-        console.log("Fetching raport data...");
-        const response = await fetch(
-          `https://jojopinjam.iffan.site/api/get-raport-main/${nisSiswa}`
-        );
-        const raportData = await response.json();
+        if (id_detail) {
+          console.log("Fetching raport data...");
+          const response = await fetch(
+            `https://jojopinjam.iffan.site/api/get-raportDetail/${id_detail}`
+          );
+          const raportData = await response.json();
 
-        console.log("Raport data:", raportData);
-        setRaportData(raportData);
+          console.log("Raport data:", raportData);
+          setRaportData(raportData);
 
-        if (Array.isArray(raportData) && raportData.length > 0) {
-          setSelectedIdRaport(raportData.map((raport) => raport.id_raport));
-        } else {
-          console.error("No raport data found for the selected student.");
-          setSelectedIdRaport([]);
+          if (Array.isArray(raportData) && raportData.length > 0) {
+            setSelectedIdRaport(raportData.map((raport) => raport.id_raport));
+          } else {
+            console.error("No raport data found !!!!!!.");
+            setSelectedIdRaport([]);
+          }
         }
       } catch (error) {
         console.error("Error fetching raport data:", error);
       }
     };
 
-    if (nisSiswa) {
-      fetchRaportData();
-    }
-  }, [nisSiswa]);
+    fetchRaportData();
+  }, [id_detail]);
 
   const updateNilai = async () => {
     if (!selectedMapel || !selectedIdRaport || !dataNilai) {
@@ -358,11 +358,12 @@ export const EditNilai = () => {
             <select
               className="dropdown"
               onChange={(e) => setSelectedMapel(e.target.value)}
+              disabled
             >
-              {dataMapel.map((item) => (
+              {raportData.map((item) => (
                 <option
-                  key={item.id_matapelajaran}
-                  value={item.id_matapelajaran}
+                  key={item.nama_matapelajaran}
+                  value={item.nama_matapelajaran}
                 >
                   {item.nama_matapelajaran}
                 </option>
