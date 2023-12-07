@@ -35,24 +35,26 @@ const SiswaLihatNilai = () => {
           setRaportDetails([]);
           return;
         }
-
+  
+        const [kelas, semester] = selectedRaportMain.split('-');
+  
         // Fetch detailed raport data for the selected main raport
         console.log("Fetching detailed raport data for:", selectedRaportMain);
         const responseRaportDetails = await fetch(
-          `https://jojopinjam.iffan.site/api/get-raport?kelas=${selectedRaportMain.split('-')[0]}&semester=${selectedRaportMain.split('-')[1]}`
+          `https://jojopinjam.iffan.site/api/get-raport?id_siswa=${nisSiswa}&kelas=${kelas}&semester=${semester}`
         );
         const dataRaportDetails = await responseRaportDetails.json();
-
+  
         console.log("Detailed raport data:", dataRaportDetails); // Log the response
-
+  
         setRaportDetails(dataRaportDetails);
       } catch (error) {
         console.error("Error fetching detailed raport data:", error);
       }
     };
-
+  
     fetchRaportDetails();
-  }, [selectedRaportMain]);
+  }, [selectedRaportMain, nisSiswa]);
 
   // Merge raportMain and raportDetails based on id_raport
   const mergedRaports = raportMain.map((main) => {
@@ -213,8 +215,10 @@ const SiswaLihatNilai = () => {
         <div className="dropdown-frame">
           <select
             className="dropdown"
+            value={selectedRaportMain}
             onChange={(e) => setSelectedRaportMain(e.target.value)}
           >
+            <option value="">Select Raport</option>
             {raportMain.map((item, index) => (
               <option key={index} value={`${item.kelas}-${item.semester}`}>
                 {`Kelas ${item.kelas} - Semester ${item.semester}`}
