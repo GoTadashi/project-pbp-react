@@ -587,7 +587,7 @@
 
 .EDIT-MAPEL .kembali {
   align-items: center;
-  background-color: #0082fc;
+  background-color: #515f6d;
   border-radius: 10px;
   display: flex;
   gap: 5px;
@@ -597,6 +597,10 @@
   position: absolute;
   top: 163px;
   width: 120px;
+}
+
+.EDIT-MAPEL .kembali:hover {
+  background-color: #3d4853;
 }
 
 .EDIT-MAPEL .back {
