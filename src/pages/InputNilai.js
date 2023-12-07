@@ -114,7 +114,15 @@ const InputNilai = () => {
         `https://jojopinjam.iffan.site/api/get-raport/${nisSiswa}/${kelas}-${semester}`
       )
         .then((response) => response.json())
-        .then((data) => setRaportData(data))
+        .then((data) => {
+          if (Array.isArray(data) && data.length > 0) {
+            const idRaportArray = data.map((raport) => raport.id_raport);
+            setSelectedIdRaport(idRaportArray);
+          } else {
+            console.error("No raport data found for the selected student.");
+            setSelectedIdRaport([]);
+          }
+        })
         .catch((error) => console.error("Error fetching raport data:", error));
     }
   }, [nisSiswa, selectedRaportMain]);
