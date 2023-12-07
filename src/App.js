@@ -10,7 +10,6 @@ import DataSiswa from "./pages/DataSiswa";
 import TambahMapel from "./pages/TambahMapel";
 import EditMapel from "./pages/EditMapel";
 import DaftarMapel from "./pages/DaftarMapel";
-import GuruLihatNilai from "./pages/GuruLihatNilai";
 import DashboardGuru from "./pages/DashboardGuru";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginSiswa from "./pages/LoginSiswa";
@@ -31,6 +30,7 @@ function App() {
         <div className="app-content">
         <Route path="/tambahguru" component={TambahGuru} />
         <Route path="/lihatguru" component={LihatGuru} />
+          <Route path="/lihatguru" component={LihatGuru} />
           <Route path="/inputsiswa" component={InputSiswa} />
           <Route path="/raportsiswa" component={RaportSiswa} />
           <Route path="/coba/:nisSiswa" exact component={RaportPage} />
@@ -50,13 +50,15 @@ function App() {
           <Route path="/LihatRaport" component={LihatRaport} />
           <Route path="/inputnilai/:nisSiswa" component={InputNilai} />
           <Route path="/inputraport/:nisSiswa" component={InputRaport} />
-          <Route path="/EditNilai/:nisSiswa/:id_detail" exact component={EditNilai} />
+          <Route
+            path="/EditNilai/:nisSiswa/:id_detail"
+            exact
+            component={EditNilai}
+          />
           {/* Data Mapel */}
           <Route path="/TambahMapel" exact component={TambahMapel} />
           <Route path="/EditMapel" exact component={EditMapel} />
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
-
-          <Route path="/GuruLihatNilai" exact component={GuruLihatNilai} />
 
           {/* Data Siswa */}
           <Route path="/EditSiswa/:nisSiswa" exact component={EditSiswa} />
