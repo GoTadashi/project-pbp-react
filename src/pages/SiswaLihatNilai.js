@@ -179,9 +179,8 @@ const SiswaLihatNilai = () => {
             <div className="text-wrapper-23">Download Rapor</div>
           </div>
         </div>
-        <div className="frame">
-          {/* <div className="text-wrapper-24">Semester 1</div> */}
-          {/* <select
+        <div className="dropdown-frame">
+          <select
             className="dropdown"
             onChange={(e) => setSelectedRaportMain(e.target.value)}
           >
@@ -193,12 +192,7 @@ const SiswaLihatNilai = () => {
                 {item.kelas && item.semester}
               </option>
             ))}
-          </select> */}
-          <img
-            className="icon-chevron-down"
-            alt="Icon chevron down"
-            src="icon-chevron-down.png"
-          />
+          </select>
         </div>
         <header className="HEADER">
           <div className="overlap-4">

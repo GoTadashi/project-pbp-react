@@ -698,30 +698,48 @@
   width: fit-content;
 }
 
-.SISWA-LIHAT-NILAI .frame {
+/* .SISWA-LIHAT-NILAI .frame {
   align-items: center;
   background-color: #e4dddd;
   border-radius: 15px;
   display: flex;
   gap: 90px;
   justify-content: flex-end;
-  left: 301px;
-  padding: 10px 20px;
+
+  width: 400px;
+} */
+
+.dropdown-frame {
   position: absolute;
   top: 163px;
-  width: 400px;
+  left: 301px;
 }
 
-.SISWA-LIHAT-NILAI .text-wrapper-24 {
-  color: #262626;
-  font-family: "Poppins-SemiBold", Helvetica;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: normal;
+.dropdown {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: var(--grey-300);
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px #17191c0d;
+  display: flex;
+  gap: 680px;
+  left: 0px;
+  padding: 12px 16px;
+  position: absolute;
+  top: 20px;
+  width: 450px;
+
+  color: #252d36;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 20px;
   margin-top: -1px;
-  position: relative;
-  width: fit-content;
+  /* position: relative; */
+  text-align: center;
+  white-space: nowrap;
 }
 
 .SISWA-LIHAT-NILAI .icon-chevron-down {
