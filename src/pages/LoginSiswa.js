@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./LoginSiswa.css";
 import mainLogo from "../img/logo.png";
 import { useHistory } from "react-router-dom";
+import Siswa from '../img/SISWA 1.png';
 
 const LoginSiswa = () => {
   const history = useHistory();
@@ -54,8 +55,6 @@ const LoginSiswa = () => {
             Jalan Pangeran Diponegoro Km. 9, Getasan, Kec. Getasan, Kabupaten
             Semarang, Jawa Tengah 50774
           </p>
-          <img className="line" alt="Line" src="/img/line-1.svg" />
-          <img className="img" alt="Line" src="/img/line-1.svg" />
           <div className="text-wrapper-2">SCH</div>
         </footer>
         <div className="FORM-LOGIN">
@@ -84,8 +83,8 @@ const LoginSiswa = () => {
               />
               <p className="takut-akan-TUHAN">
                 <span className="span">
-                  Takut akan TUHAN adalah permulaan pengetahuan, tetapi orang
-                  bodoh menghina hikmat dan didikan.
+                  "Takut akan TUHAN adalah permulaan pengetahuan, tetapi orang
+                  bodoh menghina hikmat dan didikan."
                   <br />
                 </span>
                 <span className="text-wrapper-5">Amsal 1:7</span>
@@ -108,7 +107,7 @@ const LoginSiswa = () => {
             </div>
             <div className="overlap-2">
               <div className="SMP-KRISTEN-GETASAN">
-                SMP KRISTEN GETASAN
+                SD KRISTEN TERANG BANGSA
                 <br />
                 E-Rapor
               </div>
@@ -126,15 +125,12 @@ const LoginSiswa = () => {
             {/* </div> */}
           </form>
         </div>
-        {/* <div className="overlap-3">
-                    <div className="text-wrapper-9">LOGIN SISWA/WALI</div>
-                    <img className="SISWA" alt="Siswa" src="/img/siswa-1.png" />
-                </div> */}
-        <img
-          className="icon-arrow-left"
-          alt="Icon arrow left"
-          src="/img/icon-arrow-left.png"
-        />
+        <div className="overlap-3">
+          <img className="SISWA" alt="Siswa" src={Siswa} />
+        </div>
+        <div className="text-log">
+          <div className="text-wrapper-9">LOGIN SISWA</div>
+        </div>
       </div>
     </div>
   );

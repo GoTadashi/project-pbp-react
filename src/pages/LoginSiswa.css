@@ -12,7 +12,7 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-  width: 1920px;
+  width: 100%;
 }
 
 .LOGIN-SISWA .FOOTER {
@@ -20,8 +20,8 @@
   height: 62px;
   left: 0;
   position: absolute;
-  top: 750px;
-  width: 1920px;
+  top: 790px;
+  width: 100%;
 }
 
 .LOGIN-SISWA .text-wrapper {
@@ -76,7 +76,7 @@
   left: 996px;
   position: absolute;
   top: 37px;
-  width: 876px;
+  width: 600px;
 }
 
 .LOGIN-SISWA .overlap {
@@ -96,7 +96,7 @@
   height: 80px;
   left: 42px;
   position: absolute;
-  top: 117px;
+  top: 85px;
   width: 790px;
 }
 
@@ -134,8 +134,8 @@
   line-height: normal;
   opacity: 0.55;
   position: absolute;
-  top: 119px;
-  height: 75px;
+  top: 87px;
+  height: 80px;
   width: 43.7rem;
 }
 
@@ -243,11 +243,11 @@
 }
 
 .LOGIN-SISWA .overlap-2 {
-  height: 277px;
+  height: 300px;
   left: 132px;
   position: absolute;
   top: 0;
-  width: 591px;
+  width: 700px;
 }
 
 .LOGIN-SISWA .SMP-KRISTEN-GETASAN {
@@ -261,12 +261,12 @@
   position: absolute;
   text-align: center;
   top: 150px;
-  width: 591px;
+  width: 700px;
 }
 
 .LOGIN-SISWA .SMP-KRISTEN {
   height: 133px;
-  left: 229px;
+  left: 240px;
   object-fit: cover;
   position: absolute;
   top: 20px;
@@ -321,24 +321,24 @@
 .LOGIN-SISWA .text-wrapper-9 {
   color: #000000;
   font-family: "Poppins", Helvetica;
-  font-size: 55px;
-  font-weight: 500;
-  left: 23px;
+  font-size: 40px;
+  font-weight: bolder;
+  left: 120px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 606px;
+  top: 650px;
   width: 548px;
 }
 
 .LOGIN-SISWA .SISWA {
-  height: 644px;
+  height: 500px;
   left: 0;
   object-fit: cover;
   position: absolute;
   top: 0;
-  width: 594px;
+  width: 450px;
 }
 
 .LOGIN-SISWA .icon-arrow-left {
@@ -348,3 +348,4 @@
   top: 76px;
   width: 56px;
 }
+
