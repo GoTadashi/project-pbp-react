@@ -115,7 +115,7 @@ export const EditNilai = () => {
         success: false,
         message: "Please fill in all the required fields.",
       };
-    } else console.log("Done.");
+    } else console.log("Required fields filled.");
 
     const nilai = parseInt(dataNilai);
     let dataPredikat = "";
@@ -139,6 +139,7 @@ export const EditNilai = () => {
     }
 
     const updatedNilai = {
+      id_detail: `${id_detail}`,
       id_matapelajaran: selectedMapel,
       id_raport: parseInt(selectedIdRaport),
       nilai: nilai,
@@ -158,6 +159,13 @@ export const EditNilai = () => {
         }
       );
 
+      if (!response.ok) {
+        const errorResponse = await response.json(); // Mengambil pesan error dari respons server
+        throw new Error(
+          `HTTP error! Status: ${response.status}, Message: ${errorResponse.message}`
+        );
+      }
+
       const data = await response.json();
 
       console.log("Nilai updated successfully:", data);
@@ -165,7 +173,6 @@ export const EditNilai = () => {
       return { success: true, message: "Data berhasil diupdate!" };
     } catch (error) {
       console.error("Error updating nilai:", error);
-
       return { success: false, message: "Terjadi kesalahan. Mohon coba lagi." };
     }
   };
@@ -177,6 +184,7 @@ export const EditNilai = () => {
       const response = await updateNilai();
       console.log(
         "Submitted:",
+        `${id_detail}`,
         selectedMapel,
         selectedIdRaport,
         parseInt(dataNilai),
