@@ -184,12 +184,9 @@ const SiswaLihatNilai = () => {
             className="dropdown"
             onChange={(e) => setSelectedRaportMain(e.target.value)}
           >
-            {raportMain.map((item) => (
-              <option
-                key={item.kelas && item.semester}
-                value={item.kelas && item.semester}
-              >
-                {item.kelas && item.semester}
+            {raportMain.map((item, index) => (
+              <option key={index} value={`${item.kelas}-${item.semester}`}>
+                {`Kelas ${item.kelas} - Semester ${item.semester}`}
               </option>
             ))}
           </select>
