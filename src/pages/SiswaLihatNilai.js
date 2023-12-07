@@ -6,98 +6,46 @@ const SiswaLihatNilai = () => {
   const { nisSiswa } = useParams();
   const [raportMain, setRaportMain] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
+  const [raportData, setRaportData] = useState([]);
+  const [mataPelajaran, setMataPelajaran] = useState([]);
   const [raportDetails, setRaportDetails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const raportsPerPage = 5;
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch main raport data
-        const responseRaportMain = await fetch(
-          `https://jojopinjam.iffan.site/api/get-raport-main/${nisSiswa}`
-        );
-        const dataRaportMain = await responseRaportMain.json();
-        setRaportMain(dataRaportMain);
-      } catch (error) {
-        console.error("Error fetching main raport data:", error);
-      }
-    };
-
-    fetchData();
+    // Fetch data raport-main
+    fetch(`https://jojopinjam.iffan.site/api/get-raport-main/${nisSiswa}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Raport Main Data:", data);
+        setRaportMain(data);
+      })
+      .catch((error) => console.error("Error fetching raport-main:", error));
   }, [nisSiswa]);
 
   useEffect(() => {
-    const fetchRaportDetails = async () => {
-      try {
-        if (!selectedRaportMain) {
-          // If no main raport is selected, clear the detailed raport data
-          setRaportDetails([]);
-          return;
-        }
-  
-        const [kelas, semester] = selectedRaportMain.split('-');
-  
-        // Fetch detailed raport data for the selected main raport
-        console.log("Fetching detailed raport data for:", selectedRaportMain);
-        const responseRaportDetails = await fetch(
-          `https://jojopinjam.iffan.site/api/get-raport/${nisSiswa}/${kelas}-${semester}`
-        );
-        const dataRaportDetails = await responseRaportDetails.json();
-  
-        console.log("Detailed raport data:", dataRaportDetails); // Log the response
-  
-        setRaportDetails(dataRaportDetails);
-      } catch (error) {
-        console.error("Error fetching detailed raport data:", error);
-        // Handle the error, e.g., setRaportDetails([]) or show an error message
-      }
-    };
-  
-    fetchRaportDetails();
-  }, [selectedRaportMain, nisSiswa]);
+    // Fetch data matapelajaran
+    fetch("https://jojopinjam.iffan.site/api/get-matapelajaran")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Mata Pelajaran Data:", data);
+        setMataPelajaran(data);
+      })
+      .catch((error) => console.error("Error fetching matapelajaran:", error));
+  }, []);
 
-  // Merge raportMain and raportDetails based on id_raport
-  const mergedRaports = raportMain.map((main) => {
-    const details = raportDetails.find(
-      (detail) => detail.id_raport === main.id_raport
-    );
-    return { ...main, ...details };
-  });
-
-  // Add remaining raports from raportDetails that were not included in raportMain
-  raportDetails.forEach((detail) => {
-    const exists = raportMain.some((main) => main.id_raport === detail.id_raport);
-    if (!exists) {
-      mergedRaports.push({ ...detail, ...raportMain.find((main) => main.id_raport === detail.id_raport) });
+  useEffect(() => {
+    // Fetch data raport based on selectedRaportMain
+    if (selectedRaportMain) {
+      const [kelas, semester] = selectedRaportMain.split("-");
+      fetch(
+        `https://jojopinjam.iffan.site/api/get-raport/${nisSiswa}/${kelas}-${semester}`
+      )
+        .then((response) => response.json())
+        .then((data) => setRaportData(data))
+        .catch((error) => console.error("Error fetching raport data:", error));
     }
-  });
-
-  // Sort the mergedRaports by some key, e.g., id_raport
-  mergedRaports.sort((a, b) => a.id_raport - b.id_raport);
-
-  const indexOfLastRaport = currentPage * raportsPerPage;
-  const indexOfFirstRaport = indexOfLastRaport - raportsPerPage;
-  const currentRaports = mergedRaports.slice(
-    indexOfFirstRaport,
-    indexOfLastRaport
-  );
-
-  const totalPages = Math.ceil(mergedRaports.length / raportsPerPage);
-
-  const paginate = (pageNumber) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
-    }
-  };
-
-  if (raportMain.length === 0) {
-    return <p>Loading...</p>;
-  }
-
-  if (currentRaports.length === 0) {
-    return <p>No data available.</p>;
-  }
+  }, [nisSiswa, selectedRaportMain]);
 
   return (
     <div className="LIHAT-NILAI">
@@ -164,25 +112,26 @@ const SiswaLihatNilai = () => {
           <div className="text-wrapper-4">SCH</div>
         </footer>
         <div className="overlap-2">
-          <div className="text-wrapper-5">Data Nilai Semester 1</div>
+          {raportData.map((item, index) => (
+            <div className="text-wrapper-5">
+              Data Nilai Kelas {item.kelas} Semester {item.semester}
+            </div>
+          ))}
           <div className="overlap-3">
             <div className="rectangle" />
             <div className="navbar-wrapper">
-              {currentRaports.map((raport, index) => (
-                <div key={`${raport.id_raport}-${index}`}>
+              {raportData.map((item, index) => (
+                <div key={index}>
                   <div className="div-2">
                     <div className="text-wrapper-6">
-                      {raport.nama_matapelajaran}
+                      {item.nama_matapelajaran}
                     </div>
-                    <div className="text-wrapper-7">
-                      {(currentPage - 1) * raportsPerPage + index + 1}.
-                    </div>
-                    <div className="text-wrapper-8">{raport.nilai}</div>
-                    <div className="text-wrapper-9">{raport.predikat}</div>
+                    <div className="text-wrapper-7">{index + 1}.</div>
+                    <div className="text-wrapper-8">{item.nilai}</div>
+                    <div className="text-wrapper-9">{item.predikat}</div>
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
           <div className="HEADER-TABEL">
@@ -194,13 +143,14 @@ const SiswaLihatNilai = () => {
             </div>
           </div>
           <div className="kelompok-a-wajib">Kelompok A (wajib)</div>
-          <div className="PAGES">
+          {/* <div className="PAGES">
             <div className="div-wrapper">
               {Array.from({ length: totalPages }, (_, index) => (
                 <div
                   key={index}
-                  className={`overlap-group-2 ${currentPage === index + 1 ? "active" : ""
-                    }`}
+                  className={`overlap-group-2 ${
+                    currentPage === index + 1 ? "active" : ""
+                  }`}
                   onClick={() => paginate(index + 1)}
                 >
                   <div className="ellipse" />
@@ -208,7 +158,7 @@ const SiswaLihatNilai = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
           <div className="download-button">
             <div className="text-wrapper-23">Download Rapor</div>
           </div>
