@@ -3,12 +3,16 @@ import "./LoginSiswa.css";
 import mainLogo from "../img/logo.png";
 import { useHistory } from "react-router-dom";
 import Siswa from '../img/SISWA 1.png';
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 const LoginSiswa = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -35,16 +39,22 @@ const LoginSiswa = () => {
           history.push("/DashboardGuru");
         } else {
           setErrorMsg("Authentication failed. Please check your credentials.");
+          setModalIsOpen(true);
         }
       } else {
         // Handle non-200 HTTP response
         const errorData = await response.json();
-        setErrorMsg(errorData.message || "Authentication failed");
+        // setErrorMsg(errorData.message || "Authentication failed");
+        setModalIsOpen(true);
       }
     } catch (error) {
       console.error("Error during login:", error);
       setErrorMsg("An unexpected error occurred");
+      setModalIsOpen(true);
     }
+  };
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
 
   return (
@@ -114,6 +124,38 @@ const LoginSiswa = () => {
             </button>
             {/* </div> */}
           </form>
+
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Example Modal"
+            style={{
+              overlay: {
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              },
+              content: {
+                position: 'absolute',
+                top: '40%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                border: 'none',
+                background: '#fff',
+                overflow: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                borderRadius: '4px',
+                outline: 'none',
+                padding: '20px',
+                width: '400px',
+                maxWidth: '80%',
+                height: '300px',
+                maxHeight: '80%',
+              },
+            }}
+          >
+            <h2>Login</h2>
+            <p>Email atau Password Anda Salah</p>
+            <button onClick={closeModal}>Tutup</button>
+          </Modal>
         </div>
         <div className="overlap-3">
           <img className="SISWA" alt="Siswa" src={Siswa} />
