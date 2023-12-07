@@ -130,11 +130,9 @@ const SiswaLihatNilai = () => {
         </div>
         <footer className="FOOTER">
           <p className="p">
-            Jalan Pangeran Diponegoro Km. 9, Getasan, Kec. Getasan, Kabupaten
-            Semarang, Jawa Tengah 50774
+            SD Kristen Terang Bangsa
           </p>
           <img className="line" alt="Line" src="line-2.svg" />
-          <img className="img" alt="Line" src="line-1.svg" />
           <div className="text-wrapper-4">SCH</div>
         </footer>
         <div className="overlap-2">
@@ -228,7 +226,7 @@ const SiswaLihatNilai = () => {
             <div className="search">
               <div className="group-6">
                 <img className="element-3" alt="Element" src="7.svg" />
-                <div className="text-wrapper-27">Pencarian</div>
+                
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">

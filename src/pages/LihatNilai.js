@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./LihatNilai.css";
-import { Link } from "react-router-dom";
-import mainLogo from "../img/logo.png";
 
 const LihatNilai = () => {
   const history = useHistory();
   const [dataRaport, setDataRaport] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
@@ -70,11 +67,54 @@ const LihatNilai = () => {
     <div className="LIHAT-RAPORT">
       <div className="div">
         <footer className="FOOTER">
-          <p className="p">Copyright © SD Kristen Terang Bangsa</p>
+          <p className="p">Copyright © SMP Kristen Getasan 2023</p>
+          <img className="line" alt="Line" src="line-2.svg" />
           <img className="img" alt="Line" src="line-1.svg" />
           <div className="text-wrapper-2">SCH</div>
         </footer>
 
+        <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
+        <div className="PEMBERITAHUAN">
+          <img className="element-2" alt="Element" src="53.svg" />
+          <div className="frame">
+            <div className="group">
+              <div className="ellipse-2" />
+              <div className="ellipse-3" />
+              <div className="ellipse-4" />
+            </div>
+          </div>
+          <div className="PIKET">
+            <img className="element-3" alt="Element" src="4.svg" />
+            <div className="div-wrapper">
+              <div className="text-wrapper-7">Jadwal Piket Harian</div>
+            </div>
+          </div>
+          <div className="WALI-MURID">
+            <img className="element-3" alt="Element" src="image.svg" />
+            <div className="div-wrapper">
+              <div className="text-wrapper-7">Pertemuan Wali Murid</div>
+            </div>
+          </div>
+          <div className="KLS">
+            <img className="element-3" alt="Element" src="4-2.svg" />
+            <div className="div-wrapper">
+              <div className="text-wrapper-7">Matematika Kelas 9</div>
+            </div>
+          </div>
+          <div className="KLS-2">
+            <img className="element-3" alt="Element" src="4-3.svg" />
+            <div className="div-wrapper">
+              <div className="text-wrapper-7">Matematika Kelas 8</div>
+            </div>
+          </div>
+          <div className="KLS-3">
+            <img className="element-3" alt="Element" src="4-4.svg" />
+            <div className="div-wrapper">
+              <div className="text-wrapper-7">Matematika Kelas 7</div>
+            </div>
+          </div>
+          <div className="text-wrapper-8">Pemberitahuan</div>
+        </div>
         <div className="TABLE">
           <div className="overlap">
             <div className="DATA-KELAS">
@@ -116,66 +156,78 @@ const LihatNilai = () => {
             </div>
           </div>
         </div>
+        <div className="SORTING-DATA">
+          <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
+          <div className="text-wrapper-9">Sortir Data</div>
+        </div>
+        {dataRaport.map((item, index) => (
+          <div key={index} className="navbar">
+            <div className="text-wrapper-10">\{item.kelas}</div>
+            <div className="text-wrapper-11">\Semester {item.semester}</div>
+            <div className="text-wrapper-12">\Input Rapor</div>
+            <div className="text-wrapper-13">Dashboard</div>
+          </div>
+        ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link
-              to="/InputRaport"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i class="bi bi-file-earmark-plus"></i>
-              <span className="side-text ms-2">Input Raport Siswa</span>
-            </Link>
+            <img className="element-3" alt="Element" src="64.svg" />
+            <div className="text-wrapper-14">Pengaturan Profil</div>
           </div>
           <div className="PROFILE-2">
-            <Link
-              to="/LoginSiswa"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i className="bi bi-box-arrow-right"></i>
-              <span className="side-text ms-2">Log Out</span>
-            </Link>
+            <img className="element-3" alt="Element" src="64-2.svg" />
+            <div className="text-wrapper-14">Log Out</div>
+          </div>
+          <div className="group-2">
+            <div className="overlap-group-3">
+              <div className="group-wrapper">
+                <div className="group-3">
+                  <div className="text-wrapper-15">Light</div>
+                  <img
+                    className="sun-solid"
+                    alt="Sun solid"
+                    src="sun-solid.svg"
+                  />
+                </div>
+              </div>
+              <div className="text-wrapper-16">Dark</div>
+              <img
+                className="moon-solid"
+                alt="Moon solid"
+                src="moon-solid.svg"
+              />
+            </div>
           </div>
           <div className="SISWA">
-            <Link
-              to="/DataSiswa"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i className="bi bi-person-vcard"></i>
-              <span className="side-text ms-2">Siswa</span>
-            </Link>
+            <img className="icon-SISWA" alt="Icon SISWA" src="icon-SISWA.png" />
+            <div className="text-wrapper-14">Siswa</div>
           </div>
           <div className="CHAT">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-person-video3"></i>
-              <span className="side-text ms-2">Guru</span>
-            </Link>
+            <img
+              className="icon-envelope"
+              alt="Icon envelope"
+              src="icon-envelope.png"
+            />
+            <div className="text-wrapper-14">Chat</div>
           </div>
           <div className="CHAT-2">
-            <Link
-              to="/DaftarMapel"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i className="bi bi-card-checklist"></i>
-              <span className="side-text ms-2">Mata Pelajaran</span>
-            </Link>
+            <img
+              className="icon-attendance"
+              alt="Icon attendance"
+              src="icon-attendance.png"
+            />
+            <div className="text-wrapper-14">Generate Absen</div>
           </div>
           <div className="CHAT-3">
-            <Link
-              to="/RaportSiswa"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i class="bi bi-book-fill"></i>
-              <span className="side-text ms-2">Raport Siswa</span>
-            </Link>
+            <img
+              className="icon-calender"
+              alt="Icon calender"
+              src="icon-calender.png"
+            />
+            <div className="text-wrapper-14">Jadwal Pelajaran</div>
           </div>
           <div className="DASHBOARD">
-            <Link
-              to="/DashboardGuru"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i className="bi bi-speedometer2"></i>
-              <span className="side-text ms-2">Dashboard</span>
-            </Link>
+            <img className="element-3" alt="Element" src="1.svg" />
+            <div className="text-wrapper-14">Dashboard</div>
           </div>
         </div>
         <div className="PAGES">
@@ -210,28 +262,17 @@ const LihatNilai = () => {
             <div className="element-wrapper">
               <img className="element-4" alt="Element" src="3.svg" />
             </div>
-            <div className="search">
-              <div className="group-7">
-                <input
-                  className="custom-input"
-                  type="text"
-                  placeholder="Cari berdasarkan Nama/NIS"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-            </div>
             <div className="SMP-KRISTEN-GETASAN">
-              SD Kristen Terang Bangsa
+              Smp Kristen Getasan
               <br />
-              E-Rapor
+              e-rapor
             </div>
-            <img className="img-logo" src={mainLogo} alt="logo-sd" />
-            <div className="kembali">
-              <Link to="/other-page">
-                <div className="text-wrapper-11">Kembali</div>
-              </Link>
-            </div>
+            <img className="ellipse-5" alt="Ellipse" src="ellipse-1192.svg" />
+            <img
+              className="SMP-KRISTEN"
+              alt="Smp KRISTEN"
+              src="SMP-KRISTEN-2.png"
+            />
           </div>
         </header>
       </div>
