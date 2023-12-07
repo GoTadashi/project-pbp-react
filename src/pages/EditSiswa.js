@@ -18,7 +18,7 @@ export const EditSiswa = () => {
           "https://jojopinjam.iffan.site/api/get-siswa"
         );
         const dataSiswa = await responseSiswa.json();
-        setDataSiswa(dataSiswa);
+        // setDataSiswa(dataSiswa);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -26,7 +26,7 @@ export const EditSiswa = () => {
 
     fetchData();
   }, []);
-  
+
   const handleSubmit = async () => {
     try {
       const response = await fetch("http://127.0.0.1:8001/api/update-siswa", {
@@ -229,12 +229,12 @@ export const EditSiswa = () => {
         </div>
         <div className="group-9">
           <div className="frame-wrapper">
-            <div className="frame-2">
+            <div className="frame-4">
               <div className="text-wrapper-14">Nama Lengkap</div>
-              <div className="text-wrapper-17">*</div>
+              <div className="text-wrapper-15">*</div>
             </div>
           </div>
-          <div className="frame-4">
+          <div className="frame-5">
             <input
               type="text"
               className="custom-input"
@@ -245,13 +245,13 @@ export const EditSiswa = () => {
         </div>
         <div className="group-10">
           <div className="frame-wrapper">
-            <div className="frame-2">
+            <div className="frame-6">
               <div className="text-wrapper-14">Jenis Kelamin</div>
-              <div className="text-wrapper-17">*</div>
+              <div className="text-wrapper-15">*</div>
             </div>
           </div>
           <div className="overlap-3">
-            <div className="frame-5">
+            <div className="frame-7">
               <input
                 type="text"
                 className="custom-input"
@@ -268,13 +268,13 @@ export const EditSiswa = () => {
         </div>
         <div className="group-11">
           <div className="frame-wrapper">
-            <div className="frame-2">
+            <div className="frame-8">
               <div className="text-wrapper-14">Agama</div>
               <div className="text-wrapper-17">*</div>
             </div>
           </div>
           <div className="overlap-3">
-            <div className="frame-5">
+            <div className="frame-9">
               <input
                 type="text"
                 className="custom-input"
@@ -291,12 +291,12 @@ export const EditSiswa = () => {
         </div>
         <div className="group-12">
           <div className="frame-wrapper">
-            <div className="frame-2">
+            <div className="frame-10">
               <div className="text-wrapper-14">Nama Orang Tua</div>
               <div className="text-wrapper-17">*</div>
             </div>
           </div>
-          <div className="frame-6">
+          <div className="frame-11">
             <input
               type="text"
               className="custom-input"
@@ -306,41 +306,36 @@ export const EditSiswa = () => {
           </div>
         </div>
         <div className="group-14">
-          <div className="component">
-            <div className="frame-7">
-              <div className="frame-8">
-                <div className="text-wrapper-18">Tanggal Lahir</div>
-                <div className="text-wrapper-17">*</div>
-              </div>
-              <div className="frame-9">
-                <input
-                  type="text"
-                  className="custom-input"
-                  value={tanggalLahir}
-                  onChange={(e) => setTanggalLahir(e.target.value)}
-                />
-                {/* <Calendar className="vuesax-linear" /> */}
-              </div>
-            </div>
-          </div>
-          <div className="group-15">
-            <div className="group-16">
-              <div className="frame-10">
-                <div className="text-wrapper-16"></div>
-              </div>
-            </div>
-            <div className="frame-11">
-              <div className="text-wrapper-18">Tempat Lahir</div>
+          <div className="frame-wrapper">
+            <div className="frame-12">
+              <div className="text-wrapper-14">Tanggal Lahir</div>
               <div className="text-wrapper-17">*</div>
             </div>
-            <div className="frame-12">
+            <div className="frame-13">
               <input
                 type="text"
                 className="custom-input"
-                value={tempatLahir}
-                onChange={(e) => setTempatLahir(e.target.value)}
+                value={tanggalLahir}
+                onChange={(e) => setTanggalLahir(e.target.value)}
               />
               {/* <Calendar className="vuesax-linear" /> */}
+            </div>
+          </div>
+          <div className="group-15">
+            <div className="frame-wrapper">
+              <div className="frame-14">
+                <div className="text-wrapper-14">Tempat Lahir</div>
+                <div className="text-wrapper-17">*</div>
+              </div>
+              <div className="frame-15">
+                <input
+                  type="text"
+                  className="custom-input"
+                  value={tempatLahir}
+                  onChange={(e) => setTempatLahir(e.target.value)}
+                />
+                {/* <Calendar className="vuesax-linear" /> */}
+              </div>
             </div>
           </div>
         </div>

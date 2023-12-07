@@ -3,9 +3,9 @@ import "./LoginSiswa.css";
 import mainLogo from "../img/logo.png";
 import { useHistory } from "react-router-dom";
 import Siswa from '../img/SISWA 1.png';
-import Modal from "react-modal";
+// import Modal from "react-modal";
 
-Modal.setAppElement("#root");
+// Modal.setAppElement("#root");
 
 const LoginSiswa = () => {
   const history = useHistory();
@@ -125,7 +125,7 @@ const LoginSiswa = () => {
             {/* </div> */}
           </form>
 
-          <Modal
+          {/* <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Example Modal"
@@ -155,7 +155,7 @@ const LoginSiswa = () => {
             <h2>Login</h2>
             <p>Email atau Password Anda Salah</p>
             <button onClick={closeModal}>Tutup</button>
-          </Modal>
+          </Modal> */}
         </div>
         <div className="overlap-3">
           <img className="SISWA" alt="Siswa" src={Siswa} />

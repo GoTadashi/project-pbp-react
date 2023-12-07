@@ -222,7 +222,7 @@ const InputSiswa = () => {
           <img className="back" alt="Back" src="back.png" />
           <div className="text-wrapper-11">Kembali</div>
         </div>
-        <div className="text-wrapper-12">Input Nilai</div>
+        <div className="text-wrapper-12">Input Siswa</div>
         <form onSubmit={handleSubmit}>
           <div className="group-8">
             <div className="frame-wrapper">
@@ -230,7 +230,7 @@ const InputSiswa = () => {
                 <div className="text-wrapper-13">NISN</div>
               </div>
             </div>
-            <div className="frame-2">
+            <div className="frame-3">
               <input
                 type="number"
                 className="dropdown"
@@ -245,7 +245,7 @@ const InputSiswa = () => {
               <div className="frame-2">
                 <div className="text-wrapper-13">Nama Siswa</div>
               </div>
-              <div className="frame-2">
+              <div className="frame-4">
                 <input
                   type="text"
                   className="dropdown"
@@ -261,7 +261,7 @@ const InputSiswa = () => {
               <div className="frame-2">
                 <div className="text-wrapper-13">Tempat Lahir</div>
               </div>
-              <div className="frame-2">
+              <div className="frame-5">
                 <input
                   type="text"
                   className="dropdown"
@@ -276,7 +276,7 @@ const InputSiswa = () => {
               <div className="frame-2">
                 <div className="text-wrapper-13">Tanggal Lahir</div>
               </div>
-              <div className="frame-2">
+              <div className="frame-6">
                 <input
                   type="date"  // Change the type to "date"
                   className="dropdown"
@@ -291,7 +291,7 @@ const InputSiswa = () => {
               <div className="frame-2">
                 <div className="text-wrapper-13">Jenis Kelamin</div>
               </div>
-              <div className="frame-2">
+              <div className="frame-7">
                 <select
                   className="dropdown"
                   value={jenis_kelamin}
@@ -306,10 +306,10 @@ const InputSiswa = () => {
           </div>
           <div className="group-13"> {/* Updated for Agama dropdown */}
           <div className="frame-wrapper">
-            <div className="frame-2">
+            <div className="frame-12">
               <div className="text-wrapper-13">Agama</div>
             </div>
-            <div className="frame-2">
+            <div className="frame-13">
               <select
                 className="dropdown"
                 value={agama}
@@ -328,10 +328,10 @@ const InputSiswa = () => {
         </div>
         <div className="group-14"> {/* Add a new group for Nama Orangtua */}
           <div className="frame-wrapper">
-            <div className="frame-2">
+            <div className="frame-14">
               <div className="text-wrapper-13">Nama Orangtua</div>
             </div>
-            <div className="frame-2">
+            <div className="frame-15">
               <input
                 type="text"
                 className="dropdown"
@@ -342,10 +342,10 @@ const InputSiswa = () => {
           </div>
         </div>
         <div className="group-12">
-            <button type="submit" className="frame-7">
+            <button type="submit" className="frame-16">
               <div className="text-wrapper-15">Simpan</div>
             </button>
-            <div className="frame-8" onClick={handleReset}>
+            <div className="frame-17" onClick={handleReset}>
               <div className="text-wrapper-15">Reset</div>
             </div>
           </div>

@@ -678,7 +678,6 @@
   letter-spacing: -0.4px;
   line-height: 20px;
   margin-top: -1px;
-  /* position: relative; */
   white-space: nowrap;
 }
 
@@ -866,6 +865,38 @@
 }
 
 .INPUT-SISWA .frame-8 {
+  align-items: center;
+  background-color: #e82c2c;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  left: 149px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+  cursor: pointer;
+}
+
+.INPUT-SISWA .frame-16 {
+  align-items: center;
+  background-color: #0082fc;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+  cursor: pointer;
+}
+
+.INPUT-SISWA .frame-17 {
   align-items: center;
   background-color: #e82c2c;
   border-radius: 10px;

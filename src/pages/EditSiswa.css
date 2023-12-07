@@ -658,7 +658,7 @@
   .EDIT-SISWA .text-wrapper-14 {
     color: #252d36;
     font-family: "Poppins-Regular", Helvetica;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: -0.28px;
     line-height: 14px;
@@ -681,18 +681,13 @@
   
   .EDIT-SISWA .frame-3 {
     align-items: center;
-    background-color: #ebebeb;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 10px;
-    left: -1px;
-    padding: 12px 16px;
-    position: absolute;
-    top: 40px;
-    width: 530px;
+  top: 50px;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 530px;
   }
   
   .EDIT-SISWA .text-wrapper-16 {
@@ -728,18 +723,11 @@
   
   .EDIT-SISWA .frame-4 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 10px;
-    left: -1px;
-    padding: 12px 16px;
-    position: absolute;
-    top: 40px;
-    width: 530px;
+    display: inline-flex;
+    gap: 2px;
+    left: 5px;
+    position: relative;
+    top: 25px;
   }
   
   .EDIT-SISWA .group-10 {
@@ -761,18 +749,13 @@
   
   .EDIT-SISWA .frame-5 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 10px;
-    left: 0;
-    padding: 12px 16px;
-    position: absolute;
-    top: 0;
-    width: 530px;
+  top: 70px;
+  display: flex;
+  gap: 680px;
+  left: -1px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 530px;
   }
   
   .EDIT-SISWA .icon-chevron-down {
@@ -801,18 +784,11 @@
   
   .EDIT-SISWA .frame-6 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 10px;
-    left: -1px;
-    padding: 12px 16px;
-    position: absolute;
-    top: 40px;
-    width: 533px;
+    display: inline-flex;
+    gap: 2px;
+    left: 5px;
+    position: relative;
+    top: 45px;
   }
   
   .EDIT-SISWA .group-13 {
@@ -842,20 +818,23 @@
   }
   
   .EDIT-SISWA .frame-7 {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
+    align-items: center;
+  top: 50px;
+  display: flex;
+  gap: 680px;
+  left: 0px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 530px;
   }
   
   .EDIT-SISWA .frame-8 {
     align-items: center;
     display: inline-flex;
-    flex: 0 0 auto;
     gap: 2px;
+    left: 5px;
     position: relative;
+    top: 65px;
   }
   
   .EDIT-SISWA .text-wrapper-18 {
@@ -872,20 +851,13 @@
   
   .EDIT-SISWA .frame-9 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    flex: 0 0 auto;
-    justify-content: space-between;
-    margin-bottom: -1px;
-    margin-left: -1px;
-    margin-right: -1px;
-    padding: 12px 16px;
-    position: relative;
-    width: 253px;
+  top: 70px;
+  display: flex;
+  gap: 680px;
+  left: 0px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 530px;
   }
   
   .EDIT-SISWA .vuesax-linear {
@@ -912,36 +884,90 @@
   
   .EDIT-SISWA .frame-10 {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid;
-    border-color: var(--grey-300);
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #17191c0d;
-    display: flex;
-    gap: 10px;
-    left: -1px;
-    padding: 12px 16px;
+    display: inline-flex;
+    gap: 2px;
+    left: 5px;
     position: relative;
-    top: -1px;
-    width: 267px;
+    top: 84px;
   }
   
   .EDIT-SISWA .frame-11 {
     align-items: center;
+    top: 130px;
+    display: flex;
+    gap: 68px;
+    left: 0px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 530px;
+  }
+
+  .EDIT-SISWA .frame-12 {
+    align-items: center;
     display: inline-flex;
     gap: 2px;
     left: 5px;
+    position: relative;
+    top: 19px;
+  }
+
+  .EDIT-SISWA .frame-13 {
+    align-items: center;
+    top: 60px;
+    display: flex;
+    gap: 680px;
+    left: 0px;
+    padding: 12px 20px;
     position: absolute;
-    top: 0;
+    width: 530px;
+  }
+
+  .EDIT-SISWA .frame-14 {
+    align-items: center;
+    display: inline-flex;
+    gap: 2px;
+    left: 5px;
+    position: relative;
+    top: 139px;
+  }
+
+  .EDIT-SISWA .frame-15 {
+    align-items: center;
+    top: 180px;
+    display: flex;
+    gap: 680px;
+    left: 0px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 530px;
+  }
+
+  .EDIT-SISWA .custom-input {
+    border-radius: 10px;
+    width: 58rem; 
+    font-size: 16px; 
+    margin-left: -19px;
+    margin-top: -20px;
+    padding: 18px;
   }
   
   .EDIT-SISWA .TAMBAH-DATA {
     background-color: #0082fc;
     border-radius: 10px;
     height: 40px;
-    left: 678px;
+    left: 530px;
     position: absolute;
-    top: 881px;
+    top: 64rem;
+    width: 170px;
+  }
+
+  .EDIT-SISWA .TAMBAH-DATA:hover {
+    background-color: #026fd4;
+    border-radius: 10px;
+    height: 40px;
+    left: 530px;
+    position: absolute;
+    top: 64rem;
     width: 170px;
   }
   
