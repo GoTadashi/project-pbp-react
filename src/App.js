@@ -19,6 +19,7 @@ import SiswaLihatNilai from "./pages/SiswaLihatNilai";
 import EditSiswa from "./pages/EditSiswa";
 import RaportPage from "./pages/coba";
 import InputSiswa from "./pages/InputSiswa";
+import RaportSiswa from "./pages/RaportSiswa";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           editnilai -
           */}
           <Route path="/inputsiswa" component={InputSiswa} />
+          <Route path="/raportsiswa" component={RaportSiswa} />
           <Route path="/coba/:nisSiswa" exact component={RaportPage} />
           <Route path="/LoginSiswa" exact component={LoginSiswa} />
           <Route path="/DashboardGuru" exact component={DashboardGuru} />
@@ -56,7 +58,7 @@ function App() {
           <Route path="/GuruLihatNilai" exact component={GuruLihatNilai} />
 
           {/* Data Siswa */}
-          <Route path="/EditSiswa" exact component={EditSiswa} />
+          <Route path="/EditSiswa/:nisSiswa" exact component={EditSiswa} />
         </div>
       </Switch>
     </Router>

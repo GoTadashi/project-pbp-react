@@ -1,49 +1,66 @@
 import React, { useEffect, useState } from "react";
-// import { Calendar } from "./Calendar";
+import { useParams } from "react-router-dom";
 import "./EditSiswa.css";
 
-export const EditSiswa = () => {
+const EditSiswa = () => {
+  const { nisSiswa } = useParams();
+  const [selectedSiswa, setSelectedSiswa] = useState(null);
   const [nis, setNis] = useState("");
+  const [nisn, setNisn] = useState("");
   const [nama, setNama] = useState("");
-  const [jenisKelamin, setJenisKelamin] = useState("");
+  const [jenis_kelamin, setJenisKelamin] = useState("");
   const [agama, setAgama] = useState("");
-  const [namaOrtu, setNamaOrtu] = useState("");
-  const [tanggalLahir, setTanggalLahir] = useState("");
-  const [tempatLahir, setTempatLahir] = useState("");
+  const [nama_orangtua, setNamaOrtu] = useState("");
+  const [tanggal_lahir, setTanggalLahir] = useState("");
+  const [tempat_lahir, setTempatLahir] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const responseSiswa = await fetch(
-          "https://jojopinjam.iffan.site/api/get-siswa"
+          `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
         );
         const dataSiswa = await responseSiswa.json();
-        setDataSiswa(dataSiswa);
+
+        if (Array.isArray(dataSiswa)) {
+          setSelectedSiswa(dataSiswa);
+        } else if (dataSiswa) {
+          setSelectedSiswa([dataSiswa]);
+        } else {
+          console.error("Invalid Data Siswa format:", dataSiswa);
+          setSelectedSiswa([]);
+        }
+
+        // ... (code for fetching raport data)
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []);
-  
+  }, [nisSiswa]);
+
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8001/api/update-siswa", {
-        method: "POST", // or "PUT" depending on your API
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nis,
-          nama,
-          jenis_kelamin: jenisKelamin,
-          agama,
-          nama_orangtua: namaOrtu,
-          tanggal_lahir: tanggalLahir,
-          tempat_lahir: tempatLahir,
-        }),
-      });
+      const response = await fetch(
+        "https://jojopinjam.iffan.site/api/update-siswa",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nis,
+            nama,
+            jenis_kelamin,
+            agama,
+            nama_orangtua,
+            tanggal_lahir,
+            tempat_lahir,
+          }),
+        }
+      );
 
       if (response.ok) {
         const result = await response.json();
@@ -227,6 +244,22 @@ export const EditSiswa = () => {
             />
           </div>
         </div>
+        <div className="group-8">
+          <div className="frame-wrapper">
+            <div className="frame-2">
+              <div className="text-wrapper-14">NIS</div>
+              <div className="text-wrapper-15">*</div>
+            </div>
+          </div>
+          <div className="frame-3">
+            <input
+              type="number"
+              className="custom-input"
+              value={nisn}
+              onChange={(e) => setNisn(e.target.value)}
+            />
+          </div>
+        </div>
         <div className="group-9">
           <div className="frame-wrapper">
             <div className="frame-2">
@@ -251,19 +284,15 @@ export const EditSiswa = () => {
             </div>
           </div>
           <div className="overlap-3">
-            <div className="frame-5">
-              <input
-                type="text"
-                className="custom-input"
-                value={jenisKelamin}
-                onChange={(e) => setJenisKelamin(e.target.value)}
-              />
-            </div>
-            <img
-              className="icon-chevron-down"
-              alt="Icon chevron down"
-              src="icon-chevron-down.png"
-            />
+            <select
+              className="custom-input"
+              value={jenis_kelamin}
+              onChange={(e) => setJenisKelamin(e.target.value)}
+            >
+              <option value="">Pilih Jenis Kelamin</option>
+              <option value="Pria">Pria</option>
+              <option value="Wanita">Wanita</option>
+            </select>
           </div>
         </div>
         <div className="group-11">
@@ -274,35 +303,19 @@ export const EditSiswa = () => {
             </div>
           </div>
           <div className="overlap-3">
-            <div className="frame-5">
-              <input
-                type="text"
-                className="custom-input"
-                value={agama}
-                onChange={(e) => setAgama(e.target.value)}
-              />
-            </div>
-            <img
-              className="icon-chevron-down"
-              alt="Icon chevron down"
-              src="image.png"
-            />
-          </div>
-        </div>
-        <div className="group-12">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-14">Nama Orang Tua</div>
-              <div className="text-wrapper-17">*</div>
-            </div>
-          </div>
-          <div className="frame-6">
-            <input
-              type="text"
+            <select
               className="custom-input"
-              value={namaOrtu}
-              onChange={(e) => setNamaOrtu(e.target.value)}
-            />
+              value={agama}
+              onChange={(e) => setAgama(e.target.value)}
+            >
+              <option value="">Pilih Agama</option>
+              <option value="Islam">Islam</option>
+              <option value="Kristen Protestan">Kristen Protestan</option>
+              <option value="Katolik">Katolik</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Buddha">Buddha</option>
+              <option value="Konghucu">Konghucu</option>
+            </select>
           </div>
         </div>
         <div className="group-14">
@@ -314,13 +327,28 @@ export const EditSiswa = () => {
               </div>
               <div className="frame-9">
                 <input
-                  type="text"
+                  type="date"
                   className="custom-input"
-                  value={tanggalLahir}
+                  value={tanggal_lahir}
                   onChange={(e) => setTanggalLahir(e.target.value)}
                 />
-                {/* <Calendar className="vuesax-linear" /> */}
               </div>
+            </div>
+          </div>
+          <div className="group-12">
+            <div className="frame-wrapper">
+              <div className="frame-2">
+                <div className="text-wrapper-14">Nama Orang Tua</div>
+                <div className="text-wrapper-17">*</div>
+              </div>
+            </div>
+            <div className="frame-6">
+              <input
+                type="text"
+                className="custom-input"
+                value={nama_orangtua}
+                onChange={(e) => setNamaOrtu(e.target.value)}
+              />
             </div>
           </div>
           <div className="group-15">
@@ -337,7 +365,7 @@ export const EditSiswa = () => {
               <input
                 type="text"
                 className="custom-input"
-                value={tempatLahir}
+                value={tempat_lahir}
                 onChange={(e) => setTempatLahir(e.target.value)}
               />
               {/* <Calendar className="vuesax-linear" /> */}

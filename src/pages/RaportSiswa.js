@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
-import "./DataSiswa.css";
+import "./RaportSiswa.css";
 
-const DataSiswa = () => {
+const RaportSiswa = () => {
   const history = useHistory();
   const [dataRaport, setDataRaport] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,10 +44,6 @@ const DataSiswa = () => {
     history.push(`/editnilai/${nis}`);
   };
 
-  const handleUbahData = (nis) => {
-    history.push(`/editsiswa/${nis}`);
-  };
-
   const handleLihatRaport = () => {
     history.push("/LihatRaport");
   };
@@ -63,7 +59,7 @@ const DataSiswa = () => {
   const currentItems = dataSiswa.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div className="DATA-NILAI">
+    <div className="RAPORT-SISWA">
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SMP Kristen Getasan 2023</p>
@@ -165,13 +161,6 @@ const DataSiswa = () => {
                 // disabled
               >
                 <div className="text-wrapper-23">Input Nilai</div>
-              </button>
-
-              <button
-                className="TAMBAH-DATA"
-                onClick={() => handleUbahData()}
-              >
-                <div className="text-wrapper-23">Edit Siswa</div>
               </button>
             </div>
           </div>
@@ -312,4 +301,4 @@ const DataSiswa = () => {
   );
 };
 
-export default DataSiswa;
+export default RaportSiswa;
