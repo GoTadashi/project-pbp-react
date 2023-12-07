@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./DaftarMapel.css";
+import mainLogo from "../img/logo.png";
 
 export const DaftarMapel = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -167,22 +168,18 @@ export const DaftarMapel = () => {
                 <input
                   className="custom-input"
                   type="text"
-                  placeholder="Cari berdasarkan Nama/NIS"
+                  placeholder="Cari Mata Pelajaran"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
-              Smp Kristen Getasan
+              SD Kristen Terang Bangsa
               <br />
-              e-rapor
+              E-Rapor
             </div>
-            <img
-              className="SMP-KRISTEN"
-              alt="Smp KRISTEN"
-              src="SMP-KRISTEN-2.png"
-            />
+            <img className="img-logo" src={mainLogo} alt="logo-sd" />
           </div>
         </header>
         <div className="DATA-KELAS-wrapper">
