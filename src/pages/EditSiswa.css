@@ -741,10 +741,10 @@
   .EDIT-SISWA .overlap-3 {
     border-radius: 8px;
     height: 47px;
-    left: -1px;
+    left: 18px;
     position: absolute;
-    top: 40px;
-    width: 530px;
+    top: 90px;
+    width: 510px;
   }
   
   .EDIT-SISWA .frame-5 {
@@ -762,7 +762,7 @@
     height: 10px;
     left: 490px;
     position: absolute;
-    top: 20px;
+    top: 40px;
     width: 17px;
   }
   
@@ -819,7 +819,7 @@
   
   .EDIT-SISWA .frame-7 {
     align-items: center;
-  top: 50px;
+  top: 90px;
   display: flex;
   gap: 680px;
   left: 0px;
@@ -851,7 +851,7 @@
   
   .EDIT-SISWA .frame-9 {
     align-items: center;
-  top: 70px;
+  top: 110px;
   display: flex;
   gap: 680px;
   left: 0px;
@@ -893,13 +893,13 @@
   
   .EDIT-SISWA .frame-11 {
     align-items: center;
-    top: 130px;
-    display: flex;
-    gap: 68px;
-    left: 0px;
-    padding: 12px 20px;
-    position: absolute;
-    width: 530px;
+  top: 130px;
+  display: flex;
+  gap: 680px;
+  left: 0px;
+  padding: 12px 20px;
+  position: absolute;
+  width: 530px;
   }
 
   .EDIT-SISWA .frame-12 {
@@ -926,17 +926,17 @@
     align-items: center;
     display: inline-flex;
     gap: 2px;
-    left: 5px;
+    left: 20rem;
     position: relative;
-    top: 139px;
+    top: 57rem;
   }
 
   .EDIT-SISWA .frame-15 {
     align-items: center;
-    top: 180px;
+    top: 60rem;
     display: flex;
     gap: 680px;
-    left: 0px;
+    left: 20rem;
     padding: 12px 20px;
     position: absolute;
     width: 530px;

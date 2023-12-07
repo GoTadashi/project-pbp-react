@@ -31,7 +31,6 @@ const EditSiswa = () => {
           console.error("Invalid Data Siswa format:", dataSiswa);
           setSelectedSiswa([]);
         }
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -282,12 +281,7 @@ const EditSiswa = () => {
               <div className="text-wrapper-15">*</div>
             </div>
           </div>
-          <div className="overlap-3">
-            <img
-              className="icon-chevron-down"
-              alt="Icon chevron down"
-              src="icon-chevron-down.png"
-            />
+          <div className="frame-7">
             <select
               className="custom-input"
               value={jenis_kelamin}
@@ -306,20 +300,21 @@ const EditSiswa = () => {
               <div className="text-wrapper-17">*</div>
             </div>
           </div>
-          <div className="overlap-3">
-            <div className="frame-9">
-              <input
-                type="text"
-                className="custom-input"
-                value={agama}
-                onChange={(e) => setAgama(e.target.value)}
-              />
-            </div>
-            <img
-              className="icon-chevron-down"
-              alt="Icon chevron down"
-              src="image.png"
-            />
+          <div className="frame-9">
+            <select
+              type="text"
+              className="custom-input"
+              value={agama}
+              onChange={(e) => setAgama(e.target.value)}
+            >
+              <option value="">Pilih Agama</option>
+              <option value="Islam">Islam</option>
+              <option value="Kristen Protestan">Kristen Protestan</option>
+              <option value="Katolik">Katolik</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Buddha">Buddha</option>
+              <option value="Konghucu">Konghucu</option>
+            </select>
           </div>
         </div>
         <div className="group-12">
@@ -333,80 +328,51 @@ const EditSiswa = () => {
             <input
               type="text"
               className="custom-input"
-              value={agama}
-              onChange={(e) => setAgama(e.target.value)}
+              value={nama_orangtua}
+              onChange={(e) => setNamaOrtu(e.target.value)}
             />
-              <option value="">Pilih Agama</option>
-              <option value="Islam">Islam</option>
-              <option value="Kristen Protestan">Kristen Protestan</option>
-              <option value="Katolik">Katolik</option>
-              <option value="Hindu">Hindu</option>
-              <option value="Buddha">Buddha</option>
-              <option value="Konghucu">Konghucu</option>
           </div>
         </div>
         <div className="group-14">
           <div className="frame-wrapper">
             <div className="frame-12">
               <div className="text-wrapper-14">Tanggal Lahir</div>
-          <div className="component">
-            <div className="frame-7">
-              <div className="frame-8">
-                <div className="text-wrapper-18">Tanggal Lahir</div>
-                <div className="text-wrapper-17">*</div>
-              </div>
-              <div className="frame-9">
-                <input
-                  type="date"
-                  className="custom-input"
-                  value={tanggal_lahir}
-                  onChange={(e) => setTanggalLahir(e.target.value)}
-                />
-              </div>
+              <div className="text-wrapper-17">*</div>
             </div>
           </div>
-          <div className="group-12">
-            <div className="frame-wrapper">
-              <div className="frame-2">
-                <div className="text-wrapper-14">Nama Orang Tua</div>
-                <div className="text-wrapper-17">*</div>
-              </div>
-            </div>
-            <div className="frame-6">
-              <input
-                type="text"
-                className="custom-input"
-                value={nama_orangtua}
-                onChange={(e) => setNamaOrtu(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="group-15">
-            <div className="frame-wrapper">
-              <div className="frame-14">
-                <div className="text-wrapper-14">Tempat Lahir</div>
-                <div className="text-wrapper-17">*</div>
-              </div>
-              <div className="frame-15">
-                <input
-                  type="text"
-                  className="custom-input"
-                  value={tempat_lahir}
-                  onChange={(e) => setTempatLahir(e.target.value)}
-                />
-                {/* <Calendar className="vuesax-linear" /> */}
-              </div>
-            </div>
+          <div className="frame-13">
+            <input
+              type="date"
+              className="custom-input"
+              value={tanggal_lahir}
+              onChange={(e) => setTanggalLahir(e.target.value)}
+            />
           </div>
         </div>
+        <div className="group-15">
+          <div className="frame-wrapper">
+            <div className="frame-14">
+              <div className="text-wrapper-14">Tempat Lahir</div>
+              <div className="text-wrapper-17">*</div>
+            </div>
+          </div>
+          <div className="frame-15">
+            <input
+              type="text"
+              className="custom-input"
+              value={tempat_lahir}
+              onChange={(e) => setTempatLahir(e.target.value)}
+            />
+            {/* <Calendar className="vuesax-linear" /> */}
+          </div>
+        </div>
+
         <div className="EDIT-SISWA">
           <button className="TAMBAH-DATA" onClick={handleSubmit}>
             <div className="text-wrapper-19">Update</div>
           </button>
         </div>
       </div>
-    </div>
-    </div>
     </div>
   );
 };
