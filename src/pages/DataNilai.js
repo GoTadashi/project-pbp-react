@@ -44,6 +44,11 @@ const DataNilai = () => {
     history.push(`/inputnilai/${nis}`);
   };
 
+  const handleLihatRaport = () => {
+    history.push('/LihatRaport');
+  };
+
+
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
   const pageNumbers = Array.from(
     { length: totalPages },
@@ -151,6 +156,12 @@ const DataNilai = () => {
                     </tr>
                   ))}
                 </tbody>
+                <button
+                className="TAMBAH-DATA"
+                onClick={() => handleLihatRaport()}
+                >
+                <div className="text-wrapper-23">Edit Raport</div>
+                </button>
               </table>
             </div>
           </div>
