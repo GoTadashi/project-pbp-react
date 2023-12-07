@@ -959,7 +959,7 @@
 }
 
 .DATA-NILAI .custom-input {
-  width: 58rem;
+  width: 60rem;
   font-size: 16px;
   margin-left: -2px;
   margin-top: -2px;
@@ -996,16 +996,16 @@
 
 .DATA-NILAI .SMP-KRISTEN-GETASAN {
   color: #000000;
-  font-family: "Poppins-Medium", Helvetica;
-  font-size: 20px;
-  font-weight: 500;
-  height: 60px;
-  left: 106px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 72px;
-  width: 269px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 72px;
+    left: 126px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 59px;
+    width: 314px;
 }
 
 .DATA-NILAI .ellipse-5 {

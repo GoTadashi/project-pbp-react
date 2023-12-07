@@ -970,7 +970,7 @@
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 40px;
+    top: 34px;
     width: 314px;
 }
 
@@ -995,4 +995,5 @@
     margin-top: 10px;
     width: 100px;
     height: 100px;
+
 }

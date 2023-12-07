@@ -59,8 +59,12 @@ export const DashboardGuru = () => {
         </div>
         <footer className="FOOTER">
           <p className="p">
-            
+            Jalan Pangeran Diponegoro Km. 9, Getasan, Kec. Getasan, Kabupaten
+            Semarang, Jawa Tengah 50774
           </p>
+          <img className="line" alt="Line" src="/img/line-1.svg" />
+          <img className="img" alt="Line" src="/img/line-1.svg" />
+          <div className="text-wrapper-4">SCH</div>
         </footer>
         <div className="overlap-2">
           <div className="overlap-3">
