@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import "./RaportSiswa.css";
+import mainLogo from "../img/logo.png";
 
 const RaportSiswa = () => {
   const history = useHistory();
@@ -115,7 +116,7 @@ const RaportSiswa = () => {
             <div className="DATA-KELAS">
               <table>
                 <thead className="stable-table">
-                  <tr>
+                  <tr className="head-row">
                     <th>NIS</th>
                     <th>Nama</th>
                     <th>Tempat Lahir</th>
@@ -158,17 +159,17 @@ const RaportSiswa = () => {
               <button
                 className="TAMBAH-DATA-2"
                 onClick={() => handleLihatRaport()}
-                // disabled
+              // disabled
               >
                 <div className="text-wrapper-23">Input Nilai</div>
               </button>
             </div>
           </div>
         </div>
-        <div className="SORTING-DATA">
+        {/* <div className="SORTING-DATA">
           <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
           <div className="text-wrapper-9">Sortir Data</div>
-        </div>
+        </div> */}
         {dataRaport.map((item, index) => (
           <div key={index} className="navbar">
             <div className="text-wrapper-10">\{item.kelas}</div>
@@ -179,64 +180,46 @@ const RaportSiswa = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <img className="element-3" alt="Element" src="64.svg" />
-            <div className="text-wrapper-14">Pengaturan Profil</div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-sliders2"></i>
+              <span className="side-text ms-2">Peraturan</span>
+            </Link>
           </div>
           <div className="PROFILE-2">
-            <img className="element-3" alt="Element" src="64-2.svg" />
-            <div className="text-wrapper-14">Log Out</div>
-          </div>
-          <div className="group-2">
-            <div className="overlap-group-3">
-              <div className="group-wrapper">
-                <div className="group-3">
-                  <div className="text-wrapper-15">Light</div>
-                  <img
-                    className="sun-solid"
-                    alt="Sun solid"
-                    src="sun-solid.svg"
-                  />
-                </div>
-              </div>
-              <div className="text-wrapper-16">Dark</div>
-              <img
-                className="moon-solid"
-                alt="Moon solid"
-                src="moon-solid.svg"
-              />
-            </div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-box-arrow-right"></i>
+              <span className="side-text ms-2">Log Out</span>
+            </Link>
           </div>
           <div className="SISWA">
-            <img className="icon-SISWA" alt="Icon SISWA" src="icon-SISWA.png" />
-            <div className="text-wrapper-14">Siswa</div>
+            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-person-vcard"></i>
+              <span className="side-text ms-2">Siswa</span>
+            </Link>
           </div>
           <div className="CHAT">
-            <img
-              className="icon-envelope"
-              alt="Icon envelope"
-              src="icon-envelope.png"
-            />
-            <div className="text-wrapper-14">Chat</div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-envelope"></i>
+              <span className="side-text ms-2">Chat</span>
+            </Link>
           </div>
           <div className="CHAT-2">
-            <img
-              className="icon-attendance"
-              alt="Icon attendance"
-              src="icon-attendance.png"
-            />
-            <div className="text-wrapper-14">Generate Absen</div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-card-checklist"></i>
+              <span className="side-text ms-2">Generate Absen</span>
+            </Link>
           </div>
           <div className="CHAT-3">
-            <img
-              className="icon-calender"
-              alt="Icon calender"
-              src="icon-calender.png"
-            />
-            <div className="text-wrapper-14">Jadwal Pelajaran</div>
+            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-table"></i>
+              <span className="side-text ms-2">Jadwal Pelajaran</span>
+            </Link>
           </div>
           <div className="DASHBOARD">
-            <img className="element-3" alt="Element" src="1.svg" />
-            <div className="text-wrapper-14">Dashboard</div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-speedometer2"></i>
+              <span className="side-text ms-2">Dashboard</span>
+            </Link>
           </div>
         </div>
         <div className="PAGES">
@@ -245,9 +228,8 @@ const RaportSiswa = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${
-                    currentPage === number ? "active" : ""
-                  }`}
+                  className={`ellipse ${currentPage === number ? "active" : ""
+                    }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
@@ -284,16 +266,11 @@ const RaportSiswa = () => {
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
-              Smp Kristen Getasan
+            SD Kristen Terang Bangsa
               <br />
-              e-rapor
+              E-Rapor
             </div>
-            <img className="ellipse-5" alt="Ellipse" src="ellipse-1192.svg" />
-            <img
-              className="SMP-KRISTEN"
-              alt="Smp KRISTEN"
-              src="SMP-KRISTEN-2.png"
-            />
+            <img className="img-logo" src={mainLogo} alt="logo-sd" />
           </div>
         </header>
       </div>

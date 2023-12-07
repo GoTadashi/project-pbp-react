@@ -916,16 +916,16 @@
 
 .sidebar .SMP-KRISTEN-GETASAN {
     color: #000000;
-    font-family: "Poppins", Helvetica;
-    font-size: 22px;
-    font-weight: bold;
-    height: 60px;
-    left: 106px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 72px;
+    left: 126px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 48px;
-    width: 269px;
+    top: 34px;
+    width: 314px;
 }
 
 .sidebar .ellipse-4 {
@@ -946,7 +946,7 @@
 }
 
 .img-logo{
-    margin-top: 15px;
+    margin-top: 5px;
     width: 100px;
     height: 100px;
 }

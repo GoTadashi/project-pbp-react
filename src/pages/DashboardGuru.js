@@ -41,10 +41,7 @@ export const DashboardGuru = () => {
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link
-              to="/DaftarMapel"
-              className="list-menu nav-link text-white fs-5"
-            >
+            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-table"></i>
               <span className="side-text ms-2">Jadwal Pelajaran</span>
             </Link>
@@ -239,11 +236,11 @@ export const DashboardGuru = () => {
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
-              SD KRISTEN TERANG BANGSA
+              SD Kristen Terang Bangsa
               <br />
-              E-Rpor
+              E-Rapor
             </div>
-            <img className="img-logo" src={mainLogo} alt="logo-sd"/>
+            <img className="img-logo" src={mainLogo} alt="logo-sd" />
           </div>
         </header>
       </div>

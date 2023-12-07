@@ -27,13 +27,6 @@ function App() {
       <div className="app-header"></div>
       <Switch>
         <div className="app-content">
-          {/* 
-          editguru done
-          datanilai semester dan kelas rancu
-          lihatnilai -
-          inputnilai -
-          editnilai -
-          */}
           <Route path="/inputsiswa" component={InputSiswa} />
           <Route path="/raportsiswa" component={RaportSiswa} />
           <Route path="/coba/:nisSiswa" exact component={RaportPage} />
@@ -45,7 +38,11 @@ function App() {
           <Route path="/DataSiswa" exact component={DataSiswa} />
           {/* Data Detail */}
           <Route path="/LihatNilai" exact component={LihatNilai} />
-          <Route path="/SiswaLihatNilai/:nisSiswa" exact component={SiswaLihatNilai} />
+          <Route
+            path="/SiswaLihatNilai/:nisSiswa"
+            exact
+            component={SiswaLihatNilai}
+          />
           <Route path="/LihatRaport" component={LihatRaport} />
           <Route path="/inputnilai/:nisSiswa" component={InputNilai} />
           <Route path="/inputraport/:nisSiswa" component={InputRaport} />

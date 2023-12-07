@@ -8,7 +8,7 @@ const DataSiswa = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,8 +36,27 @@ const DataSiswa = () => {
     }
   };
 
+  const handleSearch = async () => {
+    try {
+      const responseSearch = await fetch(
+        "https://jojopinjam.iffan.site/api/cari-siswa",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ cari: searchQuery }),
+        }
+      );
+      const searchData = await responseSearch.json();
+      setDataSiswa(searchData);
+    } catch (error) {
+      console.error("Error searching data:", error);
+    }
+  };
+
   const handleUbahData = (nis) => {
-    history.push(`/editsiswa/${nis}`);
+    history.push(`/EditSiswa/${nis}`);
   };
 
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
@@ -131,7 +150,7 @@ const DataSiswa = () => {
                       <td className="action-button">
                         <button
                           className="TAMBAH-DATA"
-                          onClick={() => handleUbahData()}
+                          onClick={() => handleUbahData(item.nis)}
                         >
                           <div className="text-wrapper-23">Edit Siswa</div>
                         </button>
@@ -258,6 +277,9 @@ const DataSiswa = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
+                <button className="button-search" onClick={handleSearch}>
+                  <div className="text-wrapper-23">Search</div>
+                </button>
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
