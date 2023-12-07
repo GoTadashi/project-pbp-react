@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./InputNilai.css";
-
 // ini sudah dropdown id_raport
 const InputNilai = () => {
   const { nisSiswa } = useParams();
@@ -17,7 +16,6 @@ const InputNilai = () => {
   const [raportData, setRaportData] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
   const [raportMain, setRaportMain] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,7 +23,6 @@ const InputNilai = () => {
           `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
         );
         const dataSiswa = await responseSiswa.json();
-
         if (Array.isArray(dataSiswa)) {
           setDataSiswa(dataSiswa);
         } else if (dataSiswa) {
@@ -34,7 +31,6 @@ const InputNilai = () => {
           console.error("Invalid Data Siswa format:", dataSiswa);
           setDataSiswa([]);
         }
-
         // Check if there is valid data for the student
         if (dataSiswa.length > 0) {
           const studentId = dataSiswa[0].id; // Assuming id is the correct property
@@ -42,9 +38,7 @@ const InputNilai = () => {
             `https://jojopinjam.iffan.site/api/get-raport-main/${studentId}`
           );
           const raportData = await responseRaport.json();
-
           console.log("Raport data:", raportData);
-
           if (raportData.length > 0) {
             const firstRaportId = raportData[0].id_raport; // Assuming id_raport is the correct property
             setSelectedIdRaport(firstRaportId);
@@ -58,10 +52,8 @@ const InputNilai = () => {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchData();
   }, [nisSiswa]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -74,10 +66,8 @@ const InputNilai = () => {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchData();
   }, []);
-
   useEffect(() => {
     const fetchRaportData = async () => {
       try {
@@ -86,10 +76,8 @@ const InputNilai = () => {
           `https://jojopinjam.iffan.site/api/get-raport-main/${nisSiswa}`
         );
         const raportMain = await response.json();
-
         console.log("Raport data:", raportMain);
         setRaportMain(raportMain);
-
         if (Array.isArray(raportMain) && raportMain.length > 0) {
           setSelectedIdRaport(raportMain.map((raport) => raport.id_raport));
         } else {
@@ -100,14 +88,12 @@ const InputNilai = () => {
         console.error("Error fetching raport data:", error);
       }
     };
-
     if (nisSiswa) {
       fetchRaportData();
     }
   }, [nisSiswa]);
 
   useEffect(() => {
-    // Fetch data raport based on selectedRaportMain
     if (selectedRaportMain) {
       const [kelas, semester] = selectedRaportMain.split("-");
       fetch(
@@ -116,12 +102,15 @@ const InputNilai = () => {
         .then((response) => response.json())
         .then((data) => {
           if (Array.isArray(data) && data.length > 0) {
+            // Extracting the id_raport from the fetched data
             const idRaportArray = data.map((raport) => raport.id_raport);
             setSelectedIdRaport(idRaportArray);
           } else {
             console.error("No raport data found for the selected student.");
             setSelectedIdRaport([]);
           }
+          // Set the fetched raport data
+          setRaportData(data);
         })
         .catch((error) => console.error("Error fetching raport data:", error));
     }
@@ -137,7 +126,7 @@ const InputNilai = () => {
       };
     }
 
-    // Konversi dataNilai dari string ke number jika perlu
+    // Convert dataNilai from string to number if necessary
     const nilai = parseInt(dataNilai);
     let dataPredikat = "";
     let dataDeskripsi = "";
@@ -160,10 +149,9 @@ const InputNilai = () => {
     }
 
     const newNilai = {
-      // nis: selectedSiswa,
       id_matapelajaran: selectedMapel,
       id_raport: parseInt(selectedIdRaport),
-      nilai: nilai, // Gunakan variabel 'nilai' yang sudah diubah menjadi number
+      nilai: nilai,
       predikat: dataPredikat,
       deskripsi: dataDeskripsi,
     };
@@ -181,21 +169,20 @@ const InputNilai = () => {
       );
 
       const data = await response.json();
-
       console.log("Nilai added successfully:", data);
       // Additional actions after successfully adding the nilai
-
       return { success: true, message: "Data berhasil dimasukkan!" };
     } catch (error) {
       console.error("Error adding nilai:", error);
-
-      return { success: false, message: "Terjadi kesalahan. Mohon coba lagi." };
+      return {
+        success: false,
+        message: "Terjadi kesalahan. Mohon coba lagi.",
+      };
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await addNilai();
       console.log(
@@ -206,7 +193,6 @@ const InputNilai = () => {
         dataPredikat,
         dataDeskripsi
       );
-
       if (response.success) {
         alert("Data berhasil dimasukkan!");
       } else {
@@ -219,7 +205,6 @@ const InputNilai = () => {
       alert("Terjadi kesalahan. Mohon coba lagi.");
     }
   };
-
   const handleReset = () => {
     // setSelectedMapel(""),
     //   setSelectedIdRaport(""),
@@ -227,7 +212,6 @@ const InputNilai = () => {
     //   setDataPredikat(""),
     //   setDataDeskripsi("");
   };
-
   return (
     <div className="INPUT-NILAI">
       <div className="div">
@@ -466,5 +450,4 @@ const InputNilai = () => {
     </div>
   );
 };
-
 export default InputNilai;

@@ -36,9 +36,8 @@ export const EditNilai = () => {
           setDataSiswa([]);
         }
 
-        // Check if there is valid data for the student
         if (dataSiswa.length > 0) {
-          const studentId = dataSiswa[0].id; // Assuming id is the correct property
+          const studentId = dataSiswa[0].id;
           const responseRaport = await fetch(
             `https://jojopinjam.iffan.site/api/get-raport-main/${studentId}`
           );
@@ -47,7 +46,7 @@ export const EditNilai = () => {
           console.log("Raport data:", raportData);
 
           if (raportData.length > 0) {
-            const firstRaportId = raportData[0].id_raport; // Assuming id_raport is the correct property
+            const firstRaportId = raportData[0].id_raport;
             setSelectedIdRaport(firstRaportId);
           } else {
             console.error("No raport data available for the selected student.");
@@ -107,8 +106,7 @@ export const EditNilai = () => {
     }
   }, [nisSiswa]);
 
-  const addNilai = async () => {
-    // Validate the input fields
+  const updateNilai = async () => {
     if (!selectedMapel || !selectedIdRaport || !dataNilai) {
       console.error("Please fill in all the required fields.");
       return {
@@ -117,7 +115,6 @@ export const EditNilai = () => {
       };
     }
 
-    // Konversi dataNilai dari string ke number jika perlu
     const nilai = parseInt(dataNilai);
     let dataPredikat = "";
     let dataDeskripsi = "";
@@ -139,35 +136,33 @@ export const EditNilai = () => {
       dataDeskripsi = "Sangat Kurang";
     }
 
-    const newNilai = {
-      // nis: selectedSiswa,
+    const updatedNilai = {
       id_matapelajaran: selectedMapel,
       id_raport: parseInt(selectedIdRaport),
-      nilai: nilai, // Gunakan variabel 'nilai' yang sudah diubah menjadi number
+      nilai: nilai,
       predikat: dataPredikat,
       deskripsi: dataDeskripsi,
     };
 
     try {
       const response = await fetch(
-        "https://jojopinjam.iffan.site/api/add-detail",
+        `https://jojopinjam.iffan.site/api/update-detail/${id_detail}`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(newNilai),
+          body: JSON.stringify(updatedNilai),
         }
       );
 
       const data = await response.json();
 
-      console.log("Nilai added successfully:", data);
-      // Additional actions after successfully adding the nilai
+      console.log("Nilai updated successfully:", data);
 
-      return { success: true, message: "Data berhasil dimasukkan!" };
+      return { success: true, message: "Data berhasil diupdate!" };
     } catch (error) {
-      console.error("Error adding nilai:", error);
+      console.error("Error updating nilai:", error);
 
       return { success: false, message: "Terjadi kesalahan. Mohon coba lagi." };
     }
@@ -177,7 +172,7 @@ export const EditNilai = () => {
     e.preventDefault();
 
     try {
-      const response = await addNilai();
+      const response = await updateNilai();
       console.log(
         "Submitted:",
         selectedMapel,
@@ -188,10 +183,10 @@ export const EditNilai = () => {
       );
 
       if (response.success) {
-        alert("Data berhasil dimasukkan!");
+        alert("Data berhasil diupdate!");
       } else {
         alert(
-          "Data tidak berhasil dimasukkan. Mohon coba lagi. " + response.message
+          "Data tidak berhasil diupdate. Mohon coba lagi. " + response.message
         );
       }
     } catch (error) {
@@ -201,11 +196,7 @@ export const EditNilai = () => {
   };
 
   const handleReset = () => {
-    // setSelectedMapel(""),
-    //   setSelectedIdRaport(""),
-    //   setDataNilai(""),
-    //   setDataPredikat(""),
-    //   setDataDeskripsi("");
+    // Implement the reset logic if needed
   };
 
   return (
