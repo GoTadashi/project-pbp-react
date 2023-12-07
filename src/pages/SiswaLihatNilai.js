@@ -7,7 +7,6 @@ const SiswaLihatNilai = () => {
   const [raportMain, setRaportMain] = useState([]);
   const [selectedRaportMain, setSelectedRaportMain] = useState("");
   const [raportDetails, setRaportDetails] = useState([]);
-  const [selectedRaportDetails, setSelectedRaportDetails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const raportsPerPage = 5;
 
@@ -31,26 +30,29 @@ const SiswaLihatNilai = () => {
   useEffect(() => {
     const fetchRaportDetails = async () => {
       try {
+        if (!selectedRaportMain) {
+          // If no main raport is selected, clear the detailed raport data
+          setRaportDetails([]);
+          return;
+        }
+
         // Fetch detailed raport data for the selected main raport
         console.log("Fetching detailed raport data for:", selectedRaportMain);
         const responseRaportDetails = await fetch(
           `https://jojopinjam.iffan.site/api/get-raport?kelas=${selectedRaportMain.split('-')[0]}&semester=${selectedRaportMain.split('-')[1]}`
         );
         const dataRaportDetails = await responseRaportDetails.json();
+
+        console.log("Detailed raport data:", dataRaportDetails); // Log the response
+
         setRaportDetails(dataRaportDetails);
       } catch (error) {
         console.error("Error fetching detailed raport data:", error);
       }
     };
 
-    if (selectedRaportMain) {
-      fetchRaportDetails();
-    }
+    fetchRaportDetails();
   }, [selectedRaportMain]);
-
-  useEffect(() => {
-    console.log("Selected raport details:", selectedRaportDetails);
-  }, [selectedRaportDetails]);
 
   // Merge raportMain and raportDetails based on id_raport
   const mergedRaports = raportMain.map((main) => {
@@ -59,6 +61,17 @@ const SiswaLihatNilai = () => {
     );
     return { ...main, ...details };
   });
+
+  // Add remaining raports from raportDetails that were not included in raportMain
+  raportDetails.forEach((detail) => {
+    const exists = raportMain.some((main) => main.id_raport === detail.id_raport);
+    if (!exists) {
+      mergedRaports.push({ ...detail, ...raportMain.find((main) => main.id_raport === detail.id_raport) });
+    }
+  });
+
+  // Sort the mergedRaports by some key, e.g., id_raport
+  mergedRaports.sort((a, b) => a.id_raport - b.id_raport);
 
   const indexOfLastRaport = currentPage * raportsPerPage;
   const indexOfFirstRaport = indexOfLastRaport - raportsPerPage;
@@ -153,7 +166,7 @@ const SiswaLihatNilai = () => {
             <div className="rectangle" />
             <div className="navbar-wrapper">
               {currentRaports.map((raport, index) => (
-                <div key={raport.id_raport}>
+                <div key={`${raport.id_raport}-${index}`}>
                   <div className="div-2">
                     <div className="text-wrapper-6">
                       {raport.nama_matapelajaran}
@@ -166,6 +179,7 @@ const SiswaLihatNilai = () => {
                   </div>
                 </div>
               ))}
+
             </div>
           </div>
           <div className="HEADER-TABEL">
@@ -182,9 +196,8 @@ const SiswaLihatNilai = () => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <div
                   key={index}
-                  className={`overlap-group-2 ${
-                    currentPage === index + 1 ? "active" : ""
-                  }`}
+                  className={`overlap-group-2 ${currentPage === index + 1 ? "active" : ""
+                    }`}
                   onClick={() => paginate(index + 1)}
                 >
                   <div className="ellipse" />
