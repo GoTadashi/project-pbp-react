@@ -161,7 +161,7 @@ const LoginSiswa = () => {
           <img className="SISWA" alt="Siswa" src={Siswa} />
         </div>
         <div className="text-log">
-          <div className="text-wrapper-9">LOGIN GURU</div>
+          <div className="text-wrapper-9">LOGIN</div>
         </div>
       </div>
     </div>
