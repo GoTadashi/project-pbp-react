@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./DaftarMapel.css";
 
 export const DaftarMapel = () => {
@@ -43,9 +44,6 @@ export const DaftarMapel = () => {
       <div className="div">
         <footer className="FOOTER">
           <p className="text-wrapper">Copyright © SMP Kristen Getasan 2023</p>
-          <img className="line" alt="Line" src="line-2.svg" />
-          <img className="img" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-2">SCH</div>
         </footer>
         <div className="PAGES">
           <div className="element">
@@ -103,70 +101,52 @@ export const DaftarMapel = () => {
           <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
           <div className="text-wrapper-9">Sortir Data</div>
         </div>
-        <div className="overlap">
+        {/* <div className="overlap">
           <div className="text-wrapper-10">\Daftar Mata Pelajaran</div>
           <div className="text-wrapper-11">Dashboard</div>
-        </div>
+        </div> */}
         <div className="MENU">
           <div className="PROFILE">
-            <img className="element-3" alt="Element" src="64.svg" />
-            <div className="text-wrapper-12">Pengaturan Profil</div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-file-earmark-plus"></i>
+              <span className="side-text ms-2">Input Raport Siswa</span>
+            </Link>
           </div>
           <div className="PROFILE-2">
-            <img className="element-3" alt="Element" src="64-2.svg" />
-            <div className="text-wrapper-12">Log Out</div>
-          </div>
-          <div className="overlap-group-wrapper">
-            <div className="overlap-group-2">
-              <div className="group-wrapper">
-                <div className="group-2">
-                  <div className="text-wrapper-13">Light</div>
-                  <img
-                    className="sun-solid"
-                    alt="Sun solid"
-                    src="sun-solid.svg"
-                  />
-                </div>
-              </div>
-              <div className="text-wrapper-14">Dark</div>
-              <img
-                className="moon-solid"
-                alt="Moon solid"
-                src="moon-solid.svg"
-              />
-            </div>
+            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-box-arrow-right"></i>
+              <span className="side-text ms-2">Log Out</span>
+            </Link>
           </div>
           <div className="SISWA">
-            <img className="icon-SISWA" alt="Icon SISWA" src="icon-SISWA.png" />
-            <div className="text-wrapper-12">Siswa</div>
+            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-person-vcard"></i>
+              <span className="side-text ms-2">Siswa</span>
+            </Link>
           </div>
           <div className="CHAT">
-            <img
-              className="icon-envelope"
-              alt="Icon envelope"
-              src="icon-envelope.png"
-            />
-            <div className="text-wrapper-12">Chat</div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-person-video3"></i>
+              <span className="side-text ms-2">Guru</span>
+            </Link>
           </div>
           <div className="CHAT-2">
-            <img
-              className="icon-attendance"
-              alt="Icon attendance"
-              src="icon-attendance.png"
-            />
-            <div className="text-wrapper-12">Generate Absen</div>
+            <Link to="/" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-card-checklist"></i>
+              <span className="side-text ms-2">Mata Pelajaran</span>
+            </Link>
           </div>
           <div className="CHAT-3">
-            <img
-              className="icon-calender"
-              alt="Icon calender"
-              src="icon-calender.png"
-            />
-            <div className="text-wrapper-12">Jadwal Pelajaran</div>
+            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-book-fill"></i>
+              <span className="side-text ms-2">Raport Siswa</span>
+            </Link>
           </div>
           <div className="DASHBOARD">
-            <img className="element-3" alt="Element" src="1.svg" />
-            <div className="text-wrapper-12">Dashboard</div>
+            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-speedometer2"></i>
+              <span className="side-text ms-2">Dashboard</span>
+            </Link>
           </div>
         </div>
         <header className="HEADER">
@@ -214,7 +194,7 @@ export const DaftarMapel = () => {
             {data.length === 0 ? (
               <p>Loading...</p>
             ) : (
-              <table>
+              <table border={1}>
                 <thead className="stable-table">
                   <tr>
                     <th>Kode Mata Pelajaran</th>
