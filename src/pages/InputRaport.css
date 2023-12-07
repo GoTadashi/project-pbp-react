@@ -21,7 +21,7 @@
   left: 21px;
   position: absolute;
   top: 163px;
-  width: 384px;
+  width: 300px;
 }
 
 .INPUT-NILAI .PROFILE {
@@ -235,9 +235,9 @@
 .INPUT-NILAI .FOOTER {
   background-color: transparent;
   height: 62px;
-  left: -7px;
+  left: -50px;
   position: absolute;
-  top: 1005px;
+  top: 900px;
   width: 1920px;
 }
 
@@ -379,7 +379,7 @@
   line-height: normal;
   margin-top: -1px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .INPUT-NILAI .WALI-MURID {
@@ -592,7 +592,7 @@
   display: flex;
   gap: 5px;
   justify-content: center;
-  left: 472px;
+  left: 400px;
   padding: 10px 15px;
   position: absolute;
   top: 163px;
@@ -616,15 +616,15 @@
   margin-right: -0.5px;
   margin-top: -1px;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .INPUT-NILAI .text-wrapper-12 {
   color: #000000;
   font-family: "Poppins-Medium", Helvetica;
   font-size: 40px;
-  font-weight: 500;
-  left: 476px;
+  font-weight: bolder;
+  left: 400px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -633,9 +633,9 @@
 
 .INPUT-NILAI .group-8 {
   height: 92px;
-  left: 475px;
+  left: 400px;
   position: absolute;
-  top: 320px;
+  top: 280px;
   width: 800px;
 }
 
@@ -719,7 +719,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 
 .INPUT-NILAI .expand-arrow {
@@ -731,9 +731,9 @@
 
 .INPUT-NILAI .group-9 {
   height: 105px;
-  left: 475px;
+  left: 400px;
   position: absolute;
-  top: 440px;
+  top: 400px;
   width: 800px;
 }
 
@@ -755,9 +755,9 @@
 
 .INPUT-NILAI .group-10 {
   height: 92px;
-  left: 475px;
+  left: 400px;
   position: absolute;
-  top: 560px;
+  top: 520px;
   width: 800px;
 }
 
@@ -779,9 +779,9 @@
 
 .INPUT-NILAI .group-11 {
   height: 92px;
-  left: 475px;
+  left: 400px;
   position: absolute;
-  top: 680px;
+  top: 640px;
   width: 800px;
 }
 
@@ -830,9 +830,9 @@
 
 .INPUT-NILAI .group-12 {
   height: 40px;
-  left: 762px;
+  left: 700px;
   position: absolute;
-  top: 863px;
+  top: 780px;
   width: 269px;
 }
 
