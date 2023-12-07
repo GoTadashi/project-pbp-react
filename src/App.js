@@ -15,6 +15,7 @@ import DashboardGuru from "./pages/DashboardGuru";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginSiswa from "./pages/LoginSiswa";
 import LihatRaport from "./pages/LihatRaport";
+import SiswaLihatNilai from "./pages/SiswaLihatNilai";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/DataSiswa" exact component={DataSiswa} />
           {/* Data Detail */}
           <Route path="/LihatNilai" exact component={LihatNilai} />
+          <Route path="/SiswaLihatNilai/:nisSiswa" exact component={SiswaLihatNilai} />
           <Route path="/LihatRaport" component={LihatRaport} />
           <Route path="/inputnilai/:nisSiswa" component={InputNilai} />
           <Route path="/inputraport/:nisSiswa" component={InputRaport} />
