@@ -124,7 +124,8 @@
 
 .LOGIN-SISWA .text-wrapper-4 {
   color: #000000;
-  border-color: #68b6ff;
+  border-style: none;
+  /* border-color: #68b6ff; */
   border-radius: 3px 30px 30px 2px;
   font-family: "Poppins", Helvetica;
   font-size: 25px;
@@ -135,7 +136,7 @@
   opacity: 0.55;
   position: absolute;
   top: 87px;
-  height: 80px;
+  height: 70px;
   width: 43.7rem;
 }
 
@@ -219,7 +220,8 @@
 
 .LOGIN-SISWA .text-wrapper-7 {
   color: #000000;
-  border-color: #68b6ff;
+  /* border-color: #68b6ff; */
+  border-style: none;
   border-radius: 3px 30px 30px 2px;
   font-family: "Poppins", Helvetica;
   font-size: 25px;
@@ -230,7 +232,7 @@
   opacity: 0.55;
   position: absolute;
   top: -1.5px;
-  height: 75px;
+  height: 76px;
   width: 43.7rem;
 }
 
@@ -291,6 +293,7 @@
 
 .LOGIN-SISWA .text-wrapper-8 {
   list-style: none;
+  border-style: none;
   background-color: #0083ff;
   color: #ffffff;
   border-radius: 10px;
