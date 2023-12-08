@@ -134,19 +134,19 @@ const DataSiswa = () => {
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./DaftarMapel.css";
 import mainLogo from "../img/logo.png";
 
 export const DaftarMapel = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [data, setData] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +32,8 @@ export const DaftarMapel = () => {
   const handleEdit = (index) => {
     // Handle the edit action
     console.log("Edit clicked for index:", index);
+    const matapelajaranId = data[index].id_matapelajaran;
+    history.push(`/EditMapel/${matapelajaranId}`);
   };
 
   const handleDelete = (index) => {
@@ -106,8 +109,8 @@ export const DaftarMapel = () => {
               <div className="group-4">
                 <div className="group-5">
                   <div className="group-6">
-                    <div className="text-wrapper-15">Guru Matematika</div>
-                    <div className="text-wrapper-16">Eni Susilowati</div>
+                    {/* <div className="text-wrapper-15">Guru Matematika</div>
+                    <div className="text-wrapper-16">Eni Susilowati</div> */}
                   </div>
                 </div>
               </div>
@@ -152,22 +155,12 @@ export const DaftarMapel = () => {
                 <tbody>
                   {data.map((item, index) => (
                     <tr key={index}>
-                      <td>{item.id_matapelajaran}</td>
-                      <td>{item.nama_matapelajaran}</td>
-                      <td>{item.id_guru}</td>
-                      <td>
-                        <img
-                          className="EDIT"
-                          alt="Edit"
-                          src="/src/img/edit.png"
-                          onClick={() => handleEdit(index)}
-                        />
-                        <img
-                          className="DELETE"
-                          alt="Delete"
-                          src="DELETE.png"
-                          onClick={() => handleDelete(index)}
-                        />
+                      <td align="center">{item.id_matapelajaran}</td>
+                      <td >{item.nama_matapelajaran}</td>
+                      <td align="center">{item.id_guru}</td>
+                      <td align="center">
+                        <button className="bg-success"><i class="bi bi-pencil-square" onClick={() => handleEdit(index)}></i></button>&nbsp;&nbsp;&nbsp;
+                        <button className="bg-danger"><i class="bi bi-trash3-fill" onClick={() => handleDelete(index)}></i></button>
                       </td>
                     </tr>
                   ))}
