@@ -154,7 +154,7 @@ const RaportSiswa = () => {
               <button
                 className="TAMBAH-DATA-2"
                 onClick={() => handleLihatRaport()}
-              // disabled
+                // disabled
               >
                 <div className="text-wrapper-23">Input Nilai</div>
               </button>
@@ -175,19 +175,28 @@ const RaportSiswa = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/InputRaport" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/lihatnilai"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-file-earmark-plus"></i>
-              <span className="side-text ms-2">Input Raport Siswa</span>
+              <span className="side-text ms-2">Lihat Nilai</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LoginSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DataSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
@@ -199,19 +208,28 @@ const RaportSiswa = () => {
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-card-checklist"></i>
               <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/RaportSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-book-fill"></i>
               <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DashboardGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -223,8 +241,9 @@ const RaportSiswa = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${currentPage === number ? "active" : ""
-                    }`}
+                  className={`ellipse ${
+                    currentPage === number ? "active" : ""
+                  }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
