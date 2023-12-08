@@ -44,7 +44,7 @@ export const DaftarMapel = () => {
     <div className="DAFTAR-MAPEL">
       <div className="div">
         <footer className="FOOTER">
-          <p className="text-wrapper">Copyright © SMP Kristen Getasan 2023</p>
+          <p className="text-wrapper">Copyright © SD Kristen Terang Bangsa</p>
         </footer>
         <div className="PAGES">
           <div className="element">

@@ -8,18 +8,17 @@
 
 .DATA-NILAI .div {
   background-color: #f9f9f9;
-  height: 1080px;
+  height: 0px;
   position: relative;
   width: 100%;
 }
 
 .DATA-NILAI .FOOTER {
   background-color: transparent;
-  height: 62px;
-  left: 0;
+  height: 0px;
+  left: -50px;
   position: absolute;
-  top: 1009px;
-  width: 100%;
+  top: 900px;
 }
 
 .DATA-NILAI .p {
@@ -75,7 +74,7 @@
   align-items: center;
   height: 38px;
   position: absolute;
-  top: 56rem;
+  top: 52rem;
   width: 100%;
   left: -30px;
 }
@@ -401,9 +400,9 @@
 
 .DATA-NILAI .TABLE {
   height: 647px;
-  left: 377px;
+  left: 360px;
   position: absolute;
-  top: 262px;
+  top: 170px;
   width: 1153px;
 }
 

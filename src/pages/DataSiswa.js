@@ -75,7 +75,7 @@ const DataSiswa = () => {
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
-          <div className="text-wrapper-2">SCH</div>
+          {/* <div className="text-wrapper-2">SCH</div> */}
         </footer>
         <div className="TABLE">
           <div className="overlap">
@@ -128,7 +128,7 @@ const DataSiswa = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/InputRaport" className="list-menu nav-link text-white fs-5">
+            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
@@ -192,15 +192,15 @@ const DataSiswa = () => {
               <div className="group-5">
                 <div className="group-6">
                   <div className="group-7">
-                    <div className="text-wrapper-17">Guru Matematika</div>
-                    <div className="text-wrapper-18">Eni Susilowati</div>
+                    {/* <div className="text-wrapper-17">Guru Matematika</div>
+                    <div className="text-wrapper-18">Eni Susilowati</div> */}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="element-wrapper">
+            {/* <div className="element-wrapper">
               <img className="element-4" alt="Element" src="3.svg" />
-            </div>
+            </div> */}
             <div className="search">
               <div className="group-7">
                 <form>
