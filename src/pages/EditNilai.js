@@ -117,11 +117,11 @@ export const EditNilai = () => {
           message: "Please fill in all the required fields.",
         };
       } else console.log("Required fields filled.");
-
+  
       const nilai = parseInt(dataNilai);
       let dataPredikat = "";
       let dataDeskripsi = "";
-
+  
       if (nilai > 90 && nilai <= 100) {
         dataPredikat = "A";
         dataDeskripsi = "Sangat Baik";
@@ -138,7 +138,10 @@ export const EditNilai = () => {
         dataPredikat = "E";
         dataDeskripsi = "Sangat Kurang";
       }
-
+  
+      console.log("Debug - dataPredikat:", dataPredikat);
+      console.log("Debug - dataDeskripsi:", dataDeskripsi);
+  
       const updatedNilai = {
         id_detail: `${id_detail}`,
         id_matapelajaran: selectedMapel,
@@ -147,9 +150,9 @@ export const EditNilai = () => {
         predikat: dataPredikat,
         deskripsi: dataDeskripsi,
       };
-
+  
       const response = await fetch(
-        `https://jojopinjam.iffan.site/api/update-detail/${id_detail}`,
+        `https://jojopinjam.iffan.site/api/update-detail`,
         {
           method: "POST",
           headers: {
@@ -158,24 +161,25 @@ export const EditNilai = () => {
           body: JSON.stringify(updatedNilai),
         }
       );
-
+  
       if (!response.ok) {
-        const errorResponse = await response.json(); // Mengambil pesan error dari respons server
+        const errorResponse = await response.json();
         throw new Error(
           `HTTP error! Status: ${response.status}, Message: ${errorResponse.message}`
         );
       }
-
+  
       const data = await response.json();
-
+  
       console.log("Nilai updated successfully:", data);
-
+  
       return { success: true, message: "Data berhasil diupdate!" };
     } catch (error) {
       console.error("Error updating nilai:", error);
       return { success: false, message: "Terjadi kesalahan. Mohon coba lagi." };
     }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

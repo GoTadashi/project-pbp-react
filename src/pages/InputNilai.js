@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import "./LihatRaport.css";
 import "./InputNilai.css";
 import mainLogo from "../img/logo.png";
 // ini sudah dropdown id_raport
@@ -226,8 +228,15 @@ const InputNilai = () => {
   return (
     <div className="INPUT-NILAI">
       <div className="div">
-        <div className="MENU">
+      <div className="MENU">
           <div className="PROFILE">
+            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-file-earmark-plus"></i>
+              <span className="side-text ms-2">Input Raport Siswa</span>
+            </Link>
+          </div>
+          <div className="PROFILE-2">
+            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5"></Link>
             <Link to="/LihatNilai" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Lihat Nilai</span>
@@ -273,6 +282,7 @@ const InputNilai = () => {
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
         </footer>
+        </div>
         <header className="HEADER">
           <div className="overlap-2">
             <div className="group-wrapper">
@@ -394,7 +404,6 @@ const InputNilai = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 export default InputNilai;
