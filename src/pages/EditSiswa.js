@@ -4,35 +4,49 @@ import "./EditSiswa.css";
 
 
 const EditSiswa = () => {
-  const { id_siswa } = useParams();
+  const { nis } = useParams();
   const history = useHistory();
   const [siswa, setSiswa] = useState([]);
   const [message, setMessage] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch(`https://jojopinjam.iffan.site/api/get-siswa/${id_siswa}`)
+    fetch(`https://jojopinjam.iffan.site/api/get-siswa/${nis}`)
       .then((response) => response.json())
       .then((json) => {
-        // Check if the response is an array
         if (Array.isArray(json)) {
-          setSiswa(json);
+          const formattedSiswa = json.map((siswa) => ({
+            ...siswa,
+            tanggal_lahir: formatDate(siswa.tanggal_lahir),
+          }));
+          setSiswa(formattedSiswa);
         } else {
-          // If not an array, consider wrapping it in an array or accessing the correct property
-          setSiswa([json]);
+          const formattedSiswa = {
+            ...json,
+            tanggal_lahir: formatDate(json.tanggal_lahir),
+          };
+          setSiswa([formattedSiswa]);
         }
       })
       .catch((error) => {
-        console.error("Error fetching Siswa:", error);
+        console.error("Error fetching siswa:", error);
       });
-  }, [id_siswa]);
+  }, [nis]);
+  
+  // Fungsi untuk memformat tanggal menjadi "yyyy-MM-dd"
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const updatedSiswa = siswa[0];
 
-    // Log the payload being sent to the server
     console.log("Submitting Siswa Data:", JSON.stringify(updatedSiswa));
 
     fetch("https://jojopinjam.iffan.site/api/update-siswa", {
@@ -49,16 +63,13 @@ const EditSiswa = () => {
         return response.json();
       })
       .then((data) => {
-        // Log the response from the server
         console.log("Server Response:", data);
 
-        // Check if the response has an "error" status
         if (data.status && data.status === "ERROR") {
           throw new Error(`Server error: ${data.message}`);
         }
 
-        // Fetch the updated data from the server
-        return fetch(`https://jojopinjam.iffan.site/api/get-siswa/${id_siswa}`);
+        return fetch(`https://jojopinjam.iffan.site/api/get-siswa/${nis}`);
       })
       .then((response) => {
         if (!response.ok) {
@@ -67,7 +78,6 @@ const EditSiswa = () => {
         return response.json();
       })
       .then((json) => {
-        // Log the fetched data
         console.log("Fetched Siswa Data:", JSON.stringify(json));
 
         if (Array.isArray(json)) {
@@ -76,17 +86,16 @@ const EditSiswa = () => {
           setSiswa([json]);
         }
 
-        // Display a success alert
         window.alert("Siswa Berhasil Diubah");
       })
       .catch((error) => {
-        // Log any errors during the process
         console.error("Error:", error);
-
-        // Display an error alert
         window.alert("Terjadi kesalahan. Siswa tidak dapat diubah.");
       });
   };
+
+  // Add console.log statements here to track data
+  console.log("Rendered Component with Siswa Data:", JSON.stringify(siswa));
 
   return (
     <div className="EDIT-SISWA">
@@ -247,7 +256,7 @@ const EditSiswa = () => {
               <div className="group-6">
                 <div className="frame-wrapper">
                   <div className="frame-2">
-                    <div className="text-wrapper-13">NIS</div>
+                    <div className="text-wrapper-13">NISN</div>
                     <div className="text-wrapper-14">*</div>
                   </div>
                 </div>
@@ -276,16 +285,14 @@ const EditSiswa = () => {
                   </div>
                 </div>
                 <div className="frame-3">
-                <input
+                  <input
                     className="setting"
                     type="text"
                     value={s.nama}
                     onChange={(e) =>
                       setSiswa((prevSiswa) =>
                         prevSiswa.map((item) =>
-                          item.nis === s.nis
-                            ? { ...item, nama: e.target.value }
-                            : item
+                          item.nis === s.nis ? { ...item, nama: e.target.value } : item
                         )
                       )
                     }
@@ -300,7 +307,7 @@ const EditSiswa = () => {
                   </div>
                 </div>
                 <div className="frame-3">
-                <input
+                  <input
                     className="setting"
                     type="text"
                     value={s.tempat_lahir}
@@ -324,7 +331,7 @@ const EditSiswa = () => {
                   </div>
                 </div>
                 <div className="frame-5">
-                <input
+                  <input
                     className="setting"
                     type="date"
                     value={s.tanggal_lahir}
@@ -348,7 +355,7 @@ const EditSiswa = () => {
                   </div>
                 </div>
                 <div className="frame-7">
-                <input
+                  <input
                     className="setting"
                     type="text"
                     value={s.agama}
@@ -398,7 +405,7 @@ const EditSiswa = () => {
                   </div>
                 </div>
                 <div className="frame-7">
-                <input
+                  <input
                     className="setting"
                     type="text"
                     value={s.nama_orangtua}

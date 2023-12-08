@@ -7,14 +7,14 @@ import "./EditNilai.css";
 import mainLogo from "../img/logo.png";
 
 export const EditNilai = () => {
-  const { nisSiswa, id_detail } = useParams();
+  const { id_detail } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
   const [dataMapel, setDataMapel] = useState([]);
   const [dataNilai, setDataNilai] = useState("");
   const [dataPredikat, setDataPredikat] = useState("");
   const [dataDeskripsi, setDataDeskripsi] = useState("");
-  const [selectedSiswa, setSelectedSiswa] = useState(nisSiswa);
+  const [selectedSiswa, setSelectedSiswa] = useState("");
   const [selectedMapel, setSelectedMapel] = useState("");
   const [selectedIdRaport, setSelectedIdRaport] = useState("");
   const [raportData, setRaportData] = useState([]);
@@ -151,7 +151,7 @@ export const EditNilai = () => {
       const response = await fetch(
         `https://jojopinjam.iffan.site/api/update-detail/${id_detail}`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
@@ -185,8 +185,11 @@ export const EditNilai = () => {
       console.log(
         "Submitted:",
         `${id_detail}`,
+        "\nmapel: ",
         selectedMapel,
+        "\nraport: ",
         selectedIdRaport,
+        "\nnilai: ",
         parseInt(dataNilai),
         dataPredikat,
         dataDeskripsi

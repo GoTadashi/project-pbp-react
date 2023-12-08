@@ -51,18 +51,14 @@ function App() {
           <Route path="/LihatRaport" component={LihatRaport} />
           <Route path="/inputnilai/:nisSiswa" component={InputNilai} />
           <Route path="/inputraport/:nisSiswa" component={InputRaport} />
-          <Route
-            path="/EditNilai/:nisSiswa/:id_detail"
-            exact
-            component={EditNilai}
-          />
+          <Route path="/EditNilai/:id_detail" exact component={EditNilai} />
           {/* Data Mapel */}
           <Route path="/TambahMapel" exact component={TambahMapel} />
           <Route path="/EditMapel" exact component={EditMapel} />
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
 
           {/* Data Siswa */}
-          <Route path="/EditSiswa/:nisSiswa" exact component={EditSiswa} />
+          <Route path="/EditSiswa/:nis" exact component={EditSiswa} />
         </div>
       </Switch>
     </Router>
