@@ -179,28 +179,22 @@ export const EditNilai = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await updateNilai();
-      console.log(
-        "Submitted:",
-        `${id_detail}`,
-        "\nmapel: ",
+      console.log("Submitted Data:", {
+        id_detail,
         selectedMapel,
-        "\nraport: ",
         selectedIdRaport,
-        "\nnilai: ",
-        parseInt(dataNilai),
+        nilai: parseInt(dataNilai),
         dataPredikat,
-        dataDeskripsi
-      );
-
+        dataDeskripsi,
+      });
+  
       if (response.success) {
         alert("Data berhasil diupdate!");
       } else {
-        alert(
-          "Data tidak berhasil diupdate. Mohon coba lagi. " + response.message
-        );
+        alert("Data tidak berhasil diupdate. Mohon coba lagi. " + response.message);
       }
     } catch (error) {
       console.error("Error submitting data:", error);

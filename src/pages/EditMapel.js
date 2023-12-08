@@ -3,57 +3,36 @@ import "./EditMapel.css";
 import { Link, useHistory, useParams } from "react-router-dom";
 import mainLogo from "../img/logo.png";
 
-export const EditMapel = () => {
+const EditMapel = () => {
   const { id_matapelajaran } = useParams();
   const history = useHistory();
   const [matapelajaran, setMatapelajaran] = useState([]);
-  const [availableMataPelajaran, setAvailableMataPelajaran] = useState([]);
-  const [guru, setGuru] = useState([]);
+  const [guru, setGuru] = useState([]); // State for storing guru data
   const [message, setMessage] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    // Fetch the specific mata pelajaran
+    // Fetch matapelajaran data
     fetch(`https://jojopinjam.iffan.site/api/get-matapelajaran/${id_matapelajaran}`)
       .then((response) => response.json())
       .then((json) => {
-        // Check if the response is an array
         if (Array.isArray(json)) {
           setMatapelajaran(json);
         } else {
-          // If not an array, consider wrapping it in an array or accessing the correct property
           setMatapelajaran([json]);
         }
       })
       .catch((error) => {
-        console.error("Error fetching matapelajaran:", error);
+        console.error("Error fetching mapel:", error);
       });
 
-    // Fetch all available mata pelajaran
-    fetch("https://jojopinjam.iffan.site/api/get-matapelajaran")
+    // Fetch guru data
+    fetch("https://jojopinjam.iffan.site/api/get-guru/")
       .then((response) => response.json())
       .then((json) => {
-        // Check if the response is an array
-        if (Array.isArray(json)) {
-          setAvailableMataPelajaran(json);
-        } else {
-          // If not an array, consider wrapping it in an array or accessing the correct property
-          setAvailableMataPelajaran([json]);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching available matapelajaran:", error);
-      });
-
-    // Fetch all available guru
-    fetch("https://jojopinjam.iffan.site/api/get-guru")
-      .then((response) => response.json())
-      .then((json) => {
-        // Check if the response is an array
         if (Array.isArray(json)) {
           setGuru(json);
         } else {
-          // If not an array, consider wrapping it in an array or accessing the correct property
           setGuru([json]);
         }
       })
@@ -62,22 +41,42 @@ export const EditMapel = () => {
       });
   }, [id_matapelajaran]);
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const updatedMatapelajaran = matapelajaran[0];
 
-    // Log the payload being sent to the server
-    console.log("Submitting Mapel Data:", JSON.stringify(updatedMatapelajaran));
+    console.log("Submitting Guru Data:", JSON.stringify(updatedMatapelajaran));
 
-    // ... (rest of your existing code)
+    fetch("https://jojopinjam.iffan.site/api/update-matapelajaran", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedMatapelajaran),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Server Response:", data);
 
-    // Fetch the updated data from the server after successful submission
-    fetch(`https://jojopinjam.iffan.site/api/get-matapelajaran/${id_matapelajaran}`)
-      .then((response) => response.json())
+        if (data.status && data.status === "ERROR") {
+          throw new Error(`Server error: ${data.message}`);
+        }
+
+        return fetch(`https://jojopinjam.iffan.site/api/get-matapelajaran/${id_matapelajaran}`);
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((json) => {
-        // Log the fetched data
         console.log("Fetched Mapel Data:", JSON.stringify(json));
 
         if (Array.isArray(json)) {
@@ -86,14 +85,10 @@ export const EditMapel = () => {
           setMatapelajaran([json]);
         }
 
-        // Display a success alert
         window.alert("Mapel Berhasil Diubah");
       })
       .catch((error) => {
-        // Log any errors during the process
         console.error("Error:", error);
-
-        // Display an error alert
         window.alert("Terjadi kesalahan. Mapel tidak dapat diubah.");
       });
   };
@@ -224,38 +219,33 @@ export const EditMapel = () => {
                     type="text"
                     value={g.id_matapelajaran}
                     readOnly
+                    disabled
                   />
                 </div>
               </div>
               <div className="group-9">
-            <div className="frame-wrapper">
-              <div className="frame-2">
-                <div className="text-wrapper-13">Mata Pelajaran</div>
+                <div className="frame-wrapper">
+                  <div className="frame-2">
+                    <div className="text-wrapper-13">Mata Pelajaran</div>
+                  </div>
+                </div>
+                <div className="frame-5">
+                  <input
+                    type="text"
+                    className="setting"
+                    value={g.nama_matapelajaran} // Assuming g.nama_matapelajaran contains the name of the selected mata pelajaran
+                    onChange={(e) =>
+                      setMatapelajaran((prevGuru) =>
+                        prevGuru.map((item) =>
+                          item.id_matapelajaran === g.id_matapelajaran
+                            ? { ...item, nama_matapelajaran: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
               </div>
-            </div>
-            <div className="frame-5">
-              <select
-                className="setting"
-                value={g.id_matapelajaran} // Assuming g.id_matapelajaran contains the ID of the selected mata pelajaran
-                onChange={(e) =>
-                  setMatapelajaran((prevGuru) =>
-                    prevGuru.map((item) =>
-                      item.id_matapelajaran === g.id_matapelajaran
-                        ? { ...item, id_matapelajaran: e.target.value }
-                        : item
-                    )
-                  )
-                }
-              >
-                {/* Mapping over the available mata pelajaran options */}
-                {availableMataPelajaran.map((mataPelajaranOption) => (
-                  <option key={mataPelajaranOption.id_matapelajaran} value={mataPelajaranOption.id_matapelajaran}>
-                    {mataPelajaranOption.nama_matapelajaran}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
               <div className="group-10">
                 <div className="frame-wrapper">
                   <div className="frame-2">
