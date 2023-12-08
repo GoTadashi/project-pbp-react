@@ -651,11 +651,11 @@
   width: 582px;
 }
 
-.EDIT-MAPEL .frame-2 {
+.EDIT-MAPEL .form .frame-2 {
   align-items: center;
   display: inline-flex;
   gap: 2px;
-  left: 5px;
+  left: 50px;
   position: relative;
   top: 9px;
 }
@@ -673,20 +673,21 @@
   width: fit-content;
 }
 
-.EDIT-MAPEL .frame-3 {
+
+.EDIT-MAPEL .form .frame-3 {
   align-items: center;
-  top: 50px;
-  display: flex;
-  gap: 680px;
-  left: -1px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 802px;
+    top: 50px;
+    display: flex;
+    gap: 680px;
+    left: 30px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 82rem;
 }
 
-.EDIT-MAPEL .custom-input {
+.EDIT-MAPEL .setting {
   border-radius: 10px;
-  width: 60rem;
+  width: 40rem;
   font-size: 16px;
   margin-left: -19px;
   margin-top: -20px;
@@ -712,13 +713,13 @@
 
 .EDIT-MAPEL .frame-5 {
   align-items: center;
-  top: 60px;
-  display: flex;
-  gap: 680px;
-  left: 3px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 802px;
+    top: 50px;
+    display: flex;
+    gap: 680px;
+    left: 30px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 82rem;
 }
 
 .EDIT-MAPEL .group-10 {
@@ -731,13 +732,13 @@
 
 .EDIT-MAPEL .frame-6 {
   align-items: center;
-  top: 50px;
-  display: flex;
-  gap: 680px;
-  left: -1px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 802px;
+    top: 50px;
+    display: flex;
+    gap: 680px;
+    left: 30px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 80rem;
 }
 
 .EDIT-MAPEL .group-11 {

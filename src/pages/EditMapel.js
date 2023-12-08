@@ -209,7 +209,7 @@ export const EditMapel = () => {
           </Link>
         </div>
         <div className="text-wrapper-12">Edit Mata Pelajaran</div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           {matapelajaran.map((g) => (
             <div key={g.id_matapelajaran}>
               <div className="group-8">
@@ -229,12 +229,11 @@ export const EditMapel = () => {
               </div>
               <div className="group-9">
             <div className="frame-wrapper">
-              <div className="frame-4">
+              <div className="frame-2">
                 <div className="text-wrapper-13">Mata Pelajaran</div>
               </div>
             </div>
             <div className="frame-5">
-              {/* Dropdown for selecting mata pelajaran */}
               <select
                 className="setting"
                 value={g.id_matapelajaran} // Assuming g.id_matapelajaran contains the ID of the selected mata pelajaran
