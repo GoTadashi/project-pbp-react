@@ -197,6 +197,14 @@ const InputNilai = () => {
       );
       if (response.success) {
         alert("Data berhasil dimasukkan!");
+        console.log(
+          "mapel: ",
+          selectedMapel,
+          "\nraport: ",
+          selectedIdRaport,
+          "\nnilai: ",
+          dataNilai
+        );
       } else {
         alert(
           "Data tidak berhasil dimasukkan. Mohon coba lagi. " + response.message
