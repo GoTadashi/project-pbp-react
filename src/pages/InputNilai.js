@@ -307,8 +307,9 @@ const InputNilai = () => {
           </div>
         </header>
         <div className="kembali">
-          <img className="back" alt="Back" src="back.png" />
-          <div className="text-wrapper-11">Kembali</div>
+          <Link to="/DaftarMapel">
+            <div className="text-wrapper-11">Kembali</div>
+          </Link>
         </div>
         <div className="text-wrapper-12">Input Nilai</div>
         <div className="group-8">
