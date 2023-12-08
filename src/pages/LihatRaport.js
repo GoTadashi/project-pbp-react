@@ -155,14 +155,6 @@ const LihatRaport = () => {
             </div>
           </div>
         </div>
-        {dataRaport.map((item, index) => (
-          <div key={index} className="navbar">
-            <div className="text-wrapper-10">\{item.kelas}</div>
-            <div className="text-wrapper-11">\Semester {item.semester}</div>
-            <div className="text-wrapper-12">\Input Rapor</div>
-            <div className="text-wrapper-13">Dashboard</div>
-          </div>
-        ))}
         <div className="MENU">
           <div className="PROFILE">
             <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
