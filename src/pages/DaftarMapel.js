@@ -25,7 +25,7 @@ export const DaftarMapel = () => {
   }, []);
 
   const handleTambahData = () => {
-    // Add your logic for handling the click event here
+    history.push(`/TambahMapel`);
     console.log("Button clicked!");
   };
 
