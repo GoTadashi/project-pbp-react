@@ -78,6 +78,7 @@ export const EditGuru = () => {
 
         // Display a success alert
         window.alert("Guru Berhasil Diubah");
+        history.push(`/LihatGuru`);
       })
       .catch((error) => {
         // Log any errors during the process
