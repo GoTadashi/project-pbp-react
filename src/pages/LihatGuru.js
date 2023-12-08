@@ -153,11 +153,11 @@ const LihatGuru = () => {
                 </tbody>
               </table>
               <button
-                          className="TAMBAH-DATA-2"
-                          onClick={() => handleTambahGuru()}
-                        >
-                          <div className="text-wrapper-23">Tambah Guru</div>
-                        </button>
+                className="TAMBAH-DATA-2"
+                onClick={() => handleTambahGuru()}
+              >
+                <div className="text-wrapper-23">Tambah Guru</div>
+              </button>
             </div>
           </div>
         </div>
