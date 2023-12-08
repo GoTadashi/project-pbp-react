@@ -86,6 +86,7 @@ const EditMapel = () => {
         }
 
         window.alert("Mapel Berhasil Diubah");
+        history.push(`/DaftarMapel`);
       })
       .catch((error) => {
         console.error("Error:", error);
