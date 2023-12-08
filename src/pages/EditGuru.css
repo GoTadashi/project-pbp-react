@@ -780,6 +780,19 @@
   top: 661px;
   width: 528px;
 }
+.EDIT-GURU .custom-button {
+  background-color: #0082fc;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.EDIT-GURU .custom-button:hover {
+  background-color: #036fd4;
+}
 
 .EDIT-GURU .frame-6 {
   align-items: center;
@@ -794,7 +807,7 @@
   height: 86px;
   left: 320px;
   position: absolute;
-  top: 752px;
+  top: 772px;
   width: 528px;
 }
 
