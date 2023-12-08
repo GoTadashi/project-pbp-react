@@ -151,7 +151,7 @@ export const EditNilai = () => {
       const response = await fetch(
         `https://jojopinjam.iffan.site/api/update-detail/${id_detail}`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
@@ -185,8 +185,11 @@ export const EditNilai = () => {
       console.log(
         "Submitted:",
         `${id_detail}`,
+        "\nmapel: ",
         selectedMapel,
+        "\nraport: ",
         selectedIdRaport,
+        "\nnilai: ",
         parseInt(dataNilai),
         dataPredikat,
         dataDeskripsi
