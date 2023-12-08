@@ -60,6 +60,10 @@ const LihatGuru = () => {
     history.push(`/EditGuru/${id_guru}`);
   };
 
+  const handleTambahGuru = () => {
+    history.push(`/TambahGuru`);
+  };
+
   const handleDelete = async (id_guru) => {
     try {
       const response = await fetch(
@@ -147,6 +151,12 @@ const LihatGuru = () => {
                   ))}
                 </tbody>
               </table>
+              <button
+                          className="TAMBAH-DATA-2"
+                          onClick={() => handleTambahGuru()}
+                        >
+                          <div className="text-wrapper-23">Tambah Guru</div>
+                        </button>
             </div>
           </div>
         </div>
