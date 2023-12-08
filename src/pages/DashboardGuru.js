@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
 import "./DashboardGuru.css";
@@ -15,7 +15,9 @@ export const DashboardGuru = () => {
     const fetchAdministratorName = async () => {
       try {
         // Gantilah dengan logika pengambilan data sesuai dengan aplikasi Anda
-        const response = await fetch("https://jojopinjam.iffan.site/api/action-register");
+        const response = await fetch(
+          "https://jojopinjam.iffan.site/api/action-register"
+        );
         const data = await response.json();
 
         // Set nama administrator ke dalam state
@@ -35,43 +37,64 @@ export const DashboardGuru = () => {
         </footer>
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/LihatNilai" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatNilai"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Lihat Nilai</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginAdmin" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LoginAdmin"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DataSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-card-checklist"></i>
               <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/RaportSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-book-fill"></i>
               <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DashboardGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -94,24 +117,29 @@ export const DashboardGuru = () => {
                         <img className="terbang" src={terbang} alt="gedung" />
                       </div>
                     </div>
-                    <div className="group-5">
+                    {/* <div className="group-5">
                       <div className="SEMESTER">Semester 3</div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
                 <div className="group-6">
                   <div className="INPUT-RAPOR">
-                    <Link to="/RaportSiswa" className="list-menu nav-link text-blue fs-5">
-                      <span className="side-text ms-2 fw-bolder">Input Raport</span>
+                    <Link
+                      to="/RaportSiswa"
+                      className="list-menu nav-link text-blue fs-5"
+                    >
+                      <span className="side-text ms-2 fw-bolder">
+                        Input Raport
+                      </span>
                     </Link>
                   </div>
                   <p className="selamat-datang-BU">
-                    <span className="span fs-3">Selamat datang di E-Rapor SD Kristen Terang Bangsa</span>
-
-                    <span className="span">
-
+                    <span className="span fs-3">
+                      Selamat datang di E-Rapor SD Kristen Terang Bangsa
                     </span>
+
+                    <span className="span"></span>
                   </p>
                   <p className="takut-akan-TUHAN">
                     <span className="text-wrapper-9">
@@ -129,9 +157,14 @@ export const DashboardGuru = () => {
             <div className="overlap-6">
               {/* <div className="text-wrapper-10">Jumlah</div> */}
               <div className="overlap-group-3">
-                <Link to="/DaftarMapel" className="list-menu nav-link text-blue fs-5">
+                <Link
+                  to="/DaftarMapel"
+                  className="list-menu nav-link text-blue fs-5"
+                >
                   <i className="bi bi-card-checklist fs-2"></i>
-                  <span className="side-text ms-2 fw-bolder">Mata Pelajaran</span>
+                  <span className="side-text ms-2 fw-bolder">
+                    Mata Pelajaran
+                  </span>
                 </Link>
               </div>
             </div>
@@ -140,7 +173,10 @@ export const DashboardGuru = () => {
             <div className="overlap-6">
               <div className="overlap-group-3">
                 {/* <div className="text-wrapper-10">Jumlah</div> */}
-                <Link to="/LihatGuru" className="list-menu nav-link text-blue fs-5">
+                <Link
+                  to="/LihatGuru"
+                  className="list-menu nav-link text-blue fs-5"
+                >
                   <i class="bi bi-person-video3 fs-2"></i>
                   <span className="side-text ms-2 fw-bolder">Daftar Guru</span>
                 </Link>
@@ -151,7 +187,10 @@ export const DashboardGuru = () => {
             <div className="overlap-6">
               <div className="overlap-group-3">
                 {/* <div className="text-wrapper-10">Jumlah</div> */}
-                <Link to="/DataSiswa" className="list-menu nav-link text-blue fs-5">
+                <Link
+                  to="/DataSiswa"
+                  className="list-menu nav-link text-blue fs-5"
+                >
                   <i className="bi bi-person-vcard fs-2"></i>
                   <span className="side-text ms-2 fw-bolder">Daftar Siswa</span>
                 </Link>
@@ -165,7 +204,6 @@ export const DashboardGuru = () => {
               <div className="group-7">
                 <div className="group-8">
                   <div className="group-9">
-
                     <span className="text-wrapper-14">{administratorName}</span>
                   </div>
                 </div>
