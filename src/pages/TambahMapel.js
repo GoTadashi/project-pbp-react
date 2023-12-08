@@ -3,13 +3,13 @@ import "./TambahMapel.css";
 
 export const TambahMapel = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [kodeMatapelajaran, setKodeMatapelajaran] = useState("");
+  // const [kodeMatapelajaran, setKodeMatapelajaran] = useState("");
   const [namaMatapelajaran, setNamaMatapelajaran] = useState("");
   const [guruPengampu, setGuruPengampu] = useState("");
 
   const addMatapelajaran = () => {
     const newMatapelajaran = {
-      kode_matapelajaran: kodeMatapelajaran,
+      // kode_matapelajaran: kodeMatapelajaran,
       nama_matapelajaran: namaMatapelajaran,
       id_guru: guruPengampu,
     };
@@ -36,7 +36,8 @@ export const TambahMapel = () => {
     e.preventDefault();
     addMatapelajaran();
 
-    if (!kodeMatapelajaran || !namaMatapelajaran || !guruPengampu) {
+    if (!namaMatapelajaran || !guruPengampu) {
+      //!kodeMatapelajaran ||
       alert("Harap isi semua kolom form.");
     } else {
       alert("Mata pelajaran berhasil dimasukkan.");
@@ -44,14 +45,14 @@ export const TambahMapel = () => {
 
     console.log(
       "Submitted:",
-      kodeMatapelajaran,
+      // kodeMatapelajaran,
       namaMatapelajaran,
       guruPengampu
     );
   };
 
   const handleReset = () => {
-    setKodeMatapelajaran("");
+    // setKodeMatapelajaran("");
     setNamaMatapelajaran("");
     setGuruPengampu("");
   };
@@ -211,7 +212,7 @@ export const TambahMapel = () => {
         <div className="text-wrapper-12">Tambah Mata Pelajaran</div>
 
         <div>
-          <div className="group-8">
+          {/* <div className="group-8">
             <div className="frame-wrapper">
               <div className="frame-2">
                 <div className="text-wrapper-13">Kode Mata Pelajaran</div>
@@ -225,8 +226,8 @@ export const TambahMapel = () => {
                 onChange={(e) => setKodeMatapelajaran(e.target.value)}
               />
             </div>
-          </div>
-          <div className="group-9">
+          </div> */}
+          <div className="group-8">
             <div className="frame-wrapper">
               <div className="frame-4">
                 <div className="text-wrapper-13">Mata Pelajaran</div>
@@ -241,7 +242,7 @@ export const TambahMapel = () => {
               />
             </div>
           </div>
-          <div className="group-10">
+          <div className="group-9">
             <div className="frame-wrapper">
               <div className="frame-2">
                 <div className="text-wrapper-13">Kode Guru Pengampu</div>
