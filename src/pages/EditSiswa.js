@@ -1,77 +1,91 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import "./EditSiswa.css";
 
+
 const EditSiswa = () => {
-  const { nisSiswa } = useParams();
-  const [selectedSiswa, setSelectedSiswa] = useState(null);
-  const [nis, setNis] = useState("");
-  const [nisn, setNisn] = useState("");
-  const [nama, setNama] = useState("");
-  const [jenis_kelamin, setJenisKelamin] = useState("");
-  const [agama, setAgama] = useState("");
-  const [nama_orangtua, setNamaOrtu] = useState("");
-  const [tanggal_lahir, setTanggalLahir] = useState("");
-  const [tempat_lahir, setTempatLahir] = useState("");
+  const { id_siswa } = useParams();
+  const history = useHistory();
+  const [siswa, setSiswa] = useState([]);
+  const [message, setMessage] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const responseSiswa = await fetch(
-          `https://jojopinjam.iffan.site/api/get-siswa/${nisSiswa}`
-        );
-        const dataSiswa = await responseSiswa.json();
-        // setDataSiswa(dataSiswa);
-
-        if (Array.isArray(dataSiswa)) {
-          setSelectedSiswa(dataSiswa);
-        } else if (dataSiswa) {
-          setSelectedSiswa([dataSiswa]);
+    fetch(`https://jojopinjam.iffan.site/api/get-siswa/${id_siswa}`)
+      .then((response) => response.json())
+      .then((json) => {
+        // Check if the response is an array
+        if (Array.isArray(json)) {
+          setSiswa(json);
         } else {
-          console.error("Invalid Data Siswa format:", dataSiswa);
-          setSelectedSiswa([]);
+          // If not an array, consider wrapping it in an array or accessing the correct property
+          setSiswa([json]);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching Siswa:", error);
+      });
+  }, [id_siswa]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const updatedSiswa = siswa[0];
+
+    // Log the payload being sent to the server
+    console.log("Submitting Siswa Data:", JSON.stringify(updatedSiswa));
+
+    fetch("https://jojopinjam.iffan.site/api/update-siswa", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedSiswa),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Log the response from the server
+        console.log("Server Response:", data);
+
+        // Check if the response has an "error" status
+        if (data.status && data.status === "ERROR") {
+          throw new Error(`Server error: ${data.message}`);
         }
 
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, [nisSiswa]);
-
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch(
-        "https://jojopinjam.iffan.site/api/update-siswa",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nis,
-            nama,
-            jenis_kelamin,
-            agama,
-            nama_orangtua,
-            tanggal_lahir,
-            tempat_lahir,
-          }),
+        // Fetch the updated data from the server
+        return fetch(`https://jojopinjam.iffan.site/api/get-siswa/${id_siswa}`);
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
-      );
+        return response.json();
+      })
+      .then((json) => {
+        // Log the fetched data
+        console.log("Fetched Siswa Data:", JSON.stringify(json));
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log("API response:", result);
+        if (Array.isArray(json)) {
+          setSiswa(json);
+        } else {
+          setSiswa([json]);
+        }
 
-        // Add any additional logic based on the API response
-      } else {
-        console.error("Failed to update data:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error:", error.message);
-    }
+        // Display a success alert
+        window.alert("Siswa Berhasil Diubah");
+      })
+      .catch((error) => {
+        // Log any errors during the process
+        console.error("Error:", error);
+
+        // Display an error alert
+        window.alert("Terjadi kesalahan. Siswa tidak dapat diubah.");
+      });
   };
 
   return (
@@ -227,153 +241,189 @@ const EditSiswa = () => {
             />
           </div>
         </header>
-        <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-14">NIS</div>
-              <div className="text-wrapper-15">*</div>
-            </div>
-          </div>
-          <div className="frame-3">
-            <input
-              type="number"
-              className="custom-input"
-              value={nis}
-              onChange={(e) => setNis(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-14">NIS</div>
-              <div className="text-wrapper-15">*</div>
-            </div>
-          </div>
-          <div className="frame-3">
-            <input
-              type="number"
-              className="custom-input"
-              value={nisn}
-              onChange={(e) => setNisn(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="group-9">
-          <div className="frame-wrapper">
-            <div className="frame-4">
-              <div className="text-wrapper-14">Nama Lengkap</div>
-              <div className="text-wrapper-15">*</div>
-            </div>
-          </div>
-          <div className="frame-5">
-            <input
-              type="text"
-              className="custom-input"
-              value={nama}
-              onChange={(e) => setNama(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="group-10">
-          <div className="frame-wrapper">
-            <div className="frame-6">
-              <div className="text-wrapper-14">Jenis Kelamin</div>
-              <div className="text-wrapper-15">*</div>
-            </div>
-          </div>
-          <div className="frame-7">
-            <select
-              className="custom-input"
-              value={jenis_kelamin}
-              onChange={(e) => setJenisKelamin(e.target.value)}
-            >
-              <option value="">Pilih Jenis Kelamin</option>
-              <option value="Pria">Pria</option>
-              <option value="Wanita">Wanita</option>
-            </select>
-          </div>
-        </div>
-        <div className="group-11">
-          <div className="frame-wrapper">
-            <div className="frame-8">
-              <div className="text-wrapper-14">Agama</div>
-              <div className="text-wrapper-17">*</div>
-            </div>
-          </div>
-            <div className="frame-9">
-              <select
-              type="text"
-              className="custom-input"
-              value={agama}
-              onChange={(e) => setAgama(e.target.value)}
-            >
-              <option value="">Pilih Agama</option>
-              <option value="Islam">Islam</option>
-              <option value="Kristen Protestan">Kristen Protestan</option>
-              <option value="Katolik">Katolik</option>
-              <option value="Hindu">Hindu</option>
-              <option value="Buddha">Buddha</option>
-              <option value="Konghucu">Konghucu</option>
-              </select>
+        <form onSubmit={handleSubmit}>
+          {siswa.map((s) => (
+            <div key={s.nis}>
+              <div className="group-6">
+                <div className="frame-wrapper">
+                  <div className="frame-2">
+                    <div className="text-wrapper-13">NIS</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-3">
+                  <input
+                    className="setting"
+                    type="text"
+                    value={s.nisn}
+                    onChange={(e) =>
+                      setSiswa((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.nis === s.nis
+                            ? { ...item, nisn: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
               </div>
-        </div>
-        <div className="group-12">
-          <div className="frame-wrapper">
-            <div className="frame-10">
-              <div className="text-wrapper-14">Nama Orang Tua</div>
-              <div className="text-wrapper-17">*</div>
-            </div>
-          </div>
-          <div className="frame-11">
-          <input
-                type="text"
-                className="custom-input"
-                value={nama_orangtua}
-                onChange={(e) => setNamaOrtu(e.target.value)}
-              />
-          </div>
-        </div>
-        <div className="group-14">
-          <div className="frame-wrapper">
-            <div className="frame-12">
-              <div className="text-wrapper-14">Tanggal Lahir</div>
-              <div className="text-wrapper-17">*</div>
-            </div>
-          </div>
-              <div className="frame-13">
+              <div className="group-7">
+                <div className="frame-wrapper">
+                  <div className="frame-2">
+                    <div className="text-wrapper-13">Nama</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-3">
                 <input
-                  type="date"
-                  className="custom-input"
-                  value={tanggal_lahir}
-                  onChange={(e) => setTanggalLahir(e.target.value)}
-                />
+                    className="setting"
+                    type="text"
+                    value={s.nama}
+                    onChange={(e) =>
+                      setSiswa((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.nis === s.nis
+                            ? { ...item, nama: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
               </div>
-        </div>
-          <div className="group-15">
-            <div className="frame-wrapper">
-              <div className="frame-14">
-                <div className="text-wrapper-14">Tempat Lahir</div>
-                <div className="text-wrapper-17">*</div>
+              <div className="group-9">
+                <div className="frame-wrapper">
+                  <div className="frame-2">
+                    <div className="text-wrapper-13">Tempat Lahir</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-3">
+                <input
+                    className="setting"
+                    type="text"
+                    value={s.tempat_lahir}
+                    onChange={(e) =>
+                      setSiswa((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.nis === s.nis
+                            ? { ...item, tempat_lahir: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="group-8">
+                <div className="frame-wrapper">
+                  <div className="frame-4">
+                    <div className="text-wrapper-13">Tanggal Lahir</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-5">
+                <input
+                    className="setting"
+                    type="date"
+                    value={s.tanggal_lahir}
+                    onChange={(e) =>
+                      setSiswa((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.nis === s.nis
+                            ? { ...item, tanggal_lahir: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="group-10">
+                <div className="frame-wrapper">
+                  <div className="frame-6">
+                    <div className="text-wrapper-13">Agama</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-7">
+                <input
+                    className="setting"
+                    type="text"
+                    value={s.agama}
+                    onChange={(e) =>
+                      setSiswa((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.nis === s.nis
+                            ? { ...item, agama: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="group-11">
+                <div className="frame-wrapper">
+                  <div className="frame-6">
+                    <div className="text-wrapper-13">Jenis Kelamin</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-7">
+                  <select
+                    className="setting"
+                    value={s.jenis_kelamin}
+                    onChange={(e) =>
+                      setSiswa((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.jenis_kelamin === s.jenis_kelamin
+                            ? { ...item, jenis_kelamin: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  >
+                    <option value="Pria">Pria</option>
+                    <option value="Wanita">Wanita</option>
+                  </select>
+                </div>
+              </div>
+              <div className="group-12">
+                <div className="frame-wrapper">
+                  <div className="frame-6">
+                    <div className="text-wrapper-13">Nama Orangtua</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-7">
+                <input
+                    className="setting"
+                    type="text"
+                    value={s.nama_orangtua}
+                    onChange={(e) =>
+                      setSiswa((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.nis === s.nis
+                            ? { ...item, nama_orangtua: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
               </div>
             </div>
-              <div className="frame-15">
-                <input
-                  type="text"
-                  className="custom-input"
-                  value={tempat_lahir}
-                  onChange={(e) => setTempatLahir(e.target.value)}
-                />
-                {/* <Calendar className="vuesax-linear" /> */}
-              </div>
-        <div className="EDIT-SISWA">
-          <button className="TAMBAH-DATA" onClick={handleSubmit}>
-            <div className="text-wrapper-19">Update</div>
-          </button>
-        </div>
+          ))}
+          <div className="EDIT-Siswa">
+            <button className="TAMBAH-DATA" onClick={handleSubmit}>
+              <div className="text-wrapper">Update</div>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
   );
 };
 
