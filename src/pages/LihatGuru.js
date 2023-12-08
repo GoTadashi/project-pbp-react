@@ -127,20 +127,21 @@ const LihatGuru = () => {
                       <td>{item.tempat_lahir}</td>
                       <td>{item.tanggal_lahir}</td>
                       <td>{item.jenis_kelamin}</td>
-                      <td width="100px" className="action-button inline">
-                        &nbsp;
-                        <button className="bg-success">
-                          <i
-                            class="bi bi-pencil-square"
-                            onClick={() => handleUbahData(item.id_guru)}
-                          ></i>
-                        </button>
-                        <button className="bg-danger">
-                          <i
-                            class="bi bi-trash3-fill"
-                            onClick={() => handleDelete(item.id_guru)}
-                          ></i>
-                        </button>
+                      <td className="action-button inline">
+                        <div className="sizing-anj">
+                          <button className="bg-success">
+                            <i
+                              class="bi bi-pencil-square"
+                              onClick={() => handleUbahData(item.id_guru)}
+                            ></i>
+                          </button>
+                          <button className="bg-danger">
+                            <i
+                              class="bi bi-trash3-fill"
+                              onClick={() => handleDelete(item.id_guru)}
+                            ></i>
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   ))}

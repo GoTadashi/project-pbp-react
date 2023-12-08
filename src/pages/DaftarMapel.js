@@ -117,7 +117,10 @@ export const DaftarMapel = () => {
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-card-checklist"></i>
               <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
