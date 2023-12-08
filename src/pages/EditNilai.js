@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./EditNilai.css";
 import mainLogo from "../img/logo.png";
 
 export const EditNilai = () => {
+  const history = useHistory();
   const { id_detail } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [dataSiswa, setDataSiswa] = useState([]);
@@ -117,11 +118,11 @@ export const EditNilai = () => {
           message: "Please fill in all the required fields.",
         };
       } else console.log("Required fields filled.");
-  
+
       const nilai = parseInt(dataNilai);
       let dataPredikat = "";
       let dataDeskripsi = "";
-  
+
       if (nilai > 90 && nilai <= 100) {
         dataPredikat = "A";
         dataDeskripsi = "Sangat Baik";
@@ -138,10 +139,10 @@ export const EditNilai = () => {
         dataPredikat = "E";
         dataDeskripsi = "Sangat Kurang";
       }
-  
+
       console.log("Debug - dataPredikat:", dataPredikat);
       console.log("Debug - dataDeskripsi:", dataDeskripsi);
-  
+
       const updatedNilai = {
         id_detail: `${id_detail}`,
         id_matapelajaran: selectedMapel,
@@ -150,7 +151,7 @@ export const EditNilai = () => {
         predikat: dataPredikat,
         deskripsi: dataDeskripsi,
       };
-  
+
       const response = await fetch(
         `https://jojopinjam.iffan.site/api/update-detail`,
         {
@@ -161,29 +162,28 @@ export const EditNilai = () => {
           body: JSON.stringify(updatedNilai),
         }
       );
-  
+
       if (!response.ok) {
         const errorResponse = await response.json();
         throw new Error(
           `HTTP error! Status: ${response.status}, Message: ${errorResponse.message}`
         );
       }
-  
+
       const data = await response.json();
-  
+
       console.log("Nilai updated successfully:", data);
-  
+
       return { success: true, message: "Data berhasil diupdate!" };
     } catch (error) {
       console.error("Error updating nilai:", error);
       return { success: false, message: "Terjadi kesalahan. Mohon coba lagi." };
     }
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await updateNilai();
       console.log("Submitted Data:", {
@@ -194,11 +194,14 @@ export const EditNilai = () => {
         dataPredikat,
         dataDeskripsi,
       });
-  
+
       if (response.success) {
         alert("Data berhasil diupdate!");
+        history.push(`/lihatnilai`);
       } else {
-        alert("Data tidak berhasil diupdate. Mohon coba lagi. " + response.message);
+        alert(
+          "Data tidak berhasil diupdate. Mohon coba lagi. " + response.message
+        );
       }
     } catch (error) {
       console.error("Error submitting data:", error);
@@ -215,43 +218,64 @@ export const EditNilai = () => {
       <div className="div">
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatRaport"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LoginSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DataSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-card-checklist"></i>
               <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/RaportSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-book-fill"></i>
               <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DashboardGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>

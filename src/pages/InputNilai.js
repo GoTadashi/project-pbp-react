@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useHistory } from "react-router-dom";
-import "./LihatRaport.css";
 import "./InputNilai.css";
 import mainLogo from "../img/logo.png";
 // ini sudah dropdown id_raport
@@ -228,52 +227,79 @@ const InputNilai = () => {
   return (
     <div className="INPUT-NILAI">
       <div className="div">
-      <div className="MENU">
+        <div className="MENU">
           <div className="PROFILE">
-            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatRaport"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5"></Link>
-            <Link to="/LihatNilai" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LoginSiswa"
+              className="list-menu nav-link text-white fs-5"
+            ></Link>
+            <Link
+              to="/LihatNilai"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Lihat Nilai</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginAdmin" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LoginAdmin"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DataSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-card-checklist"></i>
               <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/RaportSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-book-fill"></i>
               <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DashboardGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -282,128 +308,123 @@ const InputNilai = () => {
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
         </footer>
-        </div>
-        <header className="HEADER">
-          <div className="overlap-2">
-            <div className="group-wrapper">
-              <div className="group-4">
-                <div className="group-5">
-                  <div className="group-6">
-                  </div>
-                </div>
+      </div>
+      <header className="HEADER">
+        <div className="overlap-2">
+          <div className="group-wrapper">
+            <div className="group-4">
+              <div className="group-5">
+                <div className="group-6"></div>
               </div>
             </div>
-            <div className="element-wrapper">
-              {/* <img className="element-4" alt="Element" src="3.svg" /> */}
-            </div>
-            <div className="search">
-              <div className="group-7">
-                {/* <img className="element-5" alt="Element" src="7.svg" /> */}
-                <input
-                  className="custom-input"
-                  type="text"
-                  placeholder="Cari berdasarkan Nama/NIS"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="SMP-KRISTEN-GETASAN">
-              SD Kristen Terang Bangsa
-              <br />
-              E-Rapor
-            </div>
-            <img className="img-logo" src={mainLogo} alt="logo-sd" />
           </div>
-        </header>
-        <div className="kembali">
-          <Link to="/DaftarMapel">
-            <div className="text-wrapper-11">Kembali</div>
-          </Link>
+          <div className="element-wrapper"></div>
+          <div className="search">
+            <div className="group-7">
+              <input
+                className="custom-input"
+                type="text"
+                placeholder="Cari berdasarkan Nama/NIS"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="SMP-KRISTEN-GETASAN">
+            SD Kristen Terang Bangsa
+            <br />
+            E-Rapor
+          </div>
+          <img className="img-logo" src={mainLogo} alt="logo-sd" />
         </div>
-        <div className="text-wrapper-12">Input Nilai</div>
-        <div className="group-8">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Nama Siswa</div>
-            </div>
-          </div>
+      </header>
+      <div className="kembali">
+        <Link to="/DaftarMapel">
+          <div className="text-wrapper-11">Kembali</div>
+        </Link>
+      </div>
+      <div className="text-wrapper-12">Input Nilai</div>
+      <div className="group-8">
+        <div className="frame-wrapper">
           <div className="frame-2">
-            <select
-              className="dropdown"
-              onChange={(e) => setSelectedSiswa(e.target.value)}
-            >
-              {dataSiswa.map((item, index) => (
-                <option key={index} value={item.nis}>
-                  {item.nama}
-                </option>
-              ))}
-            </select>
+            <div className="text-wrapper-13">Nama Siswa</div>
           </div>
         </div>
-        <div className="group-9">
+        <div className="frame-2">
+          <select
+            className="dropdown"
+            onChange={(e) => setSelectedSiswa(e.target.value)}
+          >
+            {dataSiswa.map((item, index) => (
+              <option key={index} value={item.nis}>
+                {item.nama}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div className="group-9">
+        <div className="frame-wrapper">
           <div className="frame-2">
             <div className="text-wrapper-13">Mata Pelajaran</div>
           </div>
-          <div className="frame-2">
-            <select
-              className="dropdown"
-              onChange={(e) => setSelectedMapel(e.target.value)}
-            >
-              {dataMapel.map((item) => (
-                <option
-                  key={item.id_matapelajaran}
-                  value={item.id_matapelajaran}
-                >
-                  {item.nama_matapelajaran}
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
-        <div className="group-10">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Nilai</div>
-            </div>
-          </div>
-          <div className="frame-2">
-            <input
-              type="number"
-              className="dropdown"
-              onChange={(e) => setDataNilai(e.target.value)}
-            ></input>
-          </div>
-        </div>
-        <div className="group-11">
-          <div className="frame-wrapper">
-            <div className="frame-2">
-              <div className="text-wrapper-13">Kelas - Semester</div>
-            </div>
-          </div>
-          <div className="frame-2">
-            <select
-              className="dropdown"
-              value={selectedIdRaport} // Menggunakan selectedIdRaport sebagai nilai terpilih
-              onChange={(e) => setSelectedIdRaport(e.target.value)} // Mengatur selectedIdRaport dengan nilai terpilih
-            >
-              {raportMain.map((item, index) => (
-                <option key={index} value={item.id_raport}>
-                  {`Kelas ${item.kelas} - Semester ${item.semester}`}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div className="group-12">
-          <div className="frame-7" onClick={handleSubmit}>
-            <div className="text-wrapper-15">Simpan</div>
-          </div>
-          <div className="frame-8" onClick={handleReset}>
-            <div className="text-wrapper-15">Reset</div>
-          </div>
+        <div className="frame-2">
+          <select
+            className="dropdown"
+            onChange={(e) => setSelectedMapel(e.target.value)}
+          >
+            {dataMapel.map((item) => (
+              <option key={item.id_matapelajaran} value={item.id_matapelajaran}>
+                {item.nama_matapelajaran}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
+      <div className="group-10">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Nilai</div>
+          </div>
+        </div>
+        <div className="frame-2">
+          <input
+            type="number"
+            className="dropdown"
+            onChange={(e) => setDataNilai(e.target.value)}
+          ></input>
+        </div>
+      </div>
+      <div className="group-11">
+        <div className="frame-wrapper">
+          <div className="frame-2">
+            <div className="text-wrapper-13">Kelas - Semester</div>
+          </div>
+        </div>
+        <div className="frame-2">
+          <select
+            className="dropdown"
+            value={selectedIdRaport} // Menggunakan selectedIdRaport sebagai nilai terpilih
+            onChange={(e) => setSelectedIdRaport(e.target.value)} // Mengatur selectedIdRaport dengan nilai terpilih
+          >
+            {raportMain.map((item, index) => (
+              <option key={index} value={item.id_raport}>
+                {`Kelas ${item.kelas} - Semester ${item.semester}`}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div className="group-12">
+        <div className="frame-7" onClick={handleSubmit}>
+          <div className="text-wrapper-15">Simpan</div>
+        </div>
+        <div className="frame-8" onClick={handleReset}>
+          <div className="text-wrapper-15">Reset</div>
+        </div>
+      </div>
+    </div>
   );
 };
 export default InputNilai;
