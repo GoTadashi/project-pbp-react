@@ -36,11 +36,31 @@ export const DaftarMapel = () => {
     history.push(`/EditMapel/${matapelajaranId}`);
   };
 
-  const handleDelete = (index) => {
-    // Handle the delete action
-    const newData = [...data];
-    newData.splice(index, 1);
-    setData(newData);
+  const handleDelete = async (id_matapelajaran) => {
+    try {
+      const response = await fetch(
+        `https://jojopinjam.iffan.site/api/delete-matapelajaran/${id_matapelajaran}`,
+        {
+          method: "GET",
+        }
+      );
+
+      if (response.ok) {
+        // Handle success, misalnya menghapus data dari state lokal
+        console.log(
+          `Matapelajaran dengan ID ${id_matapelajaran} berhasil dihapus.`
+        );
+        window.location.reload();
+      } else {
+        const responseBody = await response.json();
+        console.log("idmapel: ", id_matapelajaran);
+        console.error("Gagal menghapus matapelajaran:", responseBody.message);
+        alert("Gagal menghapus matapelajaran.");
+      }
+    } catch (error) {
+      console.error("Error deleting data:", error);
+      alert("Terjadi kesalahan. Mohon coba lagi.");
+    }
   };
 
   return (
@@ -61,25 +81,37 @@ export const DaftarMapel = () => {
         </div>
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatRaport"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LoginSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DataSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>
@@ -91,13 +123,19 @@ export const DaftarMapel = () => {
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-book-fill"></i>
               <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DashboardGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -156,11 +194,22 @@ export const DaftarMapel = () => {
                   {data.map((item, index) => (
                     <tr key={index}>
                       <td align="center">{item.id_matapelajaran}</td>
-                      <td >{item.nama_matapelajaran}</td>
+                      <td>{item.nama_matapelajaran}</td>
                       <td align="center">{item.id_guru}</td>
                       <td align="center">
-                        <button className="bg-success"><i class="bi bi-pencil-square" onClick={() => handleEdit(index)}></i></button>&nbsp;&nbsp;&nbsp;
-                        <button className="bg-danger"><i class="bi bi-trash3-fill" onClick={() => handleDelete(index)}></i></button>
+                        <button className="bg-success">
+                          <i
+                            class="bi bi-pencil-square"
+                            onClick={() => handleEdit(item.id_matapelajaran)}
+                          ></i>
+                        </button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button className="bg-danger">
+                          <i
+                            class="bi bi-trash3-fill"
+                            onClick={() => handleDelete(item.id_matapelajaran)}
+                          ></i>
+                        </button>
                       </td>
                     </tr>
                   ))}
