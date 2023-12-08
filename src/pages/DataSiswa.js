@@ -60,6 +60,10 @@ const DataSiswa = () => {
     history.push(`/EditSiswa/${nis}`);
   };
 
+  const handleTambahSiswa = () => {
+    history.push(`/inputsiswa`);
+  };
+
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
   const pageNumbers = Array.from(
     { length: totalPages },
@@ -115,6 +119,12 @@ const DataSiswa = () => {
                   ))}
                 </tbody>
               </table>
+              <button
+                          className="TAMBAH-DATA-2"
+                          onClick={() => handleTambahSiswa()}
+                        >
+                          <div className="text-wrapper-23">Tambah Siswa</div>
+                        </button>
             </div>
           </div>
         </div>
