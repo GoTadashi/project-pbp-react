@@ -60,6 +60,31 @@ const LihatGuru = () => {
     history.push(`/EditGuru/${id_guru}`);
   };
 
+  const handleDelete = async (id_guru) => {
+    try {
+      const response = await fetch(
+        `https://jojopinjam.iffan.site/api/delete-guru/${id_guru}`,
+        {
+          method: "GET",
+        }
+      );
+
+      if (response.ok) {
+        // Handle success, misalnya menghapus data dari state lokal
+        console.log(`Guru dengan ID ${id_guru} berhasil dihapus.`);
+        window.location.reload();
+      } else {
+        const responseBody = await response.json();
+        console.log("idguru: ", id_guru);
+        console.error("Gagal menghapus guru:", responseBody.message);
+        alert("Gagal menghapus guru.");
+      }
+    } catch (error) {
+      console.error("Error deleting data:", error);
+      alert("Terjadi kesalahan. Mohon coba lagi.");
+    }
+  };
+
   const totalPages = Math.ceil(dataSiswa.length / itemsPerPage);
   const pageNumbers = Array.from(
     { length: totalPages },
@@ -103,11 +128,18 @@ const LihatGuru = () => {
                       <td>{item.tanggal_lahir}</td>
                       <td>{item.jenis_kelamin}</td>
                       <td className="action-button">
-                        <button
-                          className="TAMBAH-DATA"
-                          onClick={() => handleUbahData(item.id_guru)}
-                        >
-                          <div className="text-wrapper-23">Edit Guru</div>
+                        <button className="bg-success">
+                          <i
+                            class="bi bi-pencil-square"
+                            onClick={() => handleUbahData(item.id_guru)}
+                          ></i>
+                        </button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button className="bg-danger">
+                          <i
+                            class="bi bi-trash3-fill"
+                            onClick={() => handleDelete(item.id_guru)}
+                          ></i>
                         </button>
                       </td>
                     </tr>
@@ -127,7 +159,10 @@ const LihatGuru = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/InputRaport" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/InputRaport"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
@@ -139,31 +174,46 @@ const LihatGuru = () => {
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DataSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/LihatGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>
           </div>
           <div className="CHAT-2">
-            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DaftarMapel"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-card-checklist"></i>
               <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/RaportSiswa"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i class="bi bi-book-fill"></i>
               <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+            <Link
+              to="/DashboardGuru"
+              className="list-menu nav-link text-white fs-5"
+            >
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -175,8 +225,9 @@ const LihatGuru = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${currentPage === number ? "active" : ""
-                    }`}
+                  className={`ellipse ${
+                    currentPage === number ? "active" : ""
+                  }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>

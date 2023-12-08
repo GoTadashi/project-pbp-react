@@ -50,6 +50,7 @@ export const DaftarMapel = () => {
         console.log(
           `Matapelajaran dengan ID ${id_matapelajaran} berhasil dihapus.`
         );
+        window.location.reload();
       } else {
         const responseBody = await response.json();
         console.log("idmapel: ", id_matapelajaran);
@@ -199,14 +200,14 @@ export const DaftarMapel = () => {
                         <button className="bg-success">
                           <i
                             class="bi bi-pencil-square"
-                            onClick={() => handleEdit(index)}
+                            onClick={() => handleEdit(item.id_matapelajaran)}
                           ></i>
                         </button>
                         &nbsp;&nbsp;&nbsp;
                         <button className="bg-danger">
                           <i
                             class="bi bi-trash3-fill"
-                            onClick={() => handleDelete(index)}
+                            onClick={() => handleDelete(item.id_matapelajaran)}
                           ></i>
                         </button>
                       </td>
