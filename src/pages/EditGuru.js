@@ -213,7 +213,7 @@ export const EditGuru = () => {
                 <div className="frame-7">
                   <input
                     className="setting"
-                    type="text"
+                    type="date"
                     value={g.tanggal_lahir}
                     onChange={(e) =>
                       setGuru((prevGuru) =>
@@ -228,27 +228,29 @@ export const EditGuru = () => {
                 </div>
               </div>
               <div className="group-11">
-                <div className="frame-6">
-                  <div className="frame-8">
+                <div className="frame-wrapper">
+                  <div className="frame-6">
                     <div className="text-wrapper-13">Jenis Kelamin</div>
                     <div className="text-wrapper-14">*</div>
                   </div>
                 </div>
-                <div className="frame-9">
-                  <input
+                <div className="frame-7">
+                  <select
                     className="setting"
-                    type="text"
                     value={g.jenis_kelamin}
                     onChange={(e) =>
-                      setGuru((prevGuru) =>
-                        prevGuru.map((item) =>
-                          item.id_guru === g.id_guru
+                      setGuru((prevSiswa) =>
+                        prevSiswa.map((item) =>
+                          item.jenis_kelamin === g.jenis_kelamin
                             ? { ...item, jenis_kelamin: e.target.value }
                             : item
                         )
                       )
                     }
-                  />
+                  >
+                    <option value="Pria">Pria</option>
+                    <option value="Wanita">Wanita</option>
+                  </select>
                 </div>
               </div>
             </div>
