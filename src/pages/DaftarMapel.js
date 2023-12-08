@@ -69,16 +69,6 @@ export const DaftarMapel = () => {
         <footer className="FOOTER">
           <p className="text-wrapper">Copyright © SD Kristen Terang Bangsa</p>
         </footer>
-        <div className="PAGES">
-          <div className="element">
-            <div className="overlap-group">
-              <div className="ellipse" />
-              <div className="text-wrapper-3">1</div>
-            </div>
-          </div>
-          <div className="text-wrapper-4">2</div>
-          <div className="text-wrapper-5">3</div>
-        </div>
         <div className="MENU">
           <div className="PROFILE">
             <Link
