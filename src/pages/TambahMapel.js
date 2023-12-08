@@ -5,6 +5,7 @@ import mainLogo from "../img/logo.png";
 import "./TambahMapel.css";
 
 export const TambahMapel = () => {
+  const history = useHistory();
   const [searchQuery, setSearchQuery] = useState("");
   // const [kodeMatapelajaran, setKodeMatapelajaran] = useState("");
   const [namaMatapelajaran, setNamaMatapelajaran] = useState("");
@@ -44,6 +45,7 @@ export const TambahMapel = () => {
       alert("Harap isi semua kolom form.");
     } else {
       alert("Mata pelajaran berhasil dimasukkan.");
+      history.push(`/DaftarMapel`);
     }
 
     console.log(
@@ -63,7 +65,7 @@ export const TambahMapel = () => {
   return (
     <div className="TAMBAH-MAPEL">
       <div className="div">
-      <div className="MENU">
+        <div className="MENU">
           <div className="PROFILE">
             <Link
               to="/LihatRaport"
