@@ -139,6 +139,7 @@ const LihatGuru = () => {
                               onClick={() => handleUbahData(item.id_guru)}
                             ></i>
                           </button>
+                          &ensp;
                           <button className="bg-danger">
                             <i
                               class="bi bi-trash3-fill"
@@ -171,11 +172,11 @@ const LihatGuru = () => {
         <div className="MENU">
           <div className="PROFILE">
             <Link
-              to="/InputRaport"
+              to="/LihatNilai"
               className="list-menu nav-link text-white fs-5"
             >
               <i class="bi bi-file-earmark-plus"></i>
-              <span className="side-text ms-2">Input Raport Siswa</span>
+              <span className="side-text ms-2">Lihat Nilai</span>
             </Link>
           </div>
           <div className="PROFILE-2">
