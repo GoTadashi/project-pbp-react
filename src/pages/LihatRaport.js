@@ -67,53 +67,10 @@ const LihatRaport = () => {
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
-          {/* <img className="line" alt="Line" src="line-2.svg" />
+          <img className="line" alt="Line" src="line-2.svg" />
           <img className="img" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-2">SCH</div> */}
+          <div className="text-wrapper-2">SCH</div>
         </footer>
-
-        {/* <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div> */}
-        {/* <div className="PEMBERITAHUAN">
-          <img className="element-2" alt="Element" src="53.svg" />
-          <div className="frame">
-            <div className="group">
-              <div className="ellipse-2" />
-              <div className="ellipse-3" />
-              <div className="ellipse-4" />
-            </div>
-          </div>
-          <div className="PIKET">
-            <img className="element-3" alt="Element" src="4.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Jadwal Piket Harian</div>
-            </div>
-          </div>
-          <div className="WALI-MURID">
-            <img className="element-3" alt="Element" src="image.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Pertemuan Wali Murid</div>
-            </div>
-          </div>
-          <div className="KLS">
-            <img className="element-3" alt="Element" src="4-2.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Matematika Kelas 9</div>
-            </div>
-          </div>
-          <div className="KLS-2">
-            <img className="element-3" alt="Element" src="4-3.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Matematika Kelas 8</div>
-            </div>
-          </div>
-          <div className="KLS-3">
-            <img className="element-3" alt="Element" src="4-4.svg" />
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Matematika Kelas 7</div>
-            </div>
-          </div>
-          <div className="text-wrapper-8">Pemberitahuan</div>
-        </div> */}
         <div className="TABLE">
           <div className="overlap">
             <div className="DATA-KELAS">
