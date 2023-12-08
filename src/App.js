@@ -35,7 +35,7 @@ function App() {
           <Route path="/inputsiswa" component={InputSiswa} />
           <Route path="/raportsiswa" component={RaportSiswa} />
           <Route path="/coba/:nisSiswa" exact component={RaportPage} />
-          <Route path="/LoginSiswa" exact component={LoginSiswa} />
+          <Route path="/LoginAdmin" exact component={LoginSiswa} />
           <Route path="/DashboardGuru" exact component={DashboardGuru} />
           {/* Data Guru */}
           <Route path="/EditGuru/:id_guru" exact component={EditGuru} />
@@ -55,11 +55,6 @@ function App() {
           {/* Data Mapel */}
           <Route path="/TambahMapel" exact component={TambahMapel} />
           <Route path="/EditMapel/:id_matapelajaran" exact component={EditMapel} />
-          <Route
-            path="/EditMapel/:id_matapelajaran"
-            exact
-            component={EditMapel}
-          />
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
 
           {/* Data Siswa */}
