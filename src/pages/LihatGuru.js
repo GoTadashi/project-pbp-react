@@ -135,6 +135,7 @@ const LihatGuru = () => {
                               onClick={() => handleUbahData(item.id_guru)}
                             ></i>
                           </button>
+                          &ensp;
                           <button className="bg-danger">
                             <i
                               class="bi bi-trash3-fill"
