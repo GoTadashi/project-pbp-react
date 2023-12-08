@@ -100,11 +100,11 @@ const EditMapel = () => {
         <div className="MENU">
           <div className="PROFILE">
             <Link
-              to="/LihatRaport"
+              to="/LihatNilai"
               className="list-menu nav-link text-white fs-5"
             >
               <i class="bi bi-file-earmark-plus"></i>
-              <span className="side-text ms-2">Input Raport Siswa</span>
+              <span className="side-text ms-2">Lihat Nilai</span>
             </Link>
           </div>
           <div className="PROFILE-2">
