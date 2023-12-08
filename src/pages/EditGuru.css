@@ -618,7 +618,7 @@
 .EDIT-GURU .frame-wrapper {
   height: 17px;
   left: 0;
-  position: absolute;
+  position: relative; /* Change to relative for child positioning */
   top: 0;
   width: 509px;
 }
@@ -734,7 +734,7 @@
   height: 86px;
   left: 320px;
   position: absolute;
-  top: 479px;
+  top: 579px;
   width: 528px;
 }
 
@@ -769,8 +769,10 @@
   height: 86px;
   left: 320px;
   position: absolute;
-  top: 580px;
+  top: 750px;
   width: 528px;
+  display: flex; /* Add flex display to handle child elements */
+  flex-direction: column; /* Arrange children in a column */
 }
 
 .EDIT-GURU .group-10 {
@@ -818,7 +820,7 @@
   height: 50px;
   left: 35rem;
   position: absolute;
-  top: 823px;
+  top: 893px;
   width: 170px;
 }
 

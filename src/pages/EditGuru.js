@@ -4,7 +4,7 @@ import "./EditGuru.css";
 import mainLogo from "../img/logo.png";
 
 export const EditGuru = () => {
-  const { id_guru } = useParams(); // Use useParams to get the parameter from the URL
+  const { id_guru } = useParams();
   const history = useHistory();
   const [guru, setGuru] = useState([]);
   const [message, setMessage] = useState("");
@@ -30,22 +30,65 @@ export const EditGuru = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const updatedGuru = guru[0]; // Assuming there is only one guru with the given id
+    const updatedGuru = guru[0];
+
+    // Log the payload being sent to the server
+    console.log("Submitting Guru Data:", JSON.stringify(updatedGuru));
+
     fetch("https://jojopinjam.iffan.site/api/update-guru", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(updatedGuru),
-    }).then(() => {
-      fetch(`https://jojopinjam.iffan.site/api/get-guru/${id_guru}`)
-        .then((response) => response.json())
-        .then((json) => setGuru(json));
-      setTimeout(() => {
-        setMessage("Guru Berhasil Diubah");
-      }, 500);
-    });
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Log the response from the server
+        console.log("Server Response:", data);
+
+        // Check if the response has an "error" status
+        if (data.status && data.status === "ERROR") {
+          throw new Error(`Server error: ${data.message}`);
+        }
+
+        // Fetch the updated data from the server
+        return fetch(`https://jojopinjam.iffan.site/api/get-guru/${id_guru}`);
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((json) => {
+        // Log the fetched data
+        console.log("Fetched Guru Data:", JSON.stringify(json));
+
+        if (Array.isArray(json)) {
+          setGuru(json);
+        } else {
+          setGuru([json]);
+        }
+
+        // Display a success alert
+        window.alert("Guru Berhasil Diubah");
+      })
+      .catch((error) => {
+        // Log any errors during the process
+        console.error("Error:", error);
+
+        // Display an error alert
+        window.alert("Terjadi kesalahan. Guru tidak dapat diubah.");
+      });
   };
+
+
   return (
     <div className="EDIT-GURU">
       <div className="div">
@@ -181,6 +224,30 @@ export const EditGuru = () => {
               </div>
               <div className="group-9">
                 <div className="frame-wrapper">
+                  <div className="frame-2">
+                    <div className="text-wrapper-13">Walikelas</div>
+                    <div className="text-wrapper-14">*</div>
+                  </div>
+                </div>
+                <div className="frame-3">
+                  <input
+                    className="setting"
+                    type="text"
+                    value={g.walikelas}
+                    onChange={(e) =>
+                      setGuru((prevGuru) =>
+                        prevGuru.map((item) =>
+                          item.id_guru === g.id_guru
+                            ? { ...item, walikelas: e.target.value }
+                            : item
+                        )
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="group-8">
+                <div className="frame-wrapper">
                   <div className="frame-4">
                     <div className="text-wrapper-13">Tempat Lahir</div>
                     <div className="text-wrapper-14">*</div>
@@ -255,7 +322,11 @@ export const EditGuru = () => {
               </div>
             </div>
           ))}
-          <button type="submit" class="EDIT-GURU custom-button">Submit</button>
+          <div className="EDIT-GURU">
+            <button className="TAMBAH-DATA" onClick={handleSubmit}>
+              <div className="text-wrapper">Update</div>
+            </button>
+          </div>
         </form>
       </div>
     </div>
