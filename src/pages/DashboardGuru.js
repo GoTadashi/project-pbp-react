@@ -14,7 +14,7 @@ export const DashboardGuru = () => {
       <div className="div">
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/InputRaport" className="list-menu nav-link text-white fs-5">
+            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>

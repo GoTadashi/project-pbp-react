@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./LihatRaport.css";
+import mainLogo from "../img/logo.png";
 
 const LihatRaport = () => {
   const history = useHistory();
@@ -21,7 +22,7 @@ const LihatRaport = () => {
         // Fetch all student data
         const responseSiswa = await fetch("https://jojopinjam.iffan.site/api/get-siswa");
         const dataSiswa = await responseSiswa.json();
-        
+
         // Filter students who have raport
         const studentsWithRaport = dataSiswa.filter((siswa) =>
           dataRaport.some((raport) => raport.id_siswa === siswa.nis)
@@ -65,13 +66,13 @@ const LihatRaport = () => {
     <div className="LIHAT-RAPORT">
       <div className="div">
         <footer className="FOOTER">
-          <p className="p">Copyright © SMP Kristen Getasan 2023</p>
-          <img className="line" alt="Line" src="line-2.svg" />
+          <p className="p">Copyright © SD Kristen Terang Bangsa</p>
+          {/* <img className="line" alt="Line" src="line-2.svg" />
           <img className="img" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-2">SCH</div>
+          <div className="text-wrapper-2">SCH</div> */}
         </footer>
 
-        <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div>
+        {/* <div className="text-wrapper-6">*Urutan Siswa Sesuai NIS</div> */}
         {/* <div className="PEMBERITAHUAN">
           <img className="element-2" alt="Element" src="53.svg" />
           <div className="frame">
@@ -140,12 +141,12 @@ const LihatRaport = () => {
                       <td>{item.agama}</td>
                       <td>{item.nama_orangtua}</td>
                       <td className="action-button">
-                      <button
-                        className="EDIT-RAPORT"
-                        onClick={() => handleInputNilai(item.nis)}
-                      >
-                        <div className="text-wrapper-23">Input Nilai</div>
-                      </button>
+                        <button
+                          className="EDIT-RAPORT"
+                          onClick={() => handleInputNilai(item.nis)}
+                        >
+                          <div className="text-wrapper-23">Input Nilai</div>
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -153,10 +154,6 @@ const LihatRaport = () => {
               </table>
             </div>
           </div>
-        </div>
-        <div className="SORTING-DATA">
-          <img className="icon-sort" alt="Icon sort" src="icon-sort.png" />
-          <div className="text-wrapper-9">Sortir Data</div>
         </div>
         {dataRaport.map((item, index) => (
           <div key={index} className="navbar">
@@ -168,64 +165,46 @@ const LihatRaport = () => {
         ))}
         <div className="MENU">
           <div className="PROFILE">
-            <img className="element-3" alt="Element" src="64.svg" />
-            <div className="text-wrapper-14">Pengaturan Profil</div>
+            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-file-earmark-plus"></i>
+              <span className="side-text ms-2">Input Raport Siswa</span>
+            </Link>
           </div>
           <div className="PROFILE-2">
-            <img className="element-3" alt="Element" src="64-2.svg" />
-            <div className="text-wrapper-14">Log Out</div>
-          </div>
-          <div className="group-2">
-            <div className="overlap-group-3">
-              <div className="group-wrapper">
-                <div className="group-3">
-                  <div className="text-wrapper-15">Light</div>
-                  <img
-                    className="sun-solid"
-                    alt="Sun solid"
-                    src="sun-solid.svg"
-                  />
-                </div>
-              </div>
-              <div className="text-wrapper-16">Dark</div>
-              <img
-                className="moon-solid"
-                alt="Moon solid"
-                src="moon-solid.svg"
-              />
-            </div>
+            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-box-arrow-right"></i>
+              <span className="side-text ms-2">Log Out</span>
+            </Link>
           </div>
           <div className="SISWA">
-            <img className="icon-SISWA" alt="Icon SISWA" src="icon-SISWA.png" />
-            <div className="text-wrapper-14">Siswa</div>
+            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-person-vcard"></i>
+              <span className="side-text ms-2">Siswa</span>
+            </Link>
           </div>
           <div className="CHAT">
-            <img
-              className="icon-envelope"
-              alt="Icon envelope"
-              src="icon-envelope.png"
-            />
-            <div className="text-wrapper-14">Chat</div>
+            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-person-video3"></i>
+              <span className="side-text ms-2">Guru</span>
+            </Link>
           </div>
           <div className="CHAT-2">
-            <img
-              className="icon-attendance"
-              alt="Icon attendance"
-              src="icon-attendance.png"
-            />
-            <div className="text-wrapper-14">Generate Absen</div>
+            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-card-checklist"></i>
+              <span className="side-text ms-2">Mata Pelajaran</span>
+            </Link>
           </div>
           <div className="CHAT-3">
-            <img
-              className="icon-calender"
-              alt="Icon calender"
-              src="icon-calender.png"
-            />
-            <div className="text-wrapper-14">Jadwal Pelajaran</div>
+            <Link to="/RaportSiswa" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-book-fill"></i>
+              <span className="side-text ms-2">Raport Siswa</span>
+            </Link>
           </div>
           <div className="DASHBOARD">
-            <img className="element-3" alt="Element" src="1.svg" />
-            <div className="text-wrapper-14">Dashboard</div>
+            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
+              <i className="bi bi-speedometer2"></i>
+              <span className="side-text ms-2">Dashboard</span>
+            </Link>
           </div>
         </div>
         <div className="PAGES">
@@ -234,9 +213,8 @@ const LihatRaport = () => {
               {pageNumbers.map((number) => (
                 <div
                   key={number}
-                  className={`ellipse ${
-                    currentPage === number ? "active" : ""
-                  }`}
+                  className={`ellipse ${currentPage === number ? "active" : ""
+                    }`}
                   onClick={() => paginate(number)}
                 >
                   <div className="text-wrapper-3">{number}</div>
@@ -251,18 +229,18 @@ const LihatRaport = () => {
               <div className="group-5">
                 <div className="group-6">
                   <div className="group-7">
-                    <div className="text-wrapper-17">Guru Matematika</div>
-                    <div className="text-wrapper-18">Eni Susilowati</div>
+                    <div className="text-wrapper-17">Admin</div>
+                    <div className="text-wrapper-18">Admin</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="element-wrapper">
+            {/* <div className="element-wrapper">
               <img className="element-4" alt="Element" src="3.svg" />
-            </div>
+            </div> */}
             <div className="search">
               <div className="group-7">
-                <img className="element-5" alt="Element" src="7.svg" />
+                {/* <img className="element-5" alt="Element" src="7.svg" /> */}
                 <input
                   className="custom-input"
                   type="text"
@@ -273,16 +251,12 @@ const LihatRaport = () => {
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
-              Smp Kristen Getasan
+              SD Kristen Terang Bangsa
               <br />
-              e-rapor
+              E-Rapor
             </div>
-            <img className="ellipse-5" alt="Ellipse" src="ellipse-1192.svg" />
-            <img
-              className="SMP-KRISTEN"
-              alt="Smp KRISTEN"
-              src="SMP-KRISTEN-2.png"
-            />
+            {/* <img className="ellipse-5" alt="Ellipse" src="ellipse-1192.svg" /> */}
+            <img className="img-logo" src={mainLogo} alt="logo-sd" />
           </div>
         </header>
       </div>

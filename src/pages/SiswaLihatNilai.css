@@ -685,6 +685,13 @@
   top: 45px;
 }
 
+.TAMBAH-DATA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 100px;
+}
+
 .SISWA-LIHAT-NILAI .text-wrapper-23 {
   color: #ffffff;
   font-family: "Poppins-SemiBold", Helvetica;
@@ -692,8 +699,6 @@
   font-weight: 600;
   letter-spacing: 0;
   line-height: normal;
-  margin-bottom: -0.5px;
-  margin-top: -2.5px;
   position: relative;
   width: fit-content;
 }

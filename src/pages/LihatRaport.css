@@ -402,7 +402,7 @@
   height: 647px;
   left: 377px;
   position: absolute;
-  top: 262px;
+  top: 200px;
   width: 1153px;
 }
 
@@ -995,16 +995,16 @@
 
 .LIHAT-RAPORT .SMP-KRISTEN-GETASAN {
   color: #000000;
-  font-family: "Poppins-Medium", Helvetica;
-  font-size: 20px;
-  font-weight: 500;
-  height: 60px;
-  left: 106px;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  height: 72px;
+  left: 126px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 72px;
-  width: 269px;
+  top: 48px;
+  width: 314px;
 }
 
 .LIHAT-RAPORT .ellipse-5 {
@@ -1022,4 +1022,10 @@
   position: absolute;
   top: 51px;
   width: 99px;
+}
+
+.img-logo {
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
 }

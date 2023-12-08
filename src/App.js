@@ -21,6 +21,7 @@ import InputSiswa from "./pages/InputSiswa";
 import RaportSiswa from "./pages/RaportSiswa";
 import LihatGuru from "./pages/LihatGuru";
 import TambahGuru from "./pages/TambahGuru";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
       <div className="app-header"></div>
       <Switch>
         <div className="app-content">
-        <Route path="/tambahguru" component={TambahGuru} />
+          <Route path="/Register" component={Register} />
+          <Route path="/tambahguru" component={TambahGuru} />
           <Route path="/lihatguru" component={LihatGuru} />
           <Route path="/inputsiswa" component={InputSiswa} />
           <Route path="/raportsiswa" component={RaportSiswa} />

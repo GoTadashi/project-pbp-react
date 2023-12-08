@@ -156,7 +156,7 @@ const SiswaLihatNilai = () => {
                       className="TAMBAH-DATA"
                       onClick={() => handleEditNilai(item.id_detail)} // handleEditNilai(item)
                     >
-                      <div className="text-wrapper-23">Edit Siswa</div>
+                      <div className="text-wrapper-23">Edit Nilai</div>
                     </button>
                   </div>
                 </div>

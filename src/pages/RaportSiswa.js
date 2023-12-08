@@ -239,15 +239,15 @@ const RaportSiswa = () => {
               <div className="group-5">
                 <div className="group-6">
                   <div className="group-7">
-                    <div className="text-wrapper-17">Guru Matematika</div>
-                    <div className="text-wrapper-18">Eni Susilowati</div>
+                    <div className="text-wrapper-17"></div>
+                    <div className="text-wrapper-18">Admin</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="element-wrapper">
+            {/* <div className="element-wrapper">
               <img className="element-4" alt="Element" src="3.svg" />
-            </div>
+            </div> */}
             <div className="search">
               <div className="group-7">
                 <input
