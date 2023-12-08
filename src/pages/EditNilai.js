@@ -109,45 +109,45 @@ export const EditNilai = () => {
   }, [id_detail]);
 
   const updateNilai = async () => {
-    if (!selectedMapel || !selectedIdRaport || !dataNilai) {
-      console.error("Please fill in all the required fields.");
-      return {
-        success: false,
-        message: "Please fill in all the required fields.",
-      };
-    } else console.log("Required fields filled.");
-
-    const nilai = parseInt(dataNilai);
-    let dataPredikat = "";
-    let dataDeskripsi = "";
-
-    if (nilai > 90 && nilai <= 100) {
-      dataPredikat = "A";
-      dataDeskripsi = "Sangat Baik";
-    } else if (nilai > 80) {
-      dataPredikat = "B";
-      dataDeskripsi = "Baik";
-    } else if (nilai > 70) {
-      dataPredikat = "C";
-      dataDeskripsi = "Cukup";
-    } else if (nilai > 60) {
-      dataPredikat = "D";
-      dataDeskripsi = "Kurang";
-    } else {
-      dataPredikat = "E";
-      dataDeskripsi = "Sangat Kurang";
-    }
-
-    const updatedNilai = {
-      id_detail: `${id_detail}`,
-      id_matapelajaran: selectedMapel,
-      id_raport: parseInt(selectedIdRaport),
-      nilai: nilai,
-      predikat: dataPredikat,
-      deskripsi: dataDeskripsi,
-    };
-
     try {
+      if (!selectedMapel || !selectedIdRaport || !dataNilai) {
+        console.error("Please fill in all the required fields.");
+        return {
+          success: false,
+          message: "Please fill in all the required fields.",
+        };
+      } else console.log("Required fields filled.");
+
+      const nilai = parseInt(dataNilai);
+      let dataPredikat = "";
+      let dataDeskripsi = "";
+
+      if (nilai > 90 && nilai <= 100) {
+        dataPredikat = "A";
+        dataDeskripsi = "Sangat Baik";
+      } else if (nilai > 80) {
+        dataPredikat = "B";
+        dataDeskripsi = "Baik";
+      } else if (nilai > 70) {
+        dataPredikat = "C";
+        dataDeskripsi = "Cukup";
+      } else if (nilai > 60) {
+        dataPredikat = "D";
+        dataDeskripsi = "Kurang";
+      } else {
+        dataPredikat = "E";
+        dataDeskripsi = "Sangat Kurang";
+      }
+
+      const updatedNilai = {
+        id_detail: `${id_detail}`,
+        id_matapelajaran: selectedMapel,
+        id_raport: parseInt(selectedIdRaport),
+        nilai: nilai,
+        predikat: dataPredikat,
+        deskripsi: dataDeskripsi,
+      };
+
       const response = await fetch(
         `https://jojopinjam.iffan.site/api/update-detail/${id_detail}`,
         {
