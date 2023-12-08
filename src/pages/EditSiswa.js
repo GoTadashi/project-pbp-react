@@ -15,15 +15,32 @@ const EditSiswa = () => {
       .then((response) => response.json())
       .then((json) => {
         if (Array.isArray(json)) {
-          setSiswa(json);
+          const formattedSiswa = json.map((siswa) => ({
+            ...siswa,
+            tanggal_lahir: formatDate(siswa.tanggal_lahir),
+          }));
+          setSiswa(formattedSiswa);
         } else {
-          setSiswa([json]);
+          const formattedSiswa = {
+            ...json,
+            tanggal_lahir: formatDate(json.tanggal_lahir),
+          };
+          setSiswa([formattedSiswa]);
         }
       })
       .catch((error) => {
         console.error("Error fetching siswa:", error);
       });
   }, [nis]);
+  
+  // Fungsi untuk memformat tanggal menjadi "yyyy-MM-dd"
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
