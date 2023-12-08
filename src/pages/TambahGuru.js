@@ -48,7 +48,7 @@ export const TambahGuru = () => {
       if (!kodeGuru || !namaGuru || !tempatLahir || !tanggalLahir || !jenisKelamin) {
         alert("Harap isi semua kolom form.");
       } else {
-        alert("Mata pelajaran berhasil dimasukkan.");
+        alert("Guru berhasil dimasukkan.");
       }
   
       console.log(
