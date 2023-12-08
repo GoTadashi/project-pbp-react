@@ -55,11 +55,6 @@ function App() {
           {/* Data Mapel */}
           <Route path="/TambahMapel" exact component={TambahMapel} />
           <Route path="/EditMapel/:id_matapelajaran" exact component={EditMapel} />
-          <Route
-            path="/EditMapel/:id_matapelajaran"
-            exact
-            component={EditMapel}
-          />
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
 
           {/* Data Siswa */}
