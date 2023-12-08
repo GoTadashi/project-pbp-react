@@ -71,9 +71,6 @@ const LihatNilai = () => {
       <div className="div">
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
-          <img className="line" alt="Line" src="line-2.svg" />
-          <img className="img" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-2">SCH</div>
         </footer>
 
         
@@ -126,7 +123,7 @@ const LihatNilai = () => {
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+            <Link to="/LoginAdmin" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
@@ -185,14 +182,13 @@ const LihatNilai = () => {
               <div className="group-5">
                 <div className="group-6">
                   <div className="group-7">
-                    <div className="text-wrapper-17">Guru Matematika</div>
-                    <div className="text-wrapper-18">Eni Susilowati</div>
+
                   </div>
                 </div>
               </div>
             </div>
             <div className="element-wrapper">
-              <img className="element-4" alt="Element" src="3.svg" />
+              {/* <img className="element-4" alt="Element" src="3.svg" /> */}
             </div>
             <div className="search">
               <div className="group-7">

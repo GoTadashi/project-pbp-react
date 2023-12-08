@@ -41,7 +41,7 @@ export const DashboardGuru = () => {
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+            <Link to="/LoginAdmin" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
