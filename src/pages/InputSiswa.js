@@ -165,7 +165,7 @@ const InputSiswa = () => {
           </Link>
         </div>
         <div className="text-wrapper-12">Input Siswa</div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           <div className="group-8">
             <div className="frame-wrapper">
               <div className="frame-2">

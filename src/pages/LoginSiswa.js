@@ -76,7 +76,7 @@ const LoginSiswa = () => {
                 type="email"
                 className="text-wrapper-4"
                 id="email"
-                placeholder="Email Siswa"
+                placeholder="Email Admin"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
