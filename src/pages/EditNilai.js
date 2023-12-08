@@ -151,7 +151,7 @@ export const EditNilai = () => {
       const response = await fetch(
         `https://jojopinjam.iffan.site/api/update-detail/${id_detail}`,
         {
-          method: "PUT",
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
