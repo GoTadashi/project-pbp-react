@@ -54,7 +54,7 @@ function App() {
           <Route path="/EditNilai/:id_detail" exact component={EditNilai} />
           {/* Data Mapel */}
           <Route path="/TambahMapel" exact component={TambahMapel} />
-          <Route path="/EditMapel" exact component={EditMapel} />
+          <Route path="/EditMapel/:id_matapelajaran" exact component={EditMapel} />
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
 
           {/* Data Siswa */}
