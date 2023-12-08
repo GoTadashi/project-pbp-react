@@ -260,11 +260,8 @@ export const EditGuru = () => {
               </div>
             </div>
           ))}
-          <button type="submit">Submit</button>
+          <button type="submit" class="EDIT-GURU custom-button">Submit</button>
         </form>
-        <div className="TAMBAH-DATA">
-          <div className="text-wrapper-17">Simpan Data</div>
-        </div>
       </div>
     </div>
   );
