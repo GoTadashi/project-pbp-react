@@ -105,46 +105,43 @@ export const EditMapel = () => {
       <div className="div">
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i class="bi bi-sliders2"></i>
-              <span className="side-text ms-2">Peraturan</span>
+            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-file-earmark-plus"></i>
+              <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
           </div>
           <div className="SISWA">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/DataSiswa" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-person-vcard"></i>
               <span className="side-text ms-2">Siswa</span>
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
-              <i className="bi bi-envelope"></i>
-              <span className="side-text ms-2">Chat</span>
+            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-person-video3"></i>
+              <span className="side-text ms-2">Guru</span>
             </Link>
           </div>
           <div className="CHAT-2">
             <Link to="/" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-card-checklist"></i>
-              <span className="side-text ms-2">Generate Absen</span>
+              <span className="side-text ms-2">Mata Pelajaran</span>
             </Link>
           </div>
           <div className="CHAT-3">
-            <Link
-              to="/DaftarMapel"
-              className="list-menu nav-link text-white fs-5"
-            >
-              <i className="bi bi-table"></i>
-              <span className="side-text ms-2">Jadwal Pelajaran</span>
+            <Link to="/DaftarMapel" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-book-fill"></i>
+              <span className="side-text ms-2">Raport Siswa</span>
             </Link>
           </div>
           <div className="DASHBOARD">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/DashboardGuru" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-speedometer2"></i>
               <span className="side-text ms-2">Dashboard</span>
             </Link>
@@ -152,8 +149,6 @@ export const EditMapel = () => {
         </div>
         <footer className="FOOTER">
           <p className="p">Copyright © SD Kristen Terang Bangsa</p>
-          <img className="line-2" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-5">SCH</div>
         </footer>
         <header className="HEADER">
           <div className="overlap-2">
@@ -161,15 +156,15 @@ export const EditMapel = () => {
               <div className="group-4">
                 <div className="group-5">
                   <div className="group-6">
-                    <div className="text-wrapper-8">Siswa</div>
-                    <div className="text-wrapper-9">Anggi Adinda</div>
+                    {/* <div className="text-wrapper-8">Siswa</div>
+                    <div className="text-wrapper-9">Anggi Adinda</div> */}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="element-wrapper">
+            {/* <div className="element-wrapper">
               <img className="element-4" alt="Element" src="3.svg" />
-            </div>
+            </div> */}
             <div className="search">
               <div className="group-7">
                 <input
@@ -193,7 +188,7 @@ export const EditMapel = () => {
           </div>
         </header>
         <div className="kembali">
-          <Link to="/other-page">
+          <Link to="/DaftarMapel">
             <div className="text-wrapper-11">Kembali</div>
           </Link>
         </div>

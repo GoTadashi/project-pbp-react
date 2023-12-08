@@ -1,9 +1,13 @@
 .EDIT-SISWA {
   background-color: #f9f9f9;
-  display: flex;
+  display:inline-block;
   flex-direction: row;
   justify-content: center;
   width: 100%;
+}
+
+.EDIT-SISWA body {
+  width: auto;
 }
 
 .EDIT-SISWA .div {
@@ -406,12 +410,12 @@
   top: 15px;
 }
 
-.EDIT-SISWA .navbar {
+.EDIT-SISWA .overlap-2 {
   height: 37px;
   left: 280px;
   position: absolute;
   top: 162px;
-  width: 471px;
+  width: 408px;
 }
 
 .EDIT-SISWA .line-2 {
@@ -420,36 +424,10 @@
   object-fit: cover;
   position: absolute;
   top: 26px;
-  width: 400px;
+  width: 404px;
 }
 
 .EDIT-SISWA .text-wrapper-7 {
-  color: #000000;
-  font-family: "Poppins-Regular", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 230px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 71px;
-}
-
-.EDIT-SISWA .text-wrapper-8 {
-  color: #000000;
-  font-family: "Poppins-Regular", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 295px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 176px;
-}
-
-.EDIT-SISWA .text-wrapper-9 {
   color: #000000;
   font-family: "Poppins-Regular", Helvetica;
   font-size: 20px;
@@ -459,10 +437,23 @@
   line-height: normal;
   position: absolute;
   top: 0;
-  width: 112px;
+  width: 130px;
 }
 
-.EDIT-SISWA .text-wrapper-10 {
+.EDIT-SISWA .text-wrapper-8 {
+  color: #000000;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 238px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 170px;
+}
+
+.EDIT-SISWA .text-wrapper-9 {
   color: #000000;
   font-family: "Poppins-Regular", Helvetica;
   font-size: 20px;
@@ -484,51 +475,36 @@
   width: 1944px;
 }
 
-.EDIT-SISWA .overlap-2 {
+.EDIT-SISWA .overlap-3 {
   background-color: #62a8e8;
   height: 123px;
   position: relative;
   width: 1942px;
 }
 
-.EDIT-SISWA .group-wrapper {
+.EDIT-SISWA .group-4 {
   height: 48px;
   left: 1712px;
   position: absolute;
   top: 47px;
-  width: 111px;
+  width: 116px;
 }
 
-.EDIT-SISWA .group-4 {
-  height: 48px;
-}
-
-.EDIT-SISWA .group-5 {
-  height: 48px;
-  width: 111px;
-}
-
-.EDIT-SISWA .group-6 {
-  height: 48px;
-  position: relative;
-  width: 115px;
-}
-
-.EDIT-SISWA .text-wrapper-11 {
+.EDIT-SISWA .text-wrapper-10 {
   color: #727272;
   font-family: "Poppins-Regular", Helvetica;
   font-size: 14px;
   font-weight: 400;
-  left: 71px;
+  left: 58px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-align: right;
   top: 27px;
-  width: 40px;
+  width: 54px;
 }
 
-.EDIT-SISWA .text-wrapper-12 {
+.EDIT-SISWA .text-wrapper-11 {
   color: #262626;
   font-family: "Poppins-Medium", Helvetica;
   font-size: 16px;
@@ -571,7 +547,7 @@
   width: 949px;
 }
 
-.EDIT-SISWA .group-7 {
+.EDIT-SISWA .group-5 {
   height: 21px;
   left: 16px;
   position: relative;
@@ -587,7 +563,7 @@
   width: 16px;
 }
 
-.EDIT-SISWA .text-wrapper-13 {
+.EDIT-SISWA .text-wrapper-12 {
   color: #727272;
   font-family: "Poppins-Regular", Helvetica;
   font-size: 14px;
@@ -630,18 +606,19 @@
   width: 100px;
 }
 
-.EDIT-SISWA .group-8 {
+
+.EDIT-SISWA .EDIT-SISWA {
   height: 86px;
   left: 320px;
   position: absolute;
-  top: 223px;
+  top: 215px;
   width: 528px;
 }
 
 .EDIT-SISWA .frame-wrapper {
   height: 17px;
   left: 0;
-  position: absolute;
+  position: relative; /* Change to relative for child positioning */
   top: 0;
   width: 509px;
 }
@@ -655,19 +632,15 @@
   top: 9px;
 }
 
-.EDIT-SISWA .text-wrapper-14 {
+.EDIT-SISWA .text-wrapper-13 {
   color: #252d36;
   font-family: "Poppins-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: -0.28px;
   line-height: 14px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.EDIT-SISWA .text-wrapper-15 {
+.EDIT-SISWA .text-wrapper-14 {
   color: #d95117;
   font-family: "Poppins-Black", Helvetica;
   font-size: 14px;
@@ -681,16 +654,34 @@
 
 .EDIT-SISWA .frame-3 {
   align-items: center;
-  top: 50px;
+  top: 55px;
   display: flex;
   gap: 680px;
   left: -1px;
-  padding: 12px 20px;
+  padding: 2px 20px;
   position: absolute;
-  width: 530px;
+  width: 602px;
 }
 
-.EDIT-SISWA .text-wrapper-16 {
+.EDIT-SISWA .search {
+  background-color: #f0f2f5;
+  border-radius: 32px;
+  height: 45px;
+  left: 467px;
+  overflow: hidden;
+  position: absolute;
+  top: 34px;
+  width: 938px;
+}
+
+/* Add these styles to your CSS file */
+.EDIT-SISWA .custom-input {
+  width: 5rem; 
+  font-size: 16px; 
+  padding: 10px;
+}
+
+.EDIT-SISWA .text-wrapper-15 {
   color: var(--grey-700);
   font-family: "Poppins-Regular", Helvetica;
   font-size: 14px;
@@ -701,15 +692,15 @@
   width: fit-content;
 }
 
-.EDIT-SISWA .group-9 {
+.EDIT-SISWA .group-7 {
   height: 86px;
   left: 320px;
   position: absolute;
-  top: 314px;
+  top: 315px;
   width: 528px;
 }
 
-.EDIT-SISWA .text-wrapper-17 {
+.EDIT-SISWA .text-wrapper-16 {
   color: #d95117;
   font-family: "Poppins-Regular", Helvetica;
   font-size: 14px;
@@ -727,222 +718,10 @@
   gap: 2px;
   left: 5px;
   position: relative;
-  top: 25px;
+  top: -9rem;
 }
 
-.EDIT-SISWA .group-10 {
-  height: 86px;
-  left: 320px;
-  position: absolute;
-  top: 405px;
-  width: 528px;
-}
-
-.EDIT-SISWA .overlap-3 {
-  border-radius: 8px;
-  height: 47px;
-  left: 18px;
-  position: absolute;
-  top: 90px;
-  width: 510px;
-}
-
-.EDIT-SISWA .frame-5 {
-  align-items: center;
-  top: 70px;
-  display: flex;
-  gap: 680px;
-  left: -1px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 530px;
-}
-
-.EDIT-SISWA .icon-chevron-down {
-  height: 10px;
-  left: 490px;
-  position: absolute;
-  top: 40px;
-  width: 17px;
-}
-
-.EDIT-SISWA .group-11 {
-  height: 86px;
-  left: 320px;
-  position: absolute;
-  top: 496px;
-  width: 528px;
-}
-
-.EDIT-SISWA .group-12 {
-  height: 86px;
-  left: 320px;
-  position: absolute;
-  top: 587px;
-  width: 531px;
-}
-
-.EDIT-SISWA .frame-6 {
-  align-items: center;
-  display: inline-flex;
-  gap: 2px;
-  left: 5px;
-  position: relative;
-  top: 45px;
-}
-
-.EDIT-SISWA .group-13 {
-  height: 86px;
-  left: 320px;
-  position: absolute;
-  top: 678px;
-  width: 531px;
-}
-
-.EDIT-SISWA .group-14 {
-  height: 78px;
-  left: 320px;
-  position: absolute;
-  top: 769px;
-  width: 531px;
-}
-
-.EDIT-SISWA .component {
-  align-items: flex-start;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 16px;
-  left: 280px;
-  position: absolute;
-  top: 0;
-}
-
-.EDIT-SISWA .frame-7 {
-  align-items: center;
-  top: 90px;
-  display: flex;
-  gap: 680px;
-  left: 0px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 530px;
-}
-
-.EDIT-SISWA .frame-8 {
-  align-items: center;
-  display: inline-flex;
-  gap: 2px;
-  left: 5px;
-  position: relative;
-  top: 65px;
-}
-
-.EDIT-SISWA .text-wrapper-18 {
-  color: var(--grey-800);
-  font-family: "Poppins-Regular", Helvetica;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.28px;
-  line-height: 14px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-.EDIT-SISWA .frame-9 {
-  align-items: center;
-  top: 110px;
-  display: flex;
-  gap: 680px;
-  left: 0px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 530px;
-}
-
-.EDIT-SISWA .vuesax-linear {
-  height: 14px !important;
-  position: relative !important;
-  width: 14px !important;
-}
-
-.EDIT-SISWA .group-15 {
-  height: 76px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 265px;
-}
-
-.EDIT-SISWA .group-16 {
-  height: 45px;
-  left: 0;
-  position: absolute;
-  top: 31px;
-  width: 265px;
-}
-
-.EDIT-SISWA .frame-10 {
-  align-items: center;
-  display: inline-flex;
-  gap: 2px;
-  left: 5px;
-  position: relative;
-  top: 84px;
-}
-
-.EDIT-SISWA .frame-11 {
-  align-items: center;
-  top: 130px;
-  display: flex;
-  gap: 680px;
-  left: 0px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 530px;
-}
-
-.EDIT-SISWA .frame-12 {
-  align-items: center;
-  display: inline-flex;
-  gap: 2px;
-  left: 5px;
-  position: relative;
-  top: 19px;
-}
-
-.EDIT-SISWA .frame-13 {
-  align-items: center;
-  top: 60px;
-  display: flex;
-  gap: 680px;
-  left: 0px;
-  padding: 12px 20px;
-  position: absolute;
-  width: 530px;
-}
-
-.EDIT-SISWA .frame-14 {
-  align-items: center;
-  display: inline-flex;
-  gap: 2px;
-  left: 20rem;
-  position: relative;
-  top: 57rem;
-}
-
-.EDIT-SISWA .frame-15 {
-  align-items: center;
-  top: 60rem;
-  display: flex;
-  gap: 680px;
-  left: 20rem;
-  padding: 12px 20px;
-  position: absolute;
-  width: 530px;
-}
-
-.EDIT-SISWA .custom-input {
+.EDIT-SISWA .setting {
   border-radius: 10px;
   width: 58rem;
   font-size: 16px;
@@ -951,27 +730,120 @@
   padding: 18px;
 }
 
+.EDIT-SISWA .group-8 {
+  height: 86px;
+  left: 320px;
+  position: absolute;
+  top: 579px;
+  width: 528px;
+}
+
+.EDIT-SISWA .overlap-4 {
+  border-radius: 8px;
+  height: 47px;
+  left: -1px;
+  position: absolute;
+  top: 40px;
+  width: 530px;
+}
+
+.EDIT-SISWA .frame-5 {
+  align-items: center;
+  top: -6rem;
+  display: flex;
+  left: -1px;
+  padding: 2px 20px;
+  position: absolute;
+  width: 602px;
+}
+
+.EDIT-SISWA .icon-chevron-down {
+  height: 10px;
+  left: 490px;
+  position: absolute;
+  top: 20px;
+  width: 17px;
+}
+
+.EDIT-SISWA .group-6{
+  height: 86px;
+  left: 320px;
+  position: absolute;
+  top: 201px;
+  width: 528px;
+}
+.EDIT-SISWA .group-9 {
+  height: 86px;
+  left: 320px;
+  position: absolute;
+  top: 750px;
+  width: 528px;
+  display: flex; /* Add flex display to handle child elements */
+  flex-direction: column; /* Arrange children in a column */
+}
+
+.EDIT-SISWA .group-10 {
+  height: 86px;
+  left: 320px;
+  position: absolute;
+  top: 661px;
+  width: 528px;
+}
+
+.EDIT-SISWA .group-12 {
+  height: 86px;
+  left: 320px;
+  position: absolute;
+  top: 971px;
+  width: 528px;
+}
+.EDIT-SISWA .custom-button {
+  background-color: #0082fc;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.EDIT-SISWA .custom-button:hover {
+  background-color: #036fd4;
+}
+
+.EDIT-SISWA .frame-6 {
+  align-items: center;
+  display: inline-flex;
+  gap: 2px;
+  left: 5px;
+  position: relative;
+  top: -7rem;
+}
+
+.EDIT-SISWA .group-11 {
+  height: 86px;
+  left: 320px;
+  position: absolute;
+  top: 772px;
+  width: 528px;
+}
+
 .EDIT-SISWA .TAMBAH-DATA {
+  justify-content: center;
   background-color: #0082fc;
   border-radius: 10px;
-  height: 40px;
-  left: 530px;
+  height: 50px;
+  left: 35rem;
   position: absolute;
-  top: 64rem;
+  top: 990px;
   width: 170px;
 }
 
 .EDIT-SISWA .TAMBAH-DATA:hover {
-  background-color: #026fd4;
-  border-radius: 10px;
-  height: 40px;
-  left: 530px;
-  position: absolute;
-  top: 64rem;
-  width: 170px;
+  background-color: #036fd4;
 }
 
-.EDIT-SISWA .text-wrapper-19 {
+.EDIT-SISWA .text-wrapper-17 {
   color: #ffffff;
   font-family: "Poppins-SemiBold", Helvetica;
   font-size: 17px;
@@ -985,4 +857,53 @@
   top: 9px;
   white-space: nowrap;
   width: 147px;
+}
+
+.EDIT-SISWA .PHOTO-PROFILE {
+  /* background-image: url(./image-1.png); */
+  background-size: 100% 100%;
+  height: 94px;
+  left: 316px;
+  position: absolute;
+  top: 200px;
+  width: 93px;
+}
+
+.EDIT-SISWA .edit-photo {
+  background-color: #ff9901;
+  border-radius: 15px;
+  height: 30px;
+  left: 60px;
+  position: relative;
+  top: 58px;
+  width: 30px;
+}
+
+.EDIT-SISWA .frame-7 {
+  align-items: center;
+  top: -4rem;
+  display: flex;
+  left: -1px;
+  padding: 2px 20px;
+  position: absolute;
+  width: 602px;
+}
+
+.EDIT-SISWA .frame-8 {
+  align-items: center;
+  display: inline-flex;
+  gap: 2px;
+  left: -1px;
+  position: relative;
+  top: 2rem;
+}
+
+.EDIT-SISWA .frame-9 {
+  align-items: center;
+  top: -2rem;
+  display: flex;
+  left: -1px;
+  padding: 2px 20px;
+  position: absolute;
+  width: 602px;
 }

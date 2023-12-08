@@ -58,7 +58,7 @@ function App() {
           <Route path="/DaftarMapel" exact component={DaftarMapel} />
 
           {/* Data Siswa */}
-          <Route path="/EditSiswa/:nisSiswa" exact component={EditSiswa} />
+          <Route path="/EditSiswa/:nis" exact component={EditSiswa} />
         </div>
       </Switch>
     </Router>
