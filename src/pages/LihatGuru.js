@@ -127,14 +127,14 @@ const LihatGuru = () => {
                       <td>{item.tempat_lahir}</td>
                       <td>{item.tanggal_lahir}</td>
                       <td>{item.jenis_kelamin}</td>
-                      <td className="action-button">
+                      <td width="100px" className="action-button inline">
+                        &nbsp;
                         <button className="bg-success">
                           <i
                             class="bi bi-pencil-square"
                             onClick={() => handleUbahData(item.id_guru)}
                           ></i>
                         </button>
-                        &nbsp;&nbsp;&nbsp;
                         <button className="bg-danger">
                           <i
                             class="bi bi-trash3-fill"
@@ -168,7 +168,7 @@ const LihatGuru = () => {
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/LoginAdmin" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
@@ -242,15 +242,15 @@ const LihatGuru = () => {
               <div className="group-5">
                 <div className="group-6">
                   <div className="group-7">
-                    <div className="text-wrapper-17">Guru Matematika</div>
-                    <div className="text-wrapper-18">Eni Susilowati</div>
+                    {/* <div className="text-wrapper-17">Guru Matematika</div>
+                    <div className="text-wrapper-18">Eni Susilowati</div> */}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="element-wrapper">
+            {/* <div className="element-wrapper">
               <img className="element-4" alt="Element" src="3.svg" />
-            </div>
+            </div> */}
             <div className="search">
               <div className="group-7">
                 <input
