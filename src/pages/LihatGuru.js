@@ -123,7 +123,7 @@ const LihatGuru = () => {
                       <td className="center-item">{item.id_guru}</td>
                       <td>{item.nip}</td>
                       <td>{item.nama}</td>
-                      <td>{item.walikelas}</td>
+                      <td align="center">{item.walikelas}</td>
                       <td>{item.tempat_lahir}</td>
                       <td>{item.tanggal_lahir}</td>
                       <td>{item.jenis_kelamin}</td>
