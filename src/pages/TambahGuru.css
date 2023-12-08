@@ -663,7 +663,7 @@
     font-weight: 400;
     letter-spacing: -0.4px;
     line-height: 20px;
-    margin-top: -1px;
+    margin-top: -50px;
     position: relative;
     white-space: nowrap;
     width: fit-content;
@@ -749,17 +749,25 @@
   
   .TAMBAH-GURU .group-11 {
     height: 40px;
-    left: 762px;
+    left: 492px;
     position: absolute;
-    top: 725px;
+    top: 855px;
     width: 269px;
   }
 
     .TAMBAH-GURU .group-12 {
     height: 40px;
-    left: 762px;
+    left: 492px;
     position: absolute;
-    top: 625px;
+    top: 760px;
+    width: 269px;
+  }
+
+  .TAMBAH-GURU .group-13 {
+    height: 40px;
+    left: 492px;
+    position: absolute;
+    top: 910px;
     width: 269px;
   }
   

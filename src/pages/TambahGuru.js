@@ -240,7 +240,7 @@ export const TambahGuru = () => {
           </select>
         </div>
       </div>
-          <div className="group-11">
+          <div className="group-13">
             <button className="frame-7" onClick={handleSubmit}>
               <div className="text-wrapper-15">Simpan</div>
             </button>
