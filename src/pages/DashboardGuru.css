@@ -28,7 +28,7 @@
 
 .sidebar .div {
     background-color: #f9f9f9;
-    height: 1080px;
+    height: 845px;
     overflow: hidden;
     position: relative;
     width: 1920px;
@@ -238,8 +238,8 @@
     height: 62px;
     left: 0;
     position: absolute;
-    top: 1009px;
-    width: 1920px;
+    top: 900px;
+    width: 100%;
 }
 
 .sidebar .p {
@@ -716,7 +716,7 @@
 
 .sidebar .DAFTAR-MATAPELAJARAN {
     height: 160px;
-    left: 898px;
+    left: 850px;
     position: absolute;
     top: 481px;
     width: 366px;
@@ -991,8 +991,8 @@
     width: 99px;
 }
 
-.img-logo{
-    margin-top: 5px;
+.img-logo {
+    margin-top: 30px;
     width: 100px;
     height: 100px;
 
