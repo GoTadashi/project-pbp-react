@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link, useHistory } from "react-router-dom";
 import "./LihatRaport.css";
 import "./InputNilai.css";
+import mainLogo from "../img/logo.png";
 // ini sudah dropdown id_raport
 const InputNilai = () => {
   const { nisSiswa } = useParams();
@@ -235,7 +236,14 @@ const InputNilai = () => {
             </Link>
           </div>
           <div className="PROFILE-2">
-            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5">
+            <Link to="/LoginSiswa" className="list-menu nav-link text-white fs-5"></Link>
+            <Link to="/LihatNilai" className="list-menu nav-link text-white fs-5">
+              <i class="bi bi-file-earmark-plus"></i>
+              <span className="side-text ms-2">Lihat Nilai</span>
+            </Link>
+          </div>
+          <div className="PROFILE-2">
+            <Link to="/LoginAdmin" className="list-menu nav-link text-white fs-5">
               <i className="bi bi-box-arrow-right"></i>
               <span className="side-text ms-2">Log Out</span>
             </Link>
@@ -272,10 +280,7 @@ const InputNilai = () => {
           </div>
         </div>
         <footer className="FOOTER">
-          <p className="p">Copyright Â© SMP Kristen Getasan 2023</p>
-          <img className="line" alt="Line" src="line-2.svg" />
-          <img className="line-2" alt="Line" src="line-1.svg" />
-          <div className="text-wrapper-5">SCH</div>
+          <p className="p">Copyright © SD Kristen Terang Bangsa</p>
         </footer>
         </div>
         <header className="HEADER">
@@ -284,18 +289,16 @@ const InputNilai = () => {
               <div className="group-4">
                 <div className="group-5">
                   <div className="group-6">
-                    <div className="text-wrapper-8">Siswa</div>
-                    <div className="text-wrapper-9">Anggi Adinda</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="element-wrapper">
-              <img className="element-4" alt="Element" src="3.svg" />
+              {/* <img className="element-4" alt="Element" src="3.svg" /> */}
             </div>
             <div className="search">
               <div className="group-7">
-                <img className="element-5" alt="Element" src="7.svg" />
+                {/* <img className="element-5" alt="Element" src="7.svg" /> */}
                 <input
                   className="custom-input"
                   type="text"
@@ -306,21 +309,17 @@ const InputNilai = () => {
               </div>
             </div>
             <div className="SMP-KRISTEN-GETASAN">
-              Smp Kristen Getasan
+              SD Kristen Terang Bangsa
               <br />
-              e-rapor
+              E-Rapor
             </div>
-            <img className="ellipse-4" alt="Ellipse" src="ellipse-1192.svg" />
-            <img
-              className="SMP-KRISTEN"
-              alt="Smp KRISTEN"
-              src="SMP-KRISTEN-2.png"
-            />
+            <img className="img-logo" src={mainLogo} alt="logo-sd" />
           </div>
         </header>
         <div className="kembali">
-          <img className="back" alt="Back" src="back.png" />
-          <div className="text-wrapper-11">Kembali</div>
+          <Link to="/DaftarMapel">
+            <div className="text-wrapper-11">Kembali</div>
+          </Link>
         </div>
         <div className="text-wrapper-12">Input Nilai</div>
         <div className="group-8">

@@ -71,6 +71,7 @@ const InputRaport = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        window.alert("Rapoort Berhasil Dibuat");
         console.log(data);
       })
       .catch((error) => {
