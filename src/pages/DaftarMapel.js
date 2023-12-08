@@ -58,7 +58,7 @@ export const DaftarMapel = () => {
         </div>
         <div className="MENU">
           <div className="PROFILE">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/LihatRaport" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-file-earmark-plus"></i>
               <span className="side-text ms-2">Input Raport Siswa</span>
             </Link>
@@ -76,7 +76,7 @@ export const DaftarMapel = () => {
             </Link>
           </div>
           <div className="CHAT">
-            <Link to="/" className="list-menu nav-link text-white fs-5">
+            <Link to="/LihatGuru" className="list-menu nav-link text-white fs-5">
               <i class="bi bi-person-video3"></i>
               <span className="side-text ms-2">Guru</span>
             </Link>
