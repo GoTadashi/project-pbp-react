@@ -29,11 +29,11 @@ export const DaftarMapel = () => {
     console.log("Button clicked!");
   };
 
-  const handleEdit = (index) => {
+  const handleEdit = (id_matapelajaran) => {
     // Handle the edit action
-    console.log("Edit clicked for index:", index);
-    const matapelajaranId = data[index].id_matapelajaran;
-    history.push(`/EditMapel/${matapelajaranId}`);
+    // console.log("Edit clicked for index:", index);
+    // const matapelajaranId = data[index].id_matapelajaran;
+    history.push(`/EditMapel/${id_matapelajaran}`);
   };
 
   const handleDelete = async (id_matapelajaran) => {
