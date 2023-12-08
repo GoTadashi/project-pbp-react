@@ -8,7 +8,7 @@
 
 .EDIT-MAPEL .div {
   background-color: #f9f9f9;
-  height: 1080px;
+  height: 920px;
   overflow: hidden;
   position: relative;
   width: 1942px;
@@ -587,7 +587,7 @@
 
 .EDIT-MAPEL .kembali {
   align-items: center;
-  background-color: #515f6d;
+  background-color: #0082fc;
   border-radius: 10px;
   display: flex;
   gap: 5px;
